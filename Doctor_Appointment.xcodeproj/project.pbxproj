@@ -1,0 +1,711 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D31F2EC2505CBC700B7B9BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31F2EB2505CBC700B7B9BB /* AppDelegate.swift */; };
+		4D31F2EE2505CBC700B7B9BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31F2ED2505CBC700B7B9BB /* SceneDelegate.swift */; };
+		4D31F2F32505CBC700B7B9BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D31F2F12505CBC700B7B9BB /* Main.storyboard */; };
+		4D31F2F52505CBC800B7B9BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D31F2F42505CBC800B7B9BB /* Assets.xcassets */; };
+		4D31F2F82505CBC800B7B9BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D31F2F62505CBC800B7B9BB /* LaunchScreen.storyboard */; };
+		4D31F3032505CBC900B7B9BB /* Doctor_AppointmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31F3022505CBC900B7B9BB /* Doctor_AppointmentTests.swift */; };
+		4D31F30E2505CBC900B7B9BB /* Doctor_AppointmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31F30D2505CBC900B7B9BB /* Doctor_AppointmentUITests.swift */; };
+		4D31F3242505DE8100B7B9BB /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31F3232505DE8100B7B9BB /* ParentViewController.swift */; };
+		4D31F3262505DEC700B7B9BB /* StoryboardID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31F3252505DEC700B7B9BB /* StoryboardID.swift */; };
+		4D4C4200250615A200E1F017 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C41FF250615A200E1F017 /* SignUpController.swift */; };
+		4DBF50522509D51500519102 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF50512509D51500519102 /* ForgotPasswordController.swift */; };
+		4DE259E52509E1A20018C6C2 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE259E42509E1A20018C6C2 /* SignInController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4D31F2FF2505CBC900B7B9BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D31F2E02505CBC700B7B9BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D31F2E72505CBC700B7B9BB;
+			remoteInfo = Doctor_Appointment;
+		};
+		4D31F30A2505CBC900B7B9BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D31F2E02505CBC700B7B9BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D31F2E72505CBC700B7B9BB;
+			remoteInfo = Doctor_Appointment;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4D31F2E82505CBC700B7B9BB /* Doctor_Appointment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doctor_Appointment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D31F2EB2505CBC700B7B9BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4D31F2ED2505CBC700B7B9BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4D31F2F22505CBC700B7B9BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4D31F2F42505CBC800B7B9BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4D31F2F72505CBC800B7B9BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4D31F2F92505CBC800B7B9BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D31F2FE2505CBC900B7B9BB /* Doctor_AppointmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Doctor_AppointmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D31F3022505CBC900B7B9BB /* Doctor_AppointmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor_AppointmentTests.swift; sourceTree = "<group>"; };
+		4D31F3042505CBC900B7B9BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D31F3092505CBC900B7B9BB /* Doctor_AppointmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Doctor_AppointmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D31F30D2505CBC900B7B9BB /* Doctor_AppointmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor_AppointmentUITests.swift; sourceTree = "<group>"; };
+		4D31F30F2505CBC900B7B9BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D31F3232505DE8100B7B9BB /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		4D31F3252505DEC700B7B9BB /* StoryboardID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardID.swift; sourceTree = "<group>"; };
+		4D4C41FF250615A200E1F017 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		4DBF50512509D51500519102 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
+		4DE259E42509E1A20018C6C2 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4D31F2E52505CBC700B7B9BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D31F2FB2505CBC800B7B9BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D31F3062505CBC900B7B9BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D31F2DF2505CBC700B7B9BB = {
+			isa = PBXGroup;
+			children = (
+				4D31F2EA2505CBC700B7B9BB /* Doctor_Appointment */,
+				4D31F3012505CBC900B7B9BB /* Doctor_AppointmentTests */,
+				4D31F30C2505CBC900B7B9BB /* Doctor_AppointmentUITests */,
+				4D31F2E92505CBC700B7B9BB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D31F2E92505CBC700B7B9BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D31F2E82505CBC700B7B9BB /* Doctor_Appointment.app */,
+				4D31F2FE2505CBC900B7B9BB /* Doctor_AppointmentTests.xctest */,
+				4D31F3092505CBC900B7B9BB /* Doctor_AppointmentUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D31F2EA2505CBC700B7B9BB /* Doctor_Appointment */ = {
+			isa = PBXGroup;
+			children = (
+				4D31F31D2505D02B00B7B9BB /* Config */,
+				4D31F31E2505D03200B7B9BB /* DataDomain */,
+				4D31F31F2505D04500B7B9BB /* Utilities */,
+				4D31F31B2505CE6F00B7B9BB /* View */,
+				4D31F2F62505CBC800B7B9BB /* LaunchScreen.storyboard */,
+				4D31F2F42505CBC800B7B9BB /* Assets.xcassets */,
+				4D31F2F12505CBC700B7B9BB /* Main.storyboard */,
+				4D31F2EB2505CBC700B7B9BB /* AppDelegate.swift */,
+				4D31F2ED2505CBC700B7B9BB /* SceneDelegate.swift */,
+				4D31F2F92505CBC800B7B9BB /* Info.plist */,
+			);
+			path = Doctor_Appointment;
+			sourceTree = "<group>";
+		};
+		4D31F3012505CBC900B7B9BB /* Doctor_AppointmentTests */ = {
+			isa = PBXGroup;
+			children = (
+				4D31F3022505CBC900B7B9BB /* Doctor_AppointmentTests.swift */,
+				4D31F3042505CBC900B7B9BB /* Info.plist */,
+			);
+			path = Doctor_AppointmentTests;
+			sourceTree = "<group>";
+		};
+		4D31F30C2505CBC900B7B9BB /* Doctor_AppointmentUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4D31F30D2505CBC900B7B9BB /* Doctor_AppointmentUITests.swift */,
+				4D31F30F2505CBC900B7B9BB /* Info.plist */,
+			);
+			path = Doctor_AppointmentUITests;
+			sourceTree = "<group>";
+		};
+		4D31F31B2505CE6F00B7B9BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4DE259E32509E0F80018C6C2 /* Custom */,
+				4DE259E22509E0AB0018C6C2 /* Controller */,
+				4DE259E12509E0A50018C6C2 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D31F31D2505D02B00B7B9BB /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				4D31F3252505DEC700B7B9BB /* StoryboardID.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		4D31F31E2505D03200B7B9BB /* DataDomain */ = {
+			isa = PBXGroup;
+			children = (
+				4D31F3222505D09400B7B9BB /* Model */,
+				4D31F3212505D08E00B7B9BB /* DataManager */,
+				4D31F3202505D07600B7B9BB /* BusinessDomain */,
+			);
+			path = DataDomain;
+			sourceTree = "<group>";
+		};
+		4D31F31F2505D04500B7B9BB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4D31F3202505D07600B7B9BB /* BusinessDomain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BusinessDomain;
+			sourceTree = "<group>";
+		};
+		4D31F3212505D08E00B7B9BB /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		4D31F3222505D09400B7B9BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4D31F3272505E6F800B7B9BB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4DE259E42509E1A20018C6C2 /* SignInController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4D4C41FE2506159000E1F017 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				4D4C41FF250615A200E1F017 /* SignUpController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		4DBF50502509D4D100519102 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				4DBF50512509D51500519102 /* ForgotPasswordController.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		4DE259E12509E0A50018C6C2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4DE259E22509E0AB0018C6C2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4DBF50502509D4D100519102 /* ForgotPassword */,
+				4D4C41FE2506159000E1F017 /* SignUp */,
+				4D31F3272505E6F800B7B9BB /* Login */,
+				4D31F3232505DE8100B7B9BB /* ParentViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4DE259E32509E0F80018C6C2 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D31F2E72505CBC700B7B9BB /* Doctor_Appointment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D31F3122505CBC900B7B9BB /* Build configuration list for PBXNativeTarget "Doctor_Appointment" */;
+			buildPhases = (
+				4D31F2E42505CBC700B7B9BB /* Sources */,
+				4D31F2E52505CBC700B7B9BB /* Frameworks */,
+				4D31F2E62505CBC700B7B9BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Doctor_Appointment;
+			productName = Doctor_Appointment;
+			productReference = 4D31F2E82505CBC700B7B9BB /* Doctor_Appointment.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4D31F2FD2505CBC800B7B9BB /* Doctor_AppointmentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D31F3152505CBC900B7B9BB /* Build configuration list for PBXNativeTarget "Doctor_AppointmentTests" */;
+			buildPhases = (
+				4D31F2FA2505CBC800B7B9BB /* Sources */,
+				4D31F2FB2505CBC800B7B9BB /* Frameworks */,
+				4D31F2FC2505CBC800B7B9BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D31F3002505CBC900B7B9BB /* PBXTargetDependency */,
+			);
+			name = Doctor_AppointmentTests;
+			productName = Doctor_AppointmentTests;
+			productReference = 4D31F2FE2505CBC900B7B9BB /* Doctor_AppointmentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4D31F3082505CBC900B7B9BB /* Doctor_AppointmentUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D31F3182505CBC900B7B9BB /* Build configuration list for PBXNativeTarget "Doctor_AppointmentUITests" */;
+			buildPhases = (
+				4D31F3052505CBC900B7B9BB /* Sources */,
+				4D31F3062505CBC900B7B9BB /* Frameworks */,
+				4D31F3072505CBC900B7B9BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D31F30B2505CBC900B7B9BB /* PBXTargetDependency */,
+			);
+			name = Doctor_AppointmentUITests;
+			productName = Doctor_AppointmentUITests;
+			productReference = 4D31F3092505CBC900B7B9BB /* Doctor_AppointmentUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D31F2E02505CBC700B7B9BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = "Thinh (Oscar) P. DANG";
+				TargetAttributes = {
+					4D31F2E72505CBC700B7B9BB = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					4D31F2FD2505CBC800B7B9BB = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = 4D31F2E72505CBC700B7B9BB;
+					};
+					4D31F3082505CBC900B7B9BB = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = 4D31F2E72505CBC700B7B9BB;
+					};
+				};
+			};
+			buildConfigurationList = 4D31F2E32505CBC700B7B9BB /* Build configuration list for PBXProject "Doctor_Appointment" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4D31F2DF2505CBC700B7B9BB;
+			productRefGroup = 4D31F2E92505CBC700B7B9BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D31F2E72505CBC700B7B9BB /* Doctor_Appointment */,
+				4D31F2FD2505CBC800B7B9BB /* Doctor_AppointmentTests */,
+				4D31F3082505CBC900B7B9BB /* Doctor_AppointmentUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D31F2E62505CBC700B7B9BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D31F2F82505CBC800B7B9BB /* LaunchScreen.storyboard in Resources */,
+				4D31F2F52505CBC800B7B9BB /* Assets.xcassets in Resources */,
+				4D31F2F32505CBC700B7B9BB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D31F2FC2505CBC800B7B9BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D31F3072505CBC900B7B9BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D31F2E42505CBC700B7B9BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D31F2EC2505CBC700B7B9BB /* AppDelegate.swift in Sources */,
+				4D31F2EE2505CBC700B7B9BB /* SceneDelegate.swift in Sources */,
+				4DE259E52509E1A20018C6C2 /* SignInController.swift in Sources */,
+				4D31F3242505DE8100B7B9BB /* ParentViewController.swift in Sources */,
+				4DBF50522509D51500519102 /* ForgotPasswordController.swift in Sources */,
+				4D31F3262505DEC700B7B9BB /* StoryboardID.swift in Sources */,
+				4D4C4200250615A200E1F017 /* SignUpController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D31F2FA2505CBC800B7B9BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D31F3032505CBC900B7B9BB /* Doctor_AppointmentTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D31F3052505CBC900B7B9BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D31F30E2505CBC900B7B9BB /* Doctor_AppointmentUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4D31F3002505CBC900B7B9BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D31F2E72505CBC700B7B9BB /* Doctor_Appointment */;
+			targetProxy = 4D31F2FF2505CBC900B7B9BB /* PBXContainerItemProxy */;
+		};
+		4D31F30B2505CBC900B7B9BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D31F2E72505CBC700B7B9BB /* Doctor_Appointment */;
+			targetProxy = 4D31F30A2505CBC900B7B9BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4D31F2F12505CBC700B7B9BB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D31F2F22505CBC700B7B9BB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4D31F2F62505CBC800B7B9BB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D31F2F72505CBC800B7B9BB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4D31F3102505CBC900B7B9BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4D31F3112505CBC900B7B9BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4D31F3132505CBC900B7B9BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Doctor_Appointment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "oscar.Doctor-Appointment";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4D31F3142505CBC900B7B9BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Doctor_Appointment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "oscar.Doctor-Appointment";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4D31F3162505CBC900B7B9BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Doctor_AppointmentTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "oscar.Doctor-AppointmentTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Doctor_Appointment.app/Doctor_Appointment";
+			};
+			name = Debug;
+		};
+		4D31F3172505CBC900B7B9BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Doctor_AppointmentTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "oscar.Doctor-AppointmentTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Doctor_Appointment.app/Doctor_Appointment";
+			};
+			name = Release;
+		};
+		4D31F3192505CBC900B7B9BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Doctor_AppointmentUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "oscar.Doctor-AppointmentUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Doctor_Appointment;
+			};
+			name = Debug;
+		};
+		4D31F31A2505CBC900B7B9BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Doctor_AppointmentUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "oscar.Doctor-AppointmentUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Doctor_Appointment;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D31F2E32505CBC700B7B9BB /* Build configuration list for PBXProject "Doctor_Appointment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D31F3102505CBC900B7B9BB /* Debug */,
+				4D31F3112505CBC900B7B9BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D31F3122505CBC900B7B9BB /* Build configuration list for PBXNativeTarget "Doctor_Appointment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D31F3132505CBC900B7B9BB /* Debug */,
+				4D31F3142505CBC900B7B9BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D31F3152505CBC900B7B9BB /* Build configuration list for PBXNativeTarget "Doctor_AppointmentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D31F3162505CBC900B7B9BB /* Debug */,
+				4D31F3172505CBC900B7B9BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D31F3182505CBC900B7B9BB /* Build configuration list for PBXNativeTarget "Doctor_AppointmentUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D31F3192505CBC900B7B9BB /* Debug */,
+				4D31F31A2505CBC900B7B9BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4D31F2E02505CBC700B7B9BB /* Project object */;
+}

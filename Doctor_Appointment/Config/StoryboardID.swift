@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import UIKit
+
+struct StoryboardID {
+    //signIn id
+    static let SignInControllerId = "SignInController"
+    
+    //signUp id
+    static let SignUpControllerId = "SignUpController"
+    
+    //forgotPassword id
+    static let ForgotPasswordControllerId = "ForgotPasswordController"
+}
