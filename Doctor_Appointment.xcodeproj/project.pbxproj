@@ -19,6 +19,7 @@
 		4D4C4200250615A200E1F017 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C41FF250615A200E1F017 /* SignUpController.swift */; };
 		4DBF50522509D51500519102 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF50512509D51500519102 /* ForgotPasswordController.swift */; };
 		4DE259E52509E1A20018C6C2 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE259E42509E1A20018C6C2 /* SignInController.swift */; };
+		551FE59B250F079A0061C021 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551FE59A250F079A0061C021 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		4D4C41FF250615A200E1F017 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		4DBF50512509D51500519102 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		4DE259E42509E1A20018C6C2 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		551FE59A250F079A0061C021 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,9 +144,9 @@
 		4D31F31B2505CE6F00B7B9BB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4DE259E32509E0F80018C6C2 /* Custom */,
+				551FE599250F07880061C021 /* Custom */,
+				551FE598250F07830061C021 /* Cell */,
 				4DE259E22509E0AB0018C6C2 /* Controller */,
-				4DE259E12509E0A50018C6C2 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,13 +221,6 @@
 			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
-		4DE259E12509E0A50018C6C2 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		4DE259E22509E0AB0018C6C2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,9 +232,17 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		4DE259E32509E0F80018C6C2 /* Custom */ = {
+		551FE598250F07830061C021 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		551FE599250F07880061C021 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				551FE59A250F079A0061C021 /* CustomButton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				4D31F2EE2505CBC700B7B9BB /* SceneDelegate.swift in Sources */,
 				4DE259E52509E1A20018C6C2 /* SignInController.swift in Sources */,
 				4D31F3242505DE8100B7B9BB /* ParentViewController.swift in Sources */,
+				551FE59B250F079A0061C021 /* CustomButton.swift in Sources */,
 				4DBF50522509D51500519102 /* ForgotPasswordController.swift in Sources */,
 				4D31F3262505DEC700B7B9BB /* StoryboardID.swift in Sources */,
 				4D4C4200250615A200E1F017 /* SignUpController.swift in Sources */,
