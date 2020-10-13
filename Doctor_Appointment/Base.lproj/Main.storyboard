@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bLh-9a-x6H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bLh-9a-x6H">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -62,7 +64,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9y0-Eg-cCa" customClass="CustomButton" customModule="Doctor_Appointment" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9y0-Eg-cCa">
                                 <rect key="frame" x="130" y="430" width="150" height="48"/>
                                 <color key="backgroundColor" red="1" green="0.27738973230000002" blue="0.28849197900000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
@@ -74,6 +76,9 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="Login:" destination="0Zq-Za-2Z0" eventType="touchUpInside" id="5ZK-4z-TmI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Login with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jup-dJ-KrS">
                                 <rect key="frame" x="165.5" y="552" width="83" height="19"/>
@@ -82,7 +87,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="83" id="hgg-fM-iWx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="textColor" systemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="tCo-kW-zT5">
@@ -97,12 +102,12 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUJ-uu-Way">
-                                <rect key="frame" x="70" y="792" width="210" height="20.5"/>
+                                <rect key="frame" x="70.5" y="792" width="209.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqd-5P-2e2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqd-5P-2e2">
                                 <rect key="frame" x="285" y="786" width="59" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="59" id="ADJ-QO-0zV"/>
@@ -115,7 +120,7 @@
                                     <action selector="signUp:" destination="0Zq-Za-2Z0" eventType="touchUpInside" id="ZPx-f4-yPL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmN-rr-tO3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmN-rr-tO3">
                                 <rect key="frame" x="139" y="502" width="139" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="139" id="Lsz-Hq-kZP"/>
@@ -130,6 +135,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="mXb-XP-qX7"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mXb-XP-qX7" firstAttribute="trailing" secondItem="jup-dJ-KrS" secondAttribute="trailing" constant="165.5" id="1NR-Kl-lo8"/>
@@ -163,11 +169,14 @@
                             <constraint firstItem="9y0-Eg-cCa" firstAttribute="leading" secondItem="mXb-XP-qX7" secondAttribute="leading" constant="130" id="uIQ-aS-Rvf"/>
                             <constraint firstItem="6Ic-jV-Rd7" firstAttribute="top" secondItem="mXb-XP-qX7" secondAttribute="top" constant="37" id="yUE-1T-gGW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="mXb-XP-qX7"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="dbf-14-HYo"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tfPassword" destination="Hkr-Y6-R2n" id="BjX-mT-T8y"/>
+                        <outlet property="tfUsername" destination="2kM-2C-fBG" id="oSl-1R-ogw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wa-HY-oGR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,7 +230,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vj1-hr-Wlj" customClass="CustomButton" customModule="Doctor_Appointment" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vj1-hr-Wlj">
                                 <rect key="frame" x="125" y="623" width="177" height="48"/>
                                 <color key="backgroundColor" red="1" green="0.27738973230000002" blue="0.28849197900000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -246,6 +255,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ssV-A9-ULQ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="kVT-gZ-tFJ" firstAttribute="leading" secondItem="ssV-A9-ULQ" secondAttribute="leading" constant="149.5" id="2Fv-B3-9vN"/>
@@ -275,7 +285,6 @@
                             <constraint firstItem="ssV-A9-ULQ" firstAttribute="bottom" secondItem="vj1-hr-Wlj" secondAttribute="bottom" constant="191" id="mhd-ga-bpX"/>
                             <constraint firstItem="7jZ-y3-d0r" firstAttribute="trailing" secondItem="hHS-Aj-Nnn" secondAttribute="trailing" id="onb-Cf-Vkk"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ssV-A9-ULQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="21D-Cc-BMX"/>
                 </viewController>
@@ -322,7 +331,7 @@
                                 <color key="textColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xw8-Wv-N2s" customClass="CustomButton" customModule="Doctor_Appointment" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xw8-Wv-N2s">
                                 <rect key="frame" x="125" y="455" width="164" height="48"/>
                                 <color key="backgroundColor" red="1" green="0.27738973230000002" blue="0.28849197900000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -351,6 +360,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="9f3-6F-TTF"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9f3-6F-TTF" firstAttribute="bottom" secondItem="Xw8-Wv-N2s" secondAttribute="bottom" constant="359" id="1Fl-vp-uG6"/>
@@ -371,7 +381,6 @@
                             <constraint firstItem="fDR-J0-nUi" firstAttribute="centerX" secondItem="Ef8-Hv-8EC" secondAttribute="centerX" id="vWP-Ba-VpC"/>
                             <constraint firstItem="Pyc-vB-1As" firstAttribute="leading" secondItem="9f3-6F-TTF" secondAttribute="leading" constant="150" id="xdD-bA-r7l"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="9f3-6F-TTF"/>
                     </view>
                     <navigationItem key="navigationItem" title="Forgot password" id="aIG-q2-YbL"/>
                 </viewController>
@@ -391,7 +400,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="1" green="0.1947157085" blue="0.27091464399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqG-Yz-cLG" customClass="CustomButton" customModule="Doctor_Appointment" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqG-Yz-cLG" customClass="CustomButton" customModule="Doctor_Appointment" customModuleProvider="target">
                                 <rect key="frame" x="20" y="760" width="156" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.27738973230000002" blue="0.28849197900000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -411,14 +420,14 @@
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="1" green="0.1647194028" blue="0.24707394839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" systemColor="systemRedColor"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signUp:" destination="kzg-Hm-QYC" eventType="touchUpInside" id="bys-Mg-PI8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqK-UR-pzn" customClass="CustomButton" customModule="Doctor_Appointment" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqK-UR-pzn" customClass="CustomButton" customModule="Doctor_Appointment" customModuleProvider="target">
                                 <rect key="frame" x="238" y="760" width="156" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="156" id="bMF-e4-8yW"/>
@@ -475,6 +484,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="idv-NY-FuX"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="idv-NY-FuX" firstAttribute="bottom" secondItem="dqK-UR-pzn" secondAttribute="bottom" constant="52" id="6dF-bv-p9I"/>
@@ -491,7 +501,6 @@
                             <constraint firstItem="UrK-Zp-F0X" firstAttribute="centerX" secondItem="hL2-HC-X7g" secondAttribute="centerX" id="wP5-Xy-SCn"/>
                             <constraint firstItem="Gzt-qq-2wy" firstAttribute="centerY" secondItem="hL2-HC-X7g" secondAttribute="centerY" id="xI1-kK-jYe"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="idv-NY-FuX"/>
                     </view>
                     <navigationItem key="navigationItem" id="J66-Tg-ovv"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -500,11 +509,49 @@
             </objects>
             <point key="canvasLocation" x="1120" y="139"/>
         </scene>
+        <!--Home Page Controller-->
+        <scene sceneID="Xy7-tA-h7L">
+            <objects>
+                <viewController storyboardIdentifier="HomePageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W8Z-N2-vUi" customClass="HomePageController" customModule="Doctor_Appointment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yto-Ll-QJg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VnV-sG-SOP">
+                                <rect key="frame" x="86" y="260" width="242" height="376"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fv4-1U-Sg0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CGE-Y3-UaO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3071.0144927536235" y="138.61607142857142"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Google" width="15.5" height="15.5"/>
         <image name="background" width="112.5" height="243.5"/>
         <image name="facebook" width="15.5" height="15.5"/>
         <image name="health-care-medical-icon" width="476" height="474"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="scrollViewTexturedBackgroundColor">
+            <color red="0.43529411764705878" green="0.44313725490196082" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

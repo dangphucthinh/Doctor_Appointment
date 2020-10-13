@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,7 +19,19 @@
 		4D4C4200250615A200E1F017 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C41FF250615A200E1F017 /* SignUpController.swift */; };
 		4DBF50522509D51500519102 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF50512509D51500519102 /* ForgotPasswordController.swift */; };
 		4DE259E52509E1A20018C6C2 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE259E42509E1A20018C6C2 /* SignInController.swift */; };
-		551FE59B250F079A0061C021 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551FE59A250F079A0061C021 /* CustomButton.swift */; };
+		55A40B5B25340251008B2523 /* BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A40B5A25340251008B2523 /* BaseUrl.swift */; };
+		55A40B6025340332008B2523 /* CommonString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A40B5F25340332008B2523 /* CommonString.swift */; };
+		55A40B6525340387008B2523 /* ServerKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A40B6425340387008B2523 /* ServerKey.swift */; };
+		55A40B6A25340FCD008B2523 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A40B6925340FCD008B2523 /* Loading.swift */; };
+		55A40B6F2534108A008B2523 /* BaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A40B6E2534108A008B2523 /* BaseClient.swift */; };
+		55A40B7425345AA6008B2523 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A40B7325345AA6008B2523 /* BaseResponse.swift */; };
+		55A40B7925345B7A008B2523 /* BaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A40B7825345B7A008B2523 /* BaseConnection.swift */; };
+		55A40B7E25345EDA008B2523 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A40B7D25345EDA008B2523 /* LoginResponse.swift */; };
+		55A40B9625354567008B2523 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A40B9525354567008B2523 /* CustomButton.swift */; };
+		55A40BA6253555FE008B2523 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A40BA5253555FE008B2523 /* HomePageController.swift */; };
+		BFCD7B597B642FC3645D5B27 /* Pods_Doctor_Appointment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D9B75969EDB7EAE21CC4E5 /* Pods_Doctor_Appointment.framework */; };
+		CFC56E13494F08736311B6C7 /* Pods_Doctor_Appointment_Doctor_AppointmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B44496C1255FD0A3DB6EED37 /* Pods_Doctor_Appointment_Doctor_AppointmentUITests.framework */; };
+		E796DC430608156C92795396 /* Pods_Doctor_AppointmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D906A41495A1AD48BA8D7EB6 /* Pods_Doctor_AppointmentTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33BD55266A952C1D36532D3A /* Pods-Doctor_Appointment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor_Appointment.debug.xcconfig"; path = "Target Support Files/Pods-Doctor_Appointment/Pods-Doctor_Appointment.debug.xcconfig"; sourceTree = "<group>"; };
+		4639206ACD3B282C69B281D6 /* Pods-Doctor_Appointment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor_Appointment.release.xcconfig"; path = "Target Support Files/Pods-Doctor_Appointment/Pods-Doctor_Appointment.release.xcconfig"; sourceTree = "<group>"; };
 		4D31F2E82505CBC700B7B9BB /* Doctor_Appointment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doctor_Appointment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D31F2EB2505CBC700B7B9BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D31F2ED2505CBC700B7B9BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +72,23 @@
 		4D4C41FF250615A200E1F017 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		4DBF50512509D51500519102 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		4DE259E42509E1A20018C6C2 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
-		551FE59A250F079A0061C021 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		52261CF2CB20CAFCC37D2E90 /* Pods-Doctor_AppointmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor_AppointmentTests.debug.xcconfig"; path = "Target Support Files/Pods-Doctor_AppointmentTests/Pods-Doctor_AppointmentTests.debug.xcconfig"; sourceTree = "<group>"; };
+		55A40B5A25340251008B2523 /* BaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
+		55A40B5F25340332008B2523 /* CommonString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonString.swift; sourceTree = "<group>"; };
+		55A40B6425340387008B2523 /* ServerKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerKey.swift; sourceTree = "<group>"; };
+		55A40B6925340FCD008B2523 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Loading.swift; path = Doctor_Appointment/Config/Loading.swift; sourceTree = SOURCE_ROOT; };
+		55A40B6E2534108A008B2523 /* BaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseClient.swift; path = Doctor_Appointment/Config/BaseClient.swift; sourceTree = SOURCE_ROOT; };
+		55A40B7325345AA6008B2523 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseResponse.swift; path = Doctor_Appointment/Config/BaseResponse.swift; sourceTree = SOURCE_ROOT; };
+		55A40B7825345B7A008B2523 /* BaseConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseConnection.swift; path = Doctor_Appointment/Config/BaseConnection.swift; sourceTree = SOURCE_ROOT; };
+		55A40B7D25345EDA008B2523 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginResponse.swift; path = Doctor_Appointment/Config/LoginResponse.swift; sourceTree = SOURCE_ROOT; };
+		55A40B9525354567008B2523 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		55A40BA5253555FE008B2523 /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
+		B44496C1255FD0A3DB6EED37 /* Pods_Doctor_Appointment_Doctor_AppointmentUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doctor_Appointment_Doctor_AppointmentUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD1024280F01B4EE021A0554 /* Pods-Doctor_AppointmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor_AppointmentTests.release.xcconfig"; path = "Target Support Files/Pods-Doctor_AppointmentTests/Pods-Doctor_AppointmentTests.release.xcconfig"; sourceTree = "<group>"; };
+		C2143757D874BEBFA74CF487 /* Pods-Doctor_Appointment-Doctor_AppointmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor_Appointment-Doctor_AppointmentUITests.debug.xcconfig"; path = "Target Support Files/Pods-Doctor_Appointment-Doctor_AppointmentUITests/Pods-Doctor_Appointment-Doctor_AppointmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C5D9B75969EDB7EAE21CC4E5 /* Pods_Doctor_Appointment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doctor_Appointment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D906A41495A1AD48BA8D7EB6 /* Pods_Doctor_AppointmentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doctor_AppointmentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F770B533E7B55791547C7B0A /* Pods-Doctor_Appointment-Doctor_AppointmentUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor_Appointment-Doctor_AppointmentUITests.release.xcconfig"; path = "Target Support Files/Pods-Doctor_Appointment-Doctor_AppointmentUITests/Pods-Doctor_Appointment-Doctor_AppointmentUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFCD7B597B642FC3645D5B27 /* Pods_Doctor_Appointment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E796DC430608156C92795396 /* Pods_Doctor_AppointmentTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC56E13494F08736311B6C7 /* Pods_Doctor_Appointment_Doctor_AppointmentUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +126,8 @@
 				4D31F3012505CBC900B7B9BB /* Doctor_AppointmentTests */,
 				4D31F30C2505CBC900B7B9BB /* Doctor_AppointmentUITests */,
 				4D31F2E92505CBC700B7B9BB /* Products */,
+				A02FC5EAF7EB317B8536A8F2 /* Pods */,
+				973F1F566786192241BABDC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,6 +190,9 @@
 			isa = PBXGroup;
 			children = (
 				4D31F3252505DEC700B7B9BB /* StoryboardID.swift */,
+				55A40B5A25340251008B2523 /* BaseUrl.swift */,
+				55A40B5F25340332008B2523 /* CommonString.swift */,
+				55A40B6425340387008B2523 /* ServerKey.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -172,6 +210,7 @@
 		4D31F31F2505D04500B7B9BB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				55A40B6925340FCD008B2523 /* Loading.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -179,6 +218,10 @@
 		4D31F3202505D07600B7B9BB /* BusinessDomain */ = {
 			isa = PBXGroup;
 			children = (
+				55A40B6E2534108A008B2523 /* BaseClient.swift */,
+				55A40B7325345AA6008B2523 /* BaseResponse.swift */,
+				55A40B7825345B7A008B2523 /* BaseConnection.swift */,
+				55A40B7D25345EDA008B2523 /* LoginResponse.swift */,
 			);
 			path = BusinessDomain;
 			sourceTree = "<group>";
@@ -224,6 +267,7 @@
 		4DE259E22509E0AB0018C6C2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				55A40BA4253555EB008B2523 /* HomePage */,
 				4DBF50502509D4D100519102 /* ForgotPassword */,
 				4D4C41FE2506159000E1F017 /* SignUp */,
 				4D31F3272505E6F800B7B9BB /* Login */,
@@ -242,9 +286,40 @@
 		551FE599250F07880061C021 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				551FE59A250F079A0061C021 /* CustomButton.swift */,
+				55A40B9525354567008B2523 /* CustomButton.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		55A40BA4253555EB008B2523 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				55A40BA5253555FE008B2523 /* HomePageController.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		973F1F566786192241BABDC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5D9B75969EDB7EAE21CC4E5 /* Pods_Doctor_Appointment.framework */,
+				B44496C1255FD0A3DB6EED37 /* Pods_Doctor_Appointment_Doctor_AppointmentUITests.framework */,
+				D906A41495A1AD48BA8D7EB6 /* Pods_Doctor_AppointmentTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A02FC5EAF7EB317B8536A8F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33BD55266A952C1D36532D3A /* Pods-Doctor_Appointment.debug.xcconfig */,
+				4639206ACD3B282C69B281D6 /* Pods-Doctor_Appointment.release.xcconfig */,
+				C2143757D874BEBFA74CF487 /* Pods-Doctor_Appointment-Doctor_AppointmentUITests.debug.xcconfig */,
+				F770B533E7B55791547C7B0A /* Pods-Doctor_Appointment-Doctor_AppointmentUITests.release.xcconfig */,
+				52261CF2CB20CAFCC37D2E90 /* Pods-Doctor_AppointmentTests.debug.xcconfig */,
+				BD1024280F01B4EE021A0554 /* Pods-Doctor_AppointmentTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +329,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D31F3122505CBC900B7B9BB /* Build configuration list for PBXNativeTarget "Doctor_Appointment" */;
 			buildPhases = (
+				2C9F1864F0730D132C0E0CF3 /* [CP] Check Pods Manifest.lock */,
 				4D31F2E42505CBC700B7B9BB /* Sources */,
 				4D31F2E52505CBC700B7B9BB /* Frameworks */,
 				4D31F2E62505CBC700B7B9BB /* Resources */,
+				6DEA03B282E96D12EF4F389D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -271,6 +348,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D31F3152505CBC900B7B9BB /* Build configuration list for PBXNativeTarget "Doctor_AppointmentTests" */;
 			buildPhases = (
+				6E1A55844FF2AA41A4508DF9 /* [CP] Check Pods Manifest.lock */,
 				4D31F2FA2505CBC800B7B9BB /* Sources */,
 				4D31F2FB2505CBC800B7B9BB /* Frameworks */,
 				4D31F2FC2505CBC800B7B9BB /* Resources */,
@@ -289,9 +367,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D31F3182505CBC900B7B9BB /* Build configuration list for PBXNativeTarget "Doctor_AppointmentUITests" */;
 			buildPhases = (
+				6DC52F2E85C26CB1BA2054A2 /* [CP] Check Pods Manifest.lock */,
 				4D31F3052505CBC900B7B9BB /* Sources */,
 				4D31F3062505CBC900B7B9BB /* Frameworks */,
 				4D31F3072505CBC900B7B9BB /* Resources */,
+				221BA381D6A3D1A0FE3CB6E3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,7 +390,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Thinh (Oscar) P. DANG";
 				TargetAttributes = {
 					4D31F2E72505CBC700B7B9BB = {
@@ -373,6 +453,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		221BA381D6A3D1A0FE3CB6E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment-Doctor_AppointmentUITests/Pods-Doctor_Appointment-Doctor_AppointmentUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment-Doctor_AppointmentUITests/Pods-Doctor_Appointment-Doctor_AppointmentUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment-Doctor_AppointmentUITests/Pods-Doctor_Appointment-Doctor_AppointmentUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C9F1864F0730D132C0E0CF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Doctor_Appointment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DC52F2E85C26CB1BA2054A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Doctor_Appointment-Doctor_AppointmentUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DEA03B282E96D12EF4F389D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment/Pods-Doctor_Appointment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment/Pods-Doctor_Appointment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment/Pods-Doctor_Appointment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E1A55844FF2AA41A4508DF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Doctor_AppointmentTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4D31F2E42505CBC700B7B9BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -381,10 +564,19 @@
 				4D31F2EC2505CBC700B7B9BB /* AppDelegate.swift in Sources */,
 				4D31F2EE2505CBC700B7B9BB /* SceneDelegate.swift in Sources */,
 				4DE259E52509E1A20018C6C2 /* SignInController.swift in Sources */,
+				55A40B6025340332008B2523 /* CommonString.swift in Sources */,
+				55A40B9625354567008B2523 /* CustomButton.swift in Sources */,
+				55A40B6525340387008B2523 /* ServerKey.swift in Sources */,
+				55A40B7925345B7A008B2523 /* BaseConnection.swift in Sources */,
+				55A40B7E25345EDA008B2523 /* LoginResponse.swift in Sources */,
 				4D31F3242505DE8100B7B9BB /* ParentViewController.swift in Sources */,
-				551FE59B250F079A0061C021 /* CustomButton.swift in Sources */,
+				55A40B6F2534108A008B2523 /* BaseClient.swift in Sources */,
+				55A40B5B25340251008B2523 /* BaseUrl.swift in Sources */,
 				4DBF50522509D51500519102 /* ForgotPasswordController.swift in Sources */,
 				4D31F3262505DEC700B7B9BB /* StoryboardID.swift in Sources */,
+				55A40B7425345AA6008B2523 /* BaseResponse.swift in Sources */,
+				55A40B6A25340FCD008B2523 /* Loading.swift in Sources */,
+				55A40BA6253555FE008B2523 /* HomePageController.swift in Sources */,
 				4D4C4200250615A200E1F017 /* SignUpController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +658,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -526,6 +719,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -556,6 +750,7 @@
 		};
 		4D31F3132505CBC900B7B9BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33BD55266A952C1D36532D3A /* Pods-Doctor_Appointment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -568,12 +763,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "oscar.Doctor-Appointment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		4D31F3142505CBC900B7B9BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4639206ACD3B282C69B281D6 /* Pods-Doctor_Appointment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -586,12 +782,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "oscar.Doctor-Appointment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		4D31F3162505CBC900B7B9BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52261CF2CB20CAFCC37D2E90 /* Pods-Doctor_AppointmentTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -613,6 +810,7 @@
 		};
 		4D31F3172505CBC900B7B9BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD1024280F01B4EE021A0554 /* Pods-Doctor_AppointmentTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -634,6 +832,7 @@
 		};
 		4D31F3192505CBC900B7B9BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2143757D874BEBFA74CF487 /* Pods-Doctor_Appointment-Doctor_AppointmentUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -653,6 +852,7 @@
 		};
 		4D31F31A2505CBC900B7B9BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F770B533E7B55791547C7B0A /* Pods-Doctor_Appointment-Doctor_AppointmentUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

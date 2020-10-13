@@ -18,4 +18,7 @@ struct StoryboardID {
     
     //forgotPassword id
     static let ForgotPasswordControllerId = "ForgotPasswordController"
+    
+    //Homepage id
+    static let HomePageControllerId = "HomePageController"
 }

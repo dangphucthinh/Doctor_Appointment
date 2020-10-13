@@ -7,7 +7,25 @@
 		<key>Doctor_Appointment.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>10</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>4D31F2E72505CBC700B7B9BB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4D31F2FD2505CBC800B7B9BB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4D31F3082505CBC900B7B9BB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

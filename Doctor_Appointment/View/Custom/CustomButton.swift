@@ -2,14 +2,13 @@
 //  CustomButton.swift
 //  Doctor_Appointment
 //
-//  Created by Oscar on 9/14/20.
+//  Created by Oscar on 10/13/20.
 //  Copyright © 2020 Thinh (Oscar) P. DANG. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-@IBDesignable class CustomButton: UIButton{
+class CustomButton: UIButton{
     @IBInspectable var cornerRadius: CGFloat = 15 {
         didSet {
             refreshCorners(value: cornerRadius)
@@ -64,3 +63,4 @@ import UIKit
         layer.cornerRadius = value
     }
 }
+
