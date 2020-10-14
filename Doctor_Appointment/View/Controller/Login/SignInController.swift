@@ -35,26 +35,39 @@ class SignInController: UIViewController {
     }
     
     
-    @IBAction func Login(_ sender: Any) {
-        BaseConnection.request(BaseClient.APIRouter.login(username: tfUsername.text!, password: tfPassword.text!, grant_type: "password"), LoginResponse.self, completion: {
-            (result, err) in
-            guard err != nil else {
-                print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
-                // create the alert
-                let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)
-
-                // add an action (button)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
-                // show the alert
-                self.present(alert, animated: true, completion: nil)
-                return
-            }
-            
-            let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.HomePageControllerId) as! HomePageController
-            
-            self.navigationController?.pushViewController(controller, animated: true)
-            
-        })
+   
+    @IBAction func signIn(_ sender: Any) {
+                BaseConnection
+                .request(BaseClient.Service.login(username: tfUsername.text!, password: tfPassword.text!),
+                                   LoginResponse.self,
+                                   completion: { (result, err) in
+                                    guard err == nil else {
+                                        print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
+    
+                                        if err?.mErrorCode == 0 {
+    //                                        let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.MainViewControllerId) as! MainViewController
+    //                                        self.navigationController?.present(controller, animated: true)
+                                            let alert = UIAlertController(title: "My Title", message: "Login Success", preferredStyle: UIAlertController.Style.alert)
+    
+                                            // add an action (button)
+                                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+    
+                                            // show the alert
+                                            self.present(alert, animated: true, completion: nil)
+                                        }
+                                        else{
+                                            // create the alert
+                                            let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)
+    
+                                            // add an action (button)
+                                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+    
+                                            // show the alert
+                                            self.present(alert, animated: true, completion: nil)
+                                        }
+                                        return
+                                    }
+            })
     }
+    
 }

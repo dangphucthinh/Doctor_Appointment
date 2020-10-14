@@ -1,8 +1,8 @@
 //
-//  StoryboardID.swift
+//  StoryboardId.swift
 //  Doctor_Appointment
 //
-//  Created by thinhdang on 9/7/20.
+//  Created by Oscar on 10/14/20.
 //  Copyright © 2020 Thinh (Oscar) P. DANG. All rights reserved.
 //
 
@@ -19,6 +19,6 @@ struct StoryboardID {
     //forgotPassword id
     static let ForgotPasswordControllerId = "ForgotPasswordController"
     
-    //Homepage id
-    static let HomePageControllerId = "HomePageController"
+    //homePage id
+    static let MainViewControllerId = "MainViewController"
 }

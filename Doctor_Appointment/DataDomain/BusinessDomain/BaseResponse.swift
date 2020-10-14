@@ -2,7 +2,7 @@
 //  BaseResponse.swift
 //  Doctor_Appointment
 //
-//  Created by Oscar on 10/12/20.
+//  Created by Oscar on 10/14/20.
 //  Copyright © 2020 Thinh (Oscar) P. DANG. All rights reserved.
 //
 
@@ -13,20 +13,15 @@ class BaseResponse<T: Mappable>: Mappable {
     var status: Int?
     var code: Int?
     var message: String?
-    var accessToken: String?
-    //var data: Object?
-
-    //var data: T?
+    var data: T?
     
     required init?(map: Map) {
     }
     
     func mapping(map: Map) {
         status <- map["status"]
-        //code <- map["token_type"]
         message <- map["message"]
-        //data <- map["status"]
-        accessToken <- map["access_token"]
+        data <- map["data"]
     }
     
     func isSuccessCode() -> Bool? {
@@ -46,3 +41,4 @@ class BaseResponseError {
         mErrorMessage = errorMessage
     }
 }
+
