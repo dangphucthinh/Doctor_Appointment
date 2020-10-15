@@ -23,97 +23,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9D01AE25-3504-4161-BFDA-B266CDB15234"
+            uuid = "BAB593E2-3769-41CC-ADE7-4DA31C684488"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Doctor_Appointment/View/Controller/Login/SignInController.swift"
+            filePath = "Doctor_Appointment/View/Controller/SignUp/SignUpController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "signIn(_:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "signUp(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9D6FD47B-E046-4E65-805A-5D4D5A2992F5"
+            uuid = "D0135108-E11E-49CD-860D-BE39398AE2B3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Doctor_Appointment/View/Controller/SignUp/SignUpController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "signUp(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "690D8D5C-CD9F-4617-ACFB-9ED0B6B969FF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Doctor_Appointment/DataDomain/BusinessDomain/BaseConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "request(_:_:completion:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DAC40FD5-7CD8-4D8B-8783-8024F2C3224B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Doctor_Appointment/DataDomain/BusinessDomain/BaseConnection.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "request(_:_:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4C81B72E-AFDA-4319-992D-938F9DCD5063"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Doctor_Appointment/View/Controller/Login/SignInController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "signIn(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4C81B72E-AFDA-4319-992D-938F9DCD5063 - 275e035ee236c6ca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Doctor_Appointment.SignInController.signIn(Any) -&gt; ()"
-                  moduleName = "Doctor_Appointment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/oscar/Desktop/SeniorProject/Doctor_Appointment/Doctor_Appointment/View/Controller/Login/SignInController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "1471">
-               </Location>
-               <Location
-                  uuid = "4C81B72E-AFDA-4319-992D-938F9DCD5063 - d9e2faa740b9c786"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Doctor_Appointment.LoginResponse&gt;, Swift.Optional&lt;Doctor_Appointment.BaseResponseError&gt;) -&gt; () in Doctor_Appointment.SignInController.signIn(Any) -&gt; ()"
-                  moduleName = "Doctor_Appointment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/oscar/Desktop/SeniorProject/Doctor_Appointment/Doctor_Appointment/View/Controller/Login/SignInController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "233">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

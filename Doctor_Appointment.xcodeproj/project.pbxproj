@@ -18,6 +18,7 @@
 		4D4C4200250615A200E1F017 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C41FF250615A200E1F017 /* SignUpController.swift */; };
 		4DBF50522509D51500519102 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF50512509D51500519102 /* ForgotPasswordController.swift */; };
 		4DE259E52509E1A20018C6C2 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE259E42509E1A20018C6C2 /* SignInController.swift */; };
+		5519A0A02537EE66001D7F81 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5519A09F2537EE66001D7F81 /* RegisterResponse.swift */; };
 		55250AEB25369FED00D251BD /* dateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250AE925369FED00D251BD /* dateCell.swift */; };
 		55250AEC25369FED00D251BD /* dateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250AEA25369FED00D251BD /* dateCollectionViewCell.swift */; };
 		55250AF425369FF900D251BD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250AF025369FF800D251BD /* HeaderView.swift */; };
@@ -80,6 +81,7 @@
 		4DBF50512509D51500519102 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		4DE259E42509E1A20018C6C2 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		52261CF2CB20CAFCC37D2E90 /* Pods-Doctor_AppointmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor_AppointmentTests.debug.xcconfig"; path = "Target Support Files/Pods-Doctor_AppointmentTests/Pods-Doctor_AppointmentTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5519A09F2537EE66001D7F81 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		55250AE925369FED00D251BD /* dateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dateCell.swift; sourceTree = "<group>"; };
 		55250AEA25369FED00D251BD /* dateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dateCollectionViewCell.swift; sourceTree = "<group>"; };
 		55250AF025369FF800D251BD /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -248,6 +250,16 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		5519A0A42537EE6B001D7F81 /* ServerResponse */ = {
+			isa = PBXGroup;
+			children = (
+				55DDE4B525369851003B3B62 /* BaseResponse.swift */,
+				55DDE4BA2536987F003B3B62 /* LoginResponse.swift */,
+				5519A09F2537EE66001D7F81 /* RegisterResponse.swift */,
+			);
+			path = ServerResponse;
+			sourceTree = "<group>";
+		};
 		551FE599250F07880061C021 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,10 +319,9 @@
 		55DDE4AA25369814003B3B62 /* BusinessDomain */ = {
 			isa = PBXGroup;
 			children = (
+				5519A0A42537EE6B001D7F81 /* ServerResponse */,
 				55DDE4AB25369825003B3B62 /* BaseClient.swift */,
 				55DDE4B02536983B003B3B62 /* BaseConnection.swift */,
-				55DDE4B525369851003B3B62 /* BaseResponse.swift */,
-				55DDE4BA2536987F003B3B62 /* LoginResponse.swift */,
 			);
 			path = BusinessDomain;
 			sourceTree = "<group>";
@@ -600,6 +611,7 @@
 				55DDE48625369541003B3B62 /* ServerKey.swift in Sources */,
 				4DBF50522509D51500519102 /* ForgotPasswordController.swift in Sources */,
 				55DDE4B12536983B003B3B62 /* BaseConnection.swift in Sources */,
+				5519A0A02537EE66001D7F81 /* RegisterResponse.swift in Sources */,
 				55DDE49025369571003B3B62 /* BaseUrl.swift in Sources */,
 				4D4C4200250615A200E1F017 /* SignUpController.swift in Sources */,
 			);

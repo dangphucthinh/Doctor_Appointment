@@ -38,22 +38,16 @@ class SignInController: UIViewController {
    
     @IBAction func signIn(_ sender: Any) {
                 BaseConnection
-                .request(BaseClient.Service.login(username: tfUsername.text!, password: tfPassword.text!),
+                .request(BaseClient.Service.login(username: "Oscar", password: "Admin@123"),
                                    LoginResponse.self,
                                    completion: { (result, err) in
                                     guard err == nil else {
                                         print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
     
                                         if err?.mErrorCode == 0 {
-    //                                        let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.MainViewControllerId) as! MainViewController
-    //                                        self.navigationController?.present(controller, animated: true)
-                                            let alert = UIAlertController(title: "My Title", message: "Login Success", preferredStyle: UIAlertController.Style.alert)
-    
-                                            // add an action (button)
-                                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-    
-                                            // show the alert
-                                            self.present(alert, animated: true, completion: nil)
+                                            let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.MainViewControllerId) as! MainViewController
+                                            self.navigationController?.present(controller, animated: true)
+                                           
                                         }
                                         else{
                                             // create the alert

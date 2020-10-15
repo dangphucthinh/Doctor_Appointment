@@ -25,7 +25,7 @@ class BaseClient: NSObject{
                       email: String,
                       firstName: String,
                       lastName: String,
-                      dateOfBirth: DateFormatter,
+                      dateOfBirth: String,
                       phoneNumber: String,
                       password: String,
                       confirmPassword: String)
@@ -77,27 +77,38 @@ class BaseClient: NSObject{
         // MARK: - Parameters
         private var parameters: Parameters? {
             switch self {
-            case .login(let username, let password):
+            case .login(let username,
+                        let password):
                 return [
                     "username": username,
                     "password": password
                 ]
-            case .changePassword(let pass, let newPass, let confirmNewPass,_):
+            case .changePassword(let pass,
+                                 let newPass,
+                                 let confirmNewPass,_):
                 return[
                     "password": pass,
                     "new_password": newPass,
                     "new_password_confirmation": confirmNewPass
                 ]
-            case .register(let username, let email, let firstName, let lastName, let dateOfBirth,let phoneNumber, let password, let confirmPassword):
+            case .register(let username,
+                           let email,
+                           let firstName,
+                           let lastName,
+                           let dateOfBirth,
+                           let phoneNumber,
+                           let password,
+                           let confirmPassword
+                          ):
             return[
                 "username" : username,
                 "email" : email,
-                "firstName" : firstName,
-                "lastName" : lastName,
-                "dateOfBirth" : dateOfBirth,
-                "phoneNumber" : phoneNumber,
+                "firstname" : firstName,
+                "lastname" : lastName,
+                "dateofbirth" : dateOfBirth,
+                "phonenumber" : phoneNumber,
                 "password" : password,
-                "confirmPassword" : confirmPassword
+                "confirmpassword" : confirmPassword
             ]
             }
         }

@@ -26,9 +26,11 @@ class BaseConnection {
         Alamofire.request(apiRouter).responseObject {(response: DataResponse<BaseResponse<T>>) in
             switch response.result {
             case .success:
+                print(response.result)
                 if response.response?.statusCode == 200 {
                                     if (response.result.value?.isSuccessCode())! {
                                         completion((response.result.value?.data), nil)
+                                        print(response.result.value?.data! as Any)
                                     } else {
                                         let err: BaseResponseError = BaseResponseError.init(NetworkErrorType.API_ERROR, (response.result.value?.status)!, (response.result.value?.message)!)
                                         completion(nil, err)
