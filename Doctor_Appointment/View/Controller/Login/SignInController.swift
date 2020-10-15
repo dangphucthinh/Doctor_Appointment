@@ -38,7 +38,8 @@ class SignInController: UIViewController {
    
     @IBAction func signIn(_ sender: Any) {
                 BaseConnection
-                .request(BaseClient.Service.login(username: "Oscar", password: "Admin@123"),
+                    .request(BaseClient.Service.login(username: tfUsername.text!,
+                                                      password: tfPassword.text!),
                                    LoginResponse.self,
                                    completion: { (result, err) in
                                     guard err == nil else {

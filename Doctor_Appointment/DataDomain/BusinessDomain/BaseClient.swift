@@ -25,7 +25,7 @@ class BaseClient: NSObject{
                       email: String,
                       firstName: String,
                       lastName: String,
-                      dateOfBirth: String,
+                      dateOfBirth: Date,
                       phoneNumber: String,
                       password: String,
                       confirmPassword: String)

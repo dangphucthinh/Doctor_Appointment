@@ -21,28 +21,41 @@ class SignUpController: UIViewController {
     @IBOutlet weak var btnMale: UIButton!
     @IBOutlet weak var btnFemale: UIButton!
     
+  //  let start = "2017-05-25"
+    
+  //  let dateFormat = "MM/dd/yyyy"
+
+    let dateFormatter = DateFormatter()
+    
+    var startDate: Date?
     let datePicker = UIDatePicker()
     override func viewDidLoad() {
         super.viewDidLoad()
-        //showDatePicker()
+        showDatePicker()
+    //    dateFormatter.dateFormat = dateFormat
         
+    //    startDate = dateFormatter.date(from: start)
     }
     
+    
     @IBAction func signUp(_ sender: Any) {
-        BaseConnection.request(BaseClient.Service.register(username: "thinh357445",
-                                                           email: "thinh123@enclave.com",
-                                                           firstName: "thinh",
-                                                           lastName: "dang",
-                                                           dateOfBirth: "10/10/2020",
-                                                           phoneNumber: "0123456789",
-                                                           password: "Admin@123",
-                                                           confirmPassword: "Admin@123"),
-                                                           LoginResponse.self,
+       
+    print(datePicker.date)
+        BaseConnection.request(BaseClient.Service.register(username: tfUserName.text!,
+                                                           email: tfEmail.text!,
+                                                           firstName: tfFirstName.text!,
+                                                           lastName: tfLastName.text!,
+                                                           dateOfBirth: datePicker.date,
+                                                           phoneNumber: tfPhoneNumber.text!,
+                                                           password: tfPassword.text!,
+                                                           confirmPassword: tfConfirmPassword.text!),
+                                                           RegisterResponse.self,
            completion: { (result,err) in
-            guard err == nil else {
+           guard err == nil else {
+                
+                print(self.tfDateOfBirth.text!)
                 print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
                 
-                print(result)
                 if err?.mErrorCode == 0 {
                     let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.MainViewControllerId) as! MainViewController
                     self.navigationController?.present(controller, animated: true)
@@ -64,35 +77,38 @@ class SignUpController: UIViewController {
     }
     
     //MARK: -Birthday
-//    func showDatePicker(){
-//      //Formate Date
-//      datePicker.datePickerMode = .date
-//
-//     //ToolBar
-//     let toolbar = UIToolbar();
-//     toolbar.sizeToFit()
-//     let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
-//      let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-//    let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
-//
-//   toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-//
-//        tfDateOfBirth.inputAccessoryView = toolbar
-//        tfDateOfBirth.inputView = datePicker
-//
-//   }
-//
-//    @objc func donedatePicker(){
-//
-//     let formatter = DateFormatter()
-//     formatter.dateFormat = "MM/dd/yyyy"
-//        tfDateOfBirth.text = formatter.string(from: datePicker.date)
-//     self.view.endEditing(true)
-//   }
-//
-//   @objc func cancelDatePicker(){
-//      self.view.endEditing(true)
-//    }
+    func showDatePicker(){
+      //Formate Date
+      datePicker.datePickerMode = .date
+
+     //ToolBar
+     let toolbar = UIToolbar();
+     toolbar.sizeToFit()
+     let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+      let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+    let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+
+   toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+
+        tfDateOfBirth.inputAccessoryView = toolbar
+        tfDateOfBirth.inputView = datePicker
+
+   }
+
+    @objc func donedatePicker(){
+        
+     let formatter = DateFormatter()
+     formatter.dateFormat = "MM/dd/yyyy"
+        //let a = formatter.date(from: <#T##String#>)
+       tfDateOfBirth.text = formatter.string(from: datePicker.date)//(from: datePicker.date)
+        //startDate = dateFormatter.date(from: tfDateOfBirth.text!)
+       // startDate = dateFormatter.date(from: tfDateOfBirth.text)
+     self.view.endEditing(true)
+   }
+
+   @objc func cancelDatePicker(){
+      self.view.endEditing(true)
+    }
     
     //MARK: -Gender
     
