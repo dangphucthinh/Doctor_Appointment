@@ -26,6 +26,8 @@
 		55250AF525369FF900D251BD /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55250AF125369FF800D251BD /* HeaderView.xib */; };
 		55250AF625369FF900D251BD /* scheduledHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250AF225369FF900D251BD /* scheduledHeaderView.swift */; };
 		55250AF725369FF900D251BD /* scheduledHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55250AF325369FF900D251BD /* scheduledHeaderView.xib */; };
+		5560296E2538501500E362AA /* BaseClient_User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5560296D2538501500E362AA /* BaseClient_User.swift */; };
+		55602974253955E700E362AA /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55602973253955E700E362AA /* Loading.swift */; };
 		55A40B9625354567008B2523 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A40B9525354567008B2523 /* CustomButton.swift */; };
 		55DDE47E25369528003B3B62 /* StoryboardID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DDE47D25369528003B3B62 /* StoryboardID.swift */; };
 		55DDE48625369541003B3B62 /* ServerKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DDE48525369541003B3B62 /* ServerKey.swift */; };
@@ -90,6 +92,8 @@
 		55250AF125369FF800D251BD /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		55250AF225369FF900D251BD /* scheduledHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scheduledHeaderView.swift; sourceTree = "<group>"; };
 		55250AF325369FF900D251BD /* scheduledHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = scheduledHeaderView.xib; sourceTree = "<group>"; };
+		5560296D2538501500E362AA /* BaseClient_User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClient_User.swift; sourceTree = "<group>"; };
+		55602973253955E700E362AA /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		55A40B9525354567008B2523 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		55DDE47D25369528003B3B62 /* StoryboardID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardID.swift; sourceTree = "<group>"; };
 		55DDE48525369541003B3B62 /* ServerKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerKey.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 		4D31F2EA2505CBC700B7B9BB /* Doctor_Appointment */ = {
 			isa = PBXGroup;
 			children = (
+				55602972253955DC00E362AA /* Utilies */,
 				4D31F31D2505D02B00B7B9BB /* Config */,
 				55DDE49525369593003B3B62 /* DataDomain */,
 				4D31F31B2505CE6F00B7B9BB /* View */,
@@ -274,6 +279,14 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
+		55602972253955DC00E362AA /* Utilies */ = {
+			isa = PBXGroup;
+			children = (
+				55602973253955E700E362AA /* Loading.swift */,
+			);
+			path = Utilies;
+			sourceTree = "<group>";
+		};
 		55A40BA4253555EB008B2523 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +338,7 @@
 				5519A0A42537EE6B001D7F81 /* ServerResponse */,
 				55DDE4AB25369825003B3B62 /* BaseClient.swift */,
 				55DDE4B02536983B003B3B62 /* BaseConnection.swift */,
+				5560296D2538501500E362AA /* BaseClient_User.swift */,
 			);
 			path = BusinessDomain;
 			sourceTree = "<group>";
@@ -603,6 +617,8 @@
 				55250AF425369FF900D251BD /* HeaderView.swift in Sources */,
 				55DDE4BB2536987F003B3B62 /* LoginResponse.swift in Sources */,
 				4DE259E52509E1A20018C6C2 /* SignInController.swift in Sources */,
+				55602974253955E700E362AA /* Loading.swift in Sources */,
+				5560296E2538501500E362AA /* BaseClient_User.swift in Sources */,
 				55A40B9625354567008B2523 /* CustomButton.swift in Sources */,
 				55250AEC25369FED00D251BD /* dateCollectionViewCell.swift in Sources */,
 				55DDE47E25369528003B3B62 /* StoryboardID.swift in Sources */,

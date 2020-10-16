@@ -13,7 +13,8 @@ class HeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
     @IBOutlet weak var secondViewLabel: UILabel!
-
+    @IBOutlet weak var lbTitle: UILabel!
+    
     override func awakeFromNib() {
         firstView.layer.cornerRadius = CGFloat(30)
         

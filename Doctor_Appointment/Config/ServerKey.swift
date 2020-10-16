@@ -17,17 +17,15 @@ struct Header {
     
 }
 
-struct Body {
-    
-}
-
 struct ResponseKey {
     static let StatusCode = "status"
     static let MessageCode = "message"
     static let Data = "data"
     static let AccessToken = "access_token"
-    static let Authorization = ""
+    static let Authorization = "Authorization \(AccessToken)"
+    static let Token = "token"
 }
+
 enum ErrorCode: Int {
     case Success = 0
     case Fail = 1

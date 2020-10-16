@@ -80,6 +80,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="firstView" destination="oKq-Ee-8E7" id="te0-cG-DP2"/>
+                <outlet property="lbTitle" destination="an7-8a-uxc" id="0c3-fh-JPI"/>
                 <outlet property="secondView" destination="DwE-Hj-a4B" id="31y-al-iaX"/>
                 <outlet property="secondViewLabel" destination="H2L-Zz-8Ru" id="ORc-1p-bdV"/>
             </connections>

@@ -11,7 +11,7 @@ import Alamofire
 
 class BaseClient: NSObject{
     
-    //var accessToken : String?
+    var accessToken : String?
     
     //singleton
     static let shared = BaseClient()
@@ -33,6 +33,8 @@ class BaseClient: NSObject{
                             newPassword: String,
                             confirmPassword:String,
                             token: String)
+        
+        static let baseHTTP = API.kBaseUrl
         
   
         //MARK: -Method
@@ -71,7 +73,7 @@ class BaseClient: NSObject{
         }
         
         private func getAuthorizationHeader() -> String?{
-            return "Authorization token"
+            return "Bearer token"
         }
         
         // MARK: - Parameters
@@ -138,11 +140,11 @@ class BaseClient: NSObject{
             }
             
             switch self {
-            case .login, .register:
+            case .login, .register, .changePassword:
                 return urlRequest
-            case .changePassword(token: let accessToken):
-                urlRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: Header.Authorization)
-                return urlRequest
+//            case .changePassword(token: let accessToken):
+//                urlRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: Header.Authorization)
+                //return urlRequest
             }
         }
         
