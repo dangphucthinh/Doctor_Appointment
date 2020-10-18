@@ -65,7 +65,7 @@ class SignInController: UIViewController {
 //            })
         
         if(!tfUsername.text!.isEmpty && !tfPassword.text!.isEmpty) {
-           // Loading.showLoading(message: Message.LoadingMessage, view: self.view)
+            Loading.showLoading(message: Message.LoadingMessage, view: self.view)
             BaseClient.shared.loginWithUrl(username: tfUsername.text!,
                                            password: tfPassword.text!)
             { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
