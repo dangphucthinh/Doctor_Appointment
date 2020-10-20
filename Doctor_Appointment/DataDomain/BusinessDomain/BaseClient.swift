@@ -12,6 +12,8 @@ import Alamofire
 class BaseClient: NSObject{
     
     var accessToken : String?
+    var fullName : String?
+    
     
     //singleton
     static let shared = BaseClient()

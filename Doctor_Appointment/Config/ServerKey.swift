@@ -12,7 +12,6 @@ import Alamofire
 struct Header {
     static let ContentType = "Content-Type"
     static let ApplicationJson = "application/json"
-    //static let AccessTokenKey = "Access-Token"
     static let Authorization = "Authorization"
     
 }
@@ -24,6 +23,7 @@ struct ResponseKey {
     static let AccessToken = "access_token"
     static let Authorization = "Authorization \(AccessToken)"
     static let Token = "token"
+    static let User = "user"
 }
 
 enum ErrorCode: Int {

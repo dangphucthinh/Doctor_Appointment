@@ -21,9 +21,6 @@ class SignUpController: UIViewController {
     @IBOutlet weak var btnMale: UIButton!
     @IBOutlet weak var btnFemale: UIButton!
     
-  //  let start = "2017-05-25"
-    
-  //  let dateFormat = "MM/dd/yyyy"
 
     let dateFormatter = DateFormatter()
     
@@ -32,9 +29,6 @@ class SignUpController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showDatePicker()
-    //    dateFormatter.dateFormat = dateFormat
-        
-    //    startDate = dateFormatter.date(from: start)
     }
     
     
@@ -99,10 +93,7 @@ class SignUpController: UIViewController {
         
      let formatter = DateFormatter()
      formatter.dateFormat = "MM/dd/yyyy"
-        //let a = formatter.date(from: <#T##String#>)
        tfDateOfBirth.text = formatter.string(from: datePicker.date)//(from: datePicker.date)
-        //startDate = dateFormatter.date(from: tfDateOfBirth.text!)
-       // startDate = dateFormatter.date(from: tfDateOfBirth.text)
      self.view.endEditing(true)
    }
 
