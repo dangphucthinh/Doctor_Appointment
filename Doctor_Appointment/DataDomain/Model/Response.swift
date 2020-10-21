@@ -8,6 +8,7 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
 class ResponseMessages : Mappable{
     var succeeded : String?

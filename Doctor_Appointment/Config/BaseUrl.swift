@@ -26,9 +26,12 @@ struct API{
     static let kGetListAllDoctor = "GetListAllDoctor" //get all doctors GET
     static let kGetDoctorInfo = "GetDoctorInfo" //Post
     static let kDoctorRegister = "Register"
+    static let kDoctorBySpeciality = "GetDoctorInfoBySpecialty"
     
     
     //patient
+    static let kPatientInfo = "api/Auth/GetPatientInfo"
+    
     
     //specialties
     static let kGetAllHospitalSpecialities = "GetAllHospitalSpecialities"

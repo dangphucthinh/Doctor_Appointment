@@ -8,13 +8,14 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-class LoginResponse : Mappable{
+class LoginResponse : Object, Mappable{
     var user: User?
     var token: Token?
     
-    required init?(map : Map) {
-        
+    required convenience init?(map: Map) {
+        self.init()
     }
     
     func mapping(map: Map){

@@ -7,25 +7,10 @@
 //
 
 import Foundation
-import Foundation
 import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 
-//extension BaseClient{
-//
-//    static func isConnectedToInternet() ->Bool {
-//        return NetworkReachabilityManager()!.isReachable
-//    }
-//
-//    static func request<T: Mappable>(_ apiRouter: BaseClient.Service,_ returnType: T.Type, completion: @escaping (_ result: T?, _ error: BaseResponseError?) -> Void) {
-//        if !isConnectedToInternet() {
-//            // Xử lý khi lỗi kết nối internet
-//            return
-//        }
-//
-//    }}
-    
 extension BaseClient {
     
     /**
@@ -56,9 +41,9 @@ extension BaseClient {
                         self.accessToken = access_token?.object(forKey: ResponseKey.AccessToken) as? String
                         
                         let full_name = ((rawValue as!  NSDictionary).object(forKey: ResponseKey.User)) as? NSDictionary
-                        self.fullName = full_name?.object(forKey: "fullName") as? String
+                        self.fullName = full_name?.object(forKey: "id") as? String
                         
-                        DataManager.shared.AddValue(key: Header.Authorization, value: "Bearer" + self.accessToken!)
+                        DataManager.shared.AddValue(key: Header.Authorization, value: "Bearer \(self.accessToken!)")
                         DispatchQueue.main.async {
                             // Run on main thread
                             completion(true, nil, data as AnyObject);
@@ -88,6 +73,52 @@ extension BaseClient {
             }
         }
     }
+    
+    /*
+         * Get list doctor
+         * @param: HospitalSpeciality
+         * @return listData in callback
+     */
+    
+//    func GetDoctorInfoBySpecialty(HosSpecId: String, completion:@escaping ServiceResponse) {
+//            DispatchQueue.global(qos: .background).async {
+//                // Run on background
+//                let request = Service.GetDoctorBySpeciality(HosSpecId: HosSpecId) as URLRequestConvertible
+//                Alamofire.request(request)
+//                        .responseObject { (response: DataResponse<Doctor>) in
+//                        switch response.result {
+//                        case let .success(data):
+//                            completion(true, nil, data);
+//                            break
+//
+//                        case let .failure(error):
+//                            completion(false, error as NSError?, nil);
+//                            
+//                            break
+//                        }
+//                }
+//            }
+//        }
+    
+    func GetUserInfo(UserId: String, completion:@escaping ServiceResponse) {
+            DispatchQueue.global(qos: .background).async {
+                // Run on background
+                let request = Service.GetPatientInfo(UserId: UserId, token: self.accessToken!) as URLRequestConvertible
+                Alamofire.request(request)
+                        .responseObject { (response: DataResponse<ResponseUser>) in
+                        switch response.result {
+                        case let .success(data):
+                            completion(true, nil, data);
+                            break
+
+                        case let .failure(error):
+                            completion(false, error as NSError?, nil);
+                            
+                            break
+                        }
+                }
+            }
+        }
 }
 
 

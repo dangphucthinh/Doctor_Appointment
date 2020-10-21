@@ -21,7 +21,6 @@ struct ResponseKey {
     static let MessageCode = "message"
     static let Data = "data"
     static let AccessToken = "access_token"
-    static let Authorization = "Authorization \(AccessToken)"
     static let Token = "token"
     static let User = "user"
 }

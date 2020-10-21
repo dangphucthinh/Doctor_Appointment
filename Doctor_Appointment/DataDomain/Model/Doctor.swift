@@ -1,8 +1,8 @@
 //
-//  User.swift
+//  Doctor.swift
 //  Doctor_Appointment
 //
-//  Created by Oscar on 10/14/20.
+//  Created by Oscar on 10/21/20.
 //  Copyright © 2020 Thinh (Oscar) P. DANG. All rights reserved.
 //
 
@@ -10,21 +10,20 @@ import Foundation
 import ObjectMapper
 import RealmSwift
 
-class User:Object, Mappable {
-    var id: String?
-    var roles: Array<String>?
-    var fullName: String?
-    var userName: String?
-    var email: String?
-    var dateOfBirth: String?
-    var avatar: String?
-    var phoneNumber: String?
+
+class Doctor: User{
+    var certification : String?
+    var education : String?
+    var specialtyName : String?
+    var hospitalSpecialty_Name : String?
+    
+    
     
     required convenience init?(map: Map) {
             self.init()
         }
     
-    func mapping(map: Map) {
+    override func mapping(map: Map) {
         id          <- map["id"]
         roles       <- map["roles"]
         fullName    <- map["fullName"]
@@ -33,5 +32,9 @@ class User:Object, Mappable {
         avatar      <- map["avatar"]
         userName    <- map["userName"]
         phoneNumber <- map["phoneNumber"]
+        education   <- map["education"]
+        specialtyName <- map["specialtyName"]
+        hospitalSpecialty_Name  <- map["hospitalSpecialty_Name"]
+        
     }
 }
