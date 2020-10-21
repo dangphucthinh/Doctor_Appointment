@@ -9,6 +9,18 @@
 import Foundation
 import ObjectMapper
 
+class ResponseMessages : Mappable{
+    var succeeded : String?
+
+    required init(map: Map) {
+
+    }
+
+    func  mapping(map: Map) {
+        succeeded  <- map["succeeded"]
+    }
+}
+
 class RegisterResponse : Mappable{
     var succeeded: ResponseMessages?
     //var token: Token?

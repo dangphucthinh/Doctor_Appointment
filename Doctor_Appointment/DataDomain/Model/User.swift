@@ -8,8 +8,9 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-class User:Mappable {
+class User:Object, Mappable {
     var id: String?
     var roles: Array<String>?
     var fullName: String?
@@ -19,8 +20,9 @@ class User:Mappable {
     var avatar: String?
     var phoneNumber: String?
     
-    required init?(map: Map) {
-    }
+    required convenience init?(map: Map) {
+            self.init()
+        }
     
     func mapping(map: Map) {
         id          <- map["id"]

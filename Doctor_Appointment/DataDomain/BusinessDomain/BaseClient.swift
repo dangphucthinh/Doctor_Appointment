@@ -5,14 +5,13 @@
 //  Created by Oscar on 10/14/20.
 //  Copyright © 2020 Thinh (Oscar) P. DANG. All rights reserved.
 //
-
 import Foundation
 import Alamofire
 
 class BaseClient: NSObject{
     
     var accessToken : String?
-    var fullName : String?
+    var userId : String?
     
     
     //singleton
@@ -23,6 +22,7 @@ class BaseClient: NSObject{
     
     enum Service: URLRequestConvertible {
         case login(username: String, password: String)
+        
         case register(username: String,
                       email: String,
                       firstName: String,
@@ -31,9 +31,13 @@ class BaseClient: NSObject{
                       phoneNumber: String,
                       password: String,
                       confirmPassword: String)
+        
         case changePassword(oldPassword: String,
                             newPassword: String,
                             confirmPassword:String,
+                            token: String)
+        
+        case GetPatientInfo(UserId: String,
                             token: String)
         
         static let baseHTTP = API.kBaseUrl
@@ -42,7 +46,7 @@ class BaseClient: NSObject{
         //MARK: -Method
         private var method: HTTPMethod{
             switch self {
-            case .login, .changePassword, .register:
+            case .login, .changePassword, .register, .GetPatientInfo:
                 return .post
             }
         }
@@ -56,12 +60,15 @@ class BaseClient: NSObject{
                 return API.kRegisterUrl
             case .changePassword:
                 return API.kChangePassword
+            case .GetPatientInfo:
+                return API.kPatientInfo
             }
         }
             
         //MARK: -Header
         private var headers: HTTPHeaders {
-            var headers = ["Accept": "application/json"]
+            //var headers = ["Accept": "application/json"]
+            var headers = ["Accept" : "multipart/form-data"]
             switch self {
             case .register:
                 break
@@ -69,6 +76,8 @@ class BaseClient: NSObject{
                 break
             case .changePassword:
                 headers["Authorization"] = getAuthorizationHeader()
+                break
+            case .GetPatientInfo:
                 break
             }
             return headers;
@@ -84,14 +93,14 @@ class BaseClient: NSObject{
             case .login(let username,
                         let password):
                 return [
-                    "username": username,
-                    "password": password
+                    "Username": username,
+                    "Password": password
                 ]
             case .changePassword(let pass,
                                  let newPass,
                                  let confirmNewPass,_):
                 return[
-                    "password": pass,
+                    "Password": pass,
                     "new_password": newPass,
                     "new_password_confirmation": confirmNewPass
                 ]
@@ -105,15 +114,20 @@ class BaseClient: NSObject{
                            let confirmPassword
                           ):
             return[
-                "username" : username,
-                "email" : email,
-                "firstname" : firstName,
-                "lastname" : lastName,
-                "dateofbirth" : dateOfBirth,
-                "phonenumber" : phoneNumber,
-                "password" : password,
-                "confirmpassword" : confirmPassword
+                "Username" : username,
+                "Email" : email,
+                "FirstName" : firstName,
+                "LastName" : lastName,
+                "DateOfBirth" : dateOfBirth,
+                "PhoneNumber" : phoneNumber,
+                "Password" : password,
+                "ConfirmPassword" : confirmPassword
             ]
+                
+            case .GetPatientInfo(let UserId, _):
+                return[
+                    "UserId" : UserId
+                ]
             }
         }
         
@@ -144,11 +158,12 @@ class BaseClient: NSObject{
             switch self {
             case .login, .register, .changePassword:
                 return urlRequest
-//            case .changePassword(token: let accessToken):
-//                urlRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: Header.Authorization)
-                //return urlRequest
+                            
+            case .GetPatientInfo(UserId: _, token: let accessToken):
+                urlRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: Header.Authorization)
+                return urlRequest
+            }
             }
         }
         
     }
-}
