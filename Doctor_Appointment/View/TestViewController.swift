@@ -15,7 +15,7 @@ class TestViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var fullname: UILabel!
     
-    var UserId = BaseClient.shared.fullName
+    var UserId = BaseClient.shared.userId
     
     override func viewDidLoad() {
         super.viewDidLoad()

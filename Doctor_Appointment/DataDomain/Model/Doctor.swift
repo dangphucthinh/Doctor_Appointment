@@ -2,7 +2,7 @@
 //  Doctor.swift
 //  Doctor_Appointment
 //
-//  Created by Oscar on 10/21/20.
+//  Created by thinhdang on 10/21/20.
 //  Copyright © 2020 Thinh (Oscar) P. DANG. All rights reserved.
 //
 
@@ -24,16 +24,16 @@ class Doctor: User{
         }
     
     override func mapping(map: Map) {
-        id          <- map["id"]
-        roles       <- map["roles"]
-        fullName    <- map["fullName"]
-        email       <- map["email"]
-        dateOfBirth <- map["dateOfBirth"]
-        avatar      <- map["avatar"]
-        userName    <- map["userName"]
-        phoneNumber <- map["phoneNumber"]
-        education   <- map["education"]
-        specialtyName <- map["specialtyName"]
+        id                      <- map["id"]
+        roles                   <- map["roles"]
+        fullName                <- map["fullName"]
+        email                   <- map["email"]
+        dateOfBirth             <- map["dateOfBirth"]
+        avatar                  <- map["avatar"]
+        userName                <- map["userName"]
+        phoneNumber             <- map["phoneNumber"]
+        education               <- map["education"]
+        specialtyName           <- map["specialtyName"]
         hospitalSpecialty_Name  <- map["hospitalSpecialty_Name"]
         
     }

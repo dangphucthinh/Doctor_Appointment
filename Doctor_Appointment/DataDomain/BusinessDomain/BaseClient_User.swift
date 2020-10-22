@@ -41,7 +41,10 @@ extension BaseClient {
                         self.accessToken = access_token?.object(forKey: ResponseKey.AccessToken) as? String
                         
                         let full_name = ((rawValue as!  NSDictionary).object(forKey: ResponseKey.User)) as? NSDictionary
-                        self.fullName = full_name?.object(forKey: "id") as? String
+                        self.fullName = full_name?.object(forKey: "fullName") as? String
+                        
+                        let user_Id = ((rawValue as!  NSDictionary).object(forKey: ResponseKey.User)) as? NSDictionary
+                        self.userId = user_Id?.object(forKey: "id") as? String
                         
                         DataManager.shared.AddValue(key: Header.Authorization, value: "Bearer \(self.accessToken!)")
                         DispatchQueue.main.async {

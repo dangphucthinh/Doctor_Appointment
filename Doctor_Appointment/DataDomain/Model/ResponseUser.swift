@@ -2,7 +2,7 @@
 //  ResponseUser.swift
 //  Doctor_Appointment
 //
-//  Created by Oscar on 10/21/20.
+//  Created by thinhdang on 10/21/20.
 //  Copyright © 2020 Thinh (Oscar) P. DANG. All rights reserved.
 //
 
@@ -12,9 +12,8 @@ import ObjectMapper
 
 class ResponseUser: Object, Mappable {
     var status: Int?
-    var code: Int?
     var message: String?
-    var data: User?
+    var data: Patient?
     
     
     required convenience init?(map: Map) {
@@ -22,25 +21,22 @@ class ResponseUser: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        status <- map["status"]
-        message <- map["message"]
-        data <- map["data"]
+        status      <- map["status"]
+        message     <- map["message"]
+        data        <- map["data"]
     }
 
 }
 
 class Datas: Object, Mappable {
     
-    var user : User?
-   // var list = List<Movie>()
+    var user : Patient?
 
     required convenience init?(map: Map) {
         self.init()
     }
     
    func mapping(map: Map) {
-    user        <- map["user"]
-      // list           <- (map["lists"], ListTransform<Movie>())
-      
+    user        <- map["user"]      
    }
 }

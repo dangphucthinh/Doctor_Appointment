@@ -20,7 +20,6 @@
 		4DE259E52509E1A20018C6C2 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE259E42509E1A20018C6C2 /* SignInController.swift */; };
 		5504C670254034A700B6DA2D /* ResponseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504C66F254034A700B6DA2D /* ResponseUser.swift */; };
 		5519A0A02537EE66001D7F81 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5519A09F2537EE66001D7F81 /* RegisterResponse.swift */; };
-		5519A0A925380174001D7F81 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5519A0A825380174001D7F81 /* Response.swift */; };
 		55250AEB25369FED00D251BD /* dateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250AE925369FED00D251BD /* dateCell.swift */; };
 		55250AEC25369FED00D251BD /* dateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250AEA25369FED00D251BD /* dateCollectionViewCell.swift */; };
 		55250AF425369FF900D251BD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250AF025369FF800D251BD /* HeaderView.swift */; };
@@ -32,6 +31,8 @@
 		555DBF2125401E1000A121C7 /* ListTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555DBF2025401E1000A121C7 /* ListTransform.swift */; };
 		5560296E2538501500E362AA /* BaseClient_User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5560296D2538501500E362AA /* BaseClient_User.swift */; };
 		55602974253955E700E362AA /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55602973253955E700E362AA /* Loading.swift */; };
+		557D2BA225412C7D0081439D /* InfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557D2BA125412C7C0081439D /* InfomationViewController.swift */; };
+		557D2BA725412D140081439D /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557D2BA625412D140081439D /* Patient.swift */; };
 		55A40B9625354567008B2523 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A40B9525354567008B2523 /* CustomButton.swift */; };
 		55DDE47E25369528003B3B62 /* StoryboardID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DDE47D25369528003B3B62 /* StoryboardID.swift */; };
 		55DDE48625369541003B3B62 /* ServerKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DDE48525369541003B3B62 /* ServerKey.swift */; };
@@ -90,7 +91,6 @@
 		52261CF2CB20CAFCC37D2E90 /* Pods-Doctor_AppointmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor_AppointmentTests.debug.xcconfig"; path = "Target Support Files/Pods-Doctor_AppointmentTests/Pods-Doctor_AppointmentTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5504C66F254034A700B6DA2D /* ResponseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseUser.swift; sourceTree = "<group>"; };
 		5519A09F2537EE66001D7F81 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
-		5519A0A825380174001D7F81 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		55250AE925369FED00D251BD /* dateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dateCell.swift; sourceTree = "<group>"; };
 		55250AEA25369FED00D251BD /* dateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dateCollectionViewCell.swift; sourceTree = "<group>"; };
 		55250AF025369FF800D251BD /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -102,6 +102,8 @@
 		555DBF2025401E1000A121C7 /* ListTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTransform.swift; sourceTree = "<group>"; };
 		5560296D2538501500E362AA /* BaseClient_User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClient_User.swift; sourceTree = "<group>"; };
 		55602973253955E700E362AA /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
+		557D2BA125412C7C0081439D /* InfomationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfomationViewController.swift; sourceTree = "<group>"; };
+		557D2BA625412D140081439D /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		55A40B9525354567008B2523 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		55DDE47D25369528003B3B62 /* StoryboardID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardID.swift; sourceTree = "<group>"; };
 		55DDE48525369541003B3B62 /* ServerKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerKey.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 		55A40BA4253555EB008B2523 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				557D2BA125412C7C0081439D /* InfomationViewController.swift */,
 				55DDE4C525369EC4003B3B62 /* MainViewController.swift */,
 			);
 			path = HomePage;
@@ -327,9 +330,9 @@
 		55DDE4962536959C003B3B62 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				557D2BA625412D140081439D /* Patient.swift */,
 				55DDE497253695A7003B3B62 /* User.swift */,
 				55DDE49C253697DD003B3B62 /* Token.swift */,
-				5519A0A825380174001D7F81 /* Response.swift */,
 				555DBF122540114F00A121C7 /* Doctor.swift */,
 				5504C66F254034A700B6DA2D /* ResponseUser.swift */,
 			);
@@ -631,6 +634,7 @@
 				55250AF425369FF900D251BD /* HeaderView.swift in Sources */,
 				55DDE4BB2536987F003B3B62 /* LoginResponse.swift in Sources */,
 				4DE259E52509E1A20018C6C2 /* SignInController.swift in Sources */,
+				557D2BA225412C7D0081439D /* InfomationViewController.swift in Sources */,
 				55602974253955E700E362AA /* Loading.swift in Sources */,
 				5560296E2538501500E362AA /* BaseClient_User.swift in Sources */,
 				55A40B9625354567008B2523 /* CustomButton.swift in Sources */,
@@ -649,7 +653,7 @@
 				555DBF1C25401CF300A121C7 /* TestViewController.swift in Sources */,
 				55DDE49025369571003B3B62 /* BaseUrl.swift in Sources */,
 				4D4C4200250615A200E1F017 /* SignUpController.swift in Sources */,
-				5519A0A925380174001D7F81 /* Response.swift in Sources */,
+				557D2BA725412D140081439D /* Patient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

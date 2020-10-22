@@ -80,10 +80,10 @@ class SignInController: UIViewController {
                                            password: tfPassword.text!)
             { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
                 Loading.dismissLoading()
-                print(BaseClient.shared.users)
+                
                 if(isSuccess!) {
                    
-                    let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.TestViewControllerId) as! TestViewController
+                    let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.InfomationViewControllerId) as! InfomationViewController
                     
                     self.navigationController?.pushViewController(controller, animated: true)
                 } else {
