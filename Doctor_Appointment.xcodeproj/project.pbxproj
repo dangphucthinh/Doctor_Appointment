@@ -18,6 +18,7 @@
 		4D4C4200250615A200E1F017 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C41FF250615A200E1F017 /* SignUpController.swift */; };
 		4DBF50522509D51500519102 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF50512509D51500519102 /* ForgotPasswordController.swift */; };
 		4DE259E52509E1A20018C6C2 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE259E42509E1A20018C6C2 /* SignInController.swift */; };
+		5502826A2541747A009ED855 /* CommonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550282692541747A009ED855 /* CommonExtension.swift */; };
 		5504C670254034A700B6DA2D /* ResponseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504C66F254034A700B6DA2D /* ResponseUser.swift */; };
 		5519A0A02537EE66001D7F81 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5519A09F2537EE66001D7F81 /* RegisterResponse.swift */; };
 		55250AEB25369FED00D251BD /* dateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250AE925369FED00D251BD /* dateCell.swift */; };
@@ -89,6 +90,7 @@
 		4DBF50512509D51500519102 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		4DE259E42509E1A20018C6C2 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		52261CF2CB20CAFCC37D2E90 /* Pods-Doctor_AppointmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor_AppointmentTests.debug.xcconfig"; path = "Target Support Files/Pods-Doctor_AppointmentTests/Pods-Doctor_AppointmentTests.debug.xcconfig"; sourceTree = "<group>"; };
+		550282692541747A009ED855 /* CommonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
 		5504C66F254034A700B6DA2D /* ResponseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseUser.swift; sourceTree = "<group>"; };
 		5519A09F2537EE66001D7F81 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		55250AE925369FED00D251BD /* dateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dateCell.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				55DDE48A25369561003B3B62 /* CommonString.swift */,
 				55DDE48F25369571003B3B62 /* BaseUrl.swift */,
 				555DBF2025401E1000A121C7 /* ListTransform.swift */,
+				550282692541747A009ED855 /* CommonExtension.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 				4DBF50522509D51500519102 /* ForgotPasswordController.swift in Sources */,
 				55DDE4B12536983B003B3B62 /* BaseConnection.swift in Sources */,
 				5519A0A02537EE66001D7F81 /* RegisterResponse.swift in Sources */,
+				5502826A2541747A009ED855 /* CommonExtension.swift in Sources */,
 				555DBF1C25401CF300A121C7 /* TestViewController.swift in Sources */,
 				55DDE49025369571003B3B62 /* BaseUrl.swift in Sources */,
 				4D4C4200250615A200E1F017 /* SignUpController.swift in Sources */,
@@ -830,13 +834,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VW62Z54AQH;
 				INFOPLIST_FILE = Doctor_Appointment/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "oscar.Doctor-Appointment";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example-oscar.Doctor-Appointment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -849,13 +854,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VW62Z54AQH;
 				INFOPLIST_FILE = Doctor_Appointment/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "oscar.Doctor-Appointment";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example-oscar.Doctor-Appointment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

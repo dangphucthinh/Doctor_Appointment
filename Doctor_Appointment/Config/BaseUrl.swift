@@ -31,6 +31,7 @@ struct API{
         
         //patient
         static let kPatientInfo = "api/Auth/GetPatientInfo"
+        static let kPatientUpdate = "api/Image/CreateImage"
         
         
         //specialties

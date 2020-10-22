@@ -17,7 +17,7 @@ class ParentViewController: UIViewController {
     }
     
     @IBAction func signUp(_ sender: Any) {
-        let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.SignUpControllerId) as! SignUpController
+        let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.InfomationViewControllerId) as! InfomationViewController
          
          self.navigationController?.pushViewController(controller, animated: true)
     }
