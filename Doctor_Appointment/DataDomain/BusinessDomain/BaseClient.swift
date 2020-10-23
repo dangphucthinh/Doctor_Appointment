@@ -14,7 +14,7 @@ class BaseClient: NSObject{
     var accessToken : String?
     var userId : String?
     var fullName : String?
-    
+    var abc : String?
     //singleton
     static let shared = BaseClient()
     
@@ -45,7 +45,7 @@ class BaseClient: NSObject{
                         firstName: String,
                         lastName: String,
                         gender: Bool,
-                       // avatar: UIImage,
+                        avatar: UIImage?,
                         allergy: String,
                         medicalHistory: String,
                         symptom: String)
@@ -147,7 +147,7 @@ class BaseClient: NSObject{
                              let firstName,
                              let lastName,
                              let gender,
-                            // let avatar,
+                             let avatar,
                              let allergy,
                              let medicalHistory,
                              let symptom):
@@ -156,7 +156,7 @@ class BaseClient: NSObject{
                     "FirstName" : firstName,
                     "LastName" : lastName,
                     "Gender" : gender,
-                    //"Avatar" : avatar,
+                    "Avatar" : avatar as Any,
                     "Allergy" : allergy,
                     "MedicalHistory" : medicalHistory,
                     "Symptom" : symptom

@@ -8,9 +8,11 @@
 
 import UIKit
 import RealmSwift
+import SDWebImage
 
 class InfomationViewController: UITableViewController {
 
+   
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -21,7 +23,6 @@ class InfomationViewController: UITableViewController {
     @IBOutlet weak var symptonTextField: UITextField!
     @IBOutlet weak var historyTextField: UITextField!
     @IBOutlet weak var dateOfBirthTextField: UITextField!
-    
     @IBOutlet weak var button: UIView!
     
     var UserId = BaseClient.shared.userId
@@ -29,27 +30,17 @@ class InfomationViewController: UITableViewController {
     //var current:Contacts!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //LoadInform(UserId: UserId!)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handleSave))
+        LoadInform(UserId: UserId!)
         self.hideKeyboardWhenTappedAround()
         self.dateOfBirthTextField.setInputViewDatePicker(target: self, selector: #selector(tapDone))
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handleSave))
-        
-        
-            
+                    
     }
     
-    @objc func handleSave(_ sender: UIBarButtonItem){
-
-    
-    }
-    
-    
+        
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //showInfor()
-       // self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(handleEdit))
+
         let tapGuesture = UITapGestureRecognizer(target: self, action: #selector(handleTap)) //declear tap view
         avaPicker.addGestureRecognizer(tapGuesture)
         
@@ -57,19 +48,14 @@ class InfomationViewController: UITableViewController {
                 button.addGestureRecognizer(tapGuesture1)
     }
     
+    
+    
     @objc func handleTap1(_ sender: AnyObject){
-//            let alert = UIAlertController(title: "Call", message: "concac", preferredStyle: UIAlertController.Style.alert)
-//            alert.addAction(UIAlertAction(title: "Call", style: .default, handler: {action in
-//                let number:NSURL = URL(string: "tel://" + "0935336719")! as NSURL
-//                UIApplication.shared.open(number as URL, options: [:], completionHandler: nil)
-//            }))
-//            present(alert,animated: true,completion: nil)
-        
         BaseConnection.request(BaseClient.Service.UpdateUser(userId: "43f90a99-61e8-44bd-9c1e-cc963303d465",
-                                                             firstName: "Thinh",
-                                                             lastName: "Dang",
+                                                             firstName: nameTextField.text!,
+                                                             lastName: "ma",
                                                              gender: false,
-                                                             //avatar: UIImage(imageLiteralResourceName: "facebook"),
+                                                             avatar: UIImage(imageLiteralResourceName: "facebook"),
                                                              allergy: "nothing",
                                                              medicalHistory: "HIV/AIDS",
                                                              symptom: "nothing"),
@@ -101,6 +87,7 @@ class InfomationViewController: UITableViewController {
         }
     
     
+    //MARK: -Date picker
     @objc func tapDone() {
            if let datePicker = self.dateOfBirthTextField.inputView as? UIDatePicker { // 2-1
                let dateformatter = DateFormatter() // 2-2
@@ -110,6 +97,7 @@ class InfomationViewController: UITableViewController {
            self.dateOfBirthTextField.resignFirstResponder() // 2-5
        }
     
+    //MARK: -Image picker
     @objc func handleTap(_ sender: AnyObject){
         let imagePickerController = UIImagePickerController()
         imagePickerController.allowsEditing = true
@@ -141,6 +129,8 @@ class InfomationViewController: UITableViewController {
         present(imagePickerController, animated: true)
     }
     
+    
+    //MARK: -Load info
     func LoadInform(UserId :String){
             BaseClient.shared.GetUserInfo(UserId: UserId,
                                           completion: {
@@ -149,21 +139,25 @@ class InfomationViewController: UITableViewController {
                                             print(rs as Any)
                   if(isSuccess!){
                     let user = value as! ResponseUser
-
-                 
+                    
+                    let ava: String? = user.data?.avatar!
+                    let url1 = URL.init(string:"\(ava ?? "No image found")")
                     self.nameTextField.text = user.data?.fullName
                     self.emailTextField.text = user.data?.email
                     self.phoneTextField.text = user.data?.phoneNumber
                     self.historyTextField.text = user.data?.medicalHistory
                     self.allergyTextField.text = user.data?.allergy
                     self.symptonTextField.text = user.data?.symptom
-                                       
+                    //self.imgAvatar.image = avatar
+                    
+                    self.imgAvatar.sd_setImage(with: url1, placeholderImage: UIImage(named: "no_image_banner"))
                   }
                 
           })
         }
 }
 
+    //MARK: -Extension
 extension InfomationViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -177,6 +171,10 @@ extension InfomationViewController : UIImagePickerControllerDelegate, UINavigati
         if let selectedImage = selectedImageFromPicker {
             imgAvatar.image = selectedImage
             imgAvatar.contentMode = .scaleAspectFit
+            imgAvatar.layer.cornerRadius = imgAvatar.frame.height / 2
+            //imgAvatar.layer.masksToBounds = true
+            imgAvatar.layer.shouldRasterize = true
+            imgAvatar.clipsToBounds = true
         }
         
         picker.dismiss(animated: true, completion: nil)

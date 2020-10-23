@@ -13,6 +13,7 @@ import AlamofireObjectMapper
 
 extension BaseClient {
     
+    //MARK: -Login
     /**
     * Login
     * @param: username, password md5
@@ -77,16 +78,26 @@ extension BaseClient {
         }
     }
     
+    
+    //MARK: -Update profile
     /*
-         * Get list doctor
-         * @param: HospitalSpeciality
-         * @return listData in callback
+         * Post update profile
+         * @param: UserId, LastName, FirstName, Gender, Avatar, MedicalHistory, Allergy, Symptom
+         * @return info of user
      */
     
-//    func GetDoctorInfoBySpecialty(HosSpecId: String, completion:@escaping ServiceResponse) {
+//    func UpdateProfile(UserId: String,
+//                       FirstName: String,
+//                       LastName: String,
+//                       Gender: Bool,
+//                       Avatar: UIImage?,
+//                       MedicalHistory: String,
+//                       Allergy: String,
+//                       Symptom: String,
+//                       completion:@escaping ServiceResponse) {
 //            DispatchQueue.global(qos: .background).async {
 //                // Run on background
-//                let request = Service.GetDoctorBySpeciality(HosSpecId: HosSpecId) as URLRequestConvertible
+//                let request = Service.UpdateUser(userId: UserId, firstName: FirstName, lastName: LastName, gender: Gender, avatar: Avatar, allergy: Allergy, medicalHistory: MedicalHistory, symptom: Symptom) as URLRequestConvertible
 //                Alamofire.request(request)
 //                        .responseObject { (response: DataResponse<Doctor>) in
 //                        switch response.result {
@@ -103,6 +114,12 @@ extension BaseClient {
 //            }
 //        }
     
+    //MARK: -Get user info
+    /*
+         * Get user info
+         * @param: UserId
+         * @return list info of user in callback
+     */
     func GetUserInfo(UserId: String, completion:@escaping ServiceResponse) {
             DispatchQueue.global(qos: .background).async {
                 // Run on background

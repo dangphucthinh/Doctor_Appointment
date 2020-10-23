@@ -14,6 +14,7 @@ struct API{
         static let kDoctorUrl = "http://116.110.94.169:2905/api/Doctor"
         static let kUserUrl = "http://116.110.94.169:2905/api/Auth"
         static let kSpecialitiesUrl = "http://116.110.94.169:2905/api/Speciality"
+        static let kImageUrl = "http://res.cloudinary.com/deh0sqxwl/image/upload/"
 
         //users
         //HttpPost
@@ -37,6 +38,10 @@ struct API{
         //specialties
         static let kGetAllHospitalSpecialities = "GetAllHospitalSpecialities"
         static let kGetAllSpecialities = "GetAllSpecialities"
+    
+        static let ktest = "https://res.cloudinary.com/deh0sqxwl/image/upload/v1603184397/miqztds2o8gm26p0cezb.jpg"
+    
+        
     
 
 }

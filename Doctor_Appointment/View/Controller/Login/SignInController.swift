@@ -42,8 +42,8 @@ class SignInController: UIViewController {
 //        if(!tfUsername.text!.isEmpty && !tfPassword.text!.isEmpty) {
 //                    Loading.showLoading(message: Message.LoadingMessage, view: self.view)
 //                BaseConnection
-//                    .request(BaseClient.Service.login(username: tfUsername.text!,
-//                                                      password: tfPassword.text!),
+//                    .request(BaseClient.Service.login(username: "thinh123",
+//                                                      password: "Admin@123"),
 //                                   LoginResponse.self,
 //                                   completion: { (result, err) in
 //                                    Loading.dismissLoading()
@@ -52,7 +52,6 @@ class SignInController: UIViewController {
 //                                    guard err == nil else {
 //                                        print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
 //
-//                                        print(BaseClient.shared.users)
 //
 //                                        if err?.mErrorCode == 0 {
 //                                            let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.MainViewControllerId) as! MainViewController
@@ -81,11 +80,11 @@ class SignInController: UIViewController {
                                            password: tfPassword.text!)
             { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
                 Loading.dismissLoading()
-                
+
                 if(isSuccess!) {
-                   
+
                     let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.InfomationViewControllerId) as! InfomationViewController
-                    
+
                     self.navigationController?.pushViewController(controller, animated: true)
                 } else {
                     // Show message login fail
