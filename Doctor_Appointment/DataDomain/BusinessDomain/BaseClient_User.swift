@@ -86,33 +86,34 @@ extension BaseClient {
          * @return info of user
      */
     
-//    func UpdateProfile(UserId: String,
-//                       FirstName: String,
-//                       LastName: String,
-//                       Gender: Bool,
-//                       Avatar: UIImage?,
-//                       MedicalHistory: String,
-//                       Allergy: String,
-//                       Symptom: String,
-//                       completion:@escaping ServiceResponse) {
-//            DispatchQueue.global(qos: .background).async {
-//                // Run on background
-//                let request = Service.UpdateUser(userId: UserId, firstName: FirstName, lastName: LastName, gender: Gender, avatar: Avatar, allergy: Allergy, medicalHistory: MedicalHistory, symptom: Symptom) as URLRequestConvertible
-//                Alamofire.request(request)
-//                        .responseObject { (response: DataResponse<Doctor>) in
-//                        switch response.result {
-//                        case let .success(data):
-//                            completion(true, nil, data);
-//                            break
-//
-//                        case let .failure(error):
-//                            completion(false, error as NSError?, nil);
-//                            
-//                            break
-//                        }
-//                }
-//            }
-//        }
+    func UpdateProfile(UserId: String,
+                       FirstName: String,
+                       LastName: String,
+                       Gender: Bool,
+                       Avatar: UIImage?,
+                       MedicalHistory: String,
+                       Allergy: String,
+                       Symptom: String,
+                       completion:@escaping ServiceResponse) {
+            DispatchQueue.global(qos: .background).async {
+                // Run on background
+                let request = Service.UpdateUser(userId: UserId, firstName: FirstName, lastName: LastName, gender: Gender, avatar: Avatar, allergy: Allergy, medicalHistory: MedicalHistory, symptom: Symptom) as URLRequestConvertible
+
+                Alamofire.request(request)
+                        .responseObject { (response: DataResponse<Doctor>) in
+                        switch response.result {
+                        case let .success(data):
+                            completion(true, nil, data);
+                            break
+
+                        case let .failure(error):
+                            completion(false, error as NSError?, nil);
+                            
+                            break
+                        }
+                }
+            }
+        }
     
     //MARK: -Get user info
     /*

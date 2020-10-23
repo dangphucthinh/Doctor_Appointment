@@ -26,13 +26,13 @@ class InfomationViewController: UITableViewController {
     @IBOutlet weak var button: UIView!
     
     var UserId = BaseClient.shared.userId
-    
+    let datePicker = UIDatePicker()
     //var current:Contacts!
     override func viewDidLoad() {
         super.viewDidLoad()
         LoadInform(UserId: UserId!)
         self.hideKeyboardWhenTappedAround()
-        self.dateOfBirthTextField.setInputViewDatePicker(target: self, selector: #selector(tapDone))
+        
                     
     }
     
@@ -46,6 +46,8 @@ class InfomationViewController: UITableViewController {
         
         let tapGuesture1 = UITapGestureRecognizer(target: self, action: #selector(handleTap1)) //declear tap view
                 button.addGestureRecognizer(tapGuesture1)
+        
+        self.dateOfBirthTextField.setInputViewDatePicker(target: self, selector: #selector(tapDone))
     }
     
     
@@ -133,7 +135,7 @@ class InfomationViewController: UITableViewController {
     //MARK: -Load info
     func LoadInform(UserId :String){
             BaseClient.shared.GetUserInfo(UserId: UserId,
-                                          completion: {
+                                          completion: { [self]
                   (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
                                             let rs = value as! ResponseUser
                                             print(rs as Any)
@@ -148,7 +150,21 @@ class InfomationViewController: UITableViewController {
                     self.historyTextField.text = user.data?.medicalHistory
                     self.allergyTextField.text = user.data?.allergy
                     self.symptonTextField.text = user.data?.symptom
-                    //self.imgAvatar.image = avatar
+                    
+                    
+               
+                    let dateString = user.data?.dateOfBirth
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                    let dateFromString = dateFormatter.date(from: dateString!)
+                    dateFormatter.dateFormat = "MM-dd-yyyy"
+                    let stringFromDate = dateFormatter.string(from: dateFromString!)
+
+                   
+                    
+                    self.dateOfBirthTextField.text = stringFromDate
+                    
+
                     
                     self.imgAvatar.sd_setImage(with: url1, placeholderImage: UIImage(named: "no_image_banner"))
                   }

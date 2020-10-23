@@ -38,11 +38,6 @@ struct API{
         //specialties
         static let kGetAllHospitalSpecialities = "GetAllHospitalSpecialities"
         static let kGetAllSpecialities = "GetAllSpecialities"
-    
-        static let ktest = "https://res.cloudinary.com/deh0sqxwl/image/upload/v1603184397/miqztds2o8gm26p0cezb.jpg"
-    
-        
-    
 
 }
 
