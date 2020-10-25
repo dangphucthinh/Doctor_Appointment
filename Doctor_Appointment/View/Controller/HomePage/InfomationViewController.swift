@@ -57,15 +57,7 @@ class InfomationViewController: UITableViewController {
     
     
     @objc func handleTap1(_ sender: AnyObject){
-        if var user = users{
-            user = Patient(id = user.id,
-                           firstName = user.firstName,
-                           lastName = user.lastName,
-                           gender = user.gender,
-                           
-            )
-        }
-        
+//
 //        BaseConnection.request(BaseClient.Service.updateInfo(userId: "43f90a99-61e8-44bd-9c1e-cc963303d465",
 //                                                             firstName: "Phuc-Thinh",
 //                                                             lastName: "DANG",

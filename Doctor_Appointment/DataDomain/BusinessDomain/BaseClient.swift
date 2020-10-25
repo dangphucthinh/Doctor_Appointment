@@ -14,7 +14,6 @@ class BaseClient: NSObject{
     var userId : String?
     var fullName : String?
     
-    
     //singleton
     static let shared = BaseClient()
     

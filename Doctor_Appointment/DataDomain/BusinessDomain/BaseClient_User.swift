@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
+import SwiftyJSON
 
 
 extension BaseClient {
@@ -161,33 +162,33 @@ extension BaseClient {
                             
                             let url = String(data: response.data!, encoding: String.Encoding.utf8)
                             
-                            //patient.avatar = url
+                            patient.avatar = url
                             
                             
-                            let request = Service.updateInfo(userId: patient.id!,
-                                                             firstName: patient.firstName!,
-                                                             lastName: patient.lastName!,
-                                                             gender: patient.gender!,
-                                                             avatar: url!,
-                                                             medicalHistory: patient.medicalHistory!,
-                                                             allergy: patient.allergy!,
-                                                             sympton: patient.symptom!) as URLRequestConvertible
-                            
-
-                            Alamofire.request(request)
-                                    .responseObject { (response: DataResponse<Patient>) in
-                                    switch response.result {
-                                    case let .success(data):
-                                        completion(true, nil, data);
-                                        break
-
-                                    case let .failure(error):
-                                        completion(false, error as NSError?, nil);
-
-                                        break
-                                    }
-                            }
-
+//                            let request = Service.updateInfo(userId: patient.id!,
+//                                                             firstName: patient.firstName!,
+//                                                             lastName: patient.lastName!,
+//                                                             gender: patient.gender!,
+//                                                             avatar: patient.avatar!,
+//                                                             medicalHistory: patient.medicalHistory!,
+//                                                             allergy: patient.allergy!,
+//                                                             sympton: patient.symptom!) as URLRequestConvertible
+//
+//
+//                            Alamofire.request(request)
+//                                    .responseObject { (response: DataResponse<Patient>) in
+//                                    switch response.result {
+//                                    case let .success(data):
+//                                        completion(true, nil, data);
+//                                        break
+//
+//                                    case let .failure(error):
+//                                        completion(false, error as NSError?, nil);
+//
+//                                        break
+//                                    }
+//                            }
+                           
                             
                             if let err = response.error{
 
