@@ -71,7 +71,7 @@ class SignInController: UIViewController {
             { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
                 Loading.dismissLoading()
                 if(isSuccess!) {
-                    let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.InfomationViewControllerId) as! InfomationViewController
+                    let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.ParentViewControllerId) as! ParentViewController
                     self.navigationController?.pushViewController(controller, animated: true)
                 } else {
                     // Show message login fail

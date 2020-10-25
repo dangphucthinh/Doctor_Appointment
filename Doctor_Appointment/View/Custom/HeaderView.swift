@@ -15,9 +15,9 @@ class HeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var secondViewLabel: UILabel!
     @IBOutlet weak var lbTitle: UILabel!
     
-    var name = BaseClient.shared.userId
+    var name = BaseClient.shared.fullName
     override func awakeFromNib() {
         firstView.layer.cornerRadius = CGFloat(30)
-        lbTitle.text = name
+        //lbTitle.text = "Hello, How are you? \(name!)"
     }
 }

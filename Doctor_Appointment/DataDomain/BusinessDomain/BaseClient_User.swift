@@ -11,6 +11,7 @@ import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 
+
 extension BaseClient {
     
     /**
@@ -43,6 +44,9 @@ extension BaseClient {
                         let usersId = ((rawValue as!  NSDictionary).object(forKey: ResponseKey.User)) as? NSDictionary
                         self.userId = usersId?.object(forKey: "id") as? String
                         
+                        let full_name = ((rawValue as!  NSDictionary).object(forKey: ResponseKey.User)) as? NSDictionary
+                        self.fullName = full_name?.object(forKey: "fullName") as? String
+                        
                         DataManager.shared.AddValue(key: Header.Authorization, value: "Bearer \(self.accessToken!)")
                         DispatchQueue.main.async {
                             // Run on main thread
@@ -74,32 +78,7 @@ extension BaseClient {
         }
     }
     
-    /*
-         * Get list doctor
-         * @param: HospitalSpeciality
-         * @return listData in callback
-     */
-    
-//    func GetDoctorInfoBySpecialty(HosSpecId: String, completion:@escaping ServiceResponse) {
-//            DispatchQueue.global(qos: .background).async {
-//                // Run on background
-//                let request = Service.GetDoctorBySpeciality(HosSpecId: HosSpecId) as URLRequestConvertible
-//                Alamofire.request(request)
-//                        .responseObject { (response: DataResponse<Doctor>) in
-//                        switch response.result {
-//                        case let .success(data):
-//                            completion(true, nil, data);
-//                            break
-//
-//                        case let .failure(error):
-//                            completion(false, error as NSError?, nil);
-//
-//                            break
-//                        }
-//                }
-//            }
-//        }
-    
+    //MARK: -Get Infor
     func GetUserInfo(UserId: String, completion:@escaping ServiceResponse) {
             DispatchQueue.global(qos: .background).async {
                 // Run on background
@@ -119,4 +98,112 @@ extension BaseClient {
                 }
             }
         }
+    
+    //MARK: -Update user
+    
+    /*
+         * Get list doctor
+         * @param: HospitalSpeciality
+         * @return listData in callback
+     */
+    
+    func UpdateUser(patient: Patient,
+                    completion:@escaping ServiceResponse) {
+            DispatchQueue.global(qos: .background).async {
+                // Run on background
+                let request = Service.updateInfo(userId: patient.id!,
+                                                 firstName: patient.firstName!,
+                                                 lastName: patient.lastName!,
+                                                 gender: patient.gender!,
+                                                 avatar: patient.avatar!,
+                                                 medicalHistory: patient.medicalHistory!,
+                                                 allergy: patient.allergy!,
+                                                 sympton: patient.symptom!) as URLRequestConvertible
+                
+
+                Alamofire.request(request)
+                        .responseObject { (response: DataResponse<Patient>) in
+                        switch response.result {
+                        case let .success(data):
+                            completion(true, nil, data);
+                            break
+
+                        case let .failure(error):
+                            completion(false, error as NSError?, nil);
+
+                            break
+                        }
+                }
+            }
+        }
+    
+    //MARK: -upload image
+    func uploadImage(imageData: Data,
+                     patient: Patient,
+                     completion:@escaping ServiceResponse){
+
+                //run on background
+                
+                Alamofire.upload(multipartFormData: { (formData) in
+                    formData.append(imageData,
+                                    withName: "file",
+                                    fileName: "upload.jpg",
+                                    mimeType: "image/*")
+                }, usingThreshold: UInt64.init(),
+                to: "http://116.110.94.169:2905/api/Image/CreateImage",
+                method: .post,
+                headers: ["Accept" : "multipart/form-data"]) { (result) in
+                    switch result{
+                    case .success(let upload, _, _):
+                        upload.responseJSON { response in
+                            print("Succesfully uploaded  = \(response)")
+                           // self.UpdateUser(patient: Patient, completion: ServiceResponse){}
+                            
+                            let url = String(data: response.data!, encoding: String.Encoding.utf8)
+                            
+                            //patient.avatar = url
+                            
+                            
+                            let request = Service.updateInfo(userId: patient.id!,
+                                                             firstName: patient.firstName!,
+                                                             lastName: patient.lastName!,
+                                                             gender: patient.gender!,
+                                                             avatar: url!,
+                                                             medicalHistory: patient.medicalHistory!,
+                                                             allergy: patient.allergy!,
+                                                             sympton: patient.symptom!) as URLRequestConvertible
+                            
+
+                            Alamofire.request(request)
+                                    .responseObject { (response: DataResponse<Patient>) in
+                                    switch response.result {
+                                    case let .success(data):
+                                        completion(true, nil, data);
+                                        break
+
+                                    case let .failure(error):
+                                        completion(false, error as NSError?, nil);
+
+                                        break
+                                    }
+                            }
+
+                            
+                            if let err = response.error{
+
+                                print(err)
+                                return
+                            }
+
+                        }
+                    case .failure(let error):
+                        print("Error in upload: \(error.localizedDescription)")
+
+                    }
+                  
+                    
+                
+            }
+        }
 }
+

@@ -19,6 +19,9 @@ class User:Object, Mappable {
     var dateOfBirth: String?
     var avatar: String?
     var phoneNumber: String?
+    var firstName: String?
+    var lastName: String?
+    var gender: Bool?
     
     required convenience init?(map: Map) {
             self.init()
