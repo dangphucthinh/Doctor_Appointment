@@ -80,55 +80,6 @@ extension BaseClient {
     
     
     //MARK: -Update profile
-    /*
-         * Post update profile
-         * @param: UserId, LastName, FirstName, Gender, Avatar, MedicalHistory, Allergy, Symptom
-         * @return info of user
-     */
-    
-    func UpdateProfile(UserId: String,
-                       FirstName: String,
-                       LastName: String,
-                       Gender: Bool,
-                       Avatar: UIImage?,
-                       MedicalHistory: String,
-                       Allergy: String,
-                       Symptom: String,
-                       completion:@escaping ServiceResponse) {
-            DispatchQueue.global(qos: .background).async {
-                // Run on background
-                
-               
-                let request = Service.UpdateUser(userId: UserId,
-                                                 firstName: FirstName,
-                                                 lastName: LastName,
-                                                 gender: Gender,
-                                                 avatar: Avatar,
-                                                 allergy: Allergy,
-                                                 medicalHistory: MedicalHistory,
-                                                 symptom: Symptom) as URLRequestConvertible
-
-//                Alamofire.upload(multipartFormData: <#T##(MultipartFormData) -> Void#>, to: request as! URLConvertible, encodingCompletion: <#T##((SessionManager.MultipartFormDataEncodingResult) -> Void)?##((SessionManager.MultipartFormDataEncodingResult) -> Void)?##(SessionManager.MultipartFormDataEncodingResult) -> Void#>)
-              
-                
-                Alamofire.request(request)
-                        .responseObject { (response: DataResponse<Patient>) in
-                        switch response.result {
-                        case let .success(data):
-                            completion(true, nil, data);
-                            break
-
-                        case let .failure(error):
-                            completion(false, error as NSError?, nil);
-                            
-                            break
-                        }
-                }
-            }
-        }
-    
-    
-    //MARK: -Test
     func updateProfile(userId: String,
                        firstName:String,
                        lastName:String,
@@ -142,7 +93,8 @@ extension BaseClient {
         let headers: HTTPHeaders = [
                 /* "Authorization": "your_access_token",  in case you need authorization header */
                    "Accept": "application/json",
-                   "Content-type": "multipart/form-data"
+                   "Content-type": "multipart/form-data",
+                    "Authorization": "Bearer \(self.accessToken!)"
             ]
             var parameters : [String:Any] = [:]
             
@@ -154,7 +106,7 @@ extension BaseClient {
             parameters["MedicalHistory"] = medicalHistory
             parameters["Allergy"] = allergy
 
-            let url = "http://116.110.94.169:2905/api/Image/CreateImage"
+            let url = "http://116.110.94.169:2905/api/Auth/Update"
             print(url)
 
 
@@ -187,7 +139,7 @@ extension BaseClient {
         }
 
     
-   
+
     
     //MARK: -Get user info
     /*

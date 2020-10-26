@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ParentViewController: UIViewController {
+class WelcomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +17,7 @@ class ParentViewController: UIViewController {
     }
     
     @IBAction func signUp(_ sender: Any) {
-        let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.InfomationViewControllerId) as! InfomationViewController
+        let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.SignUpControllerId) as! SignUpController
          
          self.navigationController?.pushViewController(controller, animated: true)
     }

@@ -17,7 +17,6 @@ class SignInController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         self.hideKeyboardWhenTappedAround()
        
@@ -83,7 +82,7 @@ class SignInController: UIViewController {
 
                 if(isSuccess!) {
 
-                    let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.InfomationViewControllerId) as! InfomationViewController
+                    let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.ParentViewControllerId) as! ParentViewController
 
                     self.navigationController?.pushViewController(controller, animated: true)
                 } else {

@@ -13,6 +13,7 @@ import SDWebImage
 class InfomationViewController: UITableViewController {
 
    
+    @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -25,22 +26,23 @@ class InfomationViewController: UITableViewController {
     @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var button: UIView!
     
+
+    
     var UserId = BaseClient.shared.userId
     let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        LoadInform(UserId: UserId!)
+        
         self.hideKeyboardWhenTappedAround()
         
-                    
     }
     
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //showInfor()
-
+        LoadInform(UserId: UserId!)
+      
         let tapGuesture = UITapGestureRecognizer(target: self, action: #selector(handleTap)) //declear tap view
         avaPicker.addGestureRecognizer(tapGuesture)
         
@@ -53,39 +55,40 @@ class InfomationViewController: UITableViewController {
     
     
     @objc func handleTap1(_ sender: AnyObject){
-//        BaseConnection.request(BaseClient.Service.UpdateUser(userId: "3ecc51ab-98c9-45b2-bca3-ebf494af9a87",
-//                                                             firstName: "Oscar123",
-//                                                             lastName: "Dang",
-//                                                             gender: false,
-//                                                             avatar: UIImage(imageLiteralResourceName: "facebook"),
-//                                                             allergy: "nothing",
-//                                                             medicalHistory: "HIV/AIDS",
-//                                                             symptom: "nothing"),
-//                                                           RegisterResponse.self,
-//           completion: { (result,err) in
-//           guard err == nil else {
-//
-//
-//                print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
-//
-//                if err?.mErrorCode == 0 {
-//                    let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.MainViewControllerId) as! MainViewController
-//                    self.navigationController?.present(controller, animated: true)
-//
-//                }
-//                else{
-//                    // create the alert
-//                    let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)
-//
-//                    // add an action (button)
-//                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//
-//                    // show the alert
-//                    self.present(alert, animated: true, completion: nil)
-//                }
-//                return
-//                }
-//           })
+        var imageData : Data? = nil
+        imageData = UIImage.pngData(imgAvatar.image!)()
+        
+    
+        BaseClient.shared.updateProfile(userId: UserId!,
+                                        firstName: "cec",
+                                        lastName: "cecece",
+                                        imageData: imageData,
+                                        symptom: "hihi",
+                                        allergy: "hah",
+                                        medicalHistory: "hehe",
+                                        completion: {
+                (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+
+
+                if(isSuccess!){
+                    // create the alert
+                    let alert = UIAlertController(title: "My Title", message: "Update Fail", preferredStyle: UIAlertController.Style.alert)
+
+                    // add an action (button)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+                    // show the alert
+                    self.present(alert, animated: true, completion: nil)
+                }
+        })
+        let alert = UIAlertController(title: "My Title", message: "Update Success", preferredStyle: UIAlertController.Style.alert)
+
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        LoadInform(UserId: UserId!)
         }
     
     

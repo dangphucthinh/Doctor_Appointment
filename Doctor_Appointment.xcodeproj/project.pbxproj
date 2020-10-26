@@ -14,12 +14,13 @@
 		4D31F2F82505CBC800B7B9BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D31F2F62505CBC800B7B9BB /* LaunchScreen.storyboard */; };
 		4D31F3032505CBC900B7B9BB /* Doctor_AppointmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31F3022505CBC900B7B9BB /* Doctor_AppointmentTests.swift */; };
 		4D31F30E2505CBC900B7B9BB /* Doctor_AppointmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31F30D2505CBC900B7B9BB /* Doctor_AppointmentUITests.swift */; };
-		4D31F3242505DE8100B7B9BB /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31F3232505DE8100B7B9BB /* ParentViewController.swift */; };
+		4D31F3242505DE8100B7B9BB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31F3232505DE8100B7B9BB /* WelcomeViewController.swift */; };
 		4D4C4200250615A200E1F017 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C41FF250615A200E1F017 /* SignUpController.swift */; };
 		4DBF50522509D51500519102 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF50512509D51500519102 /* ForgotPasswordController.swift */; };
 		4DE259E52509E1A20018C6C2 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE259E42509E1A20018C6C2 /* SignInController.swift */; };
 		5502826A2541747A009ED855 /* CommonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550282692541747A009ED855 /* CommonExtension.swift */; };
 		5504C670254034A700B6DA2D /* ResponseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504C66F254034A700B6DA2D /* ResponseUser.swift */; };
+		5516C147254686A800406185 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5516C146254686A800406185 /* ParentViewController.swift */; };
 		5519A0A02537EE66001D7F81 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5519A09F2537EE66001D7F81 /* RegisterResponse.swift */; };
 		55250AEB25369FED00D251BD /* dateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250AE925369FED00D251BD /* dateCell.swift */; };
 		55250AEC25369FED00D251BD /* dateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55250AEA25369FED00D251BD /* dateCollectionViewCell.swift */; };
@@ -85,13 +86,14 @@
 		4D31F3092505CBC900B7B9BB /* Doctor_AppointmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Doctor_AppointmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D31F30D2505CBC900B7B9BB /* Doctor_AppointmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor_AppointmentUITests.swift; sourceTree = "<group>"; };
 		4D31F30F2505CBC900B7B9BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4D31F3232505DE8100B7B9BB /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		4D31F3232505DE8100B7B9BB /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4D4C41FF250615A200E1F017 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		4DBF50512509D51500519102 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		4DE259E42509E1A20018C6C2 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		52261CF2CB20CAFCC37D2E90 /* Pods-Doctor_AppointmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor_AppointmentTests.debug.xcconfig"; path = "Target Support Files/Pods-Doctor_AppointmentTests/Pods-Doctor_AppointmentTests.debug.xcconfig"; sourceTree = "<group>"; };
 		550282692541747A009ED855 /* CommonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
 		5504C66F254034A700B6DA2D /* ResponseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseUser.swift; sourceTree = "<group>"; };
+		5516C146254686A800406185 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParentViewController.swift; path = Doctor_Appointment/View/ParentViewController.swift; sourceTree = SOURCE_ROOT; };
 		5519A09F2537EE66001D7F81 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		55250AE925369FED00D251BD /* dateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dateCell.swift; sourceTree = "<group>"; };
 		55250AEA25369FED00D251BD /* dateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dateCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -267,7 +269,7 @@
 				4DBF50502509D4D100519102 /* ForgotPassword */,
 				4D4C41FE2506159000E1F017 /* SignUp */,
 				4D31F3272505E6F800B7B9BB /* Login */,
-				4D31F3232505DE8100B7B9BB /* ParentViewController.swift */,
+				5516C146254686A800406185 /* ParentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -305,6 +307,7 @@
 		55A40BA4253555EB008B2523 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				4D31F3232505DE8100B7B9BB /* WelcomeViewController.swift */,
 				557D2BA125412C7C0081439D /* InfomationViewController.swift */,
 				55DDE4C525369EC4003B3B62 /* MainViewController.swift */,
 			);
@@ -643,10 +646,11 @@
 				55A40B9625354567008B2523 /* CustomButton.swift in Sources */,
 				55250AEC25369FED00D251BD /* dateCollectionViewCell.swift in Sources */,
 				55DDE47E25369528003B3B62 /* StoryboardID.swift in Sources */,
+				5516C147254686A800406185 /* ParentViewController.swift in Sources */,
 				55250AEB25369FED00D251BD /* dateCell.swift in Sources */,
 				55DDE4B625369851003B3B62 /* BaseResponse.swift in Sources */,
 				555DBF2125401E1000A121C7 /* ListTransform.swift in Sources */,
-				4D31F3242505DE8100B7B9BB /* ParentViewController.swift in Sources */,
+				4D31F3242505DE8100B7B9BB /* WelcomeViewController.swift in Sources */,
 				55250AF625369FF900D251BD /* scheduledHeaderView.swift in Sources */,
 				55DDE48B25369561003B3B62 /* CommonString.swift in Sources */,
 				55DDE48625369541003B3B62 /* ServerKey.swift in Sources */,
@@ -962,7 +966,7 @@
 				4D31F3112505CBC900B7B9BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		4D31F3122505CBC900B7B9BB /* Build configuration list for PBXNativeTarget "Doctor_Appointment" */ = {
 			isa = XCConfigurationList;
@@ -971,7 +975,7 @@
 				4D31F3142505CBC900B7B9BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		4D31F3152505CBC900B7B9BB /* Build configuration list for PBXNativeTarget "Doctor_AppointmentTests" */ = {
 			isa = XCConfigurationList;
@@ -980,7 +984,7 @@
 				4D31F3172505CBC900B7B9BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		4D31F3182505CBC900B7B9BB /* Build configuration list for PBXNativeTarget "Doctor_AppointmentUITests" */ = {
 			isa = XCConfigurationList;
@@ -989,7 +993,7 @@
 				4D31F31A2505CBC900B7B9BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

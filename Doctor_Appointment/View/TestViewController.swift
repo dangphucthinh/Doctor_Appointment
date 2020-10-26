@@ -54,29 +54,29 @@ class TestViewController: UITableViewController {
         imageData = UIImage.pngData(imgAvatar.image!)()
         
         
-        BaseClient.shared.updateProfile(userId: "43f90a99-61e8-44bd-9c1e-cc963303d465",
-                                        firstName: "thinh hihihi",
-                                        lastName: "dang",
-                                        //gender: true,
-                                        imageData: imageData,
-                                        symptom: "deobiet",
-                                        allergy: "deobietlun",
-                                        medicalHistory: "bietdeo",
-                                        completion: {
-                (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-                                  
-                if(isSuccess!){
-                    // create the alert
-                    let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)
-
-                    // add an action (button)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
-                    // show the alert
-                    self.present(alert, animated: true, completion: nil)
-                }
-              
-        })
+//        BaseClient.shared.updateProfile(userId: "43f90a99-61e8-44bd-9c1e-cc963303d465",
+//                                        firstName: "thinh hihihi",
+//                                        lastName: "dang",
+//                                        gender: true,
+//                                        imageData: imageData,
+//                                        symptom: "deobiet",
+//                                        allergy: "deobietlun",
+//                                        medicalHistory: "bietdeo",
+//                                        completion: {
+//                (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+//                                  
+//                if(isSuccess!){
+//                    // create the alert
+//                    let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)
+//
+//                    // add an action (button)
+//                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//
+//                    // show the alert
+//                    self.present(alert, animated: true, completion: nil)
+//                }
+//              
+//        })
 //        BaseConnection.request(BaseClient.Service.UpdateUser(userId: "3ecc51ab-98c9-45b2-bca3-ebf494af9a87",
 //                                                             firstName: "Oscar123",
 //                                                             lastName: "Dang",

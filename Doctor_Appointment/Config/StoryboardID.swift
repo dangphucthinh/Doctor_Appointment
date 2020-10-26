@@ -22,4 +22,7 @@ struct StoryboardID {
     //homePage id
     static let MainViewControllerId = "MainViewController"
     static let InfomationViewControllerId = "InfomationViewController"
+    
+    //tabbar
+    static let ParentViewControllerId = "ParentViewController"
 }
