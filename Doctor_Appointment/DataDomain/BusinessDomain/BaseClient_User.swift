@@ -97,10 +97,22 @@ extension BaseClient {
                        completion:@escaping ServiceResponse) {
             DispatchQueue.global(qos: .background).async {
                 // Run on background
-                let request = Service.UpdateUser(userId: UserId, firstName: FirstName, lastName: LastName, gender: Gender, avatar: Avatar, allergy: Allergy, medicalHistory: MedicalHistory, symptom: Symptom) as URLRequestConvertible
+                
+               
+                let request = Service.UpdateUser(userId: UserId,
+                                                 firstName: FirstName,
+                                                 lastName: LastName,
+                                                 gender: Gender,
+                                                 avatar: Avatar,
+                                                 allergy: Allergy,
+                                                 medicalHistory: MedicalHistory,
+                                                 symptom: Symptom) as URLRequestConvertible
 
+//                Alamofire.upload(multipartFormData: <#T##(MultipartFormData) -> Void#>, to: request as! URLConvertible, encodingCompletion: <#T##((SessionManager.MultipartFormDataEncodingResult) -> Void)?##((SessionManager.MultipartFormDataEncodingResult) -> Void)?##(SessionManager.MultipartFormDataEncodingResult) -> Void#>)
+              
+                
                 Alamofire.request(request)
-                        .responseObject { (response: DataResponse<Doctor>) in
+                        .responseObject { (response: DataResponse<Patient>) in
                         switch response.result {
                         case let .success(data):
                             completion(true, nil, data);
@@ -115,13 +127,76 @@ extension BaseClient {
             }
         }
     
+    
+    //MARK: -Test
+    func updateProfile(userId: String,
+                       firstName:String,
+                       lastName:String,
+                       //gender: Bool,
+                       imageData:Data?,
+                       symptom: String,
+                       allergy: String,
+                       medicalHistory: String,
+                       completion: @escaping ServiceResponse) {
+        
+        let headers: HTTPHeaders = [
+                /* "Authorization": "your_access_token",  in case you need authorization header */
+                   "Accept": "application/json",
+                   "Content-type": "multipart/form-data"
+            ]
+            var parameters : [String:Any] = [:]
+            
+            parameters["UserId"] = userId
+            parameters["FirstName"] = firstName
+            parameters["LastName"] = lastName
+            //parameters["Gender"] = gender
+            parameters["Symptom"] = symptom
+            parameters["MedicalHistory"] = medicalHistory
+            parameters["Allergy"] = allergy
+
+            let url = "http://116.110.94.169:2905/api/Image/CreateImage"
+            print(url)
+
+
+            Alamofire.upload(multipartFormData: { (multipartFormData) in
+                for (key, value) in parameters {
+                    multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+                }
+
+                if let data = imageData {
+                    multipartFormData.append(data, withName: "Avatar", fileName: "image.png", mimeType: "image/png")
+                }
+
+            }, usingThreshold: UInt64.init(), to: url, method: .post, headers: headers) { (result) in
+                switch result{
+                    case .success(let upload, _, _):
+                        upload.responseJSON { response in
+                            print("Succesfully uploaded  = \(response)")
+                            if let err = response.error{
+
+                                print(err)
+                                return
+                            }
+
+                        }
+                    case .failure(let error):
+                        print("Error in upload: \(error.localizedDescription)")
+
+                    }
+            }
+        }
+
+    
+   
+    
     //MARK: -Get user info
     /*
          * Get user info
          * @param: UserId
          * @return list info of user in callback
      */
-    func GetUserInfo(UserId: String, completion:@escaping ServiceResponse) {
+    func GetUserInfo(UserId: String,
+                     completion:@escaping ServiceResponse) {
             DispatchQueue.global(qos: .background).async {
                 // Run on background
                 let request = Service.GetPatientInfo(UserId: UserId, token: self.accessToken!) as URLRequestConvertible

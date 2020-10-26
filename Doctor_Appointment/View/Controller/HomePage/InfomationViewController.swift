@@ -27,7 +27,7 @@ class InfomationViewController: UITableViewController {
     
     var UserId = BaseClient.shared.userId
     let datePicker = UIDatePicker()
-    //var current:Contacts!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         LoadInform(UserId: UserId!)
@@ -53,39 +53,39 @@ class InfomationViewController: UITableViewController {
     
     
     @objc func handleTap1(_ sender: AnyObject){
-        BaseConnection.request(BaseClient.Service.UpdateUser(userId: "43f90a99-61e8-44bd-9c1e-cc963303d465",
-                                                             firstName: nameTextField.text!,
-                                                             lastName: "ma",
-                                                             gender: false,
-                                                             avatar: UIImage(imageLiteralResourceName: "facebook"),
-                                                             allergy: "nothing",
-                                                             medicalHistory: "HIV/AIDS",
-                                                             symptom: "nothing"),
-                                                           RegisterResponse.self,
-           completion: { (result,err) in
-           guard err == nil else {
-                
-           
-                print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
-                
-                if err?.mErrorCode == 0 {
-                    let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.MainViewControllerId) as! MainViewController
-                    self.navigationController?.present(controller, animated: true)
-                   
-                }
-                else{
-                    // create the alert
-                    let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)
-
-                    // add an action (button)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
-                    // show the alert
-                    self.present(alert, animated: true, completion: nil)
-                }
-                return
-                }
-           })
+//        BaseConnection.request(BaseClient.Service.UpdateUser(userId: "3ecc51ab-98c9-45b2-bca3-ebf494af9a87",
+//                                                             firstName: "Oscar123",
+//                                                             lastName: "Dang",
+//                                                             gender: false,
+//                                                             avatar: UIImage(imageLiteralResourceName: "facebook"),
+//                                                             allergy: "nothing",
+//                                                             medicalHistory: "HIV/AIDS",
+//                                                             symptom: "nothing"),
+//                                                           RegisterResponse.self,
+//           completion: { (result,err) in
+//           guard err == nil else {
+//
+//
+//                print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
+//
+//                if err?.mErrorCode == 0 {
+//                    let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.MainViewControllerId) as! MainViewController
+//                    self.navigationController?.present(controller, animated: true)
+//
+//                }
+//                else{
+//                    // create the alert
+//                    let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)
+//
+//                    // add an action (button)
+//                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//
+//                    // show the alert
+//                    self.present(alert, animated: true, completion: nil)
+//                }
+//                return
+//                }
+//           })
         }
     
     
@@ -151,20 +151,14 @@ class InfomationViewController: UITableViewController {
                     self.allergyTextField.text = user.data?.allergy
                     self.symptonTextField.text = user.data?.symptom
                     
-                    
-               
+                        
                     let dateString = user.data?.dateOfBirth
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
                     let dateFromString = dateFormatter.date(from: dateString!)
                     dateFormatter.dateFormat = "MM-dd-yyyy"
                     let stringFromDate = dateFormatter.string(from: dateFromString!)
-
-                   
-                    
                     self.dateOfBirthTextField.text = stringFromDate
-                    
-
                     
                     self.imgAvatar.sd_setImage(with: url1, placeholderImage: UIImage(named: "no_image_banner"))
                   }
@@ -174,7 +168,7 @@ class InfomationViewController: UITableViewController {
 }
 
     //MARK: -Extension
-extension InfomationViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension TestViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         var selectedImageFromPicker : UIImage?

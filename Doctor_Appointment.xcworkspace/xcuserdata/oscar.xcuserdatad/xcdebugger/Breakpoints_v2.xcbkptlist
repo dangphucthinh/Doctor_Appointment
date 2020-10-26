@@ -23,16 +23,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8D6E936A-D6D6-4EE2-BBBA-7F66EEC0A5E5"
+            uuid = "5BFFE61A-9104-45B7-88F8-74365B455820"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Doctor_Appointment/View/Controller/HomePage/InfomationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "LoadInform(UserId:)"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "handleTap1(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B30D6E9-9BAC-41ED-9592-85603778762C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Doctor_Appointment/View/TestViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "handleTap1(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

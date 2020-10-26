@@ -156,7 +156,7 @@ class BaseClient: NSObject{
                     "FirstName" : firstName,
                     "LastName" : lastName,
                     "Gender" : gender,
-                    "Avatar" : avatar as Any,
+                    "Avatar" : avatar!,
                     "Allergy" : allergy,
                     "MedicalHistory" : medicalHistory,
                     "Symptom" : symptom
