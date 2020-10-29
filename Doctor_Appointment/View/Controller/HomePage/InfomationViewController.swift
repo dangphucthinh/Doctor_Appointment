@@ -60,8 +60,8 @@ class InfomationViewController: UITableViewController {
         
     
         BaseClient.shared.updateProfile(userId: UserId!,
-                                        firstName: "cec",
-                                        lastName: "cecece",
+                                        firstName: "phucthinh",
+                                        lastName: "dang",
                                         imageData: imageData,
                                         symptom: "hihi",
                                         allergy: "hah",
@@ -146,7 +146,7 @@ class InfomationViewController: UITableViewController {
                     let user = value as! ResponseUser
                     
                     let ava: String? = user.data?.avatar!
-                    let url1 = URL.init(string:"\(ava ?? "No image found")")
+                    let url = URL.init(string:"\(ava ?? "No image found")")
                     self.nameTextField.text = user.data?.fullName
                     self.emailTextField.text = user.data?.email
                     self.phoneTextField.text = user.data?.phoneNumber
@@ -163,7 +163,7 @@ class InfomationViewController: UITableViewController {
                     let stringFromDate = dateFormatter.string(from: dateFromString!)
                     self.dateOfBirthTextField.text = stringFromDate
                     
-                    self.imgAvatar.sd_setImage(with: url1, placeholderImage: UIImage(named: "no_image_banner"))
+                    self.imgAvatar.sd_setImage(with: url, placeholderImage: UIImage(named: "no_image_banner"))
                   }
                 
           })

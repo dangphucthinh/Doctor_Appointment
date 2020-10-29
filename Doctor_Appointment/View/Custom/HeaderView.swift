@@ -20,6 +20,6 @@ class HeaderView: UITableViewHeaderFooterView {
     var user = User()
     override func awakeFromNib() {
         firstView.layer.cornerRadius = CGFloat(30)
-        lbTitle.text = user.fullName
+        lbTitle.text = "Hello, How are you ? \(name!)"
     }
 }

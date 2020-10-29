@@ -1,8 +1,8 @@
 //
-//  ResponseUser.swift
+//  ResponseDoctor.swift
 //  Doctor_Appointment
 //
-//  Created by thinhdang on 10/21/20.
+//  Created by Oscar on 10/29/20.
 //  Copyright © 2020 Thinh (Oscar) P. DANG. All rights reserved.
 //
 
@@ -10,10 +10,10 @@ import UIKit
 import RealmSwift
 import ObjectMapper
 
-class ResponseUser: Object, Mappable {
+class ResponseDoctor: Object, Mappable {
     var status: Int?
     var message: String?
-    var data: Patient?
+    var data = List<Doctor>()
     
     
     required convenience init?(map: Map) {
@@ -23,7 +23,8 @@ class ResponseUser: Object, Mappable {
     func mapping(map: Map) {
         status      <- map["status"]
         message     <- map["message"]
-        data        <- map["data"]
+        data        <- (map["data"], ListTransform<Doctor>())
     }
 
 }
+

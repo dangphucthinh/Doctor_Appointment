@@ -41,14 +41,9 @@ class BaseClient: NSObject{
         case GetPatientInfo(UserId: String,
                             token: String)
         
-        case UpdateUser(userId: String,
-                        firstName: String,
-                        lastName: String,
-                        gender: Bool,
-                        avatar: UIImage?,
-                        allergy: String,
-                        medicalHistory: String,
-                        symptom: String)
+        case getListDoctor
+        
+
         
         static let baseHTTP = API.kBaseUrl
         
@@ -56,8 +51,10 @@ class BaseClient: NSObject{
         //MARK: -Method
         private var method: HTTPMethod{
             switch self {
-            case .login, .changePassword, .register, .GetPatientInfo, .UpdateUser:
+            case .login, .changePassword, .register, .GetPatientInfo:
                 return .post
+            case .getListDoctor:
+                return .get
             }
         }
             
@@ -72,8 +69,9 @@ class BaseClient: NSObject{
                 return API.kChangePassword
             case .GetPatientInfo:
                 return API.kPatientInfo
-            case .UpdateUser:
-                return API.kPatientUpdate
+            case .getListDoctor:
+                return API.kGetListAllDoctor
+
             }
         }
             
@@ -91,8 +89,10 @@ class BaseClient: NSObject{
                 break
             case .GetPatientInfo:
                 break
-            case .UpdateUser:
+                
+            case .getListDoctor:
                 break
+
             }
             return headers;
         }
@@ -142,25 +142,9 @@ class BaseClient: NSObject{
                 return[
                     "UserId" : UserId
                 ]
-                
-            case .UpdateUser(let userId,
-                             let firstName,
-                             let lastName,
-                             let gender,
-                             let avatar,
-                             let allergy,
-                             let medicalHistory,
-                             let symptom):
-                return[
-                    "UserId" : userId,
-                    "FirstName" : firstName,
-                    "LastName" : lastName,
-                    "Gender" : gender,
-                    "Avatar" : avatar!,
-                    "Allergy" : allergy,
-                    "MedicalHistory" : medicalHistory,
-                    "Symptom" : symptom
-                ]
+           
+            case .getListDoctor:
+                return [:]
             }
         }
         
@@ -189,7 +173,7 @@ class BaseClient: NSObject{
             }
             
             switch self {
-            case .login, .register, .changePassword, .UpdateUser:
+            case .login, .register, .changePassword, .getListDoctor :
                 return urlRequest
                             
             case .GetPatientInfo(UserId: _, token: let accessToken):

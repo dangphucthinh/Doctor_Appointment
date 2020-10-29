@@ -25,4 +25,7 @@ struct StoryboardID {
     
     //tabbar
     static let ParentViewControllerId = "ParentViewController"
+    
+    //tableview Cell
+    static let GeneralCellId = "GeneralCell"
 }
