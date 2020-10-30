@@ -9,11 +9,11 @@
 import Foundation
 
 struct API{
-    static let kBaseUrl = "http://116.110.1.219:2905/"
-        static let kPatientUrl = "http://116.110.1.219:2905/api/Patient"
-        static let kDoctorUrl = "http://116.110.1.219:2905/api/Doctor"
-        static let kUserUrl = "http://116.110.1.219:2905/api/Auth"
-        static let kSpecialitiesUrl = "http://116.110.1.219:2905/api/Speciality"
+    static let kBaseUrl = "http://116.110.152.72:2905/"
+        static let kPatientUrl = "http://116.110.152.72:2905/api/Patient"
+        static let kDoctorUrl = "http://116.110.152.72:2905/api/Doctor"
+        static let kUserUrl = "http://116.110.152.72:2905/api/Auth"
+        static let kSpecialitiesUrl = "116.110.152.72:2905/api/Speciality"
         static let kImageUrl = "http://res.cloudinary.com/deh0sqxwl/image/upload/"
 
         //users

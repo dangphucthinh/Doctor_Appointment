@@ -28,4 +28,7 @@ struct StoryboardID {
     
     //tableview Cell
     static let GeneralCellId = "GeneralCell"
+    
+    //edit profile
+    static let EditProfileViewControllerId = "EditProfileViewController"
 }

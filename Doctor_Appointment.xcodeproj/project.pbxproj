@@ -33,6 +33,7 @@
 		55602974253955E700E362AA /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55602973253955E700E362AA /* Loading.swift */; };
 		557D2BA225412C7D0081439D /* InfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557D2BA125412C7C0081439D /* InfomationViewController.swift */; };
 		557D2BA725412D140081439D /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557D2BA625412D140081439D /* Patient.swift */; };
+		559630DD254BD29500FE1075 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559630DC254BD29500FE1075 /* EditProfileViewController.swift */; };
 		55A40B9625354567008B2523 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A40B9525354567008B2523 /* CustomButton.swift */; };
 		55DDE47E25369528003B3B62 /* StoryboardID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DDE47D25369528003B3B62 /* StoryboardID.swift */; };
 		55DDE48625369541003B3B62 /* ServerKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DDE48525369541003B3B62 /* ServerKey.swift */; };
@@ -105,6 +106,7 @@
 		55602973253955E700E362AA /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		557D2BA125412C7C0081439D /* InfomationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfomationViewController.swift; sourceTree = "<group>"; };
 		557D2BA625412D140081439D /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		559630DC254BD29500FE1075 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		55A40B9525354567008B2523 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		55DDE47D25369528003B3B62 /* StoryboardID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardID.swift; sourceTree = "<group>"; };
 		55DDE48525369541003B3B62 /* ServerKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerKey.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				4D31F3232505DE8100B7B9BB /* WelcomeViewController.swift */,
 				557D2BA125412C7C0081439D /* InfomationViewController.swift */,
 				55DDE4C525369EC4003B3B62 /* MainViewController.swift */,
+				559630DC254BD29500FE1075 /* EditProfileViewController.swift */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				55250AF425369FF900D251BD /* HeaderView.swift in Sources */,
 				55DDE4BB2536987F003B3B62 /* LoginResponse.swift in Sources */,
 				4DE259E52509E1A20018C6C2 /* SignInController.swift in Sources */,
+				559630DD254BD29500FE1075 /* EditProfileViewController.swift in Sources */,
 				557D2BA225412C7D0081439D /* InfomationViewController.swift in Sources */,
 				55602974253955E700E362AA /* Loading.swift in Sources */,
 				5560296E2538501500E362AA /* BaseClient_User.swift in Sources */,
