@@ -23,7 +23,7 @@ class HomePageController: UIViewController {
     }
     
     @IBAction func signIn(_ sender: UIButton) {
-        let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.InfomationViewControllerId) as! InfomationViewController
+        let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.SignInControllerId) as! SignInController
         
         self.navigationController?.pushViewController(controller, animated: true)
     }

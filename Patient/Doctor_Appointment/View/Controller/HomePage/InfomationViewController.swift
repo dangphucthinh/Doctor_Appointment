@@ -35,7 +35,7 @@ class InfomationViewController: UITableViewController {
     //var current:Contacts!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //LoadInform(UserId: UserId!)
+        LoadInform(UserId: UserId!)
         self.hideKeyboardWhenTappedAround()
         
                     
