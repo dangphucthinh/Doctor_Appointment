@@ -50,9 +50,9 @@ class TestViewController: UITableViewController {
     
     @objc func handleTap1(_ sender: AnyObject){
         
-        var imageData : Data? = nil
-        imageData = UIImage.pngData(imgAvatar.image!)()
-        
+//        var imageData : Data? = nil
+//        imageData = UIImage.pngData(imgAvatar.image!)()
+//        
         
 //        BaseClient.shared.updateProfile(userId: "43f90a99-61e8-44bd-9c1e-cc963303d465",
 //                                        firstName: "thinh hihihi",
