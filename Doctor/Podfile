@@ -1,0 +1,24 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'youMed' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for youMed
+    pod 'Alamofire', '~> 4.7'
+    pod 'AlamofireObjectMapper', :git => 'https://github.com/RomanPodymov/AlamofireObjectMapper.git', :branch => 'xcode-10-2-fix'
+    pod 'JGProgressHUD'
+    pod 'RealmSwift'
+    pod 'SDWebImage'
+
+  target 'youMedTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'youMedUITests' do
+    # Pods for testing
+  end
+
+end
