@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -26,7 +27,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hY7-Zp-EMv">
-                            <rect key="frame" x="124" y="24" width="45" height="21"/>
+                            <rect key="frame" x="124" y="24" width="242" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -85,7 +86,7 @@
                 <outlet property="ContentView" destination="5ZS-tB-Zv8" id="e4Y-3w-0YK"/>
                 <outlet property="addressLabel" destination="Z2C-wy-thK" id="BBX-w1-82c"/>
                 <outlet property="doctorImage" destination="nJl-84-UE0" id="GzF-pE-tnA"/>
-                <outlet property="nameLabel" destination="hY7-Zp-EMv" id="gWx-fC-t37"/>
+                <outlet property="doctorNameLabel" destination="hY7-Zp-EMv" id="bcj-NN-UfC"/>
                 <outlet property="ratingLabel" destination="WLm-zT-4SF" id="cuH-jm-Gqg"/>
                 <outlet property="scheduleButton" destination="cqP-zr-mim" id="Cc8-Zu-fnc"/>
                 <outlet property="shadowView" destination="XIt-l5-UNH" id="DBs-MG-wle"/>

@@ -10,7 +10,7 @@ import UIKit
 class DetailTableViewCell: UITableViewCell {
     
     @IBOutlet weak var doctorImage: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var doctorNameLabel: UILabel!
     @IBOutlet weak var specialistLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var scheduleButton: UIButton!
@@ -18,10 +18,36 @@ class DetailTableViewCell: UITableViewCell {
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var ContentView: UIView!
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    
+    var data: Doctor? {
+        didSet {
+            guard let data = data else { return }
+            
+            specialistLabel.text = data.specialtyName
+            doctorNameLabel.text = data.fullName
+            
+            if(data.avatar!.count > 0){
+                let ava: String? = data.avatar
+                        let url = URL.init(string: "\(ava!)")
+                
+                        self.doctorImage?.sd_setImage(with: url, placeholderImage: UIImage(named: "no_image_banner"))
+            }
+                
+    }
+        
+}
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        loadInformation()
+ 
+    }
+    
+   private func loadInformation(){
         scheduleButton.layer.cornerRadius = 5
         scheduleButton.backgroundColor = .blue
         
@@ -35,5 +61,5 @@ class DetailTableViewCell: UITableViewCell {
         ContentView.layer.cornerRadius = 10
         ContentView.layer.masksToBounds = true
     }
-
+    
 }
