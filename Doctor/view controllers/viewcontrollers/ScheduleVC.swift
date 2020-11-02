@@ -6,30 +6,45 @@
 //
 
 import UIKit
+import RealmSwift
+import SDWebImage
 
-class ScheduleVC: UIViewController {
-
+class ScheduleVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var tableView: UITableView!
+    var listDoctor = List<Doctor>()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        loadDoctor()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+                // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: "HeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "headerView")
+        
+        tableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "detailCell")
+        
+        //loadDoctor()
     }
 
-
-}
-
-extension ScheduleVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        
+        if(section == 1){
+            return 1
+        }
+        return listDoctor.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        5
+        if listDoctor.count >= 0{
+           return 5
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -38,8 +53,15 @@ extension ScheduleVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "specialistCell") as! SpecialistTableViewCell
             return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell") as! ContentDetailTableViewCell
-        
+            let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as! DetailTableViewCell
+
+            if indexPath.row < listDoctor.count {
+                cell.data = listDoctor[indexPath.row]
+            } else {
+                // Handle non-existing object here
+                print("hihi")
+            }
+           
             return cell
         default:
             return UITableViewCell()
@@ -53,12 +75,14 @@ extension ScheduleVC: UITableViewDelegate, UITableViewDataSource {
         case 1:
             return 200
         default:
-            return 920
+            return 219
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        print("hihihehe")
+      
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -86,5 +110,24 @@ extension ScheduleVC: UITableViewDelegate, UITableViewDataSource {
             return ""
         }
     }
+    
+    func loadDoctor(){
+        BaseClient.shared.GetListDoctor(completion: { [self]
+                                        (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+                                                                 
+                                        if(isSuccess!){
+                                          let user = value as! ResponseDoctor
+                                          
+                                            let listTemp = user.data as List<Doctor>
+                                            for item in listTemp{
+                                                self.listDoctor.append(item)
+                                            }
+                                            self.tableView.reloadData()
+                                        }
+                                      
+                                })
+    }
+
 }
+
 
