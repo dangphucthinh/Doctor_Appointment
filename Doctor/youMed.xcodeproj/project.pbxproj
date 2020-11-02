@@ -32,13 +32,12 @@
 		D5F335CD4B8426AB7CD1E718 /* Pods_youMed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1E41CF62CB06473DE269B5 /* Pods_youMed.framework */; };
 		E105960425427F3900512941 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105960325427F3900512941 /* AppDelegate.swift */; };
 		E105960625427F3900512941 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105960525427F3900512941 /* SceneDelegate.swift */; };
-		E105960825427F3900512941 /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105960725427F3900512941 /* ScheduleVC.swift */; };
+		E105960825427F3900512941 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105960725427F3900512941 /* HomePageController.swift */; };
 		E105960B25427F3900512941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E105960925427F3900512941 /* Main.storyboard */; };
 		E105960D25427F3A00512941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E105960C25427F3A00512941 /* Assets.xcassets */; };
 		E105961025427F3A00512941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E105960E25427F3A00512941 /* LaunchScreen.storyboard */; };
 		E105961B25427F3A00512941 /* youMedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105961A25427F3A00512941 /* youMedTests.swift */; };
 		E105962625427F3A00512941 /* youMedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105962525427F3A00512941 /* youMedUITests.swift */; };
-		E15D50E4254694D50046BD4A /* ContentDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15D50E3254694D50046BD4A /* ContentDetailTableViewCell.swift */; };
 		E1D479BF2543BDAE006A7C2C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D479BE2543BDAE006A7C2C /* View.swift */; };
 		E1D479C72543C05E006A7C2C /* SpecialistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1D479C62543C05E006A7C2C /* SpecialistCell.xib */; };
 		E1D479E62543CED0006A7C2C /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D479E52543CED0006A7C2C /* TabbarController.swift */; };
@@ -97,7 +96,7 @@
 		E105960025427F3900512941 /* youMed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = youMed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E105960325427F3900512941 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E105960525427F3900512941 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E105960725427F3900512941 /* ScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
+		E105960725427F3900512941 /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
 		E105960A25427F3900512941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E105960C25427F3A00512941 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E105960F25427F3A00512941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -108,7 +107,6 @@
 		E105962125427F3A00512941 /* youMedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = youMedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E105962525427F3A00512941 /* youMedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = youMedUITests.swift; sourceTree = "<group>"; };
 		E105962725427F3A00512941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E15D50E3254694D50046BD4A /* ContentDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailTableViewCell.swift; sourceTree = "<group>"; };
 		E1D479BE2543BDAE006A7C2C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		E1D479C62543C05E006A7C2C /* SpecialistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialistCell.xib; sourceTree = "<group>"; };
 		E1D479E52543CED0006A7C2C /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
@@ -316,7 +314,6 @@
 				4D4F4F5B254DBC9F00EEC7FB /* Header */,
 				E1D47A11254422A7006A7C2C /* DetailTableViewCell.xib */,
 				E1D47A16254425B2006A7C2C /* DetailTableViewCell.swift */,
-				E15D50E3254694D50046BD4A /* ContentDetailTableViewCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -332,7 +329,7 @@
 		E1D479E42543CE9F006A7C2C /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				E105960725427F3900512941 /* ScheduleVC.swift */,
+				E105960725427F3900512941 /* HomePageController.swift */,
 				E1D479E52543CED0006A7C2C /* TabbarController.swift */,
 			);
 			path = viewcontrollers;
@@ -593,13 +590,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E105960825427F3900512941 /* ScheduleVC.swift in Sources */,
+				E105960825427F3900512941 /* HomePageController.swift in Sources */,
 				4DED67E3254EB7C700222456 /* ResponseDoctor.swift in Sources */,
 				4DED67B3254EB5A900222456 /* BaseClient_User.swift in Sources */,
 				4D0715F8254E55E600B0B886 /* BaseClient.swift in Sources */,
 				4D0715DD254E4C4800B0B886 /* BaseUrl.swift in Sources */,
 				4DED67D4254EB7A000222456 /* Patient.swift in Sources */,
-				E15D50E4254694D50046BD4A /* ContentDetailTableViewCell.swift in Sources */,
 				E1D47A032543DAD4006A7C2C /* SpecialistCollectionViewCell.swift in Sources */,
 				4D4F4F61254DBD4800EEC7FB /* Loading.swift in Sources */,
 				4D4F4F6B254DBD9100EEC7FB /* Validation.swift in Sources */,

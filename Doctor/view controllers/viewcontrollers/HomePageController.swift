@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 import SDWebImage
 
-class ScheduleVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomePageController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     var listDoctor = List<Doctor>()

@@ -20,7 +20,7 @@ class TabbarController: UIViewController {
     
     func createTabbarController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let scheduleVC = storyboard.instantiateViewController(withIdentifier: "scheduleVC")
+        let scheduleVC = storyboard.instantiateViewController(withIdentifier: StoryboardID.HomePageControllerId)
         scheduleVC.tabBarItem = UITabBarItem(title: "Schedule", image: UIImage(named: "calendar"), tag: 0)
         
         let tabbarList = [scheduleVC]
