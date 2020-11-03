@@ -27,16 +27,3 @@ class ResponseUser: Object, Mappable {
     }
 
 }
-
-class Datas: Object, Mappable {
-    
-    var user : Patient?
-
-    required convenience init?(map: Map) {
-        self.init()
-    }
-    
-   func mapping(map: Map) {
-    user        <- map["user"]      
-   }
-}

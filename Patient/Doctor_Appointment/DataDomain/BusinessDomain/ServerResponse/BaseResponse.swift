@@ -19,9 +19,9 @@ class BaseResponse<T: Mappable>: Mappable {
     }
     
     func mapping(map: Map) {
-        status <- map["status"]
-        message <- map["message"]
-        data <- map["data"]
+        status      <- map["status"]
+        message     <- map["message"]
+        data        <- map["data"]
     }
     
     func isSuccessCode() -> Bool? {

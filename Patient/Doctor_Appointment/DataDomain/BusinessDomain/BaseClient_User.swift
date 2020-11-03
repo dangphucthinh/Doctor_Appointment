@@ -5,16 +5,15 @@
 //  Created by Oscar on 10/15/20.
 //  Copyright © 2020 Thinh (Oscar) P. DANG. All rights reserved.
 //
-    
+
 import Foundation
 import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
-import SwiftyJSON
-
 
 extension BaseClient {
     
+    //MARK: -Login
     /**
     * Login
     * @param: username, password md5
@@ -42,11 +41,11 @@ extension BaseClient {
                         let access_token = ((rawValue as!  NSDictionary).object(forKey: ResponseKey.Token)) as? NSDictionary
                         self.accessToken = access_token?.object(forKey: ResponseKey.AccessToken) as? String
                         
-                        let usersId = ((rawValue as!  NSDictionary).object(forKey: ResponseKey.User)) as? NSDictionary
-                        self.userId = usersId?.object(forKey: "id") as? String
-                        
                         let full_name = ((rawValue as!  NSDictionary).object(forKey: ResponseKey.User)) as? NSDictionary
                         self.fullName = full_name?.object(forKey: "fullName") as? String
+                        
+                        let user_Id = ((rawValue as!  NSDictionary).object(forKey: ResponseKey.User)) as? NSDictionary
+                        self.userId = user_Id?.object(forKey: "id") as? String
                         
                         DataManager.shared.AddValue(key: Header.Authorization, value: "Bearer \(self.accessToken!)")
                         DispatchQueue.main.async {
@@ -79,8 +78,76 @@ extension BaseClient {
         }
     }
     
-    //MARK: -Get Infor
-    func GetUserInfo(UserId: String, completion:@escaping ServiceResponse) {
+    
+    //MARK: -Update profile
+    func updateProfile(userId: String,
+                       firstName:String,
+                       lastName:String,
+                       //gender: Bool,
+                       imageData:Data?,
+                       symptom: String,
+                       allergy: String,
+                       medicalHistory: String,
+                       completion: @escaping ServiceResponse) {
+        
+        let headers: HTTPHeaders = [
+                /* "Authorization": "your_access_token",  in case you need authorization header */
+                   "Accept": "application/json",
+                   "Content-type": "multipart/form-data",
+                    "Authorization": "Bearer \(self.accessToken!)"
+            ]
+            var parameters : [String:Any] = [:]
+            
+            parameters["UserId"] = userId
+            parameters["FirstName"] = firstName
+            parameters["LastName"] = lastName
+            parameters["Symptom"] = symptom
+            parameters["MedicalHistory"] = medicalHistory
+            parameters["Allergy"] = allergy
+
+            let url = "http://116.110.1.219:2905/api/Auth/Update"
+            print(url)
+
+
+            Alamofire.upload(multipartFormData: { (multipartFormData) in
+                for (key, value) in parameters {
+                    multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+                }
+
+                if let data = imageData {
+                    multipartFormData.append(data, withName: "Avatar", fileName: "image.png", mimeType: "image/png")
+                }
+
+            }, usingThreshold: UInt64.init(), to: url, method: .post, headers: headers) { (result) in
+                switch result{
+                    case .success(let upload, _, _):
+                        upload.responseJSON { response in
+                            print("Succesfully uploaded  = \(response)")
+                            if let err = response.error{
+
+                                print(err)
+                                return
+                            }
+
+                        }
+                    case .failure(let error):
+                        print("Error in upload: \(error.localizedDescription)")
+
+                    }
+            }
+        }
+
+    
+
+    
+    //MARK: -Get user info
+    /*
+         * Get user info
+         * @param: UserId
+         * @return list info of user in callback
+     */
+    func GetUserInfo(UserId: String,
+                     completion:@escaping ServiceResponse) {
             DispatchQueue.global(qos: .background).async {
                 // Run on background
                 let request = Service.GetPatientInfo(UserId: UserId, token: self.accessToken!) as URLRequestConvertible
@@ -100,44 +167,43 @@ extension BaseClient {
             }
         }
     
-    //MARK: -Update user
+    //MARK: -Get List All Specialites
+//    func getListDoctor(completion:@escaping ServiceResponse){
+//        Alamofire.request("http://116.110.1.219:2905/api/Doctor/GetListAllDoctor", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
+//                .responseObject { (response: DataResponse<ResponseUser>) in
+//                switch response.result {
+//                case let .success(data):
+//                    completion(true, nil, data);
+//                    break
+//
+//                case let .failure(error):
+//                    completion(false, error as NSError?, nil);
+//
+//                    break
+//            }
+//        }
+//    }
     
-    /*
-         * Get list doctor
-         * @param: HospitalSpeciality
-         * @return listData in callback
-     */
-    
-    func UpdateUser(patient: Patient,
-                    completion:@escaping ServiceResponse) {
+    func GetListDoctor(completion:@escaping ServiceResponse) {
             DispatchQueue.global(qos: .background).async {
                 // Run on background
-                let request = Service.updateInfo(userId: patient.id!,
-                                                 firstName: patient.firstName!,
-                                                 lastName: patient.lastName!,
-                                                 gender: patient.gender!,
-                                                 avatar: patient.avatar!,
-                                                 medicalHistory: patient.medicalHistory!,
-                                                 allergy: patient.allergy!,
-                                                 sympton: patient.symptom!) as URLRequestConvertible
-                
-
+                let request = Service.getListDoctor as URLRequestConvertible
                 Alamofire.request(request)
-                        .responseObject { (response: DataResponse<Patient>) in
+                        .responseObject { (response: DataResponse<ResponseDoctor>) in
                         switch response.result {
                         case let .success(data):
+                            //var a = data.data
                             completion(true, nil, data);
                             break
 
                         case let .failure(error):
                             completion(false, error as NSError?, nil);
-
+                            
                             break
                         }
                 }
             }
         }
-    
-
 }
+
 

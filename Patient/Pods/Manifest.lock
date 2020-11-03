@@ -3,10 +3,8 @@ PODS:
   - AlamofireObjectMapper (5.1.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - FlexibleTimePicker (0.1.1)
   - JGProgressHUD (2.1)
-  - Kingfisher (5.15.6):
-    - Kingfisher/Core (= 5.15.6)
-  - Kingfisher/Core (5.15.6)
   - ObjectMapper (3.5.3)
   - Realm (5.4.0):
     - Realm/Headers (= 5.4.0)
@@ -16,27 +14,24 @@ PODS:
   - SDWebImage (5.9.1):
     - SDWebImage/Core (= 5.9.1)
   - SDWebImage/Core (5.9.1)
-  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireObjectMapper (from `https://github.com/RomanPodymov/AlamofireObjectMapper.git`, branch `xcode-10-2-fix`)
+  - FlexibleTimePicker
   - JGProgressHUD
-  - Kingfisher
   - RealmSwift
   - SDWebImage
-  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - FlexibleTimePicker
     - JGProgressHUD
-    - Kingfisher
     - ObjectMapper
     - Realm
     - RealmSwift
     - SDWebImage
-    - SwiftyJSON
 
 EXTERNAL SOURCES:
   AlamofireObjectMapper:
@@ -51,14 +46,13 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireObjectMapper: 9fec33dcec52497a2a32678cd3a7b597b5a32514
+  FlexibleTimePicker: 69128600001447bd78f2aad2a1e16ddc331b86f3
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
-  Kingfisher: b3554e7bf6106115b44e8795300bad580ef2fdc7
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   Realm: 8949757d76e2451a53d727954c607e49c2542b77
   RealmSwift: 0b7d7121e842724188123c6086831ae6d2952050
   SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
-  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: cfd126f77040d56a217f40ebac118bdd7130233c
+PODFILE CHECKSUM: 0c4d7720f5e2d7291b96bfc94c82f15acab60855
 
 COCOAPODS: 1.9.3

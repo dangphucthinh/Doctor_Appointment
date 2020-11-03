@@ -23,18 +23,19 @@ class SignUpController: UIViewController {
     
 
     let dateFormatter = DateFormatter()
-    
-    var startDate: Date?
+
     let datePicker = UIDatePicker()
     override func viewDidLoad() {
         super.viewDidLoad()
         showDatePicker()
+        self.hideKeyboardWhenTappedAround()
     }
     
-    
+
+
     @IBAction func signUp(_ sender: Any) {
        
-    print(datePicker.date)
+    //print(datePicker.date)
         BaseConnection.request(BaseClient.Service.register(username: tfUserName.text!,
                                                            email: tfEmail.text!,
                                                            firstName: tfFirstName.text!,
@@ -90,7 +91,7 @@ class SignUpController: UIViewController {
    }
 
     @objc func donedatePicker(){
-        
+
      let formatter = DateFormatter()
      formatter.dateFormat = "MM/dd/yyyy"
        tfDateOfBirth.text = formatter.string(from: datePicker.date)//(from: datePicker.date)

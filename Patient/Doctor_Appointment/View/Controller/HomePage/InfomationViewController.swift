@@ -12,9 +12,8 @@ import SDWebImage
 
 class InfomationViewController: UITableViewController {
 
-    var firstImage : UIImage?
-    var secondImage: UIImage?
    
+    @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -27,70 +26,69 @@ class InfomationViewController: UITableViewController {
     @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var button: UIView!
     
-    var users: Patient?
+
     
     var UserId = BaseClient.shared.userId
+    let datePicker = UIDatePicker()
     
- 
-    //var current:Contacts!
     override func viewDidLoad() {
         super.viewDidLoad()
-        LoadInform(UserId: UserId!)
+        
         self.hideKeyboardWhenTappedAround()
         
-                    
     }
     
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //showInfor()
+        LoadInform(UserId: UserId!)
+      
         let tapGuesture = UITapGestureRecognizer(target: self, action: #selector(handleTap)) //declear tap view
         avaPicker.addGestureRecognizer(tapGuesture)
         
         let tapGuesture1 = UITapGestureRecognizer(target: self, action: #selector(handleTap1)) //declear tap view
                 button.addGestureRecognizer(tapGuesture1)
         
-        //self.dateOfBirthTextField.setInputViewDatePicker(target: self, selector: #selector(tapDone))
+        self.dateOfBirthTextField.setInputViewDatePicker(target: self, selector: #selector(tapDone))
     }
     
     
     
     @objc func handleTap1(_ sender: AnyObject){
-//
-//        BaseConnection.request(BaseClient.Service.updateInfo(userId: "43f90a99-61e8-44bd-9c1e-cc963303d465",
-//                                                             firstName: "Phuc-Thinh",
-//                                                             lastName: "DANG",
-//                                                             gender: false,
-//                                                             avatar: "facebook",
-//                                                             medicalHistory: "Stomatch",
-//                                                             allergy: "nothing",
-//                                                             sympton: "Feel tired"),
-//                                                           RegisterResponse.self,
-//           completion: { (result,err) in
-//           guard err == nil else {
-//
-//
-//                print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
-//
-//                if err?.mErrorCode == 0 {
-//                    let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.MainViewControllerId) as! MainViewController
-//                    self.navigationController?.present(controller, animated: true)
-//
-//                }
-//                else{
-//                    // create the alert
-//                    let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)
-//
-//                    // add an action (button)
-//                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//
-//                    // show the alert
-//                    self.present(alert, animated: true, completion: nil)
-//                }
-//                return
-//                }
-//           })
+        var imageData : Data? = nil
+        imageData = UIImage.pngData(imgAvatar.image!)()
+        
+    
+        BaseClient.shared.updateProfile(userId: UserId!,
+                                        firstName: "phucthinh",
+                                        lastName: "dang",
+                                        imageData: imageData,
+                                        symptom: "hihi",
+                                        allergy: "hah",
+                                        medicalHistory: "hehe",
+                                        completion: {
+                (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+
+
+                if(isSuccess!){
+                    // create the alert
+                    let alert = UIAlertController(title: "My Title", message: "Update Fail", preferredStyle: UIAlertController.Style.alert)
+
+                    // add an action (button)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+                    // show the alert
+                    self.present(alert, animated: true, completion: nil)
+                }
+        })
+        let alert = UIAlertController(title: "My Title", message: "Update Success", preferredStyle: UIAlertController.Style.alert)
+
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        LoadInform(UserId: UserId!)
         }
     
     
@@ -148,7 +146,7 @@ class InfomationViewController: UITableViewController {
                     let user = value as! ResponseUser
                     
                     let ava: String? = user.data?.avatar!
-                    let url1 = URL.init(string:"\(ava ?? "No image found")")
+                    let url = URL.init(string:"\(ava ?? "No image found")")
                     self.nameTextField.text = user.data?.fullName
                     self.emailTextField.text = user.data?.email
                     self.phoneTextField.text = user.data?.phoneNumber
@@ -156,22 +154,16 @@ class InfomationViewController: UITableViewController {
                     self.allergyTextField.text = user.data?.allergy
                     self.symptonTextField.text = user.data?.symptom
                     
-                    
-               
+                        
                     let dateString = user.data?.dateOfBirth
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
                     let dateFromString = dateFormatter.date(from: dateString!)
                     dateFormatter.dateFormat = "MM-dd-yyyy"
                     let stringFromDate = dateFormatter.string(from: dateFromString!)
-
-                   
-                    
                     self.dateOfBirthTextField.text = stringFromDate
                     
-
-                    
-                    self.imgAvatar.sd_setImage(with: url1, placeholderImage: UIImage(named: "no_image_banner"))
+                    self.imgAvatar.sd_setImage(with: url, placeholderImage: UIImage(named: "no_image_banner"))
                   }
                 
           })
@@ -207,4 +199,5 @@ extension InfomationViewController : UIImagePickerControllerDelegate, UINavigati
     }
     
 }
+
 

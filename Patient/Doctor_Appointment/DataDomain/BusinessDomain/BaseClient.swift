@@ -5,6 +5,7 @@
 //  Created by Oscar on 10/14/20.
 //  Copyright © 2020 Thinh (Oscar) P. DANG. All rights reserved.
 //
+
 import Foundation
 import Alamofire
 
@@ -13,7 +14,7 @@ class BaseClient: NSObject{
     var accessToken : String?
     var userId : String?
     var fullName : String?
-    
+    var abc : String?
     //singleton
     static let shared = BaseClient()
     
@@ -40,14 +41,9 @@ class BaseClient: NSObject{
         case GetPatientInfo(UserId: String,
                             token: String)
         
-        case updateInfo(userId: String,
-                        firstName: String,
-                        lastName: String,
-                        gender: Bool,
-                        avatar: String,
-                        medicalHistory: String,
-                        allergy: String,
-                        sympton: String)
+        case getListDoctor
+        
+
         
         static let baseHTTP = API.kBaseUrl
         
@@ -55,8 +51,10 @@ class BaseClient: NSObject{
         //MARK: -Method
         private var method: HTTPMethod{
             switch self {
-            case .login, .changePassword, .register, .GetPatientInfo, .updateInfo:
+            case .login, .changePassword, .register, .GetPatientInfo:
                 return .post
+            case .getListDoctor:
+                return .get
             }
         }
             
@@ -71,8 +69,9 @@ class BaseClient: NSObject{
                 return API.kChangePassword
             case .GetPatientInfo:
                 return API.kPatientInfo
-            case .updateInfo:
-                return API.kTest
+            case .getListDoctor:
+                return API.kGetListAllDoctor
+
             }
         }
             
@@ -90,8 +89,10 @@ class BaseClient: NSObject{
                 break
             case .GetPatientInfo:
                 break
-            case .updateInfo:
+                
+            case .getListDoctor:
                 break
+
             }
             return headers;
         }
@@ -141,25 +142,9 @@ class BaseClient: NSObject{
                 return[
                     "UserId" : UserId
                 ]
-                
-            case .updateInfo(let userId,
-                             let firstName,
-                             let lastName,
-                             let gender,
-                             let avatar,
-                             let medicalHistory,
-                             let allergy,
-                             let sympton):
-                return[
-                    "UserId" : userId,
-                    "FirstName" : firstName,
-                    "LastName" : lastName,
-                    "Symptom" : sympton,
-                    "Gender" : gender,
-                    "MedicalHistory" : medicalHistory,
-                    "Allergy" : allergy,
-                    "Avatar" : avatar
-                ]
+           
+            case .getListDoctor:
+                return [:]
             }
         }
         
@@ -188,7 +173,7 @@ class BaseClient: NSObject{
             }
             
             switch self {
-            case .login, .register, .changePassword, .updateInfo:
+            case .login, .register, .changePassword, .getListDoctor :
                 return urlRequest
                             
             case .GetPatientInfo(UserId: _, token: let accessToken):
@@ -199,3 +184,4 @@ class BaseClient: NSObject{
         }
         
     }
+

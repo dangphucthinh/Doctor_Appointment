@@ -9,11 +9,12 @@
 import Foundation
 
 struct API{
-    static let kBaseUrl = "http://116.110.1.219:2905/"
-        static let kPatientUrl = "http://116.110.1.219:2905/api/Patient"
-        static let kDoctorUrl = "http://116.110.1.219:2905/api/Doctor"
-        static let kUserUrl = "http://116.110.1.219:2905/api/Auth"
-        static let kSpecialitiesUrl = "http://116.110.1.219:2905/api/Speciality"
+    static let kBaseUrl = "http://116.110.152.72:2905/"
+        static let kPatientUrl = "http://116.110.152.72:2905/api/Patient"
+        static let kDoctorUrl = "http://116.110.152.72:2905/api/Doctor"
+        static let kUserUrl = "http://116.110.152.72:2905/api/Auth"
+        static let kSpecialitiesUrl = "116.110.152.72:2905/api/Speciality"
+        static let kImageUrl = "http://res.cloudinary.com/deh0sqxwl/image/upload/"
 
         //users
         //HttpPost
@@ -23,7 +24,7 @@ struct API{
         static let kResetPassword = "api/Auth/ResetPassword"
         
         //doctor
-        static let kGetListAllDoctor = "GetListAllDoctor" //get all doctors GET
+        static let kGetListAllDoctor = "api/Doctor/GetListAllDoctor" //get all doctors GET
         static let kGetDoctorInfo = "GetDoctorInfo" //Post
         static let kDoctorRegister = "Register"
         static let kDoctorBySpeciality = "GetDoctorInfoBySpecialty"
@@ -34,11 +35,12 @@ struct API{
         static let kPatientUpdate = "api/Auth/Update"
     
         static let kTest = "api/Image/CreateImage"
+    
+        
         
         //specialties
         static let kGetAllHospitalSpecialities = "GetAllHospitalSpecialities"
         static let kGetAllSpecialities = "GetAllSpecialities"
-    
 
 }
 

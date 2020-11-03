@@ -13,11 +13,12 @@ class SignInController: UIViewController {
 
     @IBOutlet weak var tfUsername: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
+    var user = User()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTappedAround()
        
     }
     
@@ -37,16 +38,23 @@ class SignInController: UIViewController {
     
    
     @IBAction func signIn(_ sender: Any) {
+//        if(!tfUsername.text!.isEmpty && !tfPassword.text!.isEmpty) {
+//                    Loading.showLoading(message: Message.LoadingMessage, view: self.view)
 //                BaseConnection
-//                    .request(BaseClient.Service.login(username: tfUsername.text!,
-//                                                      password: tfPassword.text!),
+//                    .request(BaseClient.Service.login(username: "thinh123",
+//                                                      password: "Admin@123"),
 //                                   LoginResponse.self,
 //                                   completion: { (result, err) in
+//                                    Loading.dismissLoading()
+//
+//
 //                                    guard err == nil else {
 //                                        print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
 //
+//
 //                                        if err?.mErrorCode == 0 {
 //                                            let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.MainViewControllerId) as! MainViewController
+//
 //                                            self.navigationController?.present(controller, animated: true)
 //
 //                                        }
@@ -63,6 +71,7 @@ class SignInController: UIViewController {
 //                                        return
 //                                    }
 //            })
+//        }
         
         if(!tfUsername.text!.isEmpty && !tfPassword.text!.isEmpty) {
             Loading.showLoading(message: Message.LoadingMessage, view: self.view)
@@ -70,8 +79,11 @@ class SignInController: UIViewController {
                                            password: tfPassword.text!)
             { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
                 Loading.dismissLoading()
+
                 if(isSuccess!) {
+
                     let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.ParentViewControllerId) as! ParentViewController
+
                     self.navigationController?.pushViewController(controller, animated: true)
                 } else {
                     // Show message login fail
@@ -85,7 +97,7 @@ class SignInController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
                 }
             }
-    }
+        }
     
-}
+    }
 }
