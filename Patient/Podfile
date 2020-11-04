@@ -11,6 +11,7 @@ target 'Doctor_Appointment' do
     pod 'JGProgressHUD'
     pod 'RealmSwift'
     pod 'SDWebImage'
+    pod 'FSCalendar'
 
   target 'Doctor_AppointmentTests' do
     inherit! :search_paths

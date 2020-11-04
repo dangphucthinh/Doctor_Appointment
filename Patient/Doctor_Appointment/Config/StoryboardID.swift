@@ -31,4 +31,8 @@ struct StoryboardID {
     
     //edit profile
     static let EditProfileViewControllerId = "EditProfileViewController"
+    
+    
+    static let TestViewControllerId = "TestViewController"
+    static let CodeViewControllerId = "CodeViewController"
 }

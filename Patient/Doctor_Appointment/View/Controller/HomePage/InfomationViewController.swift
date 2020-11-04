@@ -26,8 +26,6 @@ class InfomationViewController: UITableViewController {
     @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var button: UIView!
     
-
-    
     var UserId = BaseClient.shared.userId
     let datePicker = UIDatePicker()
     
@@ -35,10 +33,10 @@ class InfomationViewController: UITableViewController {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
-        
+        self.navigationController?.isNavigationBarHidden = true
     }
     
-        
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         LoadInform(UserId: UserId!)
@@ -49,7 +47,6 @@ class InfomationViewController: UITableViewController {
         let tapGuesture1 = UITapGestureRecognizer(target: self, action: #selector(handleTap1)) //declear tap view
                 button.addGestureRecognizer(tapGuesture1)
         
-        self.dateOfBirthTextField.setInputViewDatePicker(target: self, selector: #selector(tapDone))
     }
     
     
@@ -58,7 +55,6 @@ class InfomationViewController: UITableViewController {
         var imageData : Data? = nil
         imageData = UIImage.pngData(imgAvatar.image!)()
         
-    
         BaseClient.shared.updateProfile(userId: UserId!,
                                         firstName: "phucthinh",
                                         lastName: "dang",
@@ -92,16 +88,7 @@ class InfomationViewController: UITableViewController {
         }
     
     
-    //MARK: -Date picker
-    @objc func tapDone() {
-           if let datePicker = self.dateOfBirthTextField.inputView as? UIDatePicker { // 2-1
-               let dateformatter = DateFormatter() // 2-2
-               dateformatter.dateStyle = .medium // 2-3
-               self.dateOfBirthTextField.text = dateformatter.string(from: datePicker.date) //2-4
-           }
-           self.dateOfBirthTextField.resignFirstResponder() // 2-5
-       }
-    
+
     //MARK: -Image picker
     @objc func handleTap(_ sender: AnyObject){
         let imagePickerController = UIImagePickerController()
@@ -171,7 +158,7 @@ class InfomationViewController: UITableViewController {
 }
 
     //MARK: -Extension
-extension TestViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension InfomationViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         var selectedImageFromPicker : UIImage?

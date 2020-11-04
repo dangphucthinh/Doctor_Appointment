@@ -2,223 +2,80 @@
 //  TestViewController.swift
 //  Doctor_Appointment
 //
-//  Created by Oscar on 10/21/20.
+//  Created by Oscar on 11/4/20.
 //  Copyright © 2020 Thinh (Oscar) P. DANG. All rights reserved.
 //
 
 import UIKit
+import FSCalendar
 
-class TestViewController: UITableViewController {
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var phoneTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var allergyTextField: UITextField!
-    @IBOutlet weak var imgAvatar: UIImageView!
-    @IBOutlet weak var avaPicker: UIView!
-    @IBOutlet weak var addressTextField: UITextField!
-    @IBOutlet weak var symptonTextField: UITextField!
-    @IBOutlet weak var historyTextField: UITextField!
-    @IBOutlet weak var dateOfBirthTextField: UITextField!
-    @IBOutlet weak var button: UIView!
+class TestViewController: UIViewController, FSCalendarDelegate {
     
-    var UserId = BaseClient.shared.userId
-    let datePicker = UIDatePicker()
-    //var current:Contacts!
+    @IBOutlet var calendar : FSCalendar!
+    @IBOutlet weak var timePicker: UIPickerView!
+  
+    private var deliveryTimes = ["8 AM - 8:30 AM", "8:30 AM - 9 AM", "9 AM - 9:30 AM", "9:30 AM - 10 AM", "10 AM - 10:30 AM", "10:30 AM - 11 AM", "11 AM - 11:30 AM", "11:30 AM - 12 PM", "13 PM - 13:30 PM", "13:30 PM - 14 PM", "14 PM - 14:30 PM", "14:30 PM - 15 PM", "15 PM - 15:30 PM", "15:30 PM - 16 PM", "16 PM - 16:30 PM", "16:30 PM - 17 PM"]
+    var string = ""
+    let formatter = DateFormatter()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        //LoadInform(UserId: UserId!)
-        self.hideKeyboardWhenTappedAround()
-        
-                    
-    }
-    
-        
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //showInfor()
 
-        let tapGuesture = UITapGestureRecognizer(target: self, action: #selector(handleTap)) //declear tap view
-        avaPicker.addGestureRecognizer(tapGuesture)
+        // Do any additional setup after loading the view.
+        calendar.delegate = self
         
-        let tapGuesture1 = UITapGestureRecognizer(target: self, action: #selector(handleTap1)) //declear tap view
-                button.addGestureRecognizer(tapGuesture1)
+        timePicker.delegate = self
+        timePicker.dataSource = self
+       
+    }
+    //MARK: -button
+
+    @IBAction func Booking(_ sender: Any) {
+        print("\(deliveryTimes[self.timePicker.selectedRow(inComponent: 0)])")
+        print(string)
         
-        self.dateOfBirthTextField.setInputViewDatePicker(target: self, selector: #selector(tapDone))
+        let controller: CodeViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.CodeViewControllerId) as! CodeViewController
+        //controller.stringb = deliveryTimes[self.timePicker.selectedRow(inComponent: 0)]
+    
+        controller.stringb = string
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    //MARK: -calendar
+    
+    func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
+        
+        let curDate = Date().addingTimeInterval(-24*60*60)
+        
+        if date < curDate {
+            return false
+        } else {
+            return true
+        }
+        
     }
     
-    
-    
-    @objc func handleTap1(_ sender: AnyObject){
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         
-//        var imageData : Data? = nil
-//        imageData = UIImage.pngData(imgAvatar.image!)()
-//        
-        
-//        BaseClient.shared.updateProfile(userId: "43f90a99-61e8-44bd-9c1e-cc963303d465",
-//                                        firstName: "thinh hihihi",
-//                                        lastName: "dang",
-//                                        gender: true,
-//                                        imageData: imageData,
-//                                        symptom: "deobiet",
-//                                        allergy: "deobietlun",
-//                                        medicalHistory: "bietdeo",
-//                                        completion: {
-//                (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-//                                  
-//                if(isSuccess!){
-//                    // create the alert
-//                    let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)
-//
-//                    // add an action (button)
-//                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//
-//                    // show the alert
-//                    self.present(alert, animated: true, completion: nil)
-//                }
-//              
-//        })
-//        BaseConnection.request(BaseClient.Service.UpdateUser(userId: "3ecc51ab-98c9-45b2-bca3-ebf494af9a87",
-//                                                             firstName: "Oscar123",
-//                                                             lastName: "Dang",
-//                                                             gender: false,
-//                                                             avatar: UIImage(imageLiteralResourceName: "facebook"),
-//                                                             allergy: "nothing",
-//                                                             medicalHistory: "HIV/AIDS",
-//                                                             symptom: "nothing"),
-//                                                           RegisterResponse.self,
-//           completion: { (result,err) in
-//           guard err == nil else {
-//
-//
-//                print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
-//
-//                if err?.mErrorCode == 0 {
-//                    let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.MainViewControllerId) as! MainViewController
-//                    self.navigationController?.present(controller, animated: true)
-//
-//                }
-//                else{
-//                    // create the alert
-//                    let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)
-//
-//                    // add an action (button)
-//                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//
-//                    // show the alert
-//                    self.present(alert, animated: true, completion: nil)
-//                }
-//                return
-//                }
-//           })
-        }
-    
-    
-    //MARK: -Date picker
-    @objc func tapDone() {
-           if let datePicker = self.dateOfBirthTextField.inputView as? UIDatePicker { // 2-1
-               let dateformatter = DateFormatter() // 2-2
-               dateformatter.dateStyle = .medium // 2-3
-               self.dateOfBirthTextField.text = dateformatter.string(from: datePicker.date) //2-4
-           }
-           self.dateOfBirthTextField.resignFirstResponder() // 2-5
-       }
-    
-    //MARK: -Image picker
-    @objc func handleTap(_ sender: AnyObject){
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.allowsEditing = true
-        imagePickerController.delegate = self
-        
-        let actionSheet = UIAlertController(title: "", message: "Choose an option", preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                imagePickerController.sourceType = .camera
-                imagePickerController.allowsEditing = true
-                self.present(imagePickerController, animated: true, completion: nil)
-            } else {
-                let alert = UIAlertController(title: "Camera is not available", message: "Please select another option", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }
-            
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Photo library", style: .default, handler: { (action:UIAlertAction) in
-            imagePickerController.sourceType = .photoLibrary
-            imagePickerController.allowsEditing = true
-            self.present(imagePickerController, animated: true, completion: nil)
-            
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        self.present(actionSheet, animated: true, completion: nil)
-        present(imagePickerController, animated: true)
+          formatter.dateFormat = "MM/dd/yyyy"
+          self.string = formatter.string(from: date)//(from: datePicker.date)
+          self.view.endEditing(true)
+          //print(string)
     }
-    
-    
-    //MARK: -Load info
-    func LoadInform(UserId :String){
-            BaseClient.shared.GetUserInfo(UserId: UserId,
-                                          completion: {
-                  (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-                                            let rs = value as! ResponseUser
-                                            print(rs as Any)
-                  if(isSuccess!){
-                    let user = value as! ResponseUser
-                    
-                    let ava: String? = user.data?.avatar!
-                    let url1 = URL.init(string:"\(ava ?? "No image found")")
-                    self.nameTextField.text = user.data?.fullName
-                    self.emailTextField.text = user.data?.email
-                    self.phoneTextField.text = user.data?.phoneNumber
-                    self.historyTextField.text = user.data?.medicalHistory
-                    self.allergyTextField.text = user.data?.allergy
-                    self.symptonTextField.text = user.data?.symptom
-                    
-                        
-                    let dateString = user.data?.dateOfBirth
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-                    let dateFromString = dateFormatter.date(from: dateString!)
-                    dateFormatter.dateFormat = "MM-dd-yyyy"
-                    let stringFromDate = dateFormatter.string(from: dateFromString!)
-                    self.dateOfBirthTextField.text = stringFromDate
-                    
-                    self.imgAvatar.sd_setImage(with: url1, placeholderImage: UIImage(named: "no_image_banner"))
-                  }
-                
-          })
-        }
 }
 
-    //MARK: -Extension
-extension InfomationViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-   
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        var selectedImageFromPicker : UIImage?
-        if let edit = info[.editedImage] as? UIImage {
-            selectedImageFromPicker = edit
-        } else if let original = info[.originalImage] as? UIImage {
-            selectedImageFromPicker = original
-        }
-        
-        if let selectedImage = selectedImageFromPicker {
-            imgAvatar.image = selectedImage
-            imgAvatar.contentMode = .scaleAspectFit
-            imgAvatar.layer.cornerRadius = imgAvatar.frame.height / 2
-            //imgAvatar.layer.masksToBounds = true
-            imgAvatar.layer.shouldRasterize = true
-            imgAvatar.clipsToBounds = true
-        }
-        
-        picker.dismiss(animated: true, completion: nil)
-        
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
+extension TestViewController : UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
     }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        deliveryTimes.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return deliveryTimes[row ]
+    }
+    
+     
 }
-
-

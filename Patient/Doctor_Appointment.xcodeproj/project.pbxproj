@@ -26,8 +26,9 @@
 		55250AF525369FF900D251BD /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55250AF125369FF800D251BD /* HeaderView.xib */; };
 		552A3788254AAD6D002DF8CD /* ResponseDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552A3787254AAD6D002DF8CD /* ResponseDoctor.swift */; };
 		552A378D254AB979002DF8CD /* DoctorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552A378C254AB979002DF8CD /* DoctorCell.swift */; };
+		553738DF255242CE00EDA931 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553738DE255242CE00EDA931 /* TestViewController.swift */; };
 		555DBF132540114F00A121C7 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555DBF122540114F00A121C7 /* Doctor.swift */; };
-		555DBF1C25401CF300A121C7 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555DBF1B25401CF300A121C7 /* TestViewController.swift */; };
+		555DBF1C25401CF300A121C7 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555DBF1B25401CF300A121C7 /* CodeViewController.swift */; };
 		555DBF2125401E1000A121C7 /* ListTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555DBF2025401E1000A121C7 /* ListTransform.swift */; };
 		5560296E2538501500E362AA /* BaseClient_User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5560296D2538501500E362AA /* BaseClient_User.swift */; };
 		55602974253955E700E362AA /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55602973253955E700E362AA /* Loading.swift */; };
@@ -99,8 +100,9 @@
 		55250AF125369FF800D251BD /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		552A3787254AAD6D002DF8CD /* ResponseDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDoctor.swift; sourceTree = "<group>"; };
 		552A378C254AB979002DF8CD /* DoctorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCell.swift; sourceTree = "<group>"; };
+		553738DE255242CE00EDA931 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		555DBF122540114F00A121C7 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
-		555DBF1B25401CF300A121C7 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		555DBF1B25401CF300A121C7 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		555DBF2025401E1000A121C7 /* ListTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTransform.swift; sourceTree = "<group>"; };
 		5560296D2538501500E362AA /* BaseClient_User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClient_User.swift; sourceTree = "<group>"; };
 		55602973253955E700E362AA /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
@@ -220,7 +222,8 @@
 				55DDE49425369580003B3B62 /* Cell */,
 				551FE599250F07880061C021 /* Custom */,
 				4DE259E22509E0AB0018C6C2 /* Controller */,
-				555DBF1B25401CF300A121C7 /* TestViewController.swift */,
+				555DBF1B25401CF300A121C7 /* CodeViewController.swift */,
+				553738DE255242CE00EDA931 /* TestViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -398,7 +401,7 @@
 				4D31F2E42505CBC700B7B9BB /* Sources */,
 				4D31F2E52505CBC700B7B9BB /* Frameworks */,
 				4D31F2E62505CBC700B7B9BB /* Resources */,
-				6DEA03B282E96D12EF4F389D /* [CP] Embed Pods Frameworks */,
+				0DE2D5A216C52140D10AD675 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -436,7 +439,7 @@
 				4D31F3052505CBC900B7B9BB /* Sources */,
 				4D31F3062505CBC900B7B9BB /* Frameworks */,
 				4D31F3072505CBC900B7B9BB /* Resources */,
-				221BA381D6A3D1A0FE3CB6E3 /* [CP] Embed Pods Frameworks */,
+				4A02514C34F58467C3537F2C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -520,21 +523,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		221BA381D6A3D1A0FE3CB6E3 /* [CP] Embed Pods Frameworks */ = {
+		0DE2D5A216C52140D10AD675 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment-Doctor_AppointmentUITests/Pods-Doctor_Appointment-Doctor_AppointmentUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment/Pods-Doctor_Appointment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment-Doctor_AppointmentUITests/Pods-Doctor_Appointment-Doctor_AppointmentUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment/Pods-Doctor_Appointment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment-Doctor_AppointmentUITests/Pods-Doctor_Appointment-Doctor_AppointmentUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment/Pods-Doctor_Appointment-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2C9F1864F0730D132C0E0CF3 /* [CP] Check Pods Manifest.lock */ = {
@@ -559,6 +562,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4A02514C34F58467C3537F2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment-Doctor_AppointmentUITests/Pods-Doctor_Appointment-Doctor_AppointmentUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment-Doctor_AppointmentUITests/Pods-Doctor_Appointment-Doctor_AppointmentUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment-Doctor_AppointmentUITests/Pods-Doctor_Appointment-Doctor_AppointmentUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6DC52F2E85C26CB1BA2054A2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -579,23 +599,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6DEA03B282E96D12EF4F389D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment/Pods-Doctor_Appointment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment/Pods-Doctor_Appointment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doctor_Appointment/Pods-Doctor_Appointment-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6E1A55844FF2AA41A4508DF9 /* [CP] Check Pods Manifest.lock */ = {
@@ -658,9 +661,10 @@
 				55F9024C254A739900A5730E /* CommonResources.swift in Sources */,
 				5519A0A02537EE66001D7F81 /* RegisterResponse.swift in Sources */,
 				5502826A2541747A009ED855 /* CommonExtension.swift in Sources */,
-				555DBF1C25401CF300A121C7 /* TestViewController.swift in Sources */,
+				555DBF1C25401CF300A121C7 /* CodeViewController.swift in Sources */,
 				55DDE49025369571003B3B62 /* BaseUrl.swift in Sources */,
 				4D4C4200250615A200E1F017 /* SignUpController.swift in Sources */,
+				553738DF255242CE00EDA931 /* TestViewController.swift in Sources */,
 				557D2BA725412D140081439D /* Patient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

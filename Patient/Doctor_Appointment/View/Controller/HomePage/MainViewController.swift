@@ -19,8 +19,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationTitle(title: "Home")
+        //self.navigationTitle(title: "Home")
+        self.navigationController?.isNavigationBarHidden = true
         loadDoctor()
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -55,7 +57,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             let a = listDoctor[indexPath.row]
         
             let ava: String? = a.avatar
-            let url = URL.init(string:"\(ava!)")
+        let url = URL.init(string:"\(ava ?? "Not Found")")
         
             cell.textLabel?.text = a.fullName
             cell.detailTextLabel?.text = a.education
