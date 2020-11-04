@@ -24,7 +24,10 @@ class EditProfileViewController: UITableViewController {
         super.viewWillAppear(animated)
         loadData()
         bioTextView.isEditable = false
-        
+        //self.navigationTitle(title: "\(data?.fullName ?? "Information")")
+        self.navigationController?.isNavigationBarHidden = true
+       
+          
     }
     
     private func loadData(){
@@ -39,12 +42,8 @@ class EditProfileViewController: UITableViewController {
     
     @IBAction func showAlert(_ sender: UIButton){
         // create the alert
-                let alert = UIAlertController(title: "My Title", message: "This is my message.", preferredStyle: UIAlertController.Style.alert)
+        let controller: TestViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.TestViewControllerId) as! TestViewController
 
-                // add an action (button)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
-                // show the alert
-                self.present(alert, animated: true, completion: nil)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
