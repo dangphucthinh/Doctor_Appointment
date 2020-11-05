@@ -20,6 +20,7 @@ class Appointment:Object, Mappable {
     var patientName: String?
     var doctorId : String?
     var patientId: String?
+    var doctorPhone : String?
 
     
     required convenience init?(map: Map) {
@@ -33,5 +34,6 @@ class Appointment:Object, Mappable {
         meetingTime     <- map["meetingTime"]
         doctorName      <- map["doctorName"]
         patientName     <- map["patientName"]
+        doctorPhone     <- map["doctorPhone"]
     }
 }

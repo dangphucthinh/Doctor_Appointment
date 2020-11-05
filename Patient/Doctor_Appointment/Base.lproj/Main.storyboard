@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bLh-9a-x6H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4nq-Ml-Iui">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1256,9 +1256,38 @@
             </objects>
             <point key="canvasLocation" x="3832" y="1182"/>
         </scene>
+        <!--List Appointment View Controller-->
+        <scene sceneID="kMZ-cs-4jD">
+            <objects>
+                <tableViewController storyboardIdentifier="ListAppointmentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4nq-Ml-Iui" customClass="ListAppointmentViewController" customModule="Doctor_Appointment" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FAX-3M-C7u">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AppointmentTableCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="240" id="zCN-eE-1Gn" customClass="AppointmentTableCell" customModule="Doctor_Appointment" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="240"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zCN-eE-1Gn" id="VSX-BG-Vxk">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4nq-Ml-Iui" id="Pn5-Hk-FWW"/>
+                            <outlet property="delegate" destination="4nq-Ml-Iui" id="Eo6-G2-cxf"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9DW-vd-g9Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7624.6376811594209" y="-317.41071428571428"/>
+        </scene>
         <!--Code View Controller-->
         <scene sceneID="xlS-Ff-crQ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U1F-tC-yP8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="CodeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5TJ-po-00T" customClass="CodeViewController" customModule="Doctor_Appointment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y4b-N0-MqN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -1266,21 +1295,6 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MpO-Nd-1a7">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgF-3a-pkG" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
-                                        <color key="backgroundColor" red="1" green="0.19749936749999999" blue="0.3128389392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1200" id="PY7-yQ-XQm"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="tgF-3a-pkG" firstAttribute="top" secondItem="MpO-Nd-1a7" secondAttribute="top" id="AKL-dC-29f"/>
-                                    <constraint firstAttribute="trailing" secondItem="tgF-3a-pkG" secondAttribute="trailing" id="G8Q-Ve-gS5"/>
-                                    <constraint firstItem="tgF-3a-pkG" firstAttribute="leading" secondItem="MpO-Nd-1a7" secondAttribute="leading" id="MeW-Uv-Eot"/>
-                                    <constraint firstAttribute="bottom" secondItem="tgF-3a-pkG" secondAttribute="bottom" id="cdF-rP-4zL"/>
-                                </constraints>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BNT-to-eet"/>
@@ -1289,20 +1303,18 @@
                             <constraint firstAttribute="bottom" secondItem="MpO-Nd-1a7" secondAttribute="bottom" id="8Zz-6W-Yxo"/>
                             <constraint firstItem="MpO-Nd-1a7" firstAttribute="top" secondItem="BNT-to-eet" secondAttribute="top" id="Eb8-fl-NCE"/>
                             <constraint firstItem="MpO-Nd-1a7" firstAttribute="trailing" secondItem="BNT-to-eet" secondAttribute="trailing" id="F0P-0b-Pa0"/>
-                            <constraint firstItem="tgF-3a-pkG" firstAttribute="width" secondItem="Y4b-N0-MqN" secondAttribute="width" id="L6N-s7-cEU"/>
                             <constraint firstItem="MpO-Nd-1a7" firstAttribute="leading" secondItem="BNT-to-eet" secondAttribute="leading" id="bCP-S7-nk5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="W37-5m-UVN"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U1F-tC-yP8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7700.0000000000009" y="-462.05357142857139"/>
+            <point key="canvasLocation" x="8543" y="-317"/>
         </scene>
-        <!--Test View Controller-->
+        <!--Make Appointment View Controller-->
         <scene sceneID="cXA-Iu-jow">
             <objects>
-                <viewController storyboardIdentifier="TestViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mm7-HF-Cbf" customClass="TestViewController" customModule="Doctor_Appointment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MakeAppointmentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mm7-HF-Cbf" customClass="MakeAppointmentViewController" customModule="Doctor_Appointment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RWy-br-rkl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

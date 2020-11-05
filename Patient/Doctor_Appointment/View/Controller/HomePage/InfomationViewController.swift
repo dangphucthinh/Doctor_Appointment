@@ -64,9 +64,9 @@ class InfomationViewController: UITableViewController {
                                         medicalHistory: "hehe",
                                         completion: {
                 (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+                                    let rs = value as! ResponseUser
 
-
-                if(isSuccess!){
+                                            if(rs.status == 1){
                     // create the alert
                     let alert = UIAlertController(title: "My Title", message: "Update Fail", preferredStyle: UIAlertController.Style.alert)
 
@@ -76,14 +76,15 @@ class InfomationViewController: UITableViewController {
                     // show the alert
                     self.present(alert, animated: true, completion: nil)
                 }
+                                            let alert = UIAlertController(title: "My Title", message: "Update Success", preferredStyle: UIAlertController.Style.alert)
+
+                                            // add an action (button)
+                                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+                                            // show the alert
+                                            self.present(alert, animated: true, completion: nil)
         })
-        let alert = UIAlertController(title: "My Title", message: "Update Success", preferredStyle: UIAlertController.Style.alert)
-
-        // add an action (button)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
-        // show the alert
-        self.present(alert, animated: true, completion: nil)
+       
         LoadInform(UserId: UserId!)
         }
     

@@ -42,7 +42,7 @@ class DoctorProfileViewController: UITableViewController {
     
     @IBAction func showAlert(_ sender: UIButton){
         // create the alert
-        let controller: TestViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.TestViewControllerId) as! TestViewController
+        let controller: MakeAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.MakeAppointmentViewControllerId) as! MakeAppointmentViewController
         
         controller.doctorId = (data?.id)!
         

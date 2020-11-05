@@ -26,6 +26,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
+        
         let nib = UINib(nibName: "HeaderView", bundle: nil)
         tableView.register(nib, forHeaderFooterViewReuseIdentifier: "headerView")
         
