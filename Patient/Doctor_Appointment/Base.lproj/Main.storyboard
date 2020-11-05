@@ -780,13 +780,14 @@
                                                 <rect key="frame" x="274" y="5.6666666666666679" width="120" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icons8-xbox_cross" translatesAutoresizingMaskIntoConstraints="NO" id="zGH-Z9-IhA">
-                                                        <rect key="frame" x="0.0" y="1" width="32" height="32"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-xbox_cross" translatesAutoresizingMaskIntoConstraints="NO" id="zGH-Z9-IhA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="33"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="height" constant="33" id="6sB-na-m3i"/>
                                                             <constraint firstAttribute="width" constant="32" id="gOW-76-yYq"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="medical" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LL-2z-emn">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="medical" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LL-2z-emn">
                                                         <rect key="frame" x="35" y="1" width="85" height="33"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="22"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -799,8 +800,8 @@
                                                     <constraint firstItem="zGH-Z9-IhA" firstAttribute="centerY" secondItem="WdP-Z9-UZE" secondAttribute="centerY" id="PaR-aV-Xwo"/>
                                                     <constraint firstItem="7LL-2z-emn" firstAttribute="leading" secondItem="zGH-Z9-IhA" secondAttribute="trailing" constant="3" id="PfG-gd-rSz"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7LL-2z-emn" secondAttribute="trailing" id="PmK-zj-iMR"/>
-                                                    <constraint firstItem="zGH-Z9-IhA" firstAttribute="centerY" secondItem="7LL-2z-emn" secondAttribute="centerY" id="WdI-hQ-arX"/>
-                                                    <constraint firstItem="zGH-Z9-IhA" firstAttribute="top" secondItem="7LL-2z-emn" secondAttribute="top" id="sEx-kJ-8cZ"/>
+                                                    <constraint firstItem="zGH-Z9-IhA" firstAttribute="centerY" secondItem="7LL-2z-emn" secondAttribute="centerY" constant="-1" id="WdI-hQ-arX"/>
+                                                    <constraint firstItem="zGH-Z9-IhA" firstAttribute="top" secondItem="7LL-2z-emn" secondAttribute="top" constant="-1" id="sEx-kJ-8cZ"/>
                                                     <constraint firstAttribute="bottom" secondItem="zGH-Z9-IhA" secondAttribute="bottom" id="wcQ-QK-6Uz"/>
                                                 </constraints>
                                             </view>
@@ -1321,8 +1322,9 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What are your issues ?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gWV-UD-oE5">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What are your issues ?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gWV-UD-oE5">
                                                 <rect key="frame" x="83.666666666666657" y="49" width="322.33333333333337" height="34"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1331,6 +1333,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="31" id="chQ-0k-GMA"/>
                                                 </constraints>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1436,7 +1439,7 @@
                     <connections>
                         <outlet property="calendar" destination="eBR-k8-dLg" id="7uA-TL-vA7"/>
                         <outlet property="detailTextField" destination="Hjc-PU-TYT" id="1nt-ZI-UC5"/>
-                        <outlet property="issueTextField" destination="gWV-UD-oE5" id="nhg-m5-mRJ"/>
+                        <outlet property="issueTextField" destination="gWV-UD-oE5" id="GmE-am-ehY"/>
                         <outlet property="timePicker" destination="sgW-DI-s7v" id="XTT-qY-ufK"/>
                     </connections>
                 </viewController>
@@ -1461,10 +1464,10 @@
             </objects>
             <point key="canvasLocation" x="3832" y="506"/>
         </scene>
-        <!--Edit Profile View Controller-->
+        <!--Doctor Profile View Controller-->
         <scene sceneID="zFo-6K-B1n">
             <objects>
-                <tableViewController storyboardIdentifier="EditProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Six-tG-QgC" customClass="EditProfileViewController" customModule="Doctor_Appointment" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DoctorProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Six-tG-QgC" customClass="DoctorProfileViewController" customModule="Doctor_Appointment" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="f9N-rK-pi9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

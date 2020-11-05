@@ -18,6 +18,8 @@ class Appointment:Object, Mappable {
     var meetingTime: String?
     var doctorName : String?
     var patientName: String?
+    var doctorId : String?
+    var patientId: String?
 
     
     required convenience init?(map: Map) {

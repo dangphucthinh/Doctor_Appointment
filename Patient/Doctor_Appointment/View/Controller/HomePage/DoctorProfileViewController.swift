@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class EditProfileViewController: UITableViewController {
+class DoctorProfileViewController: UITableViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var bioTextView: UITextView!
@@ -26,7 +26,7 @@ class EditProfileViewController: UITableViewController {
         bioTextView.isEditable = false
         //self.navigationTitle(title: "\(data?.fullName ?? "Information")")
         self.navigationController?.isNavigationBarHidden = true
-       
+  
           
     }
     
@@ -43,7 +43,9 @@ class EditProfileViewController: UITableViewController {
     @IBAction func showAlert(_ sender: UIButton){
         // create the alert
         let controller: TestViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.TestViewControllerId) as! TestViewController
-
+        
+        controller.doctorId = (data?.id)!
+        
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

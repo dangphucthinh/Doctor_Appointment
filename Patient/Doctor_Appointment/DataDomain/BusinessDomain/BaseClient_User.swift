@@ -203,7 +203,7 @@ extension BaseClient {
                 let request = Service.makeAnAppointment(doctorId: doctorId, patientId: patientId, meetingTime: meetingTime, startTime: startTime, issue: issue, detail: detail, token: self.accessToken!)
                 
                 Alamofire.request(request)
-                        .responseObject { (response: DataResponse<Appointment>) in
+                        .responseObject { (response: DataResponse<ResponseAppointment>) in
                         switch response.result {
                         case let .success(data):
                             completion(true, nil, data);

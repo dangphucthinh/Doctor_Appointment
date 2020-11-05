@@ -127,8 +127,7 @@ class InfomationViewController: UITableViewController {
             BaseClient.shared.GetUserInfo(UserId: UserId,
                                           completion: { [self]
                   (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-                                            let rs = value as! ResponseUser
-                                            print(rs as Any)
+                                  
                   if(isSuccess!){
                     let user = value as! ResponseUser
                     

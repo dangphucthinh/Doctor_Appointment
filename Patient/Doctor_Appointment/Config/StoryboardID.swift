@@ -30,7 +30,7 @@ struct StoryboardID {
     static let GeneralCellId = "GeneralCell"
     
     //edit profile
-    static let EditProfileViewControllerId = "EditProfileViewController"
+    static let DoctorProfileViewControllerId = "DoctorProfileViewController"
     
     
     static let TestViewControllerId = "TestViewController"
