@@ -105,7 +105,7 @@ extension BaseClient {
             parameters["MedicalHistory"] = medicalHistory
             parameters["Allergy"] = allergy
 
-            let url = "http://116.110.1.219:2905/api/Auth/Update"
+            let url = API.kPatientUpdate
             print(url)
 
 
@@ -167,43 +167,56 @@ extension BaseClient {
             }
         }
     
-    //MARK: -Get List All Specialites
-//    func getListDoctor(completion:@escaping ServiceResponse){
-//        Alamofire.request("http://116.110.1.219:2905/api/Doctor/GetListAllDoctor", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
-//                .responseObject { (response: DataResponse<ResponseUser>) in
-//                switch response.result {
-//                case let .success(data):
-//                    completion(true, nil, data);
-//                    break
+//    //MARK: -Get List All Specialites
+//    func GetListDoctor(completion:@escaping ServiceResponse) {
+//            DispatchQueue.global(qos: .background).async {
+//                // Run on background
+//                let request = Service.getListDoctor as URLRequestConvertible
+//                Alamofire.request(request)
+//                        .responseObject { (response: DataResponse<ResponseDoctor>) in
+//                        switch response.result {
+//                        case let .success(data):
+//                            //var a = data.data
+//                            completion(true, nil, data);
+//                            break
 //
-//                case let .failure(error):
-//                    completion(false, error as NSError?, nil);
-//
-//                    break
+//                        case let .failure(error):
+//                            completion(false, error as NSError?, nil);
+//                            
+//                            break
+//                        }
+//                }
 //            }
 //        }
-//    }
     
-    func GetListDoctor(completion:@escaping ServiceResponse) {
-            DispatchQueue.global(qos: .background).async {
-                // Run on background
-                let request = Service.getListDoctor as URLRequestConvertible
-                Alamofire.request(request)
-                        .responseObject { (response: DataResponse<ResponseDoctor>) in
-                        switch response.result {
-                        case let .success(data):
-                            //var a = data.data
-                            completion(true, nil, data);
-                            break
-
-                        case let .failure(error):
-                            completion(false, error as NSError?, nil);
-                            
-                            break
-                        }
-                }
-            }
-        }
+    //MARK: -Make an appointment
+    
+//    func MakeAnAppointment(doctorId: String,
+//                           patientId: String,
+//                           meetingTime: Date,
+//                           startTime: String,
+//                           issue: String,
+//                           detail: String,
+//                           completion:@escaping ServiceResponse) {
+//            DispatchQueue.global(qos: .background).async {
+//                // Run on background
+//                let request = Service.makeAnAppointment(doctorId: doctorId, patientId: patientId, meetingTime: meetingTime, startTime: startTime, issue: issue, detail: detail, token: self.accessToken!)
+//                
+//                Alamofire.request(request)
+//                        .responseObject { (response: DataResponse<ResponseAppointment>) in
+//                        switch response.result {
+//                        case let .success(data):
+//                            completion(true, nil, data);
+//                            break
+//
+//                        case let .failure(error):
+//                            completion(false, error as NSError?, nil);
+//                            
+//                            break
+//                        }
+//                }
+//            }
+//        }
 }
 
 

@@ -11,15 +11,12 @@ import UIKit
 
 class CodeViewController: UIViewController{
    
-    @IBOutlet weak var a: UILabel!
-    @IBOutlet weak var b: UILabel!
-  
-    var stringb : String = ""
+
         override func viewDidLoad() {
             super.viewDidLoad()
             // Do any additional setup after loading the view, typically from a nib.
            
-            a.text = stringb
+
         }
         
 

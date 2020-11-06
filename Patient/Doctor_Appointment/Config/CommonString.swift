@@ -11,3 +11,7 @@ struct Message {
     static let LoginFailMessage = "Invalid Password"
     static let LoadingMessage = "Loading..."
 }
+
+struct DateFormat {
+    static let DateFormat = "MM/dd/yyyy"
+}
