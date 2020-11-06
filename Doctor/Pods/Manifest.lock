@@ -5,14 +5,14 @@ PODS:
     - ObjectMapper (~> 3.4)
   - JGProgressHUD (2.1)
   - ObjectMapper (3.5.3)
-  - Realm (5.4.8):
-    - Realm/Headers (= 5.4.8)
-  - Realm/Headers (5.4.8)
-  - RealmSwift (5.4.8):
-    - Realm (= 5.4.8)
-  - SDWebImage (5.9.2):
-    - SDWebImage/Core (= 5.9.2)
-  - SDWebImage/Core (5.9.2)
+  - Realm (5.4.0):
+    - Realm/Headers (= 5.4.0)
+  - Realm/Headers (5.4.0)
+  - RealmSwift (5.4.0):
+    - Realm (= 5.4.0)
+  - SDWebImage (5.9.1):
+    - SDWebImage/Core (= 5.9.1)
+  - SDWebImage/Core (5.9.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
@@ -45,10 +45,10 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 9fec33dcec52497a2a32678cd3a7b597b5a32514
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
-  Realm: 042bbb59227a0159eda397b8a5a49fbd67495ce7
-  RealmSwift: 15ddd6b3398ebfc99810811c44f095df1313adb3
-  SDWebImage: 0b42b8719ab0c5257177d5894306e8a336b21cbb
+  Realm: 8949757d76e2451a53d727954c607e49c2542b77
+  RealmSwift: 0b7d7121e842724188123c6086831ae6d2952050
+  SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
 
-PODFILE CHECKSUM: 8b6a185d0a58d40c38f2e0638e13c4f76b7fe463
+PODFILE CHECKSUM: 08d4328f06a3d8eb80f39ab74465703675bbdd98
 
 COCOAPODS: 1.9.3
