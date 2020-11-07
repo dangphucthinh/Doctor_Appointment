@@ -132,7 +132,7 @@ class InfomationViewController: UITableViewController {
                   if(isSuccess!){
                     let user = value as! ResponseUser
                     
-                    let ava: String? = user.data?.avatar!
+                    let ava: String? = user.data?.avatar
                     let url = URL.init(string:"\(ava ?? "No image found")")
                     self.nameTextField.text = user.data?.fullName
                     self.emailTextField.text = user.data?.email
@@ -146,7 +146,7 @@ class InfomationViewController: UITableViewController {
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
                     let dateFromString = dateFormatter.date(from: dateString!)
-                    dateFormatter.dateFormat = "MM-dd-yyyy"
+                    dateFormatter.dateFormat = "MM/dd/yyyy"
                     let stringFromDate = dateFormatter.string(from: dateFromString!)
                     self.dateOfBirthTextField.text = stringFromDate
                     

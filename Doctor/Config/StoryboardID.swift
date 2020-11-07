@@ -26,5 +26,10 @@ struct StoryboardID {
     //parent id
     static let ParentViewControllerId = "ParentViewController"
     static let UserInformationControllerId = "UserInformationController"
+    
+    
     //cell
+    
+    
+    static let ViewControllerId = "ViewController"
 }

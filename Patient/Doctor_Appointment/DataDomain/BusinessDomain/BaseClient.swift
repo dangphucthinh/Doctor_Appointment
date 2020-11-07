@@ -51,6 +51,9 @@ class BaseClient: NSObject{
                                detail: String,
                                token: String)
         
+        case getListAppointment(userId: String,
+                                token: String)
+        
 
         
         static let baseHTTP = API.kBaseUrl
@@ -59,7 +62,9 @@ class BaseClient: NSObject{
         //MARK: -Method
         private var method: HTTPMethod{
             switch self {
-            case .login, .changePassword, .register, .GetPatientInfo, .makeAnAppointment:
+            case .login, .changePassword, .register, .GetPatientInfo :
+                return .post
+            case .makeAnAppointment, .getListAppointment:
                 return .post
             case .getListDoctor:
                 return .get
@@ -81,6 +86,8 @@ class BaseClient: NSObject{
                 return API.kGetListAllDoctor
             case .makeAnAppointment:
                 return API.kMakeAnAppointment
+            case .getListAppointment:
+                return API.kGetListAppoinment
             }
         }
             
@@ -101,6 +108,8 @@ class BaseClient: NSObject{
             case .getListDoctor:
                 break
             case .makeAnAppointment:
+                break
+            case .getListAppointment:
                 break
             }
             return headers;
@@ -170,6 +179,12 @@ class BaseClient: NSObject{
                 "StartTime" : startTime,
                 "Detail" : detail
             ]
+                
+            case .getListAppointment(let userId,
+                                     _):
+                return [
+                    "UserId" : userId
+                ]
             }
         }
         
@@ -202,7 +217,8 @@ class BaseClient: NSObject{
                 return urlRequest
                             
             case .GetPatientInfo(UserId: _, token: let accessToken),
-                 .makeAnAppointment(doctorId: _, patientId: _, meetingTime: _, startTime: _, issue: _, detail: _, token: let accessToken):
+                 .makeAnAppointment(doctorId: _, patientId: _, meetingTime: _, startTime: _, issue: _, detail: _, token: let accessToken),
+                 .getListAppointment(userId: _, token: let accessToken):
                 urlRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: Header.Authorization)
                 return urlRequest
             }

@@ -44,10 +44,11 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
         print("\(deliveryTimes[self.timePicker.selectedRow(inComponent: 0)])")
         print(dateSelected)
 
-        let controller: CodeViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.CodeViewControllerId) as! CodeViewController
+        let controller: ListAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ListAppointmentViewControllerId) as! ListAppointmentViewController
         //controller.stringb = deliveryTimes[self.timePicker.selectedRow(inComponent: 0)]
 
         self.navigationController?.pushViewController(controller, animated: true)
+
 
 //        BaseClient.shared.MakeAnAppointment(doctorId: doctorId,
 //                                            patientId: patientId,
@@ -68,6 +69,7 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
 //
 //                                                    // show the alert
 //                                                    self.present(alert, animated: true, completion: nil)
+//                                               
 //                                                }
 //                                                let alert = UIAlertController(title: "My Title", message: "Success", preferredStyle: UIAlertController.Style.alert)
 //
@@ -78,7 +80,7 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
 //                                                self.present(alert, animated: true, completion: nil)
 //                   
 //                    })
-
+       
     }
     //MARK: -calendar
 

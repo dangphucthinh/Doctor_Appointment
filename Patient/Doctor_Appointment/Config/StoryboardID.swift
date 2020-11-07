@@ -36,8 +36,10 @@ struct StoryboardID {
     static let MakeAppointmentViewControllerId = "MakeAppointmentViewController"
     static let ListAppointmentViewControllerId = "ListAppointmentViewController"
     static let AppointmentTableCellId = "AppointmentTableCell" //cell
+    static let GetListAppointmentId = "GetListAppointmentId"
     
-    
+    //Menu
+    static let MenuViewControllerId = "MenuViewController"
     
     static let CodeViewControllerId = "CodeViewController"
 }

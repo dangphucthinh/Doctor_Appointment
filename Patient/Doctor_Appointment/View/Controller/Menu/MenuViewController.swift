@@ -1,14 +1,14 @@
 //
-//  UserViewController.swift
-//  youMed
+//  MenuViewController.swift
+//  Doctor_Appointment
 //
-//  Created by Duy Dinh on 10/29/20.
+//  Created by thinhdang on 11/7/20.
+//  Copyright © 2020 Thinh (Oscar) P. DANG. All rights reserved.
 //
 
 import UIKit
 
-class UserInformationController: UIViewController {
-    
+class MenuViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class UserInformationController: UIViewController {
 
 }
 
-extension UserInformationController: UITableViewDelegate, UITableViewDataSource {
+extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         8
     }
@@ -69,7 +69,7 @@ extension UserInformationController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerView") as! UserHeaderView
         headerView.contentView.backgroundColor = .white
-        return headerView 
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -105,4 +105,5 @@ extension UserInformationController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         200
     }
+
 }

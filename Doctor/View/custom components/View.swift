@@ -17,8 +17,4 @@ class CustomView: UIView {
         self.layer.shadowRadius = 7
         layer.masksToBounds = false
     }
-    
-    @objc func handleTap(_ sender: UITapGestureRecognizer) {
-        print("something")
-    }
 }
