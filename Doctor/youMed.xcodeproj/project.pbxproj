@@ -26,6 +26,10 @@
 		4D78DCFB255579BB00C53CB0 /* ResponseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D78DCF5255579BB00C53CB0 /* ResponseUser.swift */; };
 		4D78DCFC255579BB00C53CB0 /* ResponseDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D78DCF6255579BB00C53CB0 /* ResponseDoctor.swift */; };
 		4D78DCFD255579BB00C53CB0 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D78DCF7255579BB00C53CB0 /* Doctor.swift */; };
+		4DF3E63A2556AA2C0058A23A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3E6392556AA2C0058A23A /* WelcomeViewController.swift */; };
+		4DF3E6492556AAFF0058A23A /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3E6482556AAFF0058A23A /* SignInController.swift */; };
+		4DF3E64E2556AB290058A23A /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3E64D2556AB290058A23A /* SignUpController.swift */; };
+		4DF3E6542556AB5F0058A23A /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3E6532556AB5F0058A23A /* ForgotPasswordController.swift */; };
 		7D825A1D5C5512FDCD3EC21D /* Pods_youMed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF986D09B3E004D6BBD1C2DE /* Pods_youMed.framework */; };
 		87955DABCABBD82743D81948 /* Pods_youMed_youMedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956881AB46814CA016258562 /* Pods_youMed_youMedUITests.framework */; };
 		E105960425427F3900512941 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105960325427F3900512941 /* AppDelegate.swift */; };
@@ -42,7 +46,7 @@
 		E1CF95CA254A6E1C0091D0D0 /* UserHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CF95C9254A6E1C0091D0D0 /* UserHeaderView.xib */; };
 		E1CF95CF254A6E910091D0D0 /* UserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF95CE254A6E910091D0D0 /* UserHeaderView.swift */; };
 		E1D479BF2543BDAE006A7C2C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D479BE2543BDAE006A7C2C /* View.swift */; };
-		E1D479E62543CED0006A7C2C /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D479E52543CED0006A7C2C /* TabbarController.swift */; };
+		E1D479E62543CED0006A7C2C /* ParentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D479E52543CED0006A7C2C /* ParentController.swift */; };
 		E1D479F12543D7DD006A7C2C /* SpecialistCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1D479F02543D7DD006A7C2C /* SpecialistCollectionViewCell.xib */; };
 		E1D479FE2543DA09006A7C2C /* SpecialistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D479FD2543DA09006A7C2C /* SpecialistTableViewCell.swift */; };
 		E1D47A032543DAD4006A7C2C /* SpecialistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D47A022543DAD4006A7C2C /* SpecialistCollectionViewCell.swift */; };
@@ -90,6 +94,10 @@
 		4D78DCF5255579BB00C53CB0 /* ResponseUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseUser.swift; sourceTree = "<group>"; };
 		4D78DCF6255579BB00C53CB0 /* ResponseDoctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseDoctor.swift; sourceTree = "<group>"; };
 		4D78DCF7255579BB00C53CB0 /* Doctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		4DF3E6392556AA2C0058A23A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		4DF3E6482556AAFF0058A23A /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		4DF3E64D2556AB290058A23A /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		4DF3E6532556AB5F0058A23A /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		8EC83D40321E40C5BC75298C /* Pods_youMedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_youMedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		956881AB46814CA016258562 /* Pods_youMed_youMedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_youMed_youMedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CD85D3C7F775EAF5ECD49F /* Pods-youMedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youMedTests.release.xcconfig"; path = "Target Support Files/Pods-youMedTests/Pods-youMedTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,7 +122,7 @@
 		E1CF95C9254A6E1C0091D0D0 /* UserHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserHeaderView.xib; sourceTree = "<group>"; };
 		E1CF95CE254A6E910091D0D0 /* UserHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeaderView.swift; sourceTree = "<group>"; };
 		E1D479BE2543BDAE006A7C2C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		E1D479E52543CED0006A7C2C /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		E1D479E52543CED0006A7C2C /* ParentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentController.swift; sourceTree = "<group>"; };
 		E1D479F02543D7DD006A7C2C /* SpecialistCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialistCollectionViewCell.xib; sourceTree = "<group>"; };
 		E1D479FD2543DA09006A7C2C /* SpecialistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistTableViewCell.swift; sourceTree = "<group>"; };
 		E1D47A022543DAD4006A7C2C /* SpecialistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -214,6 +222,46 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4DF3E63E2556AA800058A23A /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+				E105960725427F3900512941 /* HomePageController.swift */,
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		4DF3E63F2556AA850058A23A /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				4DF3E6482556AAFF0058A23A /* SignInController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		4DF3E6402556AA920058A23A /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				4DF3E64D2556AB290058A23A /* SignUpController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		4DF3E6412556AA980058A23A /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				E1CF95C3254A6D9C0091D0D0 /* UserInformationController.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		4DF3E6522556AB4A0058A23A /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				4DF3E6532556AB5F0058A23A /* ForgotPasswordController.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
 		A5E25456060025336A37E6EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,7 +292,7 @@
 				4D78DCC82555791900C53CB0 /* Config */,
 				4D78DCC92555792000C53CB0 /* DataDomain */,
 				E1D479BD2543BD98006A7C2C /* custom components */,
-				E10596362542801D00512941 /* Controllers */,
+				E10596362542801D00512941 /* View */,
 				E105960225427F3900512941 /* youMed */,
 				E105961925427F3A00512941 /* youMedTests */,
 				E105962425427F3A00512941 /* youMedUITests */,
@@ -295,13 +343,13 @@
 			path = youMedUITests;
 			sourceTree = "<group>";
 		};
-		E10596362542801D00512941 /* Controllers */ = {
+		E10596362542801D00512941 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				E1D479E42543CE9F006A7C2C /* View Controllers */,
 				E10596372542802E00512941 /* cell */,
 			);
-			path = Controllers;
+			path = View;
 			sourceTree = "<group>";
 		};
 		E10596372542802E00512941 /* cell */ = {
@@ -379,9 +427,13 @@
 		E1D479E42543CE9F006A7C2C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E105960725427F3900512941 /* HomePageController.swift */,
-				E1D479E52543CED0006A7C2C /* TabbarController.swift */,
-				E1CF95C3254A6D9C0091D0D0 /* UserInformationController.swift */,
+				4DF3E6522556AB4A0058A23A /* ForgotPassword */,
+				4DF3E6412556AA980058A23A /* Info */,
+				4DF3E6402556AA920058A23A /* SignUp */,
+				4DF3E63F2556AA850058A23A /* SignIn */,
+				4DF3E63E2556AA800058A23A /* Homepage */,
+				4DF3E6392556AA2C0058A23A /* WelcomeViewController.swift */,
+				E1D479E52543CED0006A7C2C /* ParentController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -639,20 +691,24 @@
 				E1CF95C4254A6D9C0091D0D0 /* UserInformationController.swift in Sources */,
 				4D78DCE22555799B00C53CB0 /* CommonString.swift in Sources */,
 				4D78DCFB255579BB00C53CB0 /* ResponseUser.swift in Sources */,
+				4DF3E64E2556AB290058A23A /* SignUpController.swift in Sources */,
 				4D78DCE8255579AF00C53CB0 /* BaseClient_User.swift in Sources */,
 				4D78DCF9255579BB00C53CB0 /* Token.swift in Sources */,
 				4D78DCD12555798500C53CB0 /* Loading.swift in Sources */,
 				4D78DCD02555798500C53CB0 /* Utilities.swift in Sources */,
 				4D78DCE9255579AF00C53CB0 /* BaseClient.swift in Sources */,
-				E1D479E62543CED0006A7C2C /* TabbarController.swift in Sources */,
+				E1D479E62543CED0006A7C2C /* ParentController.swift in Sources */,
 				E105960425427F3900512941 /* AppDelegate.swift in Sources */,
 				E1D479BF2543BDAE006A7C2C /* View.swift in Sources */,
 				E105960625427F3900512941 /* SceneDelegate.swift in Sources */,
 				E10596452543259100512941 /* HeaderView.swift in Sources */,
+				4DF3E63A2556AA2C0058A23A /* WelcomeViewController.swift in Sources */,
 				E1D47A17254425B2006A7C2C /* DetailTableViewCell.swift in Sources */,
 				E1CF95CF254A6E910091D0D0 /* UserHeaderView.swift in Sources */,
+				4DF3E6542556AB5F0058A23A /* ForgotPasswordController.swift in Sources */,
 				4D78DCD22555798500C53CB0 /* Validation.swift in Sources */,
 				4D78DCDF2555799B00C53CB0 /* CommonExtension.swift in Sources */,
+				4DF3E6492556AAFF0058A23A /* SignInController.swift in Sources */,
 				4D78DCFD255579BB00C53CB0 /* Doctor.swift in Sources */,
 				4D78DCFC255579BB00C53CB0 /* ResponseDoctor.swift in Sources */,
 				4D78DCE12555799B00C53CB0 /* ListTransform.swift in Sources */,

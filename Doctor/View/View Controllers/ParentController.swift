@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabbarController: UIViewController {
+class ParentController: UIViewController {
 
     let tabbarController = UITabBarController()
     

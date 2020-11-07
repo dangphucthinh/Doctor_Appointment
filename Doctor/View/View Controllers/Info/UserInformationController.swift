@@ -67,6 +67,10 @@ extension UserInformationController: UITableViewDelegate, UITableViewDataSource 
         return headerView 
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         200
     }

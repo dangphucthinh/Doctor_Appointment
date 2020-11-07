@@ -37,7 +37,7 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
         if(section == 1){
             return 1
         }
-        return listDoctor.count
+        return 5
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
