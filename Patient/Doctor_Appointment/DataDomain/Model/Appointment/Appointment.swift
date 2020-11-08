@@ -12,6 +12,7 @@ import RealmSwift
 
 class Appointment:Object, Mappable {
 
+    var id: Int?
     var issue: String?
     var startTime: String?
     var detail: String?
@@ -28,6 +29,7 @@ class Appointment:Object, Mappable {
         }
     
     func mapping(map: Map) {
+        id              <- map["id"]
         issue           <- map["issue"]
         startTime       <- map["startTime"]
         detail          <- map["detail"]

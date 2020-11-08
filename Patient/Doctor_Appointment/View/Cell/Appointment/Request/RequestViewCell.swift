@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ResquestCellDelegate : AnyObject {
-    func accepted()
+    func accepted(_ data: Int)
     
 }
 class RequestViewCell: UITableViewCell {
@@ -22,6 +22,10 @@ class RequestViewCell: UITableViewCell {
     
     let formatter = DateFormatter()
     var returnDate = ""
+    var id: Int?
+    
+
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,7 +49,7 @@ class RequestViewCell: UITableViewCell {
     
     @IBAction func acceptBtn(_ sender: Any) {
         print("cc")
-        delegate?.accepted()
+        delegate?.accepted(id!)
     }
     
     @IBAction func denyBtn(_ sender: Any) {

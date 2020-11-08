@@ -14,7 +14,7 @@ class RequestedViewController: UITableViewController {
     var listAppointment = List<Appointment>()
 
     var UserId = BaseClient.shared.userId
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadData()
@@ -49,12 +49,14 @@ class RequestedViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardID.RequestViewCellId, for: indexPath) as! RequestViewCell
         
+        
+        
         if indexPath.row < listAppointment.count {
            // name = "\(listAppointment[indexPath.row].doctorName ?? "Not name")"
             cell.commonInit("\(listAppointment[indexPath.row].doctorName ?? "Not name")",
                             "\(listAppointment[indexPath.row].doctorPhone ?? "Not name")",
                             "\(listAppointment[indexPath.row].meetingTime ?? "Not name")")
-          
+            cell.id = listAppointment[indexPath.row].id
         } else {
             // Handle non-existing object here
             print("hihi")
@@ -76,7 +78,6 @@ class RequestedViewController: UITableViewController {
 
                               let listTemp = rs.data as List<Appointment>
 
-                     
 
                                 for item in listTemp{
                                     self.listAppointment.append(item)
@@ -89,10 +90,13 @@ class RequestedViewController: UITableViewController {
     }
 }
 extension RequestedViewController : ResquestCellDelegate{
-    func accepted() {
+ 
+    func accepted(_ data: Int) {
         
-        BaseClient.shared.GetListAppointment(userId: UserId!,
-                                             statusId: 2,
+        BaseClient.shared.UpdateAppointment(id: data,
+                                            issue: "Non",
+                                            detail: "nonnn",
+                                            statusId: 2,
                                              completion: { [self]
                      (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
                             let rs = value as! ResponseListAppointment
