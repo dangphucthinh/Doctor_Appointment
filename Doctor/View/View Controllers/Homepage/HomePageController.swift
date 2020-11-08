@@ -86,7 +86,7 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print("hihihehe")
-        let controller: ViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ViewControllerId) as! ViewController
+        let controller: RequestedViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.RequestedViewControllerId) as! RequestedViewController
         
         self.navigationController?.pushViewController(controller, animated: true)
     }

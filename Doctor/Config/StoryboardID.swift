@@ -28,8 +28,8 @@ struct StoryboardID {
     static let UserInformationControllerId = "UserInformationController"
     
     
-    //cell
-    
-    
-    static let ViewControllerId = "ViewController"
+    //appointment
+    static let RequestedViewControllerId = "RequestedViewController"
+    static let RequestViewCellId = "RequestViewCell" // cell
+   
 }

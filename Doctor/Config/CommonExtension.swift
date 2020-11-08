@@ -21,6 +21,16 @@ extension UIViewController {
     }
 }
 
+extension UIView {
+    func roundedView(cornerRadius: CGFloat?, borderWidth: CGFloat?, borderCorlor: CGColor?) {
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = cornerRadius ?? 0
+        self.layer.borderWidth = borderWidth ?? 0
+        self.layer.borderColor = borderCorlor
+    }
+}
+
+
 extension UITextField {
     
     func setInputViewDatePicker(target: Any, selector: Selector) {

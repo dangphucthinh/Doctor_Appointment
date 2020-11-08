@@ -36,6 +36,12 @@ struct API{
         //specialties
         static let kGetAllHospitalSpecialities = "GetAllHospitalSpecialities"
         static let kGetAllSpecialities = "GetAllSpecialities"
+    
+    
+        //make appointment
+        static let kMakeAnAppointment = "/api/Appointment/MakeAnAppointment"
+        static let kUpdateAppointment = "api/Appointment/Update"
+        static let kGetListAppoinment = "api/Appointment/GetAppoinmentByUser"
 
 }
 
