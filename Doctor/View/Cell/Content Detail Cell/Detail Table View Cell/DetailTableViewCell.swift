@@ -15,8 +15,7 @@ protocol DetailTableViewCellProtocol: AnyObject{
 
 class DetailTableViewCell: UITableViewCell {
     
-    var doctor : Doctor?
-    
+
     weak var delegate : DetailTableViewCellProtocol?
     
     @IBOutlet weak var doctorImage: UIImageView!
