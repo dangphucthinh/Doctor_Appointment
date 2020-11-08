@@ -21,10 +21,10 @@ class MenuViewController: UIViewController {
         tableView.register(UINib(nibName: "UserHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "headerView")
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        self.navigationController?.isNavigationBarHidden = true
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(true)
+//        self.navigationController?.isNavigationBarHidden = true
+//    }
 
 }
 
@@ -44,10 +44,10 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = "Account"
             cell.imageView?.image = UIImage(systemName: "person.fill")
         case 2:
-            cell.textLabel?.text = "Booking"
+            cell.textLabel?.text = "Your Request"
             cell.imageView?.image = UIImage(systemName: "building.2.fill")
         case 3:
-            cell.textLabel?.text = "Transactions"
+            cell.textLabel?.text = "Upcoming"
             cell.imageView?.image = UIImage(systemName: "creditcard.fill")
         case 4:
             cell.textLabel?.text = "Wallet"
@@ -82,8 +82,16 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             print("b")
         case 2:
             print("c")
+            let controller: ListAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ListAppointmentViewControllerId) as! ListAppointmentViewController
+            //controller.stringb = deliveryTimes[self.timePicker.selectedRow(inComponent: 0)]
+
+            self.navigationController?.pushViewController(controller, animated: true)
         case 3:
             print("d")
+            
+            let controller: RequestedViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.RequestedViewControllerId) as! RequestedViewController
+            
+            self.navigationController?.pushViewController(controller, animated: true)
         case 4:
             print("e")
         case 5:

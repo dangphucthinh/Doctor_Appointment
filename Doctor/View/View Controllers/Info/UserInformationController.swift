@@ -10,6 +10,7 @@ import UIKit
 class UserInformationController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    var data : Doctor?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +42,10 @@ extension UserInformationController: UITableViewDelegate, UITableViewDataSource 
             cell.textLabel?.text = "Home"
             cell.imageView?.image = UIImage(systemName: "house.fill")
         case 1:
-            cell.textLabel?.text = "Account"
+            cell.textLabel?.text = "Request"
             cell.imageView?.image = UIImage(systemName: "person.fill")
         case 2:
-            cell.textLabel?.text = "Booking"
+            cell.textLabel?.text = "Upcoming"
             cell.imageView?.image = UIImage(systemName: "building.2.fill")
         case 3:
             cell.textLabel?.text = "Transactions"
@@ -81,8 +82,17 @@ extension UserInformationController: UITableViewDelegate, UITableViewDataSource 
             print("a")
         case 1:
             print("b")
+            let controller: ListAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ListAppointmentViewControllerId) as! ListAppointmentViewController
+
+            
+            self.navigationController?.pushViewController(controller, animated: true)
         case 2:
             print("c")
+            let controller: RequestedViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.RequestedViewControllerId) as! RequestedViewController
+
+            
+            self.navigationController?.pushViewController(controller, animated: true)
+            
         case 3:
             print("d")
         case 4:

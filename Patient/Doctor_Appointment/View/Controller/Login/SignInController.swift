@@ -19,6 +19,7 @@ class SignInController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.hideKeyboardWhenTappedAround()
+        self.navigationController?.isNavigationBarHidden = true
        
     }
     

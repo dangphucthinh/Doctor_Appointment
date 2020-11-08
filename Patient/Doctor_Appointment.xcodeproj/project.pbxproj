@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4D1E9EDB2552C29A00151F3D /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E9EDA2552C29A00151F3D /* Appointment.swift */; };
+		4D1F4B99255830CF00D191D2 /* RequestViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F4B97255830CF00D191D2 /* RequestViewCell.swift */; };
+		4D1F4B9A255830CF00D191D2 /* RequestViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1F4B98255830CF00D191D2 /* RequestViewCell.xib */; };
+		4D1F4B9F255830F400D191D2 /* RequestedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F4B9E255830F400D191D2 /* RequestedViewController.swift */; };
 		4D31F2EC2505CBC700B7B9BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31F2EB2505CBC700B7B9BB /* AppDelegate.swift */; };
 		4D31F2EE2505CBC700B7B9BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31F2ED2505CBC700B7B9BB /* SceneDelegate.swift */; };
 		4D31F2F32505CBC700B7B9BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D31F2F12505CBC700B7B9BB /* Main.storyboard */; };
@@ -86,6 +89,9 @@
 		33BD55266A952C1D36532D3A /* Pods-Doctor_Appointment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor_Appointment.debug.xcconfig"; path = "Target Support Files/Pods-Doctor_Appointment/Pods-Doctor_Appointment.debug.xcconfig"; sourceTree = "<group>"; };
 		4639206ACD3B282C69B281D6 /* Pods-Doctor_Appointment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor_Appointment.release.xcconfig"; path = "Target Support Files/Pods-Doctor_Appointment/Pods-Doctor_Appointment.release.xcconfig"; sourceTree = "<group>"; };
 		4D1E9EDA2552C29A00151F3D /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		4D1F4B97255830CF00D191D2 /* RequestViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestViewCell.swift; sourceTree = "<group>"; };
+		4D1F4B98255830CF00D191D2 /* RequestViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RequestViewCell.xib; sourceTree = "<group>"; };
+		4D1F4B9E255830F400D191D2 /* RequestedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestedViewController.swift; sourceTree = "<group>"; };
 		4D31F2E82505CBC700B7B9BB /* Doctor_Appointment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doctor_Appointment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D31F2EB2505CBC700B7B9BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D31F2ED2505CBC700B7B9BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +187,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D1F4B96255830C000D191D2 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				4D1F4B97255830CF00D191D2 /* RequestViewCell.swift */,
+				4D1F4B98255830CF00D191D2 /* RequestViewCell.xib */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		4D31F2DF2505CBC700B7B9BB = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +314,7 @@
 		4D86CEB52554389300A831B7 /* Appointment */ = {
 			isa = PBXGroup;
 			children = (
+				4D1F4B96255830C000D191D2 /* Request */,
 				4D86CEAE2554388D00A831B7 /* AppointmentTableCell.swift */,
 				4D86CEAF2554388D00A831B7 /* AppointmentTableCell.xib */,
 			);
@@ -319,6 +335,7 @@
 			children = (
 				553738DE255242CE00EDA931 /* MakeAppointmentViewController.swift */,
 				4D86CEC12554488700A831B7 /* ListAppointmentViewController.swift */,
+				4D1F4B9E255830F400D191D2 /* RequestedViewController.swift */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -610,6 +627,7 @@
 				4D31F2F32505CBC700B7B9BB /* Main.storyboard in Resources */,
 				55250AF525369FF900D251BD /* HeaderView.xib in Resources */,
 				4D86CEB12554388D00A831B7 /* AppointmentTableCell.xib in Resources */,
+				4D1F4B9A255830CF00D191D2 /* RequestViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,10 +775,12 @@
 				559630DD254BD29500FE1075 /* DoctorProfileViewController.swift in Sources */,
 				557D2BA225412C7D0081439D /* InfomationViewController.swift in Sources */,
 				55602974253955E700E362AA /* Loading.swift in Sources */,
+				4D1F4B99255830CF00D191D2 /* RequestViewCell.swift in Sources */,
 				5560296E2538501500E362AA /* BaseClient_User.swift in Sources */,
 				55A40B9625354567008B2523 /* CustomButton.swift in Sources */,
 				55DDE47E25369528003B3B62 /* StoryboardID.swift in Sources */,
 				5516C147254686A800406185 /* ParentViewController.swift in Sources */,
+				4D1F4B9F255830F400D191D2 /* RequestedViewController.swift in Sources */,
 				55DDE4B625369851003B3B62 /* BaseResponse.swift in Sources */,
 				555DBF2125401E1000A121C7 /* ListTransform.swift in Sources */,
 				4D31F3242505DE8100B7B9BB /* WelcomeViewController.swift in Sources */,

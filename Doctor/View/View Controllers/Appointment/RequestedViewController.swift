@@ -14,9 +14,14 @@ class RequestedViewController: UITableViewController {
 
     var UserId = BaseClient.shared.userId
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        loadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+       // loadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,7 +37,7 @@ class RequestedViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,12 +60,15 @@ class RequestedViewController: UITableViewController {
 
         }
         
+    
+        cell.delegate = self
         return cell
     }
     
     //MARK: -Load data
     private func loadData(){
         BaseClient.shared.GetListAppointment(userId: UserId!,
+                                             statusId: 1,
                                              completion: { [self]
                      (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
                             let rs = value as! ResponseListAppointment
@@ -74,6 +82,28 @@ class RequestedViewController: UITableViewController {
                                 }
                                 self.tableView.reloadData()
                             
+                                                
+                     })
+        
+    }
+}
+extension RequestedViewController : ResquestCellDelegate{
+    func accepted() {
+        
+        BaseClient.shared.GetListAppointment(userId: UserId!,
+                                             statusId: 2,
+                                             completion: { [self]
+                     (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+                            let rs = value as! ResponseListAppointment
+
+                                if rs.status == 0{
+                                
+                                let controller: ListAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ListAppointmentViewControllerId) as! ListAppointmentViewController
+                                
+                                //controller.data = data
+                                self.navigationController?.pushViewController(controller, animated: true)
+                                }
+                                tableView.reloadData()
                                                 
                      })
         

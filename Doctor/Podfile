@@ -6,11 +6,12 @@ target 'youMed' do
   use_frameworks!
 
   # Pods for youMed
- pod 'Alamofire', '~> 4.7'
+    pod 'Alamofire', '~> 4.7'
     pod 'AlamofireObjectMapper', :git => 'https://github.com/RomanPodymov/AlamofireObjectMapper.git', :branch => 'xcode-10-2-fix'
     pod 'JGProgressHUD'
     pod 'RealmSwift'
     pod 'SDWebImage'
+    pod 'FSCalendar'
 
   target 'youMedTests' do
     inherit! :search_paths

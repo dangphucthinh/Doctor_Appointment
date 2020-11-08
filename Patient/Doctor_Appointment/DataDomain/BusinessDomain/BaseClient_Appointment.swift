@@ -48,10 +48,13 @@ extension BaseClient{
     
     //MARK: -get list appointment
     func GetListAppointment(userId: String,
+                            statusId: Int,
                             completion: @escaping ServiceResponse){
         DispatchQueue.global(qos: .background).async {
             //Run on background
-            let request = Service.getListAppointment(userId: userId, token: self.accessToken!)
+            let request = Service.getListAppointment(userId: userId,
+                                                     statusId: statusId,
+                                                     token: self.accessToken!)
             
             Alamofire.request(request)
                 .responseObject{ (response: DataResponse<ResponseListAppointment>) in

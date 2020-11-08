@@ -66,7 +66,12 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
                 print("hihi")
             }
             
+            cell.delegate = self
+         
+            
             return cell
+            
+            //cell.delegate = self
         default:
             return UITableViewCell()
         }
@@ -132,6 +137,18 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
                                         }
                                       
                                 })
+    }
+}
+
+extension HomePageController : DetailTableViewCellProtocol{
+    func doctorPage(_ data: Doctor) {
+        let controller: DoctorProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorProfileViewControllerId) as! DoctorProfileViewController
+
+        controller.data = data
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+        print("cc")
+
     }
 }
 

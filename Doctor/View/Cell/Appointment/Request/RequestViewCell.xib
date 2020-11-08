@@ -48,11 +48,17 @@
                             <constraint firstAttribute="width" constant="50" id="sY6-8h-MVZ"/>
                         </constraints>
                         <state key="normal" image="tick"/>
+                        <connections>
+                            <action selector="acceptBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uUL-8I-wRP"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ubK-Oa-xoV">
                         <rect key="frame" x="361" y="51" width="50" height="50"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" image="cross"/>
+                        <connections>
+                            <action selector="denyBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="e6s-an-z4u"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

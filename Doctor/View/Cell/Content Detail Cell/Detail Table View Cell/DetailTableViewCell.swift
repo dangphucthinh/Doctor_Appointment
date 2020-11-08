@@ -6,9 +6,18 @@
 //
 
 import UIKit
+import RealmSwift
 import SDWebImage
 
+protocol DetailTableViewCellProtocol: AnyObject{
+    func doctorPage(_ data: Doctor)
+}
+
 class DetailTableViewCell: UITableViewCell {
+    
+    var doctor : Doctor?
+    
+    weak var delegate : DetailTableViewCellProtocol?
     
     @IBOutlet weak var doctorImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -44,7 +53,11 @@ class DetailTableViewCell: UITableViewCell {
  
     }
     
-   private func loadInformation(){
+    @IBAction func schedule(_ sender: Any) {
+        delegate?.doctorPage(data!)
+        //print("c")
+    }
+    private func loadInformation(){
         scheduleButton.layer.cornerRadius = 5
         scheduleButton.backgroundColor = .blue
         

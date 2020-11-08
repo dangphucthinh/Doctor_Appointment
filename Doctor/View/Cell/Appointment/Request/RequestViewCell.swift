@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol ResquestCellDelegate : AnyObject {
+    func accepted()
+    
+}
 class RequestViewCell: UITableViewCell {
+    
+    weak var delegate: ResquestCellDelegate?
 
     @IBOutlet weak var imgAva: UIImageView!
     @IBOutlet weak var lbName: UILabel!
@@ -34,11 +40,17 @@ class RequestViewCell: UITableViewCell {
     func commonInit(_ name: String, _ issue: String, _ date: String){
         lbName.text = name
         lbIssue.text = issue
-        lbDateBook.text = dateToSQLDate(date)
-            
+        lbDateBook.text = dateToSQLDate(date)            
     }
     
+    @IBAction func acceptBtn(_ sender: Any) {
+        print("cc")
+        delegate?.accepted()
+    }
     
+    @IBAction func denyBtn(_ sender: Any) {
+        print("ececec")
+    }
     private func dateToSQLDate(_ DateString: String) -> String {
   
         let dateFormatter = DateFormatter()

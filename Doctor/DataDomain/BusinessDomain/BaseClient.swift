@@ -52,6 +52,7 @@ class BaseClient: NSObject{
                                token: String)
         
         case getListAppointment(userId: String,
+                                statusId: Int,
                                 token: String)
         
 
@@ -181,9 +182,11 @@ class BaseClient: NSObject{
             ]
                 
             case .getListAppointment(let userId,
+                                     let statusId,
                                      _):
                 return [
-                    "UserId" : userId
+                    "UserId" : userId,
+                    "StatusId" : statusId
                 ]
             }
         }
@@ -218,7 +221,7 @@ class BaseClient: NSObject{
                             
             case .GetPatientInfo(UserId: _, token: let accessToken),
                  .makeAnAppointment(doctorId: _, patientId: _, meetingTime: _, startTime: _, issue: _, detail: _, token: let accessToken),
-                 .getListAppointment(userId: _, token: let accessToken):
+                 .getListAppointment(userId: _, statusId: _, token: let accessToken):
                 urlRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: Header.Authorization)
                 return urlRequest
             }
