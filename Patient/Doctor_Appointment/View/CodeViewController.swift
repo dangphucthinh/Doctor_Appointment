@@ -18,10 +18,6 @@ class CodeViewController: UIViewController{
            
 
         }
-        
-
-        
-     
     }
     
     

@@ -90,7 +90,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                                         (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
                                                                  
                                         if(isSuccess!){
-                                          let user = value as! ResponseDoctor
+                                          let user = value as! ResponseListDoctor
                                           
                                             let listTemp = user.data as List<Doctor>
                                             for item in listTemp{

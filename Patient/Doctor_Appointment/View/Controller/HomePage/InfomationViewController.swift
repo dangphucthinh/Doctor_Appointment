@@ -17,12 +17,11 @@ class InfomationViewController: UITableViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var allergyTextField: UITextField!
+
     @IBOutlet weak var imgAvatar: UIImageView!
     @IBOutlet weak var avaPicker: UIView!
     @IBOutlet weak var addressTextField: UITextField!
-    @IBOutlet weak var symptonTextField: UITextField!
-    @IBOutlet weak var historyTextField: UITextField!
+
     @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var button: UIView!
     
@@ -125,23 +124,21 @@ class InfomationViewController: UITableViewController {
     
     //MARK: -Load info
     func LoadInform(UserId :String){
-            BaseClient.shared.GetUserInfo(UserId: UserId,
+            BaseClient.shared.GetDoctorInfo(userId: UserId,
                                           completion: { [self]
                   (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
                                   
                   if(isSuccess!){
-                    let user = value as! ResponseUser
+                    let user = value as! ResponseDoctor
                     
                     let ava: String? = user.data?.avatar
                     let url = URL.init(string:"\(ava ?? "No image found")")
                     self.nameTextField.text = user.data?.fullName
                     self.emailTextField.text = user.data?.email
                     self.phoneTextField.text = user.data?.phoneNumber
-                    self.historyTextField.text = user.data?.medicalHistory
-                    self.allergyTextField.text = user.data?.allergy
-                    self.symptonTextField.text = user.data?.symptom
-                    
-                        
+                  
+//                    
+//                        
                     let dateString = user.data?.dateOfBirth
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"

@@ -14,7 +14,8 @@ class BaseClient: NSObject{
     var accessToken : String?
     var userId : String?
     var fullName : String?
-    var abc : String?
+    var avatar : String?
+    
     //singleton
     static let shared = BaseClient()
     
@@ -41,8 +42,12 @@ class BaseClient: NSObject{
         case GetPatientInfo(UserId: String,
                             token: String)
         
+        case getDoctorInfo(userId: String,
+                           token: String)
+        
         case getListDoctor
         
+        //appointment
         case makeAnAppointment(doctorId: String,
                                patientId: String,
                                meetingTime: Date,
@@ -52,8 +57,14 @@ class BaseClient: NSObject{
                                token: String)
         
         case getListAppointment(userId: String,
+                                statusId: Int,
                                 token: String)
         
+        case updateAppointment(id: Int,
+                               issue: String,
+                               detail: String,
+                               statusId: Int,
+                               token: String)
 
         
         static let baseHTTP = API.kBaseUrl
@@ -62,9 +73,9 @@ class BaseClient: NSObject{
         //MARK: -Method
         private var method: HTTPMethod{
             switch self {
-            case .login, .changePassword, .register, .GetPatientInfo :
+            case .login, .changePassword, .register, .GetPatientInfo, .getDoctorInfo :
                 return .post
-            case .makeAnAppointment, .getListAppointment:
+            case .makeAnAppointment, .getListAppointment, .updateAppointment:
                 return .post
             case .getListDoctor:
                 return .get
@@ -84,10 +95,14 @@ class BaseClient: NSObject{
                 return API.kPatientInfo
             case .getListDoctor:
                 return API.kGetListAllDoctor
+            case .getDoctorInfo:
+                return API.kGetDoctorInfo
             case .makeAnAppointment:
                 return API.kMakeAnAppointment
             case .getListAppointment:
                 return API.kGetListAppoinment
+            case .updateAppointment:
+                return API.kUpdateAppointment
             }
         }
             
@@ -107,9 +122,13 @@ class BaseClient: NSObject{
                 break
             case .getListDoctor:
                 break
+            case .getDoctorInfo:
+                break
             case .makeAnAppointment:
                 break
             case .getListAppointment:
+                break
+            case .updateAppointment:
                 break
             }
             return headers;
@@ -160,6 +179,12 @@ class BaseClient: NSObject{
                 return[
                     "UserId" : UserId
                 ]
+                
+            case .getDoctorInfo(let userId,
+                                _):
+                return[
+                    "UserId" : userId
+                ]
            
             case .getListDoctor:
                 return [:]
@@ -181,9 +206,23 @@ class BaseClient: NSObject{
             ]
                 
             case .getListAppointment(let userId,
+                                     let statusId,
                                      _):
                 return [
-                    "UserId" : userId
+                    "UserId" : userId,
+                    "StatusId" : statusId
+                ]
+                
+            case .updateAppointment(let id,
+                                    let issue,
+                                    let detail,
+                                    let statusId,
+                                    _):
+                return[
+                    "Id" : id,
+                    "Issue" : issue,
+                    "Detail" : detail,
+                    "StatusId" : statusId
                 ]
             }
         }
@@ -213,12 +252,13 @@ class BaseClient: NSObject{
             }
             
             switch self {
-            case .login, .register, .changePassword, .getListDoctor:
+            case .login, .register, .changePassword, .getListDoctor, .getDoctorInfo:
                 return urlRequest
                             
             case .GetPatientInfo(UserId: _, token: let accessToken),
                  .makeAnAppointment(doctorId: _, patientId: _, meetingTime: _, startTime: _, issue: _, detail: _, token: let accessToken),
-                 .getListAppointment(userId: _, token: let accessToken):
+                 .getListAppointment(userId: _, statusId: _, token: let accessToken),
+                 .updateAppointment(id: _, issue: _, detail: _, statusId: _, token: let accessToken):
                 urlRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: Header.Authorization)
                 return urlRequest
             }
@@ -226,4 +266,6 @@ class BaseClient: NSObject{
         }
         
     }
+
+
 

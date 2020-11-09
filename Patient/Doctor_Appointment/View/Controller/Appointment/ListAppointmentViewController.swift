@@ -16,15 +16,15 @@ class ListAppointmentViewController: UITableViewController {
     
     var UserId = BaseClient.shared.userId
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        loadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+        
+        //self.navigationController?.isNavigationBarHidden = true
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         let nib = UINib.init(nibName: StoryboardID.AppointmentTableCellId, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: StoryboardID.AppointmentTableCellId)
@@ -44,8 +44,8 @@ class ListAppointmentViewController: UITableViewController {
        
         if indexPath.row < listAppointment.count {
            // name = "\(listAppointment[indexPath.row].doctorName ?? "Not name")"
-            cell.commonInit("\(listAppointment[indexPath.row].doctorName ?? "Not name")",
-                            "\(listAppointment[indexPath.row].doctorPhone ?? "Not name")",
+            cell.commonInit("\(listAppointment[indexPath.row].patientName ?? "Not name")",
+                            "\(listAppointment[indexPath.row].issue ?? "Not name")",
                             "\(listAppointment[indexPath.row].meetingTime ?? "Not name")")
           
         } else {
@@ -63,6 +63,7 @@ class ListAppointmentViewController: UITableViewController {
     
     private func loadData(){
         BaseClient.shared.GetListAppointment(userId: UserId!,
+                                             statusId: 2,
                                              completion: { [self]
                      (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
                             let rs = value as! ResponseListAppointment
@@ -81,30 +82,5 @@ class ListAppointmentViewController: UITableViewController {
         
     }
 }
-//
-//
-//                       let ava: String? = user.data?.avatar!
-//                       let url = URL.init(string:"\(ava ?? "No image found")")
-//                       self.nameTextField.text = user.data?.fullName
-//                       self.emailTextField.text = user.data?.email
-//                       self.phoneTextField.text = user.data?.phoneNumber
-//                       self.historyTextField.text = user.data?.medicalHistory
-//                       self.allergyTextField.text = user.data?.allergy
-//                       self.symptonTextField.text = user.data?.symptom
-//
-//
-//                       let dateString = user.data?.dateOfBirth
-//                       let dateFormatter = DateFormatter()
-//                       dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-//                       let dateFromString = dateFormatter.date(from: dateString!)
-//                       dateFormatter.dateFormat = "MM/dd/yyyy"
-//                       let stringFromDate = dateFormatter.string(from: dateFromString!)
-//                       self.dateOfBirthTextField.text = stringFromDate
-//
-//                       self.imgAvatar.sd_setImage(with: url, placeholderImage: UIImage(named: "no_image_banner"))
-//                 }
-               
-//         })
-
 
 

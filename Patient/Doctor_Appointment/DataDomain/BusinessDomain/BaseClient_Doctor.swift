@@ -12,13 +12,36 @@ import ObjectMapper
 import RealmSwift
 
 extension BaseClient{
+    //MARK: -Get doctor info
+    func GetDoctorInfo(userId: String,
+                       completion: @escaping ServiceResponse){
+        DispatchQueue.global(qos: .background).async {
+            //run on background
+            let request = Service.getDoctorInfo(userId: userId,
+                                                token: self.accessToken!) as URLRequestConvertible
+            Alamofire.request(request)
+                    .responseObject { (response: DataResponse<ResponseDoctor>) in
+                    switch response.result {
+                    case let .success(data):
+                        //var a = data.data
+                        completion(true, nil, data);
+                        break
+
+                    case let .failure(error):
+                        completion(false, error as NSError?, nil);
+                        break
+                    }
+            }
+        }
+    }
+    
     //MARK: -Get List All Specialites
     func GetListDoctor(completion:@escaping ServiceResponse) {
             DispatchQueue.global(qos: .background).async {
                 // Run on background
                 let request = Service.getListDoctor as URLRequestConvertible
                 Alamofire.request(request)
-                        .responseObject { (response: DataResponse<ResponseDoctor>) in
+                        .responseObject { (response: DataResponse<ResponseListDoctor>) in
                         switch response.result {
                         case let .success(data):
                             //var a = data.data
