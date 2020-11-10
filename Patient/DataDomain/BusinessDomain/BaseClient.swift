@@ -55,7 +55,8 @@ class BaseClient: NSObject{
                                 statusId: Int,
                                 token: String)
         
-
+        case chatbot(data: String,
+                     token: String)
         
         static let baseHTTP = API.kBaseUrl
         
@@ -69,6 +70,8 @@ class BaseClient: NSObject{
                 return .post
             case .getListDoctor:
                 return .get
+            case .chatbot:
+                return .post
             }
         }
             
@@ -89,6 +92,8 @@ class BaseClient: NSObject{
                 return API.kMakeAnAppointment
             case .getListAppointment:
                 return API.kGetListAppoinment
+            case .chatbot:
+                return API.kChatbot
             }
         }
             
@@ -111,6 +116,8 @@ class BaseClient: NSObject{
             case .makeAnAppointment:
                 break
             case .getListAppointment:
+                break
+            case .chatbot:
                 break
             }
             return headers;
@@ -188,6 +195,12 @@ class BaseClient: NSObject{
                     "UserId" : userId,
                     "StatusId" : statusId
                 ]
+                
+            case .chatbot(let data,
+                          _):
+                return[
+                    "data" : data
+                ]
             }
         }
         
@@ -219,11 +232,27 @@ class BaseClient: NSObject{
             case .login, .register, .changePassword, .getListDoctor:
                 return urlRequest
                             
-            case .GetPatientInfo(UserId: _, token: let accessToken),
-                 .makeAnAppointment(doctorId: _, patientId: _, meetingTime: _, startTime: _, issue: _, detail: _, token: let accessToken),
-                 .getListAppointment(userId: _, statusId: _, token: let accessToken):
+            case .GetPatientInfo(UserId: _,
+                                 token: let accessToken),
+                 
+                 .makeAnAppointment(doctorId: _,
+                                    patientId: _,
+                                    meetingTime: _,
+                                    startTime: _,
+                                    issue: _,
+                                    detail: _,
+                                    token: let accessToken),
+                 
+                 .getListAppointment(userId: _,
+                                     statusId: _,
+                                     token: let accessToken),
+                 
+                 .chatbot(data: _,
+                          token: let accessToken):
+                
                 urlRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: Header.Authorization)
                 return urlRequest
+                
             }
             }
         }

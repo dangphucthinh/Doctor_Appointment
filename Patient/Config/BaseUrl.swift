@@ -29,8 +29,10 @@ struct API{
         static let kPatientInfo = "api/Auth/GetPatientInfo"
         static let kPatientUpdate = "api/Auth/Update"
     
-        static let kTest = "api/Image/CreateImage"
-    
+
+        //AI
+        static let kPrediction = "api/AI/Prediction"
+        static let kChatbot = "api/AI/Chatbot"
         
         
         //specialties
@@ -39,7 +41,7 @@ struct API{
     
     
         //make appointment
-        static let kMakeAnAppointment = "/api/Appointment/MakeAnAppointment"
+        static let kMakeAnAppointment = "api/Appointment/MakeAnAppointment"
         static let kUpdateAppointment = "api/Appointment/Update"
         static let kGetListAppoinment = "api/Appointment/GetAppoinmentByUser"
 

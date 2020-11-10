@@ -20,6 +20,9 @@
 		4D1B6F7725579A3E00AEC5FC /* ResponseListAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B6F7625579A3E00AEC5FC /* ResponseListAppointment.swift */; };
 		4D1B6F7C25579A8700AEC5FC /* BaseClient_Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B6F7B25579A8700AEC5FC /* BaseClient_Appointment.swift */; };
 		4D1F4B8425582F9400D191D2 /* MakeAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F4B8325582F9400D191D2 /* MakeAppointmentViewController.swift */; };
+		4D6018F525595F5E0081B76F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6018F425595F5E0081B76F /* ChatViewController.swift */; };
+		4D60194825598AD50081B76F /* MessagesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D60194725598AD50081B76F /* MessagesViewCell.swift */; };
+		4D60194D25598AF30081B76F /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D60194C25598AF30081B76F /* MessageModel.swift */; };
 		4D728F372556FC66001F3430 /* RequestViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D728F352556FC66001F3430 /* RequestViewCell.swift */; };
 		4D728F382556FC66001F3430 /* RequestViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D728F362556FC66001F3430 /* RequestViewCell.xib */; };
 		4D78DCD02555798500C53CB0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D78DCCD2555798500C53CB0 /* Utilities.swift */; };
@@ -45,6 +48,8 @@
 		4DF3E64E2556AB290058A23A /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3E64D2556AB290058A23A /* SignUpController.swift */; };
 		4DF3E6542556AB5F0058A23A /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3E6532556AB5F0058A23A /* ForgotPasswordController.swift */; };
 		4DF3E6602556ADF20058A23A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3E65F2556ADF20058A23A /* CustomButton.swift */; };
+		55A004E7255A3B8D00A36DE0 /* BaseClient_AI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A004E6255A3B8D00A36DE0 /* BaseClient_AI.swift */; };
+		55A004EE255A3C3B00A36DE0 /* ResponseChatbot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A004ED255A3C3B00A36DE0 /* ResponseChatbot.swift */; };
 		7D825A1D5C5512FDCD3EC21D /* Pods_youMed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF986D09B3E004D6BBD1C2DE /* Pods_youMed.framework */; };
 		87955DABCABBD82743D81948 /* Pods_youMed_youMedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956881AB46814CA016258562 /* Pods_youMed_youMedUITests.framework */; };
 		E105960425427F3900512941 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105960325427F3900512941 /* AppDelegate.swift */; };
@@ -103,6 +108,9 @@
 		4D1B6F7625579A3E00AEC5FC /* ResponseListAppointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseListAppointment.swift; sourceTree = "<group>"; };
 		4D1B6F7B25579A8700AEC5FC /* BaseClient_Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClient_Appointment.swift; sourceTree = "<group>"; };
 		4D1F4B8325582F9400D191D2 /* MakeAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAppointmentViewController.swift; sourceTree = "<group>"; };
+		4D6018F425595F5E0081B76F /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		4D60194725598AD50081B76F /* MessagesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewCell.swift; sourceTree = "<group>"; };
+		4D60194C25598AF30081B76F /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		4D728F352556FC66001F3430 /* RequestViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewCell.swift; sourceTree = "<group>"; };
 		4D728F362556FC66001F3430 /* RequestViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestViewCell.xib; sourceTree = "<group>"; };
 		4D78DCCD2555798500C53CB0 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -128,6 +136,8 @@
 		4DF3E64D2556AB290058A23A /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		4DF3E6532556AB5F0058A23A /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		4DF3E65F2556ADF20058A23A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		55A004E6255A3B8D00A36DE0 /* BaseClient_AI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClient_AI.swift; sourceTree = "<group>"; };
+		55A004ED255A3C3B00A36DE0 /* ResponseChatbot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseChatbot.swift; sourceTree = "<group>"; };
 		8EC83D40321E40C5BC75298C /* Pods_youMedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_youMedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		956881AB46814CA016258562 /* Pods_youMed_youMedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_youMed_youMedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CD85D3C7F775EAF5ECD49F /* Pods-youMedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youMedTests.release.xcconfig"; path = "Target Support Files/Pods-youMedTests/Pods-youMedTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -253,6 +263,16 @@
 			path = Appointment;
 			sourceTree = "<group>";
 		};
+		4D60192E2559741B0081B76F /* TestMessage */ = {
+			isa = PBXGroup;
+			children = (
+				4D6018F425595F5E0081B76F /* ChatViewController.swift */,
+				4D60194725598AD50081B76F /* MessagesViewCell.swift */,
+				4D60194C25598AF30081B76F /* MessageModel.swift */,
+			);
+			path = TestMessage;
+			sourceTree = "<group>";
+		};
 		4D728F342556FC3B001F3430 /* Appointment */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +322,7 @@
 				4D78DCE6255579AE00C53CB0 /* BaseClient_User.swift */,
 				4D78DCE7255579AE00C53CB0 /* BaseClient.swift */,
 				4D1B6F7B25579A8700AEC5FC /* BaseClient_Appointment.swift */,
+				55A004E6255A3B8D00A36DE0 /* BaseClient_AI.swift */,
 			);
 			path = BusinessDomain;
 			sourceTree = "<group>";
@@ -317,6 +338,7 @@
 		4D78DCCC2555793C00C53CB0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				55A004EB255A3BB300A36DE0 /* AI */,
 				4D1B6F6B255799EE00AEC5FC /* Appointment */,
 				4D1B6F6A255799E600AEC5FC /* Doctor */,
 				4D1B6F69255799E100AEC5FC /* Patient */,
@@ -365,6 +387,22 @@
 				4DF3E6532556AB5F0058A23A /* ForgotPasswordController.swift */,
 			);
 			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		55A004EB255A3BB300A36DE0 /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				55A004EC255A3BBA00A36DE0 /* Chatbot */,
+			);
+			path = AI;
+			sourceTree = "<group>";
+		};
+		55A004EC255A3BBA00A36DE0 /* Chatbot */ = {
+			isa = PBXGroup;
+			children = (
+				55A004ED255A3C3B00A36DE0 /* ResponseChatbot.swift */,
+			);
+			path = Chatbot;
 			sourceTree = "<group>";
 		};
 		A5E25456060025336A37E6EA /* Frameworks */ = {
@@ -450,6 +488,7 @@
 		E10596362542801D00512941 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4D60192E2559741B0081B76F /* TestMessage */,
 				E1D479BD2543BD98006A7C2C /* custom components */,
 				E1D479E42543CE9F006A7C2C /* View Controllers */,
 				E10596372542802E00512941 /* Cell */,
@@ -793,8 +832,10 @@
 			files = (
 				E105960825427F3900512941 /* HomePageController.swift in Sources */,
 				4D78DCEE255579B400C53CB0 /* DataManager.swift in Sources */,
+				55A004EE255A3C3B00A36DE0 /* ResponseChatbot.swift in Sources */,
 				4D78DCFA255579BB00C53CB0 /* Patient.swift in Sources */,
 				4D78DCE02555799B00C53CB0 /* ServerKey.swift in Sources */,
+				4D60194825598AD50081B76F /* MessagesViewCell.swift in Sources */,
 				4D1B6F7225579A2C00AEC5FC /* ResponseAppointment.swift in Sources */,
 				4D78DCF8255579BB00C53CB0 /* User.swift in Sources */,
 				4D1F4B8425582F9400D191D2 /* MakeAppointmentViewController.swift in Sources */,
@@ -802,6 +843,7 @@
 				4D1B6F7C25579A8700AEC5FC /* BaseClient_Appointment.swift in Sources */,
 				E1D47A032543DAD4006A7C2C /* SpecialistCollectionViewCell.swift in Sources */,
 				4D78DCDD2555799B00C53CB0 /* StoryboardID.swift in Sources */,
+				4D6018F525595F5E0081B76F /* ChatViewController.swift in Sources */,
 				4D1B6F61255794BC00AEC5FC /* RequestedViewController.swift in Sources */,
 				E1CF95C4254A6D9C0091D0D0 /* UserInformationController.swift in Sources */,
 				4D076A112557FDC000DDD452 /* ListAppointmentViewController.swift in Sources */,
@@ -814,6 +856,7 @@
 				4D78DCF9255579BB00C53CB0 /* Token.swift in Sources */,
 				4D076A262557FE8A00DDD452 /* AppointmentTableCell.swift in Sources */,
 				4D78DCD12555798500C53CB0 /* Loading.swift in Sources */,
+				55A004E7255A3B8D00A36DE0 /* BaseClient_AI.swift in Sources */,
 				4D78DCD02555798500C53CB0 /* Utilities.swift in Sources */,
 				4D78DCE9255579AF00C53CB0 /* BaseClient.swift in Sources */,
 				E1D479E62543CED0006A7C2C /* ParentController.swift in Sources */,
@@ -826,6 +869,7 @@
 				E1CF95CF254A6E910091D0D0 /* UserHeaderView.swift in Sources */,
 				4D076A0C2557FD5800DDD452 /* UserInfoView.swift in Sources */,
 				4DF3E6542556AB5F0058A23A /* ForgotPasswordController.swift in Sources */,
+				4D60194D25598AF30081B76F /* MessageModel.swift in Sources */,
 				4D78DCD22555798500C53CB0 /* Validation.swift in Sources */,
 				4D78DCDF2555799B00C53CB0 /* CommonExtension.swift in Sources */,
 				4DF3E6492556AAFF0058A23A /* SignInController.swift in Sources */,
