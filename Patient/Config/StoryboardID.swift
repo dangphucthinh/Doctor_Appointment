@@ -30,12 +30,19 @@ struct StoryboardID {
     
     //appointment
     static let RequestedViewControllerId = "RequestedViewController"
-    static let RequestViewCellId = "RequestViewCell" // cell
-    static let AppointmentTableCellId = "AppointmentTableCell" //cell
     static let ListAppointmentViewControllerId = "ListAppointmentViewController"
     static let MakeAppointmentViewControllerId = "MakeAppointmentViewController"
+    static let ConfirmPatientTableViewCellId = "ConfirmPatientTableViewCell" //cell
+    static let RequestViewCellId = "RequestViewCell" // cell
+    static let AppointmentTableCellId = "AppointmentTableCell" //cell
+    
+    static let ConfirmAppointmentId = "ConfirmAppointment"
     
     //doctor
-
     static let DoctorProfileViewControllerId = "DoctorProfileViewController"
+    
+    //chatbot
+    static let ChatViewControllerId = "ChatViewController"
+    
+    
 }

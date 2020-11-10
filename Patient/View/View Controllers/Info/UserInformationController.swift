@@ -94,7 +94,7 @@ extension UserInformationController: UITableViewDelegate, UITableViewDataSource 
         case 4:
             print("e")
             
-            let controller: ListAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ListAppointmentViewControllerId) as! ListAppointmentViewController
+            let controller: ChatViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ChatViewControllerId) as! ChatViewController
           
 
             self.navigationController?.pushViewController(controller, animated: true)

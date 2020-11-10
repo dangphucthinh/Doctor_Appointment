@@ -5,9 +5,9 @@
 //  Created by thinhdang on 11/9/20.
 //
 import UIKit
-//import AI
 
-class ViewController: UIViewController {
+
+class ChatViewController: UIViewController {
 
     
     let messagesTableView: UITableView = {
@@ -106,7 +106,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
