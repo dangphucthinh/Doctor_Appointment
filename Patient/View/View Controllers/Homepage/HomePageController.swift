@@ -101,6 +101,8 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerView") as! HeaderView
+            header.delegateDoctor = self
+            header.delegateHospital = self
             return header
         }
         return UITableViewHeaderFooterView()
@@ -151,6 +153,24 @@ extension HomePageController : DetailTableViewCellProtocol{
         
         print("cc")
 
+    }
+}
+
+extension HomePageController : DoctorViewProtocol{
+    func doctorPage() {
+        let controller: DoctorViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorViewControllerId) as! DoctorViewController
+
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+extension HomePageController : HospitalViewProtocol{
+    func hospitalPage() {
+        let controller: HospitalViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.HospitalViewControllerId) as! HospitalViewController
+
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 

@@ -43,48 +43,51 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
         print("\(deliveryTimes[self.timePicker.selectedRow(inComponent: 0)])")
         print(dateSelected)
 
-      
+        let controller: ConfirmAppointment = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ConfirmAppointmentId) as! ConfirmAppointment
+                                                      //controller.stringb = deliveryTimes[self.timePicker.selectedRow(inComponent: 0)]
+                                                      //controller.statusId = 1
+          self.navigationController?.pushViewController(controller, animated: true)
 
 
-        BaseClient.shared.MakeAnAppointment(doctorId: doctorId,
-                                            patientId: patientId,
-                                            meetingTime: formatter.date(from: dateSelected)!,
-                                            startTime: deliveryTimes[self.timePicker.selectedRow(inComponent: 0)],
-                                            issue: issueTextField.text ?? "No thing",
-                                            detail: detailTextField.text ?? "Nothing",
-                                            completion: {
-                    (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-                                                //print(error!)
-                                                let rs = value as! ResponseAppointment
-                                                print(rs)
-                                                if rs.status == 1{
-                                                    let alert = UIAlertController(title: "My Title", message: "Can not appointment this time", preferredStyle: UIAlertController.Style.alert)
-
-                                                    // add an action (button)
-                                                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
-                                                    // show the alert
-                                                    self.present(alert, animated: true, completion: nil)
-                                                    
-//                                                    let controller: ListAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ListAppointmentViewControllerId) as! ListAppointmentViewController
-//                                                    //controller.stringb = deliveryTimes[self.timePicker.selectedRow(inComponent: 0)]
+//        BaseClient.shared.MakeAnAppointment(doctorId: doctorId,
+//                                            patientId: patientId,
+//                                            meetingTime: formatter.date(from: dateSelected)!,
+//                                            startTime: deliveryTimes[self.timePicker.selectedRow(inComponent: 0)],
+//                                            issue: issueTextField.text ?? "No thing",
+//                                            detail: detailTextField.text ?? "Nothing",
+//                                            completion: {
+//                    (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+//                                                //print(error!)
+//                                                let rs = value as! ResponseAppointment
+//                                                print(rs)
+//                                                if rs.status == 1{
+//                                                    let alert = UIAlertController(title: "My Title", message: "Can not appointment this time", preferredStyle: UIAlertController.Style.alert)
 //
-//                                                    self.navigationController?.pushViewController(controller, animated: true)
-
-                                                }
-//                                                let alert = UIAlertController(title: "My Title", message: "Success", preferredStyle: UIAlertController.Style.alert)
+//                                                    // add an action (button)
+//                                                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
 //
-//                                                // add an action (button)
-//                                                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//                                                    // show the alert
+//                                                    self.present(alert, animated: true, completion: nil)
 //
-//                                                // show the alert
-//                                                self.present(alert, animated: true, completion: nil)
-                                                let controller: ListAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ListAppointmentViewControllerId) as! ListAppointmentViewController
-                                                //controller.stringb = deliveryTimes[self.timePicker.selectedRow(inComponent: 0)]
-                                                controller.statusId = 1
-                                                self.navigationController?.pushViewController(controller, animated: true)
+////                                                    let controller: ListAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ListAppointmentViewControllerId) as! ListAppointmentViewController
+////                                                    //controller.stringb = deliveryTimes[self.timePicker.selectedRow(inComponent: 0)]
+////
+////                                                    self.navigationController?.pushViewController(controller, animated: true)
+//
+//                                                }
+////                                                let alert = UIAlertController(title: "My Title", message: "Success", preferredStyle: UIAlertController.Style.alert)
+////
+////                                                // add an action (button)
+////                                                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+////
+////                                                // show the alert
+////                                                self.present(alert, animated: true, completion: nil)
+//                                                let controller: ListAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ListAppointmentViewControllerId) as! ListAppointmentViewController
+//                                                //controller.stringb = deliveryTimes[self.timePicker.selectedRow(inComponent: 0)]
+//                                                controller.statusId = 1
+//                                                self.navigationController?.pushViewController(controller, animated: true)
 
-                    })
+//                    })
        
     }
     //MARK: -calendar

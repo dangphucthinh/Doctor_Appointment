@@ -43,6 +43,8 @@ class BaseClient: NSObject{
         
         case getListDoctor
         
+        case getListHospital
+        
         case makeAnAppointment(doctorId: String,
                                patientId: String,
                                meetingTime: Date,
@@ -55,7 +57,8 @@ class BaseClient: NSObject{
                                 statusId: Int,
                                 token: String)
         
-
+        case chatbot(data: String,
+                     token: String)
         
         static let baseHTTP = API.kBaseUrl
         
@@ -67,8 +70,10 @@ class BaseClient: NSObject{
                 return .post
             case .makeAnAppointment, .getListAppointment:
                 return .post
-            case .getListDoctor:
+            case .getListDoctor, .getListHospital:
                 return .get
+            case .chatbot:
+                return .post
             }
         }
             
@@ -89,6 +94,10 @@ class BaseClient: NSObject{
                 return API.kMakeAnAppointment
             case .getListAppointment:
                 return API.kGetListAppoinment
+            case .chatbot:
+                return API.kChatbot
+            case .getListHospital:
+                return API.kGetListHospital
             }
         }
             
@@ -112,6 +121,11 @@ class BaseClient: NSObject{
                 break
             case .getListAppointment:
                 break
+            case .chatbot:
+                break
+            case .getListHospital:
+                break
+            
             }
             return headers;
         }
@@ -165,6 +179,9 @@ class BaseClient: NSObject{
             case .getListDoctor:
                 return [:]
                 
+            case .getListHospital:
+                return [:]
+                
             case .makeAnAppointment(let doctorId,
                                     let patientId,
                                     let meetingTime,
@@ -187,6 +204,12 @@ class BaseClient: NSObject{
                 return [
                     "UserId" : userId,
                     "StatusId" : statusId
+                ]
+                
+            case .chatbot(let data,
+                          _):
+                return[
+                    "data" : data
                 ]
             }
         }
@@ -216,14 +239,30 @@ class BaseClient: NSObject{
             }
             
             switch self {
-            case .login, .register, .changePassword, .getListDoctor:
+            case .login, .register, .changePassword, .getListDoctor, .getListHospital:
                 return urlRequest
                             
-            case .GetPatientInfo(UserId: _, token: let accessToken),
-                 .makeAnAppointment(doctorId: _, patientId: _, meetingTime: _, startTime: _, issue: _, detail: _, token: let accessToken),
-                 .getListAppointment(userId: _, statusId: _, token: let accessToken):
+            case .GetPatientInfo(UserId: _,
+                                 token: let accessToken),
+                 
+                 .makeAnAppointment(doctorId: _,
+                                    patientId: _,
+                                    meetingTime: _,
+                                    startTime: _,
+                                    issue: _,
+                                    detail: _,
+                                    token: let accessToken),
+                 
+                 .getListAppointment(userId: _,
+                                     statusId: _,
+                                     token: let accessToken),
+                 
+                 .chatbot(data: _,
+                          token: let accessToken):
+                
                 urlRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: Header.Authorization)
                 return urlRequest
+                
             }
             }
         }

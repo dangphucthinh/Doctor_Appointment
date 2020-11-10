@@ -5,9 +5,9 @@
 //  Created by thinhdang on 11/9/20.
 //
 import UIKit
-//import AI
 
-class ViewController: UIViewController {
+
+class ChatViewController: UIViewController {
 
     
     let messagesTableView: UITableView = {
@@ -40,12 +40,26 @@ class ViewController: UIViewController {
     
     @IBAction func sendBtnClicked(_ sender: Any) {
         if messageField.text != nil && messageField.text != "" {
-            //queryResponse(query: messageField.text!)
+            queryResponse(query: messageField.text!)
+            BaseClient.shared.Chatbot(data: messageField.text!,
+                                      completion: {
+                              (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+                                                       
+            let rs = value as! ResponseChatbot
+                                        if rs.status == 0{
+                                         print("true")
+                                        }
+                                      
+                                  
+//
+//
+        })
             messagesArray.append(MessageModel(content: messageField.text!, id: "user"))
-            messagesTableView.reloadData()
-            messageField.text = ""
-        }
+           messagesTableView.reloadData()
+           messageField.text = ""
     }
+            
+}
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,22 +84,29 @@ class ViewController: UIViewController {
 
     }
     
-//    func queryResponse(query: String) {
-//        AI.sharedService.textRequest(query).success { (response) in
-//
-//            if let speech = response.result.fulfillment?.speech {
-//                self.messagesArray.append(MessageModel(content: speech, id: "agent"))
-//                self.messagesTableView.reloadData()
-//                print(response)
-//
-//            }
-//            }.failure { (error) in
-//                print(error)
-//        }
-//    }
+    func queryResponse(query: String) {
+  
+      BaseClient.shared.Chatbot(data: messageField.text!,
+                                completion: { [self]
+                        (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+                                                         
+                                    let rs = value as! ResponseChatbot
+                                    if rs.status == 0{
+                                        if let speech = rs.data {
+                                               self.messagesArray.append(MessageModel(content: speech, id: "agent"))
+                                               self.messagesTableView.reloadData()
+                                               print(speech)
+                                               
+                                           }
+                                    }
+                           
+                                      
+
+                    })
+    }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
