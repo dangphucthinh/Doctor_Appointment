@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "icons8-xbox_cross.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "search_icon.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

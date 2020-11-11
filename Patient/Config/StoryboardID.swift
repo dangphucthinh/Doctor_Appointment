@@ -49,4 +49,7 @@ struct StoryboardID {
     //hospital
     static let HospitalViewControllerId = "HospitalViewController"
     
+    //adviser
+    static let AdviserViewControllerId = "AdviserViewController"
+    
 }

@@ -142,6 +142,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="YCW-2D-AYu" kind="relationship" relationship="viewControllers" id="3Tt-vp-aVp"/>
+                        <segue destination="fr8-vQ-JnA" kind="relationship" relationship="viewControllers" id="Wkl-FB-ePN"/>
                         <segue destination="YuX-hI-hNS" kind="relationship" relationship="viewControllers" id="vzF-Ik-bhk"/>
                     </connections>
                 </tabBarController>
@@ -157,6 +158,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Peq-zD-HfF">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemBlueColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Teu-gl-LJ8"/>
@@ -166,6 +174,30 @@
             </objects>
             <point key="canvasLocation" x="2430" y="-358"/>
         </scene>
+        <!--Adviser-->
+        <scene sceneID="3SP-d8-DE9">
+            <objects>
+                <navigationController id="fr8-vQ-JnA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Adviser" image="heart.fill" catalog="system" selectedImage="heart.fill" id="fBo-Rp-14i"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="opv-8n-ONg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemBlueColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" systemColor="systemBlueColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="F2r-IN-cTq" kind="relationship" relationship="rootViewController" id="Ck6-ok-cyO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0SE-7N-u6q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2486" y="345"/>
+        </scene>
         <!--Item-->
         <scene sceneID="b6v-iN-B4e">
             <objects>
@@ -174,6 +206,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2qq-Dl-Rf9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemBlueColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="vxM-Sg-oNk" kind="relationship" relationship="rootViewController" id="SZL-KL-C8d"/>
@@ -181,7 +220,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3A8-xo-DBG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2430" y="560"/>
+            <point key="canvasLocation" x="2468" y="1139"/>
         </scene>
         <!--Home Page Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -360,7 +399,86 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngj-HE-ob1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3749" y="560"/>
+            <point key="canvasLocation" x="3351" y="1138"/>
+        </scene>
+        <!--Adviser View Controller-->
+        <scene sceneID="tee-ev-PrZ">
+            <objects>
+                <viewController storyboardIdentifier="AdviserViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="F2r-IN-cTq" customClass="AdviserViewController" customModule="youMed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jsk-UP-H7b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Symptom 3" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IZ6-DN-ZST" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="0.0" y="431" width="414" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Symptom 2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhH-HH-O6n" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="0.0" y="333" width="414" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Symptom 4" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVB-NJ-nDW" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="-11" y="536" width="425" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Symptom 1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Vp-5O-ioX" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="0.0" y="200" width="414" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcV-iK-Soh">
+                                <rect key="frame" x="20" y="637" width="374" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eK6-Hh-eYz">
+                                <rect key="frame" x="20" y="764" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="sendData:" destination="F2r-IN-cTq" eventType="touchUpInside" id="T8a-6c-rbr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IBt-MS-0Aa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IZ6-DN-ZST" firstAttribute="trailing" secondItem="IBt-MS-0Aa" secondAttribute="trailing" id="8XX-TP-28c"/>
+                            <constraint firstItem="IZ6-DN-ZST" firstAttribute="centerY" secondItem="Jsk-UP-H7b" secondAttribute="centerY" id="kgg-J4-gbl"/>
+                            <constraint firstItem="IZ6-DN-ZST" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" id="n64-Tl-ft4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xT3-k8-5yS"/>
+                    <connections>
+                        <outlet property="mainDropDown" destination="IZ6-DN-ZST" id="r12-3l-b6V"/>
+                        <outlet property="result" destination="QcV-iK-Soh" id="y1s-Ah-Ptq"/>
+                        <outlet property="symptom2" destination="yhH-HH-O6n" id="p7W-eO-4Xv"/>
+                        <outlet property="symptom4" destination="cVB-NJ-nDW" id="dvA-Bn-JXJ"/>
+                        <outlet property="symtom1" destination="5Vp-5O-ioX" id="iIG-yB-HhA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VV1-3c-udV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3531.884057971015" y="344.86607142857139"/>
         </scene>
         <!--Requested View Controller-->
         <scene sceneID="vWY-IY-GQa">
@@ -388,7 +506,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cN-RW-9WH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4729" y="560"/>
+            <point key="canvasLocation" x="4471" y="1138"/>
         </scene>
         <!--LogInScreen-->
         <scene sceneID="s9Y-qm-bvW">
@@ -1181,10 +1299,6 @@
                             <outlet property="delegate" destination="aOH-DC-taS" id="0Gl-D6-aLb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dvJ-fD-uxL">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="76W-Xz-Tk0"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="uag-eV-SnN"/>
-                    </navigationItem>
                     <connections>
                         <outlet property="bioTextView" destination="KP8-8z-GkK" id="11Y-fK-EpL"/>
                         <outlet property="bookingAppoinment" destination="Dy2-YT-jW6" id="Ee2-fa-5MZ"/>
@@ -1195,7 +1309,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QpC-VN-Gks" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5854" y="-317"/>
+            <point key="canvasLocation" x="5987" y="-344"/>
         </scene>
         <!--Infomation View Controller-->
         <scene sceneID="x1O-SY-Hym">
@@ -1889,6 +2003,7 @@
         <image name="arrowshape.turn.up.left" catalog="system" width="128" height="106"/>
         <image name="background" width="112.5" height="243.5"/>
         <image name="health-care-medical-icon" width="476" height="474"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="send_icon" width="512" height="512"/>

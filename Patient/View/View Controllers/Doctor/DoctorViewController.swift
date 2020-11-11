@@ -21,6 +21,8 @@ class DoctorViewController: UITableViewController {
         tableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "detailCell")
         
     }
+    
+    
 
     // MARK: - Table view data source
 

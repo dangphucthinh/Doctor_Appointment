@@ -12,7 +12,7 @@ target 'youMed' do
     pod 'RealmSwift'
     pod 'SDWebImage'
     pod 'FSCalendar'
-
+    pod 'iOSDropDown'
 
   target 'youMedTests' do
     inherit! :search_paths

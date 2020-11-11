@@ -17,21 +17,31 @@ class HomePageController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadDoctor()
-       
+        self.setNavigationBarLogo(title: "HOME", controlEvents: .touchUpInside,
+        ForAction:{() -> Void in
+            // Search action
+            print("Search")
+        })
+
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        showNavigationBar(animated: animated)
+    }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: "HeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "headerView")
         
         tableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "detailCell")
-        self.navigationController?.isNavigationBarHidden = true
+        
     }
 }
 

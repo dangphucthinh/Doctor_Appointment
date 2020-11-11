@@ -4,21 +4,23 @@ PODS:
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
   - FSCalendar (2.8.1)
+  - iOSDropDown (0.3.4)
   - JGProgressHUD (2.1)
   - ObjectMapper (3.5.3)
-  - Realm (5.4.8):
-    - Realm/Headers (= 5.4.8)
-  - Realm/Headers (5.4.8)
-  - RealmSwift (5.4.8):
-    - Realm (= 5.4.8)
-  - SDWebImage (5.9.2):
-    - SDWebImage/Core (= 5.9.2)
-  - SDWebImage/Core (5.9.2)
+  - Realm (5.4.0):
+    - Realm/Headers (= 5.4.0)
+  - Realm/Headers (5.4.0)
+  - RealmSwift (5.4.0):
+    - Realm (= 5.4.0)
+  - SDWebImage (5.9.1):
+    - SDWebImage/Core (= 5.9.1)
+  - SDWebImage/Core (5.9.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireObjectMapper (from `https://github.com/RomanPodymov/AlamofireObjectMapper.git`, branch `xcode-10-2-fix`)
   - FSCalendar
+  - iOSDropDown
   - JGProgressHUD
   - RealmSwift
   - SDWebImage
@@ -27,6 +29,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - FSCalendar
+    - iOSDropDown
     - JGProgressHUD
     - ObjectMapper
     - Realm
@@ -47,12 +50,13 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireObjectMapper: 9fec33dcec52497a2a32678cd3a7b597b5a32514
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
+  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
-  Realm: 042bbb59227a0159eda397b8a5a49fbd67495ce7
-  RealmSwift: 15ddd6b3398ebfc99810811c44f095df1313adb3
-  SDWebImage: 0b42b8719ab0c5257177d5894306e8a336b21cbb
+  Realm: 8949757d76e2451a53d727954c607e49c2542b77
+  RealmSwift: 0b7d7121e842724188123c6086831ae6d2952050
+  SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
 
-PODFILE CHECKSUM: 5f0c555d213714ae9febcc96518313fa1b326c26
+PODFILE CHECKSUM: a2fa417362d795b48880d0bc47d8aff343339b7e
 
 COCOAPODS: 1.9.3

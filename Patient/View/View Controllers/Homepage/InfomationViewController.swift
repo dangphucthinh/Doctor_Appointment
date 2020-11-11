@@ -32,7 +32,6 @@ class InfomationViewController: UITableViewController {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
-        self.navigationController?.isNavigationBarHidden = true
     }
     
 
