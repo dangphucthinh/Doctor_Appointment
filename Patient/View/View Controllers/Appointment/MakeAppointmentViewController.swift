@@ -22,6 +22,7 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
     var appointment : Appointment?
     let formatter = DateFormatter()
 
+    
 
     var patientId: String = BaseClient.shared.userId!
     override func viewDidLoad() {

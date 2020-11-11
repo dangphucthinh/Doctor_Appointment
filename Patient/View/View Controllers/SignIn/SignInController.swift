@@ -14,12 +14,22 @@ class SignInController: UIViewController {
     @IBOutlet weak var tfUsername: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     var user = User()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.hideKeyboardWhenTappedAround()
-       
+   
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     
@@ -38,41 +48,6 @@ class SignInController: UIViewController {
     
    
     @IBAction func signIn(_ sender: Any) {
-//        if(!tfUsername.text!.isEmpty && !tfPassword.text!.isEmpty) {
-//                    Loading.showLoading(message: Message.LoadingMessage, view: self.view)
-//                BaseConnection
-//                    .request(BaseClient.Service.login(username: "thinh123",
-//                                                      password: "Admin@123"),
-//                                   LoginResponse.self,
-//                                   completion: { (result, err) in
-//                                    Loading.dismissLoading()
-//
-//
-//                                    guard err == nil else {
-//                                        print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
-//
-//
-//                                        if err?.mErrorCode == 0 {
-//                                            let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.MainViewControllerId) as! MainViewController
-//
-//                                            self.navigationController?.present(controller, animated: true)
-//
-//                                        }
-//                                        else{
-//                                            // create the alert
-//                                            let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)
-//
-//                                            // add an action (button)
-//                                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//
-//                                            // show the alert
-//                                            self.present(alert, animated: true, completion: nil)
-//                                        }
-//                                        return
-//                                    }
-//            })
-//        }
-        
         if(!tfUsername.text!.isEmpty && !tfPassword.text!.isEmpty) {
             Loading.showLoading(message: Message.LoadingMessage, view: self.view)
             BaseClient.shared.loginWithUrl(username: tfUsername.text!,
@@ -81,11 +56,10 @@ class SignInController: UIViewController {
                 Loading.dismissLoading()
 
                 if(isSuccess!) {
-
-                    let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.ParentViewControllerId) as! ParentController
-
-                    self.navigationController?.pushViewController(controller, animated: true)
-                } else {
+                    
+                    self.resetRoot(id: StoryboardID.ParentViewControllerId)
+                        }
+                else {
                     // Show message login fail
                     // create the alert
                 let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)

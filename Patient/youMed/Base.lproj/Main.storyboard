@@ -157,6 +157,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Peq-zD-HfF">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemBlueColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Teu-gl-LJ8"/>
@@ -174,6 +181,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2qq-Dl-Rf9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemBlueColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="vxM-Sg-oNk" kind="relationship" relationship="rootViewController" id="SZL-KL-C8d"/>
@@ -279,6 +293,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3533" y="-358"/>
+        </scene>
+        <!--Doctor View Controller-->
+        <scene sceneID="0QP-jf-oVZ">
+            <objects>
+                <tableViewController storyboardIdentifier="DoctorViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R5Q-fu-8Wn" customClass="DoctorViewController" customModule="youMed" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="L9Q-PL-gQN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" rowHeight="199" id="Avf-sG-aD4">
+                                <rect key="frame" x="0.0" y="28" width="414" height="199"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Avf-sG-aD4" id="KDl-v5-UKa">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="R5Q-fu-8Wn" id="PkH-an-3qz"/>
+                            <outlet property="delegate" destination="R5Q-fu-8Wn" id="hTv-fA-yCk"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6W0-H4-gYg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4328" y="-358"/>
         </scene>
         <!--User Information Controller-->
         <scene sceneID="fh2-hc-NfJ">
@@ -881,6 +923,34 @@
             </objects>
             <point key="canvasLocation" x="-1704.3478260869567" y="-7.3660714285714279"/>
         </scene>
+        <!--Hospital View Controller-->
+        <scene sceneID="ll6-YK-C7A">
+            <objects>
+                <tableViewController storyboardIdentifier="HospitalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xlU-qM-mhC" customClass="HospitalViewController" customModule="youMed" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jrc-Q7-NQG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" rowHeight="191" id="imH-bd-0hk">
+                                <rect key="frame" x="0.0" y="28" width="414" height="191"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="imH-bd-0hk" id="0r2-xi-HXz">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="191"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xlU-qM-mhC" id="5HV-87-Kb4"/>
+                            <outlet property="delegate" destination="xlU-qM-mhC" id="Xcz-F1-n6k"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KYL-KH-Uga" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5171.0144927536239" y="-358.25892857142856"/>
+        </scene>
         <!--Doctor Profile View Controller-->
         <scene sceneID="MNd-aU-6yu">
             <objects>
@@ -1125,10 +1195,6 @@
                             <outlet property="delegate" destination="aOH-DC-taS" id="0Gl-D6-aLb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dvJ-fD-uxL">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="76W-Xz-Tk0"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="uag-eV-SnN"/>
-                    </navigationItem>
                     <connections>
                         <outlet property="bioTextView" destination="KP8-8z-GkK" id="11Y-fK-EpL"/>
                         <outlet property="bookingAppoinment" destination="Dy2-YT-jW6" id="Ee2-fa-5MZ"/>
@@ -1139,7 +1205,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QpC-VN-Gks" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5854" y="-317"/>
+            <point key="canvasLocation" x="5987" y="-344"/>
         </scene>
         <!--Infomation View Controller-->
         <scene sceneID="x1O-SY-Hym">
@@ -1514,7 +1580,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zxc-xd-9yF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6128" y="560"/>
+            <point key="canvasLocation" x="5674" y="560"/>
         </scene>
         <!--List Appointment View Controller-->
         <scene sceneID="9hC-JL-5rJ">
@@ -1550,7 +1616,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4U-Pe-4NX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4887" y="1237"/>
+            <point key="canvasLocation" x="8413" y="-317"/>
         </scene>
         <!--Make Appointment View Controller-->
         <scene sceneID="BBb-RM-08R">

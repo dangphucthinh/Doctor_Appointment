@@ -1,9 +1,3 @@
-//
-//  DoctorProfileViewController.swift
-//  youMed
-//
-//  Created by thinhdang on 11/8/20.
-//
 import UIKit
 import SDWebImage
 
@@ -22,10 +16,9 @@ class DoctorProfileViewController: UITableViewController {
         super.viewWillAppear(animated)
         loadData()
         bioTextView.isEditable = false
-        //self.navigationTitle(title: "\(data?.fullName ?? "Information")")
-        self.navigationController?.isNavigationBarHidden = true
-  
-          
+     
+        self.showNavigationBar(animated: animated)
+        self.navigationTitle(title: "DOCTOR")
     }
     
     private func loadData(){

@@ -40,9 +40,13 @@ struct StoryboardID {
     
     //doctor
     static let DoctorProfileViewControllerId = "DoctorProfileViewController"
+    static let DoctorViewControllerId = "DoctorViewController"
     
     //chatbot
     static let ChatViewControllerId = "ChatViewController"
     
+    
+    //hospital
+    static let HospitalViewControllerId = "HospitalViewController"
     
 }

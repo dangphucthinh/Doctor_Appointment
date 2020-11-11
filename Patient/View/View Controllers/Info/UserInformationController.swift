@@ -11,10 +11,24 @@ class UserInformationController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var data : Doctor?
-
+    var leftBarButtonItem : UIBarButtonItem!
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.showNavigationBar(animated: animated)
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.setNavigationBarLogo(title: "INFORMATION", controlEvents: .touchUpInside,
+        ForAction:{() -> Void in
+            // Search action
+            print("Search")
+        })
+
+        
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
@@ -22,11 +36,6 @@ class UserInformationController: UIViewController {
         tableView.register(UINib(nibName: "UserHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "headerView")
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        self.navigationController?.isNavigationBarHidden = true
-    }
-
 }
 
 extension UserInformationController: UITableViewDelegate, UITableViewDataSource {
@@ -74,6 +83,10 @@ extension UserInformationController: UITableViewDelegate, UITableViewDataSource 
         switch indexPath.row {
         case 0:
             print("abc")
+            let controller: DoctorProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorProfileViewControllerId) as! DoctorProfileViewController
+            
+
+            self.navigationController?.pushViewController(controller, animated: true)
         case 1:
    
             let controller: InfomationViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.InfomationViewControllerId) as! InfomationViewController

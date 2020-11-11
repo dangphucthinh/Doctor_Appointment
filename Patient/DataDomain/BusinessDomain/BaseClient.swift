@@ -43,6 +43,8 @@ class BaseClient: NSObject{
         
         case getListDoctor
         
+        case getListHospital
+        
         case makeAnAppointment(doctorId: String,
                                patientId: String,
                                meetingTime: Date,
@@ -68,7 +70,7 @@ class BaseClient: NSObject{
                 return .post
             case .makeAnAppointment, .getListAppointment:
                 return .post
-            case .getListDoctor:
+            case .getListDoctor, .getListHospital:
                 return .get
             case .chatbot:
                 return .post
@@ -94,6 +96,8 @@ class BaseClient: NSObject{
                 return API.kGetListAppoinment
             case .chatbot:
                 return API.kChatbot
+            case .getListHospital:
+                return API.kGetListHospital
             }
         }
             
@@ -119,6 +123,9 @@ class BaseClient: NSObject{
                 break
             case .chatbot:
                 break
+            case .getListHospital:
+                break
+            
             }
             return headers;
         }
@@ -170,6 +177,9 @@ class BaseClient: NSObject{
                 ]
            
             case .getListDoctor:
+                return [:]
+                
+            case .getListHospital:
                 return [:]
                 
             case .makeAnAppointment(let doctorId,
@@ -229,7 +239,7 @@ class BaseClient: NSObject{
             }
             
             switch self {
-            case .login, .register, .changePassword, .getListDoctor:
+            case .login, .register, .changePassword, .getListDoctor, .getListHospital:
                 return urlRequest
                             
             case .GetPatientInfo(UserId: _,

@@ -54,7 +54,7 @@ class DetailTableViewCell: UITableViewCell {
     
     @IBAction func schedule(_ sender: Any) {
         delegate?.doctorPage(data!)
-        //print("c")
+      
     }
     private func loadInformation(){
         scheduleButton.layer.cornerRadius = 5

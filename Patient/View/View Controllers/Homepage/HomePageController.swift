@@ -17,21 +17,31 @@ class HomePageController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadDoctor()
-       
+        self.setNavigationBarLogo(title: "HOME", controlEvents: .touchUpInside,
+        ForAction:{() -> Void in
+            // Search action
+            print("Search")
+        })
+
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        showNavigationBar(animated: animated)
+    }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: "HeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "headerView")
         
         tableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "detailCell")
-        self.navigationController?.isNavigationBarHidden = true
+        
     }
 }
 
@@ -101,6 +111,8 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerView") as! HeaderView
+            header.delegateDoctor = self
+            header.delegateHospital = self
             return header
         }
         return UITableViewHeaderFooterView()
@@ -151,6 +163,24 @@ extension HomePageController : DetailTableViewCellProtocol{
         
         print("cc")
 
+    }
+}
+
+extension HomePageController : DoctorViewProtocol{
+    func doctorPage() {
+        let controller: DoctorViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorViewControllerId) as! DoctorViewController
+
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+extension HomePageController : HospitalViewProtocol{
+    func hospitalPage() {
+        let controller: HospitalViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.HospitalViewControllerId) as! HospitalViewController
+
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 
