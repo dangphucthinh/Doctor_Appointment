@@ -60,6 +60,9 @@ class BaseClient: NSObject{
         case chatbot(data: String,
                      token: String)
         
+        case prediction(data: Array<Any>,
+                        token: String)
+        
         static let baseHTTP = API.kBaseUrl
         
   
@@ -72,7 +75,7 @@ class BaseClient: NSObject{
                 return .post
             case .getListDoctor, .getListHospital:
                 return .get
-            case .chatbot:
+            case .chatbot, .prediction:
                 return .post
             }
         }
@@ -98,6 +101,8 @@ class BaseClient: NSObject{
                 return API.kChatbot
             case .getListHospital:
                 return API.kGetListHospital
+            case .prediction:
+                return API.kPrediction
             }
         }
             
@@ -124,6 +129,8 @@ class BaseClient: NSObject{
             case .chatbot:
                 break
             case .getListHospital:
+                break
+            case .prediction:
                 break
             
             }
@@ -211,6 +218,12 @@ class BaseClient: NSObject{
                 return[
                     "data" : data
                 ]
+                
+            case .prediction(let data,
+                             _):
+                return[
+                    "data" : data
+                ]
             }
         }
         
@@ -239,7 +252,12 @@ class BaseClient: NSObject{
             }
             
             switch self {
-            case .login, .register, .changePassword, .getListDoctor, .getListHospital:
+            case .login,
+                 .register,
+                 .changePassword,
+                 .getListDoctor,
+                 .getListHospital:
+                
                 return urlRequest
                             
             case .GetPatientInfo(UserId: _,
@@ -258,7 +276,10 @@ class BaseClient: NSObject{
                                      token: let accessToken),
                  
                  .chatbot(data: _,
-                          token: let accessToken):
+                          token: let accessToken),
+                 
+                 .prediction(data: _,
+                             token: let accessToken):
                 
                 urlRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: Header.Authorization)
                 return urlRequest
