@@ -1,8 +1,8 @@
 //
-//  youMedTests.swift
-//  youMedTests
+//  SceneDelegate.swift
+//  youMed
 //
-//  Created by Duy Dinh on 10/23/20.
+//  Created by thinhdang on 11/15/20.
 //
 
 import XCTest

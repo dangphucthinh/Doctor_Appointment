@@ -24,6 +24,9 @@
 		4D1B6F7725579A3E00AEC5FC /* ResponseListAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B6F7625579A3E00AEC5FC /* ResponseListAppointment.swift */; };
 		4D1B6F7C25579A8700AEC5FC /* BaseClient_Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B6F7B25579A8700AEC5FC /* BaseClient_Appointment.swift */; };
 		4D1F4B8425582F9400D191D2 /* MakeAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F4B8325582F9400D191D2 /* MakeAppointmentViewController.swift */; };
+		4D346376256137300040474C /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D346375256137300040474C /* BaseResponse.swift */; };
+		4D34637E2561373F0040474C /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34637D2561373F0040474C /* RegisterResponse.swift */; };
+		4D346383256138380040474C /* BaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D346382256138380040474C /* BaseConnection.swift */; };
 		4D47D33C256005F2002A28B1 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47D33B256005F2002A28B1 /* DesignableView.swift */; };
 		4D47D34125600609002A28B1 /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47D34025600609002A28B1 /* DesignableTextView.swift */; };
 		4D47D34625600635002A28B1 /* ChattingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47D34525600635002A28B1 /* ChattingCell.swift */; };
@@ -142,6 +145,9 @@
 		4D1B6F7625579A3E00AEC5FC /* ResponseListAppointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseListAppointment.swift; sourceTree = "<group>"; };
 		4D1B6F7B25579A8700AEC5FC /* BaseClient_Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClient_Appointment.swift; sourceTree = "<group>"; };
 		4D1F4B8325582F9400D191D2 /* MakeAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAppointmentViewController.swift; sourceTree = "<group>"; };
+		4D346375256137300040474C /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		4D34637D2561373F0040474C /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		4D346382256138380040474C /* BaseConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConnection.swift; sourceTree = "<group>"; };
 		4D47D33B256005F2002A28B1 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		4D47D34025600609002A28B1 /* DesignableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextView.swift; sourceTree = "<group>"; };
 		4D47D34525600635002A28B1 /* ChattingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingCell.swift; sourceTree = "<group>"; };
@@ -349,6 +355,15 @@
 			path = Appointment;
 			sourceTree = "<group>";
 		};
+		4D346374256137150040474C /* ServerResponse */ = {
+			isa = PBXGroup;
+			children = (
+				4D346375256137300040474C /* BaseResponse.swift */,
+				4D34637D2561373F0040474C /* RegisterResponse.swift */,
+			);
+			path = ServerResponse;
+			sourceTree = "<group>";
+		};
 		4D60192E2559741B0081B76F /* Message */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,12 +422,14 @@
 		4D78DCCA2555792E00C53CB0 /* BusinessDomain */ = {
 			isa = PBXGroup;
 			children = (
+				4D346374256137150040474C /* ServerResponse */,
 				4D78DCE6255579AE00C53CB0 /* BaseClient_User.swift */,
 				4D78DCE7255579AE00C53CB0 /* BaseClient.swift */,
 				4D1B6F7B25579A8700AEC5FC /* BaseClient_Appointment.swift */,
 				55A004E6255A3B8D00A36DE0 /* BaseClient_AI.swift */,
 				4DC4669A255ACEE20027A193 /* BaseClient_Doctor.swift */,
 				4DC4669F255ACF130027A193 /* BaseClient_Hospital.swift */,
+				4D346382256138380040474C /* BaseConnection.swift */,
 			);
 			path = BusinessDomain;
 			sourceTree = "<group>";
@@ -1047,6 +1064,7 @@
 				4D78DCFA255579BB00C53CB0 /* Patient.swift in Sources */,
 				4D78DCE02555799B00C53CB0 /* ServerKey.swift in Sources */,
 				4D60194825598AD50081B76F /* MessagesViewCell.swift in Sources */,
+				4D34637E2561373F0040474C /* RegisterResponse.swift in Sources */,
 				5531836A255D313500A43B92 /* CreateRoomsViewController.swift in Sources */,
 				4D1B6F7225579A2C00AEC5FC /* ResponseAppointment.swift in Sources */,
 				4D78DCF8255579BB00C53CB0 /* User.swift in Sources */,
@@ -1091,6 +1109,7 @@
 				4D47D34125600609002A28B1 /* DesignableTextView.swift in Sources */,
 				E105960625427F3900512941 /* SceneDelegate.swift in Sources */,
 				E10596452543259100512941 /* HeaderView.swift in Sources */,
+				4D346376256137300040474C /* BaseResponse.swift in Sources */,
 				4DF3E63A2556AA2C0058A23A /* WelcomeViewController.swift in Sources */,
 				E1D47A17254425B2006A7C2C /* DetailTableViewCell.swift in Sources */,
 				E1CF95CF254A6E910091D0D0 /* UserHeaderView.swift in Sources */,
@@ -1113,6 +1132,7 @@
 				4D78DCFC255579BB00C53CB0 /* ResponseDoctor.swift in Sources */,
 				4D78DCE12555799B00C53CB0 /* ListTransform.swift in Sources */,
 				4D13E64F255C36D80065452F /* ResponsePrediction.swift in Sources */,
+				4D346383256138380040474C /* BaseConnection.swift in Sources */,
 				E1D479FE2543DA09006A7C2C /* SpecialistTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

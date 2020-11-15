@@ -36,39 +36,39 @@ class SignUpController: UIViewController {
     @IBAction func signUp(_ sender: Any) {
        
 //   // print(datePicker.date)
-//        BaseConnection.request(BaseClient.Service.register(username: tfUserName.text!,
-//                                                           email: tfEmail.text!,
-//                                                           firstName: tfFirstName.text!,
-//                                                           lastName: tfLastName.text!,
-//                                                           dateOfBirth: datePicker.date,
-//                                                           phoneNumber: tfPhoneNumber.text!,
-//                                                           password: tfPassword.text!,
-//                                                           confirmPassword: tfConfirmPassword.text!),
-//                                                           RegisterResponse.self,
-//           completion: { (result,err) in
-//           guard err == nil else {
-//                
-//                print(self.tfDateOfBirth.text!)
-//                print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
-//                
-//                if err?.mErrorCode == 0 {
-//                    let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.MainViewControllerId) as! MainViewController
-//                    self.navigationController?.present(controller, animated: true)
-//                   
-//                }
-//                else{
-//                    // create the alert
-//                    let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)
-//
-//                    // add an action (button)
-//                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//
-//                    // show the alert
-//                    self.present(alert, animated: true, completion: nil)
-//                }
-//                return
-//                }
-//           })
+        BaseConnection.request(BaseClient.Service.register(username: tfUserName.text!,
+                                                           email: tfEmail.text!,
+                                                           firstName: tfFirstName.text!,
+                                                           lastName: tfLastName.text!,
+                                                           dateOfBirth: datePicker.date,
+                                                           phoneNumber: tfPhoneNumber.text!,
+                                                           password: tfPassword.text!,
+                                                           confirmPassword: tfConfirmPassword.text!),
+                                                           RegisterResponse.self,
+           completion: { (result,err) in
+           guard err == nil else {
+                
+                print(self.tfDateOfBirth.text!)
+                print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
+                
+                if err?.mErrorCode == 0 {
+                    let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.SignInControllerId) as! SignInController
+                    self.navigationController?.pushViewController(controller, animated: true)
+                   
+                }
+                else{
+                    // create the alert
+                    let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)
+
+                    // add an action (button)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+                    // show the alert
+                    self.present(alert, animated: true, completion: nil)
+                }
+                return
+                }
+           })
     }
     
     //MARK: -Birthday

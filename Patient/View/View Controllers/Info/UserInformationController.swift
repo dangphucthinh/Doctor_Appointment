@@ -2,7 +2,7 @@
 //  UserViewController.swift
 //  youMed
 //
-//  Created by Duy Dinh on 10/29/20.
+//  Created by thinhdang on 10/29/20.
 //
 
 import UIKit
