@@ -13,15 +13,16 @@ import SDWebImage
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var listDoctor = List<Doctor>()
- 
+
+    var listAppointment = List<Appointment>()
+    var UserId = BaseClient.shared.userId
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //self.navigationTitle(title: "Home")
         self.navigationController?.isNavigationBarHidden = true
-        loadDoctor()
+        loadData()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -37,19 +38,21 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listDoctor.count
+        return listAppointment.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
             let cell =  tableView.dequeueReusableCell(withIdentifier: "GeneralCell", for: indexPath)
-            let a = listDoctor[indexPath.row]
+            let a = listAppointment[indexPath.row]
         
-            let ava: String? = a.avatar
+        
+        
+            let ava: String? = a.patientAvatar
             let url = URL.init(string:"\(ava ?? "Not Found")")
         
-            cell.textLabel?.text = a.fullName
-            cell.detailTextLabel?.text = a.education
+            cell.textLabel?.text = a.patientName
+            cell.detailTextLabel?.text = a.issue
         
    
             cell.imageView?.sd_setImage(with: url, placeholderImage: UIImage(named: "no_image_banner"))
@@ -64,7 +67,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         let controller: DoctorProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorProfileViewControllerId) as! DoctorProfileViewController
         
-        controller.data = listDoctor[indexPath.row]
+        
 
         self.navigationController?.pushViewController(controller, animated: true)
     }
@@ -83,22 +86,25 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return (header?.frame.height)!
     }
     
-  
+    private func loadData(){
+        BaseClient.shared.GetListAppointment(userId: UserId!,
+                                             statusId: 2,
+                                             completion: { [self]
+                     (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+                            let rs = value as! ResponseListAppointment
+
+                              let listTemp = rs.data as List<Appointment>
+
+                     
+
+                                for item in listTemp{
+                                    self.listAppointment.append(item)
+                                }
+                                self.tableView.reloadData()
+                            
+                                                
+                     })
         
-    func loadDoctor(){
-        BaseClient.shared.GetListDoctor(completion: { [self]
-                                        (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-                                                                 
-                                        if(isSuccess!){
-                                          let user = value as! ResponseListDoctor
-                                          
-                                            let listTemp = user.data as List<Doctor>
-                                            for item in listTemp{
-                                                self.listDoctor.append(item)
-                                            }
-                                            self.tableView.reloadData()
-                                        }
-                                      
-                                })
     }
+
 }

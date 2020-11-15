@@ -48,13 +48,6 @@ class BaseClient: NSObject{
         case getListDoctor(token: String)
         
         //appointment
-        case makeAnAppointment(doctorId: String,
-                               patientId: String,
-                               meetingTime: Date,
-                               startTime: String,
-                               issue: String,
-                               detail: String,
-                               token: String)
         
         case getListAppointment(userId: String,
                                 statusId: Int,
@@ -75,7 +68,7 @@ class BaseClient: NSObject{
             switch self {
             case .login, .changePassword, .register, .GetPatientInfo, .getDoctorInfo :
                 return .post
-            case .makeAnAppointment, .getListAppointment, .updateAppointment:
+            case .getListAppointment, .updateAppointment:
                 return .post
             case .getListDoctor:
                 return .get
@@ -97,8 +90,6 @@ class BaseClient: NSObject{
                 return API.kGetListAllDoctor
             case .getDoctorInfo:
                 return API.kGetDoctorInfo
-            case .makeAnAppointment:
-                return API.kMakeAnAppointment
             case .getListAppointment:
                 return API.kGetListAppoinment
             case .updateAppointment:
@@ -123,8 +114,6 @@ class BaseClient: NSObject{
             case .getListDoctor:
                 break
             case .getDoctorInfo:
-                break
-            case .makeAnAppointment:
                 break
             case .getListAppointment:
                 break
@@ -189,22 +178,6 @@ class BaseClient: NSObject{
             case .getListDoctor(_):
                 return [:]
                 
-            case .makeAnAppointment(let doctorId,
-                                    let patientId,
-                                    let meetingTime,
-                                    let startTime,
-                                    let issue,
-                                    let detail,
-                                    _):
-            return[
-                "DoctorId" : doctorId,
-                "PatientId" : patientId,
-                "Issue" : issue,
-                "MeetingTime" : meetingTime,
-                "StartTime" : startTime,
-                "Detail" : detail
-            ]
-                
             case .getListAppointment(let userId,
                                      let statusId,
                                      _):
@@ -256,7 +229,6 @@ class BaseClient: NSObject{
                 return urlRequest
                             
             case .GetPatientInfo(UserId: _, token: let accessToken),
-                 .makeAnAppointment(doctorId: _, patientId: _, meetingTime: _, startTime: _, issue: _, detail: _, token: let accessToken),
                  .getListAppointment(userId: _, statusId: _, token: let accessToken),
                  .updateAppointment(id: _, issue: _, detail: _, statusId: _, token: let accessToken),
                  .getListDoctor(token: let accessToken):
