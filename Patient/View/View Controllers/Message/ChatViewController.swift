@@ -49,12 +49,9 @@ class ChatViewController: UIViewController {
                                         if rs.status == 0{
                                          print("true")
                                         }
-                                      
-                                  
-//
-//
+                            
         })
-            messagesArray.append(MessageModel(content: messageField.text!, id: "user"))
+           messagesArray.append(MessageModel(content: messageField.text!, id: "user"))
            messagesTableView.reloadData()
            messageField.text = ""
     }

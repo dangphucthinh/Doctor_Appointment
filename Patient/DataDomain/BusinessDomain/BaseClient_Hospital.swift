@@ -13,7 +13,7 @@ extension BaseClient{
     func GetListHospital(completion:@escaping ServiceResponse) {
             DispatchQueue.global(qos: .background).async {
                 // Run on background
-                let request = Service.getListHospital as URLRequestConvertible
+                let request = Service.getListHospital(token: self.accessToken!) as URLRequestConvertible
                 Alamofire.request(request)
                         .responseObject { (response: DataResponse<ResponseListHospital>) in
                         switch response.result {

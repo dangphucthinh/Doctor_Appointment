@@ -11,17 +11,33 @@ import RealmSwift
 class DoctorViewController: UITableViewController {
     
     var listDoctor = List<Doctor>()
-    var listHospital = List<Hospital>()
+    
+
+    var allUsers = [UserDataModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDoctor()
-        loadHospital()
+        cellRegister()
+        getAllUser()
         
-        tableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "detailCell")
-        
+        let userData = UserDataModel(Uname: "phucthinh dang", Uemail: "dangthinh@gmail.com", Uavatar: "http://res.cloudinary.com/deh0sqxwl/image/upload/v1603946649/kysbc6aamvwi8mkrklni.png", UuserId: "3bae1afc-ff29-421f-b80e-53a76635da0a")
+        UserDataManager.setUserData(userData: userData, userId: "3bae1afc-ff29-421f-b80e-53a76635da0a")
     }
     
+    func cellRegister(){
+        tableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "detailCell")
+    }
+    
+    
+    //MARK:- Get All Users
+    func getAllUser(){
+        UserDataManager.getAllUsers { (allUser) in
+            self.allUsers.removeAll()
+            self.allUsers = allUser
+            self.tableView.reloadData()
+        }
+    }
     
 
     // MARK: - Table view data source
@@ -45,12 +61,22 @@ class DoctorViewController: UITableViewController {
             // Handle non-existing object here
             print("hihi")
         }
-     
+    
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 219
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        let controller: DoctorProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorProfileViewControllerId) as! DoctorProfileViewController
+        
+        controller.data = listDoctor[indexPath.row]
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 
     
@@ -71,21 +97,6 @@ class DoctorViewController: UITableViewController {
                                 })
     }
     
-    func loadHospital(){
-        BaseClient.shared.GetListHospital(completion: { [self]
-                                        (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-                                                                 
-                                        if(isSuccess!){
-                                          let user = value as! ResponseListHospital
-                                          
-                                            let listTemp = user.data as List<Hospital>
-                                            for item in listTemp{
-                                                self.listHospital.append(item)
-                                            }
-                                            self.tableView.reloadData()
-                                        }
-                                      
-                                })
-    }
+
 
 }

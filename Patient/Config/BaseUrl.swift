@@ -8,7 +8,7 @@
 import Foundation
 
 struct API{
-    static let kBaseUrl = "http://116.110.152.72:2905/"
+    static let kBaseUrl = "http://116.98.175.71:2905/"
   
 
         //users

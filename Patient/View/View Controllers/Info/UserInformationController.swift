@@ -83,7 +83,7 @@ extension UserInformationController: UITableViewDelegate, UITableViewDataSource 
         switch indexPath.row {
         case 0:
             print("abc")
-            let controller: DoctorProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorProfileViewControllerId) as! DoctorProfileViewController
+            let controller: CreateRoomsViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.CreateRoomsViewControllerId) as! CreateRoomsViewController
             
 
             self.navigationController?.pushViewController(controller, animated: true)

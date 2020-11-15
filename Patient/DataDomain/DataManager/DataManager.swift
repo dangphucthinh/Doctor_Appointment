@@ -16,3 +16,18 @@ class DataManager: NSObject{
         return UserDefaults.standard.string(forKey: key) ?? ""
     }
 }
+//
+//class UserDefaultManager{
+//    
+//    static let userDefault = UserDefaults.standard
+//    
+//    //UserId (Firebase User Uid)
+//    static var userId : String{
+//        get{
+//            return userDefault.string(forKey: "uid")!
+//        }
+//        set{
+//            userDefault.set(newValue, forKey: "uid")
+//        }
+//    }
+//}

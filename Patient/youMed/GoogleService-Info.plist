@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>882370692434-q8n10bvbl6gemvae7pj0fei88vk63pgb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.882370692434-q8n10bvbl6gemvae7pj0fei88vk63pgb</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAJC5Ms0Ip_ZHhgCC8n53foYFQ5blB7AvI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>882370692434</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.youMed</string>
+	<key>PROJECT_ID</key>
+	<string>seniorproject-c8044</string>
+	<key>STORAGE_BUCKET</key>
+	<string>seniorproject-c8044.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:882370692434:ios:71fbde55feeb8609e7268b</string>
+	<key>DATABASE_URL</key>
+	<string>https://seniorproject-c8044.firebaseio.com</string>
+</dict>
+</plist>
