@@ -19,10 +19,4 @@ class MessageModel {
     
 }
 
-struct Messenger {
-    var senderId: String?
-    var messageText:String?
-    var senderUsername: String?
-    var imageLink:String?
-    
-}
+

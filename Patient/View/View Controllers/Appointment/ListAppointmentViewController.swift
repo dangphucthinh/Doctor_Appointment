@@ -11,17 +11,17 @@ import RealmSwift
 class ListAppointmentViewController: UITableViewController {
     
     var listAppointment = List<Appointment>()
-   
-    
     var UserId = BaseClient.shared.userId
     var statusId : Int?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        listAppointment = List<Appointment>()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        //self.navigationController?.isNavigationBarHidden = true
-
-        
         let nib = UINib.init(nibName: StoryboardID.AppointmentTableCellId, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: StoryboardID.AppointmentTableCellId)
     }
@@ -72,14 +72,11 @@ class ListAppointmentViewController: UITableViewController {
 
                               let listTemp = rs.data as List<Appointment>
 
-                     
-
                                 for item in listTemp{
                                     self.listAppointment.append(item)
                                 }
                                 self.tableView.reloadData()
-                            
-                                                
+                 
                      })
         
     }

@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  youMed
 //
-//  Created by Duy Dinh on 10/23/20.
+//  Created by thinhdang on 10/23/20.
 //
 
 import UIKit
@@ -80,8 +80,6 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
          
             
             return cell
-            
-            //cell.delegate = self
         default:
             return UITableViewCell()
         }
@@ -100,7 +98,6 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("hihihehe")
         let controller: DoctorProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorProfileViewControllerId) as! DoctorProfileViewController
         
         controller.data = listDoctor[indexPath.row]
@@ -114,6 +111,34 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
             header.delegateDoctor = self
             header.delegateHospital = self
             return header
+        }
+        if section == 1{
+            let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 40))
+
+            let label = UILabel()
+            label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width, height: headerView.frame.height-10)
+            label.text = "SPECIALIST"
+            //label.font = UIFont().futuraPTMediumFont(16) // my custom font
+            label.textColor = .white // my custom colour
+            label.backgroundColor = .link
+            label.font = UIFont.boldSystemFont(ofSize: 16)
+            headerView.addSubview(label)
+
+            return headerView
+        }
+        if section == 2{
+            let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 40))
+
+            let label = UILabel()
+            label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width, height: headerView.frame.height-10)
+            label.text = "DOCTOR"
+            //label.font = UIFont().futuraPTMediumFont(16) // my custom font
+            label.textColor = .white // my custom colour
+            label.backgroundColor = .link
+            label.font = UIFont.boldSystemFont(ofSize: 16)
+            headerView.addSubview(label)
+
+            return headerView
         }
         return UITableViewHeaderFooterView()
     }

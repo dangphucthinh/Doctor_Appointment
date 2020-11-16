@@ -33,7 +33,7 @@ class AppointmentTableCell: UITableViewCell {
     
   
     func commonInit(_ name: String, _ phone: String, _ date: String){
-        doctorNameLb.text = name
+        doctorNameLb.text = "Dr. \(name.uppercased())"
         phoneNumber.text = phone
         dateLb.text = dateToSQLDate(date)
             

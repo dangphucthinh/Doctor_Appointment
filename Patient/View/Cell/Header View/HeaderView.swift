@@ -2,7 +2,7 @@
 //  headerView.swift
 //  youMed
 //
-//  Created by Duy Dinh on 10/23/20.
+//  Created by thinhdang on 10/23/20.
 //
 
 import UIKit

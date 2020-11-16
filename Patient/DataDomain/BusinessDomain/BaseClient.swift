@@ -14,6 +14,7 @@ class BaseClient: NSObject{
     var userId : String?
     var fullName : String?
     var avatar : String?
+    var email : String?
     
     //singleton
     static let shared = BaseClient()
@@ -41,9 +42,9 @@ class BaseClient: NSObject{
         case GetPatientInfo(UserId: String,
                             token: String)
         
-        case getListDoctor
+        case getListDoctor(token: String)
         
-        case getListHospital
+        case getListHospital(token: String)
         
         case makeAnAppointment(doctorId: String,
                                patientId: String,
@@ -183,10 +184,10 @@ class BaseClient: NSObject{
                     "UserId" : UserId
                 ]
            
-            case .getListDoctor:
+            case .getListDoctor(_):
                 return [:]
                 
-            case .getListHospital:
+            case .getListHospital(_):
                 return [:]
                 
             case .makeAnAppointment(let doctorId,
@@ -254,9 +255,8 @@ class BaseClient: NSObject{
             switch self {
             case .login,
                  .register,
-                 .changePassword,
-                 .getListDoctor,
-                 .getListHospital:
+                 .changePassword
+                 :
                 
                 return urlRequest
                             
@@ -279,7 +279,11 @@ class BaseClient: NSObject{
                           token: let accessToken),
                  
                  .prediction(data: _,
-                             token: let accessToken):
+                             token: let accessToken),
+                
+                 .getListDoctor(token: let accessToken),
+                
+                .getListHospital(token: let accessToken):
                 
                 urlRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: Header.Authorization)
                 return urlRequest

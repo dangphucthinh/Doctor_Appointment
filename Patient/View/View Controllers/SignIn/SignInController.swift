@@ -13,8 +13,8 @@ class SignInController: UIViewController {
 
     @IBOutlet weak var tfUsername: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
-    var user = User()
         
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -57,6 +57,15 @@ class SignInController: UIViewController {
 
                 if(isSuccess!) {
                     
+                    var name = BaseClient.shared.fullName
+                    var email = BaseClient.shared.email
+                    var avatar = BaseClient.shared.avatar
+                    var id = BaseClient.shared.userId
+                    //send user to firebase
+                    let userData = UserDataModel(Uname: name ?? "Not found", Uemail: email ?? "Not found", Uavatar: avatar ?? "Not found", UuserId: id ?? "Not found" )
+                    UserDataManager.setUserData(userData: userData, userId: name ?? "Not found")
+                    
+                    //switch to parentViewController
                     self.resetRoot(id: StoryboardID.ParentViewControllerId)
                         }
                 else {

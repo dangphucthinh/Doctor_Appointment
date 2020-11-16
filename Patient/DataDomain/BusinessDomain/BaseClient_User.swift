@@ -46,6 +46,13 @@ extension BaseClient {
                         let user_Id = ((rawValue as!  NSDictionary).object(forKey: ResponseKey.User)) as? NSDictionary
                         self.userId = user_Id?.object(forKey: "id") as? String
                         
+                        let avatar_user = ((rawValue as!  NSDictionary).object(forKey: ResponseKey.User)) as? NSDictionary
+                        self.avatar = avatar_user?.object(forKey: "avatar") as? String
+                        
+                        let email_user = ((rawValue as!  NSDictionary).object(forKey: ResponseKey.User)) as? NSDictionary
+                        self.email = email_user?.object(forKey: "email") as? String
+                        
+                        
                         DataManager.shared.AddValue(key: Header.Authorization, value: "Bearer \(self.accessToken!)")
                         DispatchQueue.main.async {
                             // Run on main thread
@@ -104,7 +111,7 @@ extension BaseClient {
             parameters["MedicalHistory"] = medicalHistory
             parameters["Allergy"] = allergy
 
-            let url = "http://116.110.1.219:2905/api/Auth/Update"
+        let url = API.kUpdate
             print(url)
 
 

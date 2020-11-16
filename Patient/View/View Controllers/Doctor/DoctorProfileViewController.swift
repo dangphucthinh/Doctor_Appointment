@@ -7,6 +7,7 @@ class DoctorProfileViewController: UITableViewController {
     @IBOutlet weak var bioTextView: UITextView!
     @IBOutlet weak var imgAva: UIImageView!
 
+    @IBOutlet weak var messageButton: UIButton!
     @IBOutlet weak var bookingAppoinment: UIButton!
     
     var data : Doctor?
@@ -31,12 +32,25 @@ class DoctorProfileViewController: UITableViewController {
         imgAva.sd_setImage(with: url, placeholderImage: UIImage(named: "no_image_banner"))
     }
     
-    @IBAction func showAlert(_ sender: UIButton){
+    private func setUserInFirebase(){
+        let userData = UserDataModel(Uname: (data?.fullName)!, Uemail: (data?.email)!, Uavatar: (data?.avatar)!, UuserId: (data?.id)! )
+        UserDataManager.setUserData(userData: userData, userId: data?.id ?? "Not found ID")
+    }
+    
+    
+    @IBAction func makeAppointment(_ sender: Any) {
         // create the alert
         let controller: MakeAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.MakeAppointmentViewControllerId) as! MakeAppointmentViewController
         
         controller.doctorId = (data?.id)!
         
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    @IBAction func chatting(_ sender: Any) {
+        // create the alert
+        let controller: MessengerViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.MessengerViewControllerId) as! MessengerViewController
+        setUserInFirebase()
+        controller.receivedUserId = data?.id
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

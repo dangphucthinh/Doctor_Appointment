@@ -10,136 +10,82 @@ import Firebase
 
 class MessengerViewController: UIViewController {
 
-    var ref = DatabaseReference.init()
+    @IBOutlet weak var messageTableView: UITableView!
+    @IBOutlet weak var txtMessage: UITextField!
+    @IBOutlet weak var btnSend: UIButton!
     
-    let messagesTableView: UITableView = {
-        let messagesTableView = UITableView()
-        messagesTableView.register(MessagesViewCell.self, forCellReuseIdentifier: "cellId")
-        messagesTableView.translatesAutoresizingMaskIntoConstraints = false
-        messagesTableView.isScrollEnabled = true
+    var sendUserId = BaseClient.shared.userId
+    var receivedUserId : String?
+    var allmessages = [MessageDataModel]()
+    var recieverUser : UserDataModel?
         
-        
-        return messagesTableView
-    }()
-    
-    private let pageTitle: UILabel = {
-        let pageTitle = UILabel()
-        pageTitle.translatesAutoresizingMaskIntoConstraints = false
-        pageTitle.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
-        
-        let attributedText = NSMutableAttributedString(string: "Smart A.I. Chat", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 25)])
-        
-        pageTitle.attributedText = attributedText
-        return pageTitle
-    }()
-    
-    var messagesArray = [
-        MessageModel(content: "Hey What's Up, Ask me Something. I'm Super Smart", id: "agent")
-    ]
-    
-    @IBOutlet weak var sendBtn: UIButton!
-    @IBOutlet weak var messageField: UITextField!
-    
-    @IBAction func sendBtnClicked(_ sender: Any) {
-        if messageField.text != nil && messageField.text != "" {
-            //queryResponse(query: messageField.text!)
- 
-        }
-            messagesArray.append(MessageModel(content: messageField.text!, id: "user"))
-           messagesTableView.reloadData()
-           messageField.text = ""
-    }
-    
-    func queryResponse(query: String) {
-  
-      BaseClient.shared.Chatbot(data: messageField.text!,
-                                completion: { [self]
-                        (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-                                                         
-                                    let rs = value as! ResponseChatbot
-                                    if rs.status == 0{
-                                        if let speech = rs.data {
-                                               self.messagesArray.append(MessageModel(content: speech, id: "agent"))
-                                               self.messagesTableView.reloadData()
-                                               print(speech)
-                                               
-                                           }
-                                    }
-                           
-                                      
-
-                    })
-    }
-
-            
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        super.viewDidLoad()
-        
-        messagesTableView.dataSource = self
-        messagesTableView.delegate = self
-        messagesTableView.separatorStyle = .none
-        messagesTableView.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1)
-        messagesTableView.rowHeight = UITableView.automaticDimension
-        messagesTableView.estimatedRowHeight = 200
-        
-        view.addSubview(messagesTableView)
-        view.addSubview(pageTitle)
-        
-        messagesTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-        messagesTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        messagesTableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        messagesTableView.bottomAnchor.constraint(equalTo: messageField.topAnchor, constant: -20).isActive = true
-        
-        pageTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
-        pageTitle.bottomAnchor.constraint(equalTo: messagesTableView.topAnchor, constant: -18).isActive = true
-        
-        
-
+        textFieldValidation()
+        self.title = recieverUser?.name
+        getAllMessages()
+    
+    }
+    
+    func getAllMessages(){
+      
+        MessageDataManager.getAllMessages(thread: (recieverUser?.userId)! + sendUserId!) { (messages) in
+            self.allmessages = messages
+            self.messageTableView.reloadData()
+           
+            if self.allmessages.count != 0{
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.1, execute: {
+                    let indexPath = IndexPath(row: self.allmessages.count-1, section: 0)
+                    self.messageTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+                })
+            }
+        }
     }
 
+    @IBAction func onClickBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func onClickSend(_ sender: Any) {
+        let messageData = MessageDataModel(msg: txtMessage.text!, rvrId: (recieverUser?.userId)!, sndrId: sendUserId!)
+        MessageDataManager.setMessage(thread: (recieverUser?.userId)! + sendUserId!, messageData: messageData)
+        txtMessage.text = ""
+    }
 }
 
-extension MessengerViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return UITableView.automaticDimension
-        } else {
-            return 40
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return UITableView.automaticDimension
-        } else {
-            return 40
-        }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+extension MessengerViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messagesArray.count
+        return allmessages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! MessagesViewCell
-        
-        let message = messagesArray[indexPath.row]
-        cell.message = message
-        cell.backgroundColor = .clear
-        cell.layer.cornerRadius = 10
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChattingCell", for: indexPath) as! ChattingCell
+        if allmessages[indexPath.row].senderId == sendUserId{
+            cell.setMessageType(type: .outgoing)
+        }
+        else{
+            cell.setMessageType(type: .incoming)
+        }
+        cell.txtMessage.text = allmessages[indexPath.row].message
         return cell
     }
-    
+}
 
+extension MessengerViewController{
+    func textFieldValidation(){
+        btnSend.isEnabled = false
+        txtMessage.addTarget(self, action: #selector(textDidChange(_sender:)), for: .editingChanged)
+    }
+    
+    @objc func textDidChange(_sender:UITextField){
+        if txtMessage.text?.count == 0 && txtMessage.text == ""{
+            btnSend.alpha = 0.5
+            btnSend.isEnabled = false
+        }
+        else{
+            btnSend.alpha = 1
+            btnSend.isEnabled = true
+        }
+    }
 }

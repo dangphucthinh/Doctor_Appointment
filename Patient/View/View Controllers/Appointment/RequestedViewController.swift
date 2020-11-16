@@ -14,21 +14,14 @@ class RequestedViewController: UITableViewController {
 
     var UserId = BaseClient.shared.userId
     
+    
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
+        listAppointment = List<Appointment>()
         loadData()
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-       // loadData()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
         let nib = UINib.init(nibName: StoryboardID.RequestViewCellId, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: StoryboardID.RequestViewCellId)
     }
@@ -49,7 +42,6 @@ class RequestedViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardID.RequestViewCellId, for: indexPath) as! RequestViewCell
         
         if indexPath.row < listAppointment.count {
-           // name = "\(listAppointment[indexPath.row].doctorName ?? "Not name")"
             cell.commonInit("\(listAppointment[indexPath.row].doctorName ?? "Not name")",
                             "\(listAppointment[indexPath.row].doctorPhone ?? "Not name")",
                             "\(listAppointment[indexPath.row].meetingTime ?? "Not name")")
@@ -59,10 +51,6 @@ class RequestedViewController: UITableViewController {
             print("hihi")
 
         }
-        
-     
-        
-    
         cell.delegate = self
         return cell
     }

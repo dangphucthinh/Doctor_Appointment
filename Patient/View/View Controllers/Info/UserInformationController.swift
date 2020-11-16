@@ -2,7 +2,7 @@
 //  UserViewController.swift
 //  youMed
 //
-//  Created by Duy Dinh on 10/29/20.
+//  Created by thinhdang on 10/29/20.
 //
 
 import UIKit
@@ -25,7 +25,6 @@ class UserInformationController: UIViewController {
         self.setNavigationBarLogo(title: "INFORMATION", controlEvents: .touchUpInside,
         ForAction:{() -> Void in
             // Search action
-            print("Search")
         })
 
         
@@ -83,7 +82,7 @@ extension UserInformationController: UITableViewDelegate, UITableViewDataSource 
         switch indexPath.row {
         case 0:
             print("abc")
-            let controller: DoctorProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorProfileViewControllerId) as! DoctorProfileViewController
+            let controller: CreateRoomsViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.CreateRoomsViewControllerId) as! CreateRoomsViewController
             
 
             self.navigationController?.pushViewController(controller, animated: true)

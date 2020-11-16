@@ -2,7 +2,7 @@
 //  DetailTableViewCell.swift
 //  youMed
 //
-//  Created by Duy Dinh on 10/24/20.
+//  Created by thinhdang on 10/24/20.
 //
 
 import UIKit
@@ -32,7 +32,7 @@ class DetailTableViewCell: UITableViewCell {
             guard let data = data else { return }
             
             specialistLabel.text = data.specialtyName
-            nameLabel.text = data.fullName
+            nameLabel.text = data.fullName?.uppercased()
             
             if(data.avatar!.count > 0){
                 let ava: String? = data.avatar
@@ -57,6 +57,9 @@ class DetailTableViewCell: UITableViewCell {
       
     }
     private func loadInformation(){
+        doctorImage.layer.cornerRadius = doctorImage.frame.height / 2
+        doctorImage.backgroundColor = .systemBlue
+        
         scheduleButton.layer.cornerRadius = 5
         scheduleButton.backgroundColor = .blue
         
