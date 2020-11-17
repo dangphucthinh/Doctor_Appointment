@@ -76,6 +76,7 @@
 		55318362255D2BF900A43B92 /* MessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55318361255D2BF900A43B92 /* MessageDataModel.swift */; };
 		5531836A255D313500A43B92 /* CreateRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55318369255D313500A43B92 /* CreateRoomsViewController.swift */; };
 		55337C23255B767D003E22A6 /* CommonResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55337C22255B767D003E22A6 /* CommonResources.swift */; };
+		553ABDF5256364320016BCF3 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553ABDF4256364320016BCF3 /* DesignableTextField.swift */; };
 		557B0BD2255A8F5B00C52C63 /* ConfirmPatientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B0BD0255A8F5B00C52C63 /* ConfirmPatientTableViewCell.swift */; };
 		557B0BD3255A8F5B00C52C63 /* ConfirmPatientTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 557B0BD1255A8F5B00C52C63 /* ConfirmPatientTableViewCell.xib */; };
 		557B0BDB255A946300C52C63 /* ConfirmAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B0BDA255A946300C52C63 /* ConfirmAppointment.swift */; };
@@ -197,6 +198,7 @@
 		55318361255D2BF900A43B92 /* MessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataModel.swift; sourceTree = "<group>"; };
 		55318369255D313500A43B92 /* CreateRoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomsViewController.swift; sourceTree = "<group>"; };
 		55337C22255B767D003E22A6 /* CommonResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResources.swift; sourceTree = "<group>"; };
+		553ABDF4256364320016BCF3 /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		557B0BD0255A8F5B00C52C63 /* ConfirmPatientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPatientTableViewCell.swift; sourceTree = "<group>"; };
 		557B0BD1255A8F5B00C52C63 /* ConfirmPatientTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmPatientTableViewCell.xib; sourceTree = "<group>"; };
 		557B0BDA255A946300C52C63 /* ConfirmAppointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAppointment.swift; sourceTree = "<group>"; };
@@ -783,6 +785,7 @@
 				4DF3E65F2556ADF20058A23A /* CustomButton.swift */,
 				4D47D33B256005F2002A28B1 /* DesignableView.swift */,
 				4D47D34025600609002A28B1 /* DesignableTextView.swift */,
+				553ABDF4256364320016BCF3 /* DesignableTextField.swift */,
 			);
 			path = "custom components";
 			sourceTree = "<group>";
@@ -1082,6 +1085,7 @@
 				4D1B6F61255794BC00AEC5FC /* RequestedViewController.swift in Sources */,
 				E1CF95C4254A6D9C0091D0D0 /* UserInformationController.swift in Sources */,
 				4DC466A0255ACF130027A193 /* BaseClient_Hospital.swift in Sources */,
+				553ABDF5256364320016BCF3 /* DesignableTextField.swift in Sources */,
 				4D076A112557FDC000DDD452 /* ListAppointmentViewController.swift in Sources */,
 				4D076A2B2557FF2D00DDD452 /* DoctorProfileViewController.swift in Sources */,
 				4D78DCE22555799B00C53CB0 /* CommonString.swift in Sources */,

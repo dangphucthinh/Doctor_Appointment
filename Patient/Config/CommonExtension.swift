@@ -68,19 +68,19 @@ extension UIViewController {
         
     }
     
-//    func navigationTitle(title: String) -> Void {
-//        self.navigationItem.title = title
-//          let navBar = self.navigationController?.navigationBar
-//
-//            // change the bar tint color to change what the color of the bar itself looks like
-//            navBar?.barTintColor = UIColor.black
-//
-//            // tint color changes the color of the nav item colors eg. the back button
-//            navBar?.tintColor = UIColor.white
-//            
-//            // the following attribute changes the title color
-//            navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-//    }
+    func navigationTitle(title: String) -> Void {
+        self.navigationItem.title = title
+          let navBar = self.navigationController?.navigationBar
+
+            // change the bar tint color to change what the color of the bar itself looks like
+            navBar?.barTintColor = UIColor.systemBlue
+
+            // tint color changes the color of the nav item colors eg. the back button
+            navBar?.tintColor = UIColor.white
+            
+            // the following attribute changes the title color
+            navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
     
     func hideNavigationBar(animated: Bool){
         // Hide the navigation bar on the this view controller
@@ -97,20 +97,20 @@ extension UIViewController {
 
 extension UITableViewController{
     
-    func navigationTitle(title: String) -> Void {
-        self.navigationItem.title = title
-          let navBar = self.navigationController?.navigationBar
-
-            // change the bar tint color to change what the color of the bar itself looks like
-            navBar?.barTintColor = UIColor.systemBlue
-
-            // tint color changes the color of the nav item colors eg. the back button
-            navBar?.tintColor = UIColor.white
-            
-            // the following attribute changes the title color
-            navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        
-    }
+//    func navigationTitle(title: String) -> Void {
+//        self.navigationItem.title = title
+//          let navBar = self.navigationController?.navigationBar
+//
+//            // change the bar tint color to change what the color of the bar itself looks like
+//            navBar?.barTintColor = UIColor.systemBlue
+//
+//            // tint color changes the color of the nav item colors eg. the back button
+//            navBar?.tintColor = UIColor.white
+//            
+//            // the following attribute changes the title color
+//            navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//        
+//    }
 }
 
 extension UIView {
@@ -119,6 +119,13 @@ extension UIView {
         self.layer.cornerRadius = cornerRadius ?? 0
         self.layer.borderWidth = borderWidth ?? 0
         self.layer.borderColor = borderCorlor
+    }
+}
+
+extension UIImageView{
+    func roundedImageView(){
+        self.layer.cornerRadius = self.frame.height / 2
+        self.backgroundColor = .systemBlue
     }
 }
 

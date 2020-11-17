@@ -18,6 +18,8 @@ class User:Object, Mappable {
     var dateOfBirth: String?
     var phoneNumber: String?
     var avatar: String?
+    var firstName : String?
+    var lastName: String?
     
     required convenience init?(map: Map) {
             self.init()
@@ -32,6 +34,7 @@ class User:Object, Mappable {
         avatar      <- map["avatar"]
         userName    <- map["userName"]
         phoneNumber <- map["phoneNumber"]
-     
+        firstName   <- map["firstName"]
+        lastName    <- map["lastName"]     
     }
 }

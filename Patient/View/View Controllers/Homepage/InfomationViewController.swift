@@ -24,15 +24,18 @@ class InfomationViewController: UITableViewController {
     @IBOutlet weak var historyTextField: UITextField!
     @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var button: UIView!
+
     
     var UserId = BaseClient.shared.userId
     let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.hideKeyboardWhenTappedAround()
+        self.hideKeyboardWhenTappedAround()        
+        imgAvatar.roundedImageView()
+        self.navigationTitle(title: "PROFILE")
     }
+    
     
 
     override func viewWillAppear(_ animated: Bool) {
@@ -46,8 +49,6 @@ class InfomationViewController: UITableViewController {
                 button.addGestureRecognizer(tapGuesture1)
         
     }
-    
-    
     
     @objc func handleTap1(_ sender: AnyObject){
         var imageData : Data? = nil
@@ -132,7 +133,8 @@ class InfomationViewController: UITableViewController {
                     
                     let ava: String? = user.data?.avatar
                     let url = URL.init(string:"\(ava ?? "No image found")")
-                    self.nameTextField.text = user.data?.fullName
+                    self.nameTextField.text = user.data?.firstName
+                    self.lastNameTextField.text = user.data?.lastName
                     self.emailTextField.text = user.data?.email
                     self.phoneTextField.text = user.data?.phoneNumber
                     self.historyTextField.text = user.data?.medicalHistory

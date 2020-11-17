@@ -29,8 +29,9 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationTitle(title: "MAKE APPOINTMENT")
+        
         calendar.delegate = self
-
         timePicker.delegate = self
         timePicker.dataSource = self
 
@@ -43,11 +44,6 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
     @IBAction func Booking(_ sender: Any) {
         print("\(deliveryTimes[self.timePicker.selectedRow(inComponent: 0)])")
         print(dateSelected)
-
-//        let controller: ConfirmAppointment = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ConfirmAppointmentId) as! ConfirmAppointment
-//                                                      //controller.stringb = deliveryTimes[self.timePicker.selectedRow(inComponent: 0)]
-//                                                      //controller.statusId = 1
-//          self.navigationController?.pushViewController(controller, animated: true)
 
         Loading.showLoading(message: Message.LoadingMessage, view: self.view)
         BaseClient.shared.MakeAnAppointment(doctorId: doctorId,
@@ -72,7 +68,6 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
                         self.present(alert, animated: true, completion: nil)
                     }
                     let controller: ListAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ListAppointmentViewControllerId) as! ListAppointmentViewController
-                    //controller.stringb = deliveryTimes[self.timePicker.selectedRow(inComponent: 0)]
                     controller.statusId = 1
                     self.navigationController?.pushViewController(controller, animated: true)
 

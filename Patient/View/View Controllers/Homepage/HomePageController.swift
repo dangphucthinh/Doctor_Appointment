@@ -150,17 +150,6 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
         return 30
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 1:
-            return "Specialist"
-        case 2:
-            return "Doctor"
-        default:
-            return ""
-        }
-    }
-    
     func loadDoctor(){
         BaseClient.shared.GetListDoctor(completion: { [self]
                                         (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
