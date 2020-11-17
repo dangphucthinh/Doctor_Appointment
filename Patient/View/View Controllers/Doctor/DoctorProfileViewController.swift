@@ -11,7 +11,7 @@ class DoctorProfileViewController: UITableViewController {
     @IBOutlet weak var bookingAppoinment: UIButton!
     
     var data : Doctor?
-   
+    var dataUser: UserDataModel?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,10 +32,10 @@ class DoctorProfileViewController: UITableViewController {
         imgAva.sd_setImage(with: url, placeholderImage: UIImage(named: "no_image_banner"))
     }
     
-    private func setUserInFirebase(){
-        let userData = UserDataModel(Uname: (data?.fullName)!, Uemail: (data?.email)!, Uavatar: (data?.avatar)!, UuserId: (data?.id)! )
-        UserDataManager.setUserData(userData: userData, userId: data?.id ?? "Not found ID")
-    }
+//    private func setUserInFirebase(){
+//        let userData = UserDataModel(Uname: (data?.fullName)!, Uemail: (data?.email)!, Uavatar: (data?.avatar)!, UuserId: (data?.id)! )
+//        UserDataManager.setUserData(userData: userData, userId: data?.id ?? "Not found ID")
+//    }
     
     
     @IBAction func makeAppointment(_ sender: Any) {
@@ -49,8 +49,9 @@ class DoctorProfileViewController: UITableViewController {
     @IBAction func chatting(_ sender: Any) {
         // create the alert
         let controller: MessengerViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.MessengerViewControllerId) as! MessengerViewController
-        setUserInFirebase()
-        controller.receivedUserId = data?.id
+        dataUser = UserDataModel(Uname: (data?.fullName)!, Uemail: (data?.email)!, Uavatar: (data?.avatar)!, UuserId: (data?.id)! )
+        UserDataManager.setUserData(userData: dataUser!, userId: data?.id ?? "Not found ID")
+        controller.recieverUser = dataUser!
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

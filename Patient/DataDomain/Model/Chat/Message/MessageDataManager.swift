@@ -18,7 +18,7 @@ class MessageDataManager{
     }
     
     
-    static func getAllMessages(thread:String, completion:@escaping([MessageDataModel])->Void){
+    static func getAllMessagesInConversation(thread:String, completion:@escaping([MessageDataModel])->Void){
         
         var allmessages = [MessageDataModel]()
         Database.database().reference(withPath: "Messages").child(thread).observe(.value) { (dataSnapShot) in
@@ -38,6 +38,27 @@ class MessageDataManager{
                 }
                 completion(allmessages)
             }
+        }
+    }
+    
+    static func getAllConversation(completion:@escaping([MessageDataModel])->Void){
+        //let sendUserId = BaseClient.shared.userId
+        var allConversation = [MessageDataModel]()
+        databaseRef.child("Messages").observe(.value) { (dataSnapShot) in
+            allConversation.removeAll()
+            for snap in dataSnapShot.children{
+                let userSnap = snap as! DataSnapshot
+                let userDict = userSnap.value as! [String:String]
+                let message = userDict["message"]
+                let recieverId = userDict["recieverId"]
+                let senderId = userDict["senderId"]
+                
+                
+//                if sendUserId != userId{
+                allConversation.append(MessageDataModel(msg: message!, rvrId: recieverId!, sndrId: senderId!))
+//                }
+            }
+            completion(allConversation)
         }
     }
     

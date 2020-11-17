@@ -2208,13 +2208,13 @@
     </scenes>
     <designables>
         <designable name="6o0-iy-u2Y">
-            <size key="intrinsicContentSize" width="130" height="34"/>
+            <size key="intrinsicContentSize" width="140" height="34"/>
         </designable>
         <designable name="BHk-9u-i1a">
-            <size key="intrinsicContentSize" width="148" height="21"/>
+            <size key="intrinsicContentSize" width="158" height="21"/>
         </designable>
         <designable name="gae-XA-OT2">
-            <size key="intrinsicContentSize" width="122" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="132" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>

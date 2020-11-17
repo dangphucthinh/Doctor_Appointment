@@ -85,21 +85,18 @@ class ChatViewController: UIViewController {
   
       BaseClient.shared.Chatbot(data: messageField.text!,
                                 completion: { [self]
-                        (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-                                                         
-                                    let rs = value as! ResponseChatbot
-                                    if rs.status == 0{
-                                        if let speech = rs.data {
-                                               self.messagesArray.append(MessageModel(content: speech, id: "agent"))
-                                               self.messagesTableView.reloadData()
-                                               print(speech)
-                                               
-                                           }
-                                    }
-                           
-                                      
-
-                    })
+            (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+                                             
+                        let rs = value as! ResponseChatbot
+                        if rs.status == 0{
+                            if let speech = rs.data {
+                                   self.messagesArray.append(MessageModel(content: speech, id: "agent"))
+                                   self.messagesTableView.reloadData()
+                                   print(speech)
+                                   
+                               }
+                        }
+        })
     }
 }
 

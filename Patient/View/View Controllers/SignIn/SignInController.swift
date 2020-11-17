@@ -62,8 +62,11 @@ class SignInController: UIViewController {
                     let avatar = BaseClient.shared.avatar
                     let id = BaseClient.shared.userId
                     //send user to firebase
-                    let userData = UserDataModel(Uname: name ?? "Not found", Uemail: email ?? "Not found", Uavatar: avatar ?? "Not found", UuserId: id ?? "Not found" )
-                    UserDataManager.setUserData(userData: userData, userId: name ?? "Not found")
+                    let userData = UserDataModel(Uname: name ?? "Not found",
+                                                 Uemail: email ?? "Not found",
+                                                 Uavatar: avatar ?? "Not found",
+                                                 UuserId: id ?? "Not found" )
+                    UserDataManager.setUserData(userData: userData, userId: id ?? "Not found")
                     
                     //switch to parentViewController
                     self.resetRoot(id: StoryboardID.ParentViewControllerId)
