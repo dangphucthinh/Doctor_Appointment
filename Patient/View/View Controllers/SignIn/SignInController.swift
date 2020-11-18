@@ -64,7 +64,7 @@ class SignInController: UIViewController {
                     //send user to firebase
                     let userData = UserDataModel(Uname: name ?? "Not found",
                                                  Uemail: email ?? "Not found",
-                                                 Uavatar: avatar ?? "Not found",
+                                                 Uavatar: avatar ?? "User",
                                                  UuserId: id ?? "Not found" )
                     UserDataManager.setUserData(userData: userData, userId: id ?? "Not found")
                     

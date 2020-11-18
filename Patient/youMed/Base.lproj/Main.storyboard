@@ -427,9 +427,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Symptom 4" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVB-NJ-nDW" customClass="DropDown" customModule="iOSDropDown">
@@ -703,159 +700,262 @@
                                     <action selector="signUp:" destination="3l6-Sz-eO4" eventType="touchUpInside" id="4KT-2S-Iku"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qOE-jd-G2d">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qOE-jd-G2d" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
                                 <rect key="frame" x="20" y="322" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="YWE-Cf-zCr"/>
                                 </constraints>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="opaqueSeparatorColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="LeftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BEV-qc-EUd">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BEV-qc-EUd" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
                                 <rect key="frame" x="20" y="376" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="ZaX-Zm-xde"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="opaqueSeparatorColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="LeftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S52-sh-GTc">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="S52-sh-GTc" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
                                 <rect key="frame" x="20" y="430" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="N8v-Q4-3q0"/>
                                 </constraints>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="opaqueSeparatorColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="LeftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cgh-UY-pHQ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cgh-UY-pHQ" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
                                 <rect key="frame" x="20" y="484" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="oF2-uU-L6d"/>
                                 </constraints>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="opaqueSeparatorColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="LeftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q7e-7e-D2j">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Q7e-7e-D2j" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
                                 <rect key="frame" x="20" y="538" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="IQh-FL-p4Z"/>
                                 </constraints>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="opaqueSeparatorColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="LeftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jBk-dU-zyw">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jBk-dU-zyw" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
                                 <rect key="frame" x="20" y="592" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="6Yh-H4-RFJ"/>
                                 </constraints>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="opaqueSeparatorColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="LeftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UVI-iN-7e0">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UVI-iN-7e0" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
                                 <rect key="frame" x="20" y="646" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="eZn-iD-Xgp"/>
                                 </constraints>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="opaqueSeparatorColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="LeftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date Of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cBY-7K-mTQ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date Of Birth" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cBY-7K-mTQ" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
                                 <rect key="frame" x="20" y="700" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="ZjN-or-IHq"/>
                                 </constraints>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="opaqueSeparatorColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="LeftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQr-HL-zGh">
-                                <rect key="frame" x="79" y="765" width="37.333333333333343" height="21"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XLj-UT-fKd" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="20" y="754" width="200" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="JQO-nk-hgb"/>
+                                    <constraint firstAttribute="width" constant="200" id="3Ua-MR-b8Q"/>
+                                    <constraint firstAttribute="height" constant="34" id="RUd-Mk-KiW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ath-Kj-z8H">
-                                <rect key="frame" x="41" y="760.66666666666663" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Mcq-bR-BD3"/>
-                                    <constraint firstAttribute="width" constant="30" id="aZs-mA-z14"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="uncheckbox"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Female" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfg-Ll-2kO">
-                                <rect key="frame" x="317.66666666666669" y="765" width="55.333333333333314" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="4xC-TK-X7F"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNw-vO-VaH">
-                                <rect key="frame" x="279.66666666666669" y="760.66666666666663" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="Hp0-Tl-sJ9"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="uncheckbox"/>
-                            </button>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="opaqueSeparatorColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="arrowColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedRowColor">
+                                        <color key="value" systemColor="opaqueSeparatorColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="00g-9d-HGY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="00g-9d-HGY" firstAttribute="trailing" secondItem="cBY-7K-mTQ" secondAttribute="trailing" constant="20" id="0cR-fG-aUx"/>
-                            <constraint firstItem="gQr-HL-zGh" firstAttribute="leading" secondItem="WVF-Zq-Unt" secondAttribute="leading" constant="79" id="4HI-TT-haw"/>
                             <constraint firstItem="00g-9d-HGY" firstAttribute="bottom" secondItem="QSF-ZP-5Kg" secondAttribute="bottom" id="52a-Vy-Bgu"/>
-                            <constraint firstItem="Ath-Kj-z8H" firstAttribute="baseline" secondItem="VNw-vO-VaH" secondAttribute="baseline" id="5Tb-si-Lm4"/>
                             <constraint firstItem="BEV-qc-EUd" firstAttribute="leading" secondItem="00g-9d-HGY" secondAttribute="leading" constant="20" id="7Mf-u2-gNT"/>
                             <constraint firstItem="00g-9d-HGY" firstAttribute="trailing" secondItem="cgh-UY-pHQ" secondAttribute="trailing" constant="20" id="8ZE-uG-5Es"/>
                             <constraint firstItem="SY5-Iu-lGD" firstAttribute="centerX" secondItem="sSR-c6-f6g" secondAttribute="centerX" id="8ZT-CH-VPk"/>
-                            <constraint firstItem="Ath-Kj-z8H" firstAttribute="centerY" secondItem="jfg-Ll-2kO" secondAttribute="centerY" id="8fh-Oz-EX4"/>
                             <constraint firstItem="00g-9d-HGY" firstAttribute="trailing" secondItem="UVI-iN-7e0" secondAttribute="trailing" constant="20" id="9Fp-rO-ABR"/>
                             <constraint firstItem="SY5-Iu-lGD" firstAttribute="top" secondItem="sSR-c6-f6g" secondAttribute="bottom" constant="21" id="9bF-mk-3fL"/>
                             <constraint firstItem="UVI-iN-7e0" firstAttribute="top" secondItem="jBk-dU-zyw" secondAttribute="bottom" constant="20" id="BHN-0F-diO"/>
                             <constraint firstItem="00g-9d-HGY" firstAttribute="trailing" secondItem="QSF-ZP-5Kg" secondAttribute="trailing" constant="112" id="F6o-yS-cYb"/>
                             <constraint firstItem="cBY-7K-mTQ" firstAttribute="top" secondItem="UVI-iN-7e0" secondAttribute="bottom" constant="20" id="FwY-fw-6rl"/>
                             <constraint firstItem="R5t-8C-3h9" firstAttribute="leading" secondItem="00g-9d-HGY" secondAttribute="leading" constant="149.5" id="HGq-1G-PDs"/>
-                            <constraint firstItem="00g-9d-HGY" firstAttribute="trailing" secondItem="jfg-Ll-2kO" secondAttribute="trailing" constant="41" id="HhH-hl-QyB"/>
                             <constraint firstItem="R5t-8C-3h9" firstAttribute="top" secondItem="ocA-5s-z3V" secondAttribute="top" id="Ife-bc-3mB"/>
                             <constraint firstItem="cgh-UY-pHQ" firstAttribute="top" secondItem="S52-sh-GTc" secondAttribute="bottom" constant="20" id="Jkf-Zt-h9n"/>
                             <constraint firstItem="S52-sh-GTc" firstAttribute="leading" secondItem="00g-9d-HGY" secondAttribute="leading" constant="20" id="KXs-OK-frD"/>
-                            <constraint firstItem="jfg-Ll-2kO" firstAttribute="leading" secondItem="VNw-vO-VaH" secondAttribute="trailing" constant="8" symbolic="YES" id="Nd6-Fx-ZkK"/>
                             <constraint firstItem="R5t-8C-3h9" firstAttribute="top" secondItem="WVF-Zq-Unt" secondAttribute="topMargin" constant="40" id="NmK-Pm-Af8"/>
                             <constraint firstItem="Q7e-7e-D2j" firstAttribute="leading" secondItem="00g-9d-HGY" secondAttribute="leading" constant="20" id="NxE-6c-oPY"/>
                             <constraint firstItem="jBk-dU-zyw" firstAttribute="top" secondItem="Q7e-7e-D2j" secondAttribute="bottom" constant="20" id="Pv2-bT-0VP"/>
                             <constraint firstItem="ocA-5s-z3V" firstAttribute="leading" secondItem="00g-9d-HGY" secondAttribute="leading" constant="143" id="Qro-X0-HOr"/>
-                            <constraint firstItem="Ath-Kj-z8H" firstAttribute="firstBaseline" secondItem="VNw-vO-VaH" secondAttribute="firstBaseline" id="RnE-Kx-3qU"/>
-                            <constraint firstItem="Ath-Kj-z8H" firstAttribute="top" secondItem="VNw-vO-VaH" secondAttribute="top" id="UK1-db-Kih"/>
+                            <constraint firstItem="XLj-UT-fKd" firstAttribute="leading" secondItem="00g-9d-HGY" secondAttribute="leading" constant="20" id="UQK-hx-c81"/>
                             <constraint firstItem="cBY-7K-mTQ" firstAttribute="leading" secondItem="00g-9d-HGY" secondAttribute="leading" constant="20" id="V9d-Gf-sr2"/>
-                            <constraint firstItem="Ath-Kj-z8H" firstAttribute="centerY" secondItem="gQr-HL-zGh" secondAttribute="centerY" id="VIo-Hf-YW8"/>
-                            <constraint firstItem="Ath-Kj-z8H" firstAttribute="bottom" secondItem="VNw-vO-VaH" secondAttribute="bottom" id="X5w-9O-22w"/>
-                            <constraint firstItem="Ath-Kj-z8H" firstAttribute="top" secondItem="cBY-7K-mTQ" secondAttribute="bottom" constant="26.5" id="X8L-9O-ZUj"/>
+                            <constraint firstItem="QSF-ZP-5Kg" firstAttribute="top" secondItem="XLj-UT-fKd" secondAttribute="bottom" constant="26" id="Xcv-5X-PlI"/>
                             <constraint firstItem="SY5-Iu-lGD" firstAttribute="leading" secondItem="00g-9d-HGY" secondAttribute="leading" constant="20" id="YDK-1s-g36"/>
                             <constraint firstItem="cgh-UY-pHQ" firstAttribute="leading" secondItem="00g-9d-HGY" secondAttribute="leading" constant="20" id="YEC-Nx-ztC"/>
                             <constraint firstItem="00g-9d-HGY" firstAttribute="trailing" secondItem="R5t-8C-3h9" secondAttribute="trailing" constant="264.5" id="YEQ-je-0gJ"/>
+                            <constraint firstItem="XLj-UT-fKd" firstAttribute="top" secondItem="cBY-7K-mTQ" secondAttribute="bottom" constant="20" id="aMg-kW-ExE"/>
                             <constraint firstItem="qOE-jd-G2d" firstAttribute="leading" secondItem="00g-9d-HGY" secondAttribute="leading" constant="20" id="acf-tB-SzF"/>
                             <constraint firstItem="00g-9d-HGY" firstAttribute="trailing" secondItem="qOE-jd-G2d" secondAttribute="trailing" constant="20" id="beh-iS-A66"/>
                             <constraint firstItem="00g-9d-HGY" firstAttribute="trailing" secondItem="jBk-dU-zyw" secondAttribute="trailing" constant="20" id="bpv-VA-7Xl"/>
                             <constraint firstItem="00g-9d-HGY" firstAttribute="trailing" secondItem="S52-sh-GTc" secondAttribute="trailing" constant="20" id="dD0-eD-0px"/>
-                            <constraint firstItem="jfg-Ll-2kO" firstAttribute="leading" secondItem="VNw-vO-VaH" secondAttribute="trailing" constant="8" symbolic="YES" id="eEd-F8-Z3J"/>
                             <constraint firstItem="qOE-jd-G2d" firstAttribute="top" secondItem="SY5-Iu-lGD" secondAttribute="bottom" constant="8" symbolic="YES" id="epE-pr-aZ1"/>
                             <constraint firstItem="jBk-dU-zyw" firstAttribute="leading" secondItem="00g-9d-HGY" secondAttribute="leading" constant="20" id="evb-w9-wBa"/>
-                            <constraint firstItem="Ath-Kj-z8H" firstAttribute="leading" secondItem="00g-9d-HGY" secondAttribute="leading" constant="41" id="g0u-3x-3gq"/>
                             <constraint firstItem="00g-9d-HGY" firstAttribute="trailing" secondItem="BEV-qc-EUd" secondAttribute="trailing" constant="20" id="gNs-tX-qxh"/>
                             <constraint firstItem="QSF-ZP-5Kg" firstAttribute="centerX" secondItem="WVF-Zq-Unt" secondAttribute="centerX" id="gVi-Ax-ylk"/>
                             <constraint firstItem="Q7e-7e-D2j" firstAttribute="top" secondItem="cgh-UY-pHQ" secondAttribute="bottom" constant="20" id="gn5-Sq-gDK"/>
                             <constraint firstItem="ocA-5s-z3V" firstAttribute="top" secondItem="00g-9d-HGY" secondAttribute="top" constant="40" id="hYf-l9-KQA"/>
-                            <constraint firstItem="VNw-vO-VaH" firstAttribute="leading" secondItem="gQr-HL-zGh" secondAttribute="trailing" constant="163.5" id="irx-DD-agd"/>
                             <constraint firstItem="sSR-c6-f6g" firstAttribute="top" secondItem="ocA-5s-z3V" secondAttribute="bottom" constant="21" id="njR-fh-GOL"/>
                             <constraint firstItem="00g-9d-HGY" firstAttribute="trailing" secondItem="Q7e-7e-D2j" secondAttribute="trailing" constant="20" id="oY0-p9-KnL"/>
                             <constraint firstItem="UVI-iN-7e0" firstAttribute="leading" secondItem="00g-9d-HGY" secondAttribute="leading" constant="20" id="qgT-xX-YJN"/>
@@ -863,14 +963,12 @@
                             <constraint firstItem="00g-9d-HGY" firstAttribute="trailing" secondItem="ocA-5s-z3V" secondAttribute="trailing" constant="143" id="sZr-LW-Qhb"/>
                             <constraint firstItem="R5t-8C-3h9" firstAttribute="bottom" secondItem="ocA-5s-z3V" secondAttribute="bottom" id="smN-Vp-WgA"/>
                             <constraint firstItem="sSR-c6-f6g" firstAttribute="leading" secondItem="00g-9d-HGY" secondAttribute="leading" constant="20" id="sxN-vb-OQS"/>
-                            <constraint firstItem="gQr-HL-zGh" firstAttribute="leading" secondItem="Ath-Kj-z8H" secondAttribute="trailing" constant="8" symbolic="YES" id="uBW-NQ-TlJ"/>
                             <constraint firstItem="BEV-qc-EUd" firstAttribute="top" secondItem="qOE-jd-G2d" secondAttribute="bottom" constant="20" id="wE6-yO-mmS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ocd-HT-AYW"/>
                     <connections>
-                        <outlet property="btnFemale" destination="VNw-vO-VaH" id="4vP-qo-ETN"/>
-                        <outlet property="btnMale" destination="Ath-Kj-z8H" id="IUl-8A-cBJ"/>
+                        <outlet property="gender" destination="XLj-UT-fKd" id="wNC-jB-aAj"/>
                         <outlet property="tfConfirmPassword" destination="Q7e-7e-D2j" id="kNu-M4-Fmg"/>
                         <outlet property="tfDateOfBirth" destination="cBY-7K-mTQ" id="EwK-1z-on8"/>
                         <outlet property="tfEmail" destination="jBk-dU-zyw" id="7vu-iQ-7GN"/>
@@ -883,7 +981,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SgE-cA-9zo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1704" y="798"/>
+            <point key="canvasLocation" x="-1704.3478260869567" y="797.54464285714278"/>
         </scene>
         <!--Forgot password-->
         <scene sceneID="ECR-JB-daa">
@@ -2210,11 +2308,35 @@
         <designable name="6o0-iy-u2Y">
             <size key="intrinsicContentSize" width="140" height="34"/>
         </designable>
+        <designable name="BEV-qc-EUd">
+            <size key="intrinsicContentSize" width="88.333333333333329" height="21"/>
+        </designable>
         <designable name="BHk-9u-i1a">
             <size key="intrinsicContentSize" width="158" height="21"/>
         </designable>
+        <designable name="Q7e-7e-D2j">
+            <size key="intrinsicContentSize" width="142" height="20"/>
+        </designable>
+        <designable name="S52-sh-GTc">
+            <size key="intrinsicContentSize" width="87.666666666666671" height="21"/>
+        </designable>
+        <designable name="UVI-iN-7e0">
+            <size key="intrinsicContentSize" width="118.66666666666667" height="21"/>
+        </designable>
+        <designable name="cBY-7K-mTQ">
+            <size key="intrinsicContentSize" width="104.66666666666667" height="21"/>
+        </designable>
+        <designable name="cgh-UY-pHQ">
+            <size key="intrinsicContentSize" width="80" height="20"/>
+        </designable>
         <designable name="gae-XA-OT2">
             <size key="intrinsicContentSize" width="132" height="18.666666666666668"/>
+        </designable>
+        <designable name="jBk-dU-zyw">
+            <size key="intrinsicContentSize" width="49" height="21"/>
+        </designable>
+        <designable name="qOE-jd-G2d">
+            <size key="intrinsicContentSize" width="84.333333333333329" height="21"/>
         </designable>
     </designables>
     <resources>
@@ -2229,12 +2351,14 @@
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="send_icon" width="512" height="512"/>
-        <image name="uncheckbox" width="112.5" height="112.5"/>
         <namedColor name="PrimaryColor">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

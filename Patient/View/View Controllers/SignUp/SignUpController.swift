@@ -7,6 +7,7 @@
 
 
 import UIKit
+import iOSDropDown
 
 class SignUpController: UIViewController {
 
@@ -18,18 +19,38 @@ class SignUpController: UIViewController {
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPhoneNumber: UITextField!
     @IBOutlet weak var tfDateOfBirth: UITextField!
-    @IBOutlet weak var btnMale: UIButton!
-    @IBOutlet weak var btnFemale: UIButton!
+    @IBOutlet weak var gender: DropDown!
     
-
     let dateFormatter = DateFormatter()
-
+    var option = Options()
     let datePicker = UIDatePicker()
+    var isMale: Bool = true
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         showDatePicker()
         self.hideKeyboardWhenTappedAround()
+        LoadGender()
     }
+    
+    func LoadGender(){
+        gender.optionArray = option.Gender
+        gender.didSelect{(selectedText , index , id) in
+        self.gender.text = "Selected String: \(selectedText) \n index: \(index) \n Id: \(id)"
+            print(selectedText)
+            print(index)
+            
+            if selectedText == "Male"{
+                self.isMale = true
+            }
+            if selectedText == "Female"{
+            self.isMale  = false
+        }
+        print(self.isMale)
+    }
+}
+
+
     
     @IBAction func signUp(_ sender: Any) {
 

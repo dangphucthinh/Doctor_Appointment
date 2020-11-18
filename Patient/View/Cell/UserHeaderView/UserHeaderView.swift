@@ -21,6 +21,6 @@ class UserHeaderView: UITableViewHeaderFooterView {
         imageView.backgroundColor = .systemBlue
         
         nameLabel.text = name!.uppercased()
-        self.imageView.sd_setImage(with: URL(string: "\(avatar ?? "not found")"), placeholderImage: UIImage(named: "no_image_poster"))
+        self.imageView.sd_setImage(with: URL(string: "\(avatar ?? "User")"), placeholderImage: UIImage(named: "User"))
     }
 }
