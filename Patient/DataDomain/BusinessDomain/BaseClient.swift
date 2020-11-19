@@ -255,8 +255,7 @@ class BaseClient: NSObject{
             switch self {
             case .login,
                  .register,
-                 .changePassword
-                 :
+                 .changePassword:
                 
                 return urlRequest
                             

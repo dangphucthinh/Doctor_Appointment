@@ -21,6 +21,14 @@ class SignUpController: UIViewController {
     @IBOutlet weak var tfDateOfBirth: UITextField!
     @IBOutlet weak var gender: DropDown!
     
+    @IBOutlet weak var usernameValidated: UILabel!
+    @IBOutlet weak var firstnameValidated: UILabel!
+    @IBOutlet weak var lastnameValidated: UILabel!
+    @IBOutlet weak var passwordValidated: UILabel!
+    @IBOutlet weak var confirmValidated: UILabel!
+    @IBOutlet weak var emailvalidated: UILabel!
+    @IBOutlet weak var phoneValidated: UILabel!
+    
     let dateFormatter = DateFormatter()
     var option = Options()
     let datePicker = UIDatePicker()
@@ -31,6 +39,7 @@ class SignUpController: UIViewController {
         showDatePicker()
         self.hideKeyboardWhenTappedAround()
         LoadGender()
+        messageValited()
     }
     
     func LoadGender(){
@@ -49,44 +58,123 @@ class SignUpController: UIViewController {
         print(self.isMale)
     }
 }
+    
+    func messageValited(){
+        usernameValidated.text = ""
+        firstnameValidated.text = ""
+        lastnameValidated.text = ""
+        passwordValidated.text = ""
+        confirmValidated.text = ""
+        emailvalidated.text = ""
+        phoneValidated.text = ""
+    }
 
-
+    @IBAction func username_act(_ sender: Any){
+        let text = tfUserName.text ?? ""
+        if text.isValidName {
+            tfUserName.textColor = UIColor.black
+            usernameValidated.text = ""
+        } else {
+            tfUserName.textColor = UIColor.red
+            usernameValidated.text = "Your username should have at least 5 letter!"
+        }
+    }
+    
+    @IBAction func lastname_act(_ sender: Any){
+        let text = tfLastName.text ?? ""
+        if text.isValidName {
+            tfUserName.textColor = UIColor.black
+            lastnameValidated.text = ""
+        } else {
+            tfUserName.textColor = UIColor.red
+            lastnameValidated.text = "Your last name should have at least 5 letter!"
+        }
+    }
+    
+    @IBAction func firstname_act(_ sender: Any){
+        let text = tfFirstName.text ?? ""
+        if text.isValidName {
+            tfUserName.textColor = UIColor.black
+            firstnameValidated.text = ""
+        } else {
+            tfUserName.textColor = UIColor.red
+            firstnameValidated.text = "Your first name should have at least 5 letter!"
+        }
+    }
+    
+    @IBAction func password_act(_ sender: Any){
+        let text = tfPassword.text ?? ""
+        if text.isValidPassword{
+            tfPassword.textColor = UIColor.black
+            passwordValidated.text = ""
+        } else {
+            tfPassword.textColor = UIColor.red
+            passwordValidated.text = "Your password should contain symbol, number and upper letter"
+        }
+    }
+    
+    @IBAction func confirm_act(_ sender: Any){
+        let text = tfPassword.text ?? ""
+        if text != tfPassword.text{
+            tfPassword.textColor = UIColor.red
+            passwordValidated.text = "Your confirm password is not match!"
+        }
+        if text.isValidPassword{
+            tfPassword.textColor = UIColor.black
+            passwordValidated.text = ""
+        } else {
+            tfPassword.textColor = UIColor.red
+            passwordValidated.text = "Your password should contain symbol, number and upper letter"
+        }
+    }
+    
     
     @IBAction func signUp(_ sender: Any) {
+        if(!tfUserName.text!.isEmpty || !tfFirstName.text!.isEmpty || !tfLastName.text!.isEmpty || !tfPassword.text!.isEmpty || !tfConfirmPassword.text!.isEmpty || !tfEmail.text!.isEmpty){
+            
+            BaseConnection.request(BaseClient.Service.register(username: tfUserName.text!,
+                                                               email: tfEmail.text!,
+                                                               firstName: tfFirstName.text ?? "",
+                                                               lastName: tfLastName.text ?? "" ,
+                                                               dateOfBirth: datePicker.date,
+                                                               phoneNumber: tfPhoneNumber.text ?? "",
+                                                               password: tfPassword.text!,
+                                                               confirmPassword: tfConfirmPassword.text!),
+                                                               RegisterResponse.self,
+               completion: { (result,err) in
+               guard err == nil else {
+                    
+                    print(self.tfDateOfBirth.text!)
+                    print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
+                    
+                    if err?.mErrorCode == 0 {
+                        let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.SignInControllerId) as! SignInController
+                        self.navigationController?.pushViewController(controller, animated: true)
+                       
+                    }
+                    else{
+                        // create the alert
+                        let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)
 
-        BaseConnection.request(BaseClient.Service.register(username: tfUserName.text!,
-                                                           email: tfEmail.text!,
-                                                           firstName: tfFirstName.text!,
-                                                           lastName: tfLastName.text!,
-                                                           dateOfBirth: datePicker.date,
-                                                           phoneNumber: tfPhoneNumber.text!,
-                                                           password: tfPassword.text!,
-                                                           confirmPassword: tfConfirmPassword.text!),
-                                                           RegisterResponse.self,
-           completion: { (result,err) in
-           guard err == nil else {
-                
-                print(self.tfDateOfBirth.text!)
-                print("False with code: \(String(describing: err?.mErrorCode)) and message: \(String(describing: err?.mErrorMessage))")
-                
-                if err?.mErrorCode == 0 {
-                    let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.SignInControllerId) as! SignInController
-                    self.navigationController?.pushViewController(controller, animated: true)
-                   
-                }
-                else{
-                    // create the alert
-                    let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)
+                        // add an action (button)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
 
-                    // add an action (button)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
-                    // show the alert
-                    self.present(alert, animated: true, completion: nil)
-                }
-                return
-                }
-           })
+                        // show the alert
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    return
+                    }
+               })
+        }
+        
+        firstnameValidated.text = "This field is required"
+        lastnameValidated.text = "This field is required"
+        passwordValidated.text = "This field is required"
+        confirmValidated.text = "This field is required"
+        emailvalidated.text = "This field is required"
+        phoneValidated.text = "This field is required"
+        
+      
     }
     
     //MARK: -Birthday
