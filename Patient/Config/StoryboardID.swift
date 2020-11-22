@@ -15,8 +15,12 @@ struct StoryboardID {
     //signUp id
     static let SignUpControllerId = "SignUpController"
     
-    //forgotPassword id
-    static let ForgotPasswordControllerId = "ForgotPasswordController"
+    //changePassword id
+    static let ChangePasswordControllerId = "ChangePasswordController"
+    
+    //forgotpassword
+    static let SendEmailViewControllerId = "SendEmailViewController"
+    static let ResetSuccessViewControllerId = "ResetSuccessViewController"
     
     //homePage id
     static let MainViewControllerId = "MainViewController"

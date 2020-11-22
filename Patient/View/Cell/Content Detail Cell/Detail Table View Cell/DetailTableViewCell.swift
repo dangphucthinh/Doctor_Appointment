@@ -34,13 +34,10 @@ class DetailTableViewCell: UITableViewCell {
             specialistLabel.text = data.specialtyName
             nameLabel.text = data.fullName?.uppercased()
             
-            if(data.avatar!.count > 0){
-                let ava: String? = data.avatar
-                        let url = URL.init(string: "\(ava!)")
-                
-                        self.doctorImage?.sd_setImage(with: url, placeholderImage: UIImage(named: "no_image_banner"))
-               
-            }
+           
+            let ava: String? = data.avatar
+            let url = URL.init(string: "\(ava ?? "Not found")")
+            self.doctorImage?.sd_setImage(with: url, placeholderImage: UIImage(named: "User"))
     }
         
 }

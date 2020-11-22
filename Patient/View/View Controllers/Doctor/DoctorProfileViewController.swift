@@ -27,16 +27,10 @@ class DoctorProfileViewController: UITableViewController {
         nameTextField.text = data?.fullName
         emailTextField.text = data?.specialtyName
         
-        let ava: String? = data?.avatar!
+        let ava: String? = data?.avatar
         let url = URL.init(string:"\(ava ?? "No image found")")
         imgAva.sd_setImage(with: url, placeholderImage: UIImage(named: "no_image_banner"))
     }
-    
-//    private func setUserInFirebase(){
-//        let userData = UserDataModel(Uname: (data?.fullName)!, Uemail: (data?.email)!, Uavatar: (data?.avatar)!, UuserId: (data?.id)! )
-//        UserDataManager.setUserData(userData: userData, userId: data?.id ?? "Not found ID")
-//    }
-    
     
     @IBAction func makeAppointment(_ sender: Any) {
         // create the alert

@@ -84,6 +84,54 @@ extension BaseClient {
         }
     }
     
+    //MARK: -Change Password
+    func changePassword(oldPassword: String,
+                        newPassword: String,
+                        confirmPassword: String,
+                        completion: @escaping ServiceResponse){
+        DispatchQueue.global(qos: .background).async {
+            // Run on background
+            let request = Service.changePassword(oldPassword: oldPassword,
+                                                 newPassword: newPassword,
+                                                 confirmPassword: confirmPassword,
+                                                 token: self.accessToken!)as URLRequestConvertible
+            Alamofire.request(request)
+                    .responseObject { (response: DataResponse<ResponseUser>) in
+                    switch response.result {
+                    case let .success(data):
+                        completion(true, nil, data);
+                        break
+
+                    case let .failure(error):
+                        completion(false, error as NSError?, nil);
+                        
+                        break
+                    }
+            }
+        }
+    }
+    
+    //MARK: -Reset password
+    func resetPassword(email: String,
+                       completion: @escaping ServiceResponse){
+        DispatchQueue.global(qos: .background).async {
+            // Run on background
+            let request = Service.forgotPassword(email: email) as URLRequestConvertible
+            Alamofire.request(request)
+                    .responseObject { (response: DataResponse<ResponseUser>) in
+                    switch response.result {
+                    case let .success(data):
+                        completion(true, nil, data);
+                        break
+
+                    case let .failure(error):
+                        completion(false, error as NSError?, nil);
+                        
+                        break
+                    }
+            }
+        }
+    }
     
     //MARK: -Update profile
     func updateProfile(userId: String,

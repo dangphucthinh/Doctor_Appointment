@@ -16,7 +16,7 @@ struct API{
         static let kRegisterUrl = "api/Auth/Register"
         static let kLogin = "api/Auth/Login"
         static let kChangePassword = "api/Auth/ChangePassword"
-        static let kResetPassword = "api/Auth/ResetPassword"
+        static let kForgotPassword = "api/Auth/ForgotPassword"
         
         //doctor
         static let kGetListAllDoctor = "api/Doctor/GetListAllDoctor" //get all doctors GET

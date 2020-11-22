@@ -145,7 +145,7 @@ class InfomationViewController: UITableViewController {
                     let dateString = user.data?.dateOfBirth
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-                    let dateFromString = dateFormatter.date(from: dateString!)
+                    let dateFromString = dateFormatter.date(from: dateString ?? "Not found")
                     dateFormatter.dateFormat = "MM/dd/yyyy"
                     let stringFromDate = dateFormatter.string(from: dateFromString!)
                     self.dateOfBirthTextField.text = stringFromDate

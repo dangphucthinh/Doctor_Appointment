@@ -87,7 +87,7 @@ class SignUpController: UIViewController {
             lastnameValidated.text = ""
         } else {
             tfUserName.textColor = UIColor.red
-            lastnameValidated.text = "Your last name should have at least 5 letter!"
+            lastnameValidated.text = "Your last name should have at least 2 letter!"
         }
     }
     
@@ -98,7 +98,7 @@ class SignUpController: UIViewController {
             firstnameValidated.text = ""
         } else {
             tfUserName.textColor = UIColor.red
-            firstnameValidated.text = "Your first name should have at least 5 letter!"
+            firstnameValidated.text = "Your first name should have at least 2 letter!"
         }
     }
     
@@ -114,28 +114,42 @@ class SignUpController: UIViewController {
     }
     
     @IBAction func confirm_act(_ sender: Any){
-        let text = tfPassword.text ?? ""
-        if text != tfPassword.text{
+        let text = tfConfirmPassword.text ?? ""
+        if(tfPassword.text! != tfConfirmPassword.text){
             tfPassword.textColor = UIColor.red
-            passwordValidated.text = "Your confirm password is not match!"
+            confirmValidated.text = "Your confirm password is not match!"
         }
         if text.isValidPassword{
-            tfPassword.textColor = UIColor.black
-            passwordValidated.text = ""
+            tfConfirmPassword.textColor = UIColor.black
+            confirmValidated.text = ""
         } else {
-            tfPassword.textColor = UIColor.red
-            passwordValidated.text = "Your password should contain symbol, number and upper letter"
+            tfConfirmPassword.textColor = UIColor.red
+            confirmValidated.text = "Your password should contain symbol, number and upper letter"
         }
     }
     
     
     @IBAction func signUp(_ sender: Any) {
-        if(!tfUserName.text!.isEmpty || !tfFirstName.text!.isEmpty || !tfLastName.text!.isEmpty || !tfPassword.text!.isEmpty || !tfConfirmPassword.text!.isEmpty || !tfEmail.text!.isEmpty){
+        if(tfConfirmPassword.text! != tfPassword.text!){
+            tfConfirmPassword.textColor = UIColor.red
+            confirmValidated.text = "Your confirm password and password are not match!"
+        }
+    
+        if(tfUserName.text!.isEmpty && tfFirstName.text!.isEmpty && tfLastName.text!.isEmpty && tfPassword.text!.isEmpty && tfConfirmPassword.text!.isEmpty && tfEmail.text!.isEmpty){
             
+            usernameValidated.text = "This field is required"
+            firstnameValidated.text = "This field is required"
+            lastnameValidated.text = "This field is required"
+            passwordValidated.text = "This field is required"
+            confirmValidated.text = "This field is required"
+            emailvalidated.text = "This field is required"
+        
+        }
+        else {
             BaseConnection.request(BaseClient.Service.register(username: tfUserName.text!,
                                                                email: tfEmail.text!,
-                                                               firstName: tfFirstName.text ?? "",
-                                                               lastName: tfLastName.text ?? "" ,
+                                                               firstName: tfFirstName.text!,
+                                                               lastName: tfLastName.text! ,
                                                                dateOfBirth: datePicker.date,
                                                                phoneNumber: tfPhoneNumber.text ?? "",
                                                                password: tfPassword.text!,
@@ -166,15 +180,6 @@ class SignUpController: UIViewController {
                     }
                })
         }
-        
-        firstnameValidated.text = "This field is required"
-        lastnameValidated.text = "This field is required"
-        passwordValidated.text = "This field is required"
-        confirmValidated.text = "This field is required"
-        emailvalidated.text = "This field is required"
-        phoneValidated.text = "This field is required"
-        
-      
     }
     
     //MARK: -Birthday

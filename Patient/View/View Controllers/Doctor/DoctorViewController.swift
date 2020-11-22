@@ -21,8 +21,8 @@ class DoctorViewController: UITableViewController {
         cellRegister()
         getAllUser()
         
-        let userData = UserDataModel(Uname: "phucthinh dang", Uemail: "dangthinh@gmail.com", Uavatar: "http://res.cloudinary.com/deh0sqxwl/image/upload/v1603946649/kysbc6aamvwi8mkrklni.png", UuserId: "3bae1afc-ff29-421f-b80e-53a76635da0a")
-        UserDataManager.setUserData(userData: userData, userId: "3bae1afc-ff29-421f-b80e-53a76635da0a")
+//        let userData = UserDataModel(Uname: "phucthinh dang", Uemail: "dangthinh@gmail.com", Uavatar: "http://res.cloudinary.com/deh0sqxwl/image/upload/v1603946649/kysbc6aamvwi8mkrklni.png", UuserId: "3bae1afc-ff29-421f-b80e-53a76635da0a")
+//        UserDataManager.setUserData(userData: userData, userId: "3bae1afc-ff29-421f-b80e-53a76635da0a")
     }
     
     func cellRegister(){
