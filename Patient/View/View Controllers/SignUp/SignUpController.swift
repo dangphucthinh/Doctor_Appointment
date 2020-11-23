@@ -72,7 +72,7 @@ class SignUpController: UIViewController {
     @IBAction func username_act(_ sender: Any){
         let text = tfUserName.text ?? ""
         if text.isValidName {
-            tfUserName.textColor = UIColor.black
+            tfUserName.textColor = UIColor.blue
             usernameValidated.text = ""
         } else {
             tfUserName.textColor = UIColor.red
@@ -83,7 +83,7 @@ class SignUpController: UIViewController {
     @IBAction func lastname_act(_ sender: Any){
         let text = tfLastName.text ?? ""
         if text.isValidName {
-            tfUserName.textColor = UIColor.black
+            tfUserName.textColor = UIColor.blue
             lastnameValidated.text = ""
         } else {
             tfUserName.textColor = UIColor.red
@@ -94,7 +94,7 @@ class SignUpController: UIViewController {
     @IBAction func firstname_act(_ sender: Any){
         let text = tfFirstName.text ?? ""
         if text.isValidName {
-            tfUserName.textColor = UIColor.black
+            tfUserName.textColor = UIColor.blue
             firstnameValidated.text = ""
         } else {
             tfUserName.textColor = UIColor.red
@@ -105,7 +105,7 @@ class SignUpController: UIViewController {
     @IBAction func password_act(_ sender: Any){
         let text = tfPassword.text ?? ""
         if text.isValidPassword{
-            tfPassword.textColor = UIColor.black
+            tfPassword.textColor = UIColor.blue
             passwordValidated.text = ""
         } else {
             tfPassword.textColor = UIColor.red
@@ -116,7 +116,7 @@ class SignUpController: UIViewController {
     @IBAction func confirm_act(_ sender: Any){
         let text = tfConfirmPassword.text ?? ""
         if(tfPassword.text! != tfConfirmPassword.text){
-            tfPassword.textColor = UIColor.red
+            tfPassword.textColor = UIColor.blue
             confirmValidated.text = "Your confirm password is not match!"
         }
         if text.isValidPassword{
