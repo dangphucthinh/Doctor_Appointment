@@ -77,11 +77,11 @@
 		5531836A255D313500A43B92 /* CreateRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55318369255D313500A43B92 /* CreateRoomsViewController.swift */; };
 		55337C23255B767D003E22A6 /* CommonResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55337C22255B767D003E22A6 /* CommonResources.swift */; };
 		553ABDF5256364320016BCF3 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553ABDF4256364320016BCF3 /* DesignableTextField.swift */; };
-		557B0BD2255A8F5B00C52C63 /* ConfirmPatientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B0BD0255A8F5B00C52C63 /* ConfirmPatientTableViewCell.swift */; };
-		557B0BD3255A8F5B00C52C63 /* ConfirmPatientTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 557B0BD1255A8F5B00C52C63 /* ConfirmPatientTableViewCell.xib */; };
-		557B0BDB255A946300C52C63 /* ConfirmAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B0BDA255A946300C52C63 /* ConfirmAppointment.swift */; };
-		557B0BE5255A9A3E00C52C63 /* ConfirmDoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B0BE3255A9A3E00C52C63 /* ConfirmDoctorTableViewCell.swift */; };
-		557B0BE6255A9A3E00C52C63 /* ConfirmDoctorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 557B0BE4255A9A3E00C52C63 /* ConfirmDoctorTableViewCell.xib */; };
+		555A6EB6256D04C500FAD327 /* ConfirmAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A6EB5256D04C500FAD327 /* ConfirmAppointmentViewController.swift */; };
+		555A6EC3256D076C00FAD327 /* PatientConfirmationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 555A6EC2256D076C00FAD327 /* PatientConfirmationView.xib */; };
+		555A6EC8256D086900FAD327 /* PatientConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A6EC7256D086900FAD327 /* PatientConfirmationView.swift */; };
+		555A6ECD256DF18900FAD327 /* DoctorConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A6ECC256DF18900FAD327 /* DoctorConfirmationView.swift */; };
+		555A6ED2256DF19B00FAD327 /* DoctorConfirmationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 555A6ED1256DF19B00FAD327 /* DoctorConfirmationView.xib */; };
 		557B1877256AB7D4004F78A5 /* SendEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B1876256AB7D4004F78A5 /* SendEmailViewController.swift */; };
 		557B187C256AB7F0004F78A5 /* ResetSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B187B256AB7F0004F78A5 /* ResetSuccessViewController.swift */; };
 		55A004E7255A3B8D00A36DE0 /* BaseClient_AI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A004E6255A3B8D00A36DE0 /* BaseClient_AI.swift */; };
@@ -201,11 +201,11 @@
 		55318369255D313500A43B92 /* CreateRoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomsViewController.swift; sourceTree = "<group>"; };
 		55337C22255B767D003E22A6 /* CommonResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResources.swift; sourceTree = "<group>"; };
 		553ABDF4256364320016BCF3 /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
-		557B0BD0255A8F5B00C52C63 /* ConfirmPatientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPatientTableViewCell.swift; sourceTree = "<group>"; };
-		557B0BD1255A8F5B00C52C63 /* ConfirmPatientTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmPatientTableViewCell.xib; sourceTree = "<group>"; };
-		557B0BDA255A946300C52C63 /* ConfirmAppointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAppointment.swift; sourceTree = "<group>"; };
-		557B0BE3255A9A3E00C52C63 /* ConfirmDoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDoctorTableViewCell.swift; sourceTree = "<group>"; };
-		557B0BE4255A9A3E00C52C63 /* ConfirmDoctorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmDoctorTableViewCell.xib; sourceTree = "<group>"; };
+		555A6EB5256D04C500FAD327 /* ConfirmAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAppointmentViewController.swift; sourceTree = "<group>"; };
+		555A6EC2256D076C00FAD327 /* PatientConfirmationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PatientConfirmationView.xib; sourceTree = "<group>"; };
+		555A6EC7256D086900FAD327 /* PatientConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientConfirmationView.swift; sourceTree = "<group>"; };
+		555A6ECC256DF18900FAD327 /* DoctorConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorConfirmationView.swift; sourceTree = "<group>"; };
+		555A6ED1256DF19B00FAD327 /* DoctorConfirmationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorConfirmationView.xib; sourceTree = "<group>"; };
 		557B1876256AB7D4004F78A5 /* SendEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailViewController.swift; sourceTree = "<group>"; };
 		557B187B256AB7F0004F78A5 /* ResetSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetSuccessViewController.swift; sourceTree = "<group>"; };
 		55A004E6255A3B8D00A36DE0 /* BaseClient_AI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClient_AI.swift; sourceTree = "<group>"; };
@@ -320,6 +320,7 @@
 				4D1B6F60255794BC00AEC5FC /* RequestedViewController.swift */,
 				4D076A102557FDC000DDD452 /* ListAppointmentViewController.swift */,
 				4D1F4B8325582F9400D191D2 /* MakeAppointmentViewController.swift */,
+				555A6EB5256D04C500FAD327 /* ConfirmAppointmentViewController.swift */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -385,8 +386,7 @@
 			children = (
 				557B0BCE255A8F2300C52C63 /* ConfirmInfoCell */,
 				4D076A152557FE3B00DDD452 /* Request */,
-				4D076A242557FE8A00DDD452 /* AppointmentTableCell.swift */,
-				4D076A232557FE8A00DDD452 /* AppointmentTableCell.xib */,
+				556D44AA256CEB9C00F0A129 /* ListAppointment */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -577,6 +577,15 @@
 			path = Chat;
 			sourceTree = "<group>";
 		};
+		556D44AA256CEB9C00F0A129 /* ListAppointment */ = {
+			isa = PBXGroup;
+			children = (
+				4D076A242557FE8A00DDD452 /* AppointmentTableCell.swift */,
+				4D076A232557FE8A00DDD452 /* AppointmentTableCell.xib */,
+			);
+			path = ListAppointment;
+			sourceTree = "<group>";
+		};
 		557B0BCE255A8F2300C52C63 /* ConfirmInfoCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,8 +598,8 @@
 		557B0BCF255A8F3300C52C63 /* Patient */ = {
 			isa = PBXGroup;
 			children = (
-				557B0BD0255A8F5B00C52C63 /* ConfirmPatientTableViewCell.swift */,
-				557B0BD1255A8F5B00C52C63 /* ConfirmPatientTableViewCell.xib */,
+				555A6EC2256D076C00FAD327 /* PatientConfirmationView.xib */,
+				555A6EC7256D086900FAD327 /* PatientConfirmationView.swift */,
 			);
 			path = Patient;
 			sourceTree = "<group>";
@@ -598,8 +607,8 @@
 		557B0BE2255A9A1E00C52C63 /* Doctor */ = {
 			isa = PBXGroup;
 			children = (
-				557B0BE3255A9A3E00C52C63 /* ConfirmDoctorTableViewCell.swift */,
-				557B0BE4255A9A3E00C52C63 /* ConfirmDoctorTableViewCell.xib */,
+				555A6ECC256DF18900FAD327 /* DoctorConfirmationView.swift */,
+				555A6ED1256DF19B00FAD327 /* DoctorConfirmationView.xib */,
 			);
 			path = Doctor;
 			sourceTree = "<group>";
@@ -717,7 +726,6 @@
 				E1D479BD2543BD98006A7C2C /* custom components */,
 				E1D479E42543CE9F006A7C2C /* View Controllers */,
 				E10596372542802E00512941 /* Cell */,
-				557B0BDA255A946300C52C63 /* ConfirmAppointment.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -725,14 +733,14 @@
 		E10596372542802E00512941 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				4D02351D2560D517003D9255 /* User */,
-				5501BA92255D1638005D4C4B /* Message */,
-				4DC466B5255AD1E70027A193 /* Hospital */,
 				4D728F342556FC3B001F3430 /* Appointment */,
-				E1CF95C8254A6E090091D0D0 /* UserHeaderView */,
 				E1580C062549805A000A2921 /* Content Detail Cell */,
-				E1580C052549802F000A2921 /* Specialist Cell */,
 				E1580C042549801A000A2921 /* Header View */,
+				4DC466B5255AD1E70027A193 /* Hospital */,
+				5501BA92255D1638005D4C4B /* Message */,
+				E1580C052549802F000A2921 /* Specialist Cell */,
+				4D02351D2560D517003D9255 /* User */,
+				E1CF95C8254A6E090091D0D0 /* UserHeaderView */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -932,16 +940,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D900EA5255EC16900D5D707 /* GoogleService-Info.plist in Resources */,
-				557B0BD3255A8F5B00C52C63 /* ConfirmPatientTableViewCell.xib in Resources */,
 				4D728F382556FC66001F3430 /* RequestViewCell.xib in Resources */,
 				4D076A252557FE8A00DDD452 /* AppointmentTableCell.xib in Resources */,
 				E105961025427F3A00512941 /* LaunchScreen.storyboard in Resources */,
+				555A6ED2256DF19B00FAD327 /* DoctorConfirmationView.xib in Resources */,
 				E105960D25427F3A00512941 /* Assets.xcassets in Resources */,
 				4D0235242560D9E1003D9255 /* UserCell.xib in Resources */,
 				E1CF95CA254A6E1C0091D0D0 /* UserHeaderView.xib in Resources */,
 				E105960B25427F3900512941 /* Main.storyboard in Resources */,
+				555A6EC3256D076C00FAD327 /* PatientConfirmationView.xib in Resources */,
 				E1D479F12543D7DD006A7C2C /* SpecialistCollectionViewCell.xib in Resources */,
-				557B0BE6255A9A3E00C52C63 /* ConfirmDoctorTableViewCell.xib in Resources */,
 				4DC466C4255AD24B0027A193 /* HospitalTableViewCell.xib in Resources */,
 				E1D47A12254422A7006A7C2C /* DetailTableViewCell.xib in Resources */,
 				E10596392542803C00512941 /* HeaderView.xib in Resources */,
@@ -1078,7 +1086,6 @@
 				4D78DCEE255579B400C53CB0 /* DataManager.swift in Sources */,
 				557B187C256AB7F0004F78A5 /* ResetSuccessViewController.swift in Sources */,
 				55A004EE255A3C3B00A36DE0 /* ResponseChatbot.swift in Sources */,
-				557B0BDB255A946300C52C63 /* ConfirmAppointment.swift in Sources */,
 				4D78DCFA255579BB00C53CB0 /* Patient.swift in Sources */,
 				4D78DCE02555799B00C53CB0 /* ServerKey.swift in Sources */,
 				4D60194825598AD50081B76F /* MessagesViewCell.swift in Sources */,
@@ -1086,6 +1093,7 @@
 				5531836A255D313500A43B92 /* CreateRoomsViewController.swift in Sources */,
 				4D1B6F7225579A2C00AEC5FC /* ResponseAppointment.swift in Sources */,
 				4D78DCF8255579BB00C53CB0 /* User.swift in Sources */,
+				555A6EB6256D04C500FAD327 /* ConfirmAppointmentViewController.swift in Sources */,
 				4D1F4B8425582F9400D191D2 /* MakeAppointmentViewController.swift in Sources */,
 				55337C23255B767D003E22A6 /* CommonResources.swift in Sources */,
 				4D78DCDE2555799B00C53CB0 /* BaseUrl.swift in Sources */,
@@ -1097,8 +1105,8 @@
 				4D78DCDD2555799B00C53CB0 /* StoryboardID.swift in Sources */,
 				4D6018F525595F5E0081B76F /* ChatViewController.swift in Sources */,
 				4DFCC503255F9A96002E6415 /* UserDataManager.swift in Sources */,
-				557B0BD2255A8F5B00C52C63 /* ConfirmPatientTableViewCell.swift in Sources */,
 				4D1B6F61255794BC00AEC5FC /* RequestedViewController.swift in Sources */,
+				555A6EC8256D086900FAD327 /* PatientConfirmationView.swift in Sources */,
 				E1CF95C4254A6D9C0091D0D0 /* UserInformationController.swift in Sources */,
 				4DC466A0255ACF130027A193 /* BaseClient_Hospital.swift in Sources */,
 				553ABDF5256364320016BCF3 /* DesignableTextField.swift in Sources */,
@@ -1136,13 +1144,13 @@
 				4D47D34625600635002A28B1 /* ChattingCell.swift in Sources */,
 				4DF3E6542556AB5F0058A23A /* ChangePasswordController.swift in Sources */,
 				4D60194D25598AF30081B76F /* MessageModel.swift in Sources */,
-				557B0BE5255A9A3E00C52C63 /* ConfirmDoctorTableViewCell.swift in Sources */,
 				55318362255D2BF900A43B92 /* MessageDataModel.swift in Sources */,
 				4D78DCD22555798500C53CB0 /* Validation.swift in Sources */,
 				4D78DCDF2555799B00C53CB0 /* CommonExtension.swift in Sources */,
 				4DF3E6492556AAFF0058A23A /* SignInController.swift in Sources */,
 				4D1B6F6D25579A1600AEC5FC /* Appointment.swift in Sources */,
 				4D1B6F7725579A3E00AEC5FC /* ResponseListAppointment.swift in Sources */,
+				555A6ECD256DF18900FAD327 /* DoctorConfirmationView.swift in Sources */,
 				4DC466C3255AD24B0027A193 /* HospitalTableViewCell.swift in Sources */,
 				4D78DCFD255579BB00C53CB0 /* Doctor.swift in Sources */,
 				4D0235292560DA6C003D9255 /* DesignableImageView.swift in Sources */,

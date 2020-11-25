@@ -72,7 +72,7 @@ class SignUpController: UIViewController {
     @IBAction func username_act(_ sender: Any){
         let text = tfUserName.text ?? ""
         if text.isValidName {
-            tfUserName.textColor = UIColor.blue
+            tfUserName.textColor = UIColor.link
             usernameValidated.text = ""
         } else {
             tfUserName.textColor = UIColor.red
@@ -83,7 +83,7 @@ class SignUpController: UIViewController {
     @IBAction func lastname_act(_ sender: Any){
         let text = tfLastName.text ?? ""
         if text.isValidName {
-            tfUserName.textColor = UIColor.blue
+            tfUserName.textColor = UIColor.link
             lastnameValidated.text = ""
         } else {
             tfUserName.textColor = UIColor.red
@@ -94,7 +94,7 @@ class SignUpController: UIViewController {
     @IBAction func firstname_act(_ sender: Any){
         let text = tfFirstName.text ?? ""
         if text.isValidName {
-            tfUserName.textColor = UIColor.blue
+            tfUserName.textColor = UIColor.link
             firstnameValidated.text = ""
         } else {
             tfUserName.textColor = UIColor.red
@@ -105,7 +105,7 @@ class SignUpController: UIViewController {
     @IBAction func password_act(_ sender: Any){
         let text = tfPassword.text ?? ""
         if text.isValidPassword{
-            tfPassword.textColor = UIColor.blue
+            tfPassword.textColor = UIColor.link
             passwordValidated.text = ""
         } else {
             tfPassword.textColor = UIColor.red
@@ -116,11 +116,11 @@ class SignUpController: UIViewController {
     @IBAction func confirm_act(_ sender: Any){
         let text = tfConfirmPassword.text ?? ""
         if(tfPassword.text! != tfConfirmPassword.text){
-            tfPassword.textColor = UIColor.blue
+            tfPassword.textColor = UIColor.link
             confirmValidated.text = "Your confirm password is not match!"
         }
         if text.isValidPassword{
-            tfConfirmPassword.textColor = UIColor.black
+            tfConfirmPassword.textColor = UIColor.link
             confirmValidated.text = ""
         } else {
             tfConfirmPassword.textColor = UIColor.red
@@ -133,19 +133,7 @@ class SignUpController: UIViewController {
         if(tfConfirmPassword.text! != tfPassword.text!){
             tfConfirmPassword.textColor = UIColor.red
             confirmValidated.text = "Your confirm password and password are not match!"
-        }
-    
-        if(tfUserName.text!.isEmpty && tfFirstName.text!.isEmpty && tfLastName.text!.isEmpty && tfPassword.text!.isEmpty && tfConfirmPassword.text!.isEmpty && tfEmail.text!.isEmpty){
-            
-            usernameValidated.text = "This field is required"
-            firstnameValidated.text = "This field is required"
-            lastnameValidated.text = "This field is required"
-            passwordValidated.text = "This field is required"
-            confirmValidated.text = "This field is required"
-            emailvalidated.text = "This field is required"
-        
-        }
-        else {
+        }else{
             BaseConnection.request(BaseClient.Service.register(username: tfUserName.text!,
                                                                email: tfEmail.text!,
                                                                firstName: tfFirstName.text!,
@@ -179,6 +167,15 @@ class SignUpController: UIViewController {
                     return
                     }
                })
+        }
+    
+        if(tfUserName.text!.isEmpty || tfFirstName.text!.isEmpty || tfLastName.text!.isEmpty || tfPassword.text!.isEmpty || tfConfirmPassword.text!.isEmpty || tfEmail.text!.isEmpty){
+            usernameValidated.text = "This field is required"
+            firstnameValidated.text = "This field is required"
+            lastnameValidated.text = "This field is required"
+            passwordValidated.text = "This field is required"
+            confirmValidated.text = "This field is required"
+            emailvalidated.text = "This field is required"
         }
     }
     

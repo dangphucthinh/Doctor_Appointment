@@ -34,6 +34,7 @@ class InfomationViewController: UITableViewController {
         self.hideKeyboardWhenTappedAround()        
         imgAvatar.roundedImageView()
         self.navigationTitle(title: "PROFILE")
+        LoadInform(UserId: UserId!)
     }
     
     
@@ -65,7 +66,7 @@ class InfomationViewController: UITableViewController {
                 (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
                                     let rs = value as! ResponseUser
 
-                                            if(rs.status == 1){
+                if(rs.status == 1){
                     // create the alert
                     let alert = UIAlertController(title: "My Title", message: "Update Fail", preferredStyle: UIAlertController.Style.alert)
 
@@ -75,17 +76,20 @@ class InfomationViewController: UITableViewController {
                     // show the alert
                     self.present(alert, animated: true, completion: nil)
                 }
-                                            let alert = UIAlertController(title: "My Title", message: "Update Success", preferredStyle: UIAlertController.Style.alert)
+                if rs.status == 0 {
+                    let alert = UIAlertController(title: "My Title", message: "Update Success", preferredStyle: UIAlertController.Style.alert)
 
-                                            // add an action (button)
-                                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    // add an action (button)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { [self]
+                        action in
+                        self.LoadInform(UserId: self.UserId!)
+                    }))
 
-                                            // show the alert
-                                            self.present(alert, animated: true, completion: nil)
+                    // show the alert
+                    self.present(alert, animated: true, completion: nil)
+                }
         })
-       
-        LoadInform(UserId: UserId!)
-        }
+   }
     
     
 

@@ -13,8 +13,9 @@ class SignInController: UIViewController {
 
     @IBOutlet weak var tfUsername: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
-        
-
+    @IBOutlet weak var lbNameValidated: UILabel!
+    @IBOutlet weak var lbPassValidated: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -45,7 +46,27 @@ class SignInController: UIViewController {
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
+    @IBAction func name_act(_ sender: Any){
+        let text = tfUsername.text ?? ""
+        if text.isValidName{
+            tfUsername.textColor = UIColor.link
+            lbNameValidated.text = ""
+        }else{
+            tfUsername.textColor = UIColor.red
+            lbNameValidated.text = "Your username is invalid"
+        }
+    }
     
+    @IBAction func password_act(_ sender: Any){
+        let text = tfPassword.text ?? ""
+        if text.isValidPassword{
+            tfPassword.textColor = UIColor.link
+            lbNameValidated.text = ""
+        }else{
+            tfPassword.textColor = UIColor.link
+            lbPassValidated.text = "Your password is invalid"
+        }
+    }
    
     @IBAction func signIn(_ sender: Any) {
         if(!tfUsername.text!.isEmpty && !tfPassword.text!.isEmpty) {

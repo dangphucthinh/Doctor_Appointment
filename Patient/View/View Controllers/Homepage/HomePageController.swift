@@ -13,7 +13,6 @@ class HomePageController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var listDoctor = List<Doctor>()
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadDoctor()
@@ -22,7 +21,7 @@ class HomePageController: UIViewController {
             // Search action
             print("Search")
         })
-
+  
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,6 +42,7 @@ class HomePageController: UIViewController {
         tableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "detailCell")
         
     }
+    
 }
 
 extension HomePageController: UITableViewDelegate, UITableViewDataSource {

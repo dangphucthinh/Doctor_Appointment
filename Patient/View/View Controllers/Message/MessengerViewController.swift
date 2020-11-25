@@ -24,6 +24,7 @@ class MessengerViewController: UIViewController {
         textFieldValidation()
         self.title = recieverUser?.name
         getAllMessages()
+        hideKeyboardWhenTappedAround()
     }
     
     func getAllMessages(){

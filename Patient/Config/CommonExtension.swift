@@ -93,24 +93,37 @@ extension UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.navigationController!.navigationBar.tintColor = UIColor.white
     }
+    
+    func dateToSQLDate(_ DateString: String) -> String {
+        var returnDate = ""
+        let dateFormatter = DateFormatter()
+       // dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let string = String(DateString)
+        if let date = dateFormatter.date(from: string) {
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+           returnDate = dateFormatter.string(from: date)
+        }
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        return returnDate
+    }
 }
 
-extension UITableViewController{
+extension UIView{
     
-//    func navigationTitle(title: String) -> Void {
-//        self.navigationItem.title = title
-//          let navBar = self.navigationController?.navigationBar
-//
-//            // change the bar tint color to change what the color of the bar itself looks like
-//            navBar?.barTintColor = UIColor.systemBlue
-//
-//            // tint color changes the color of the nav item colors eg. the back button
-//            navBar?.tintColor = UIColor.white
-//            
-//            // the following attribute changes the title color
-//            navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-//        
-//    }
+    func dateToSQLDate(_ DateString: String) -> String {
+        var returnDate = ""
+        let dateFormatter = DateFormatter()
+       // dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let string = String(DateString)
+        if let date = dateFormatter.date(from: string) {
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+           returnDate = dateFormatter.string(from: date)
+        }
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        return returnDate
+    }
 }
 
 extension UIView {

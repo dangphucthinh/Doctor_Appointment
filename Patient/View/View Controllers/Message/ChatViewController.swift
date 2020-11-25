@@ -60,6 +60,7 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         
         messagesTableView.dataSource = self
         messagesTableView.delegate = self

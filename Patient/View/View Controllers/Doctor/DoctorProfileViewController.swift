@@ -37,6 +37,7 @@ class DoctorProfileViewController: UITableViewController {
         let controller: MakeAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.MakeAppointmentViewControllerId) as! MakeAppointmentViewController
         
         controller.doctorId = (data?.id)!
+        controller.doctor = data
         
         self.navigationController?.pushViewController(controller, animated: true)
     }
