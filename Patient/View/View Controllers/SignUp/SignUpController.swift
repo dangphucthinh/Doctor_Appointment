@@ -202,7 +202,7 @@ class SignUpController: UIViewController {
 
      let formatter = DateFormatter()
      formatter.dateFormat = "MM/dd/yyyy"
-       tfDateOfBirth.text = formatter.string(from: datePicker.date)//(from: datePicker.date)
+       tfDateOfBirth.text = formatter.string(from: datePicker.date)
      self.view.endEditing(true)
    }
 

@@ -173,10 +173,9 @@ extension HomePageController : DetailTableViewCellProtocol{
         let controller: MakeAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.MakeAppointmentViewControllerId) as! MakeAppointmentViewController
 
         controller.doctorId = data.id!
-        self.navigationController?.pushViewController(controller, animated: true)
+        controller.doctor = data
         
-        print("cc")
-
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 

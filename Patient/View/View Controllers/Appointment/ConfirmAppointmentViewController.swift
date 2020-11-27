@@ -38,6 +38,12 @@ class ConfirmAppointmentViewController: UIViewController {
         view.addSubview(userView!)
     }
     
+    func stringToDate(_ str: String)->Date{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        return formatter.date(from: str)!
+    }
+    
     private func loadDataDoctor(){
         let doctorView = Bundle.main.loadNibNamed(StoryboardID.DoctorConfirmationViewId, owner: self, options: nil)?.first as? DoctorConfirmationView
         doctorView?.frame = CGRect(x: 20, y: 449, width: 374, height: 250)
@@ -63,10 +69,12 @@ class ConfirmAppointmentViewController: UIViewController {
 
     
     @IBAction func makeAppointment(_ sender: Any) {
+        print(dateMeeting)
         
+
         BaseClient.shared.MakeAnAppointment(doctorId: doctor!.id!,
                                             patientId: BaseClient.shared.userId!,
-                                            meetingTime: formatter.date(from: "12/12/2020")!,
+                                            meetingTime: stringToDate(dateMeeting) ,
                                             startTime: time!,
                                             issue: issue!,
                                             detail: detail!,
