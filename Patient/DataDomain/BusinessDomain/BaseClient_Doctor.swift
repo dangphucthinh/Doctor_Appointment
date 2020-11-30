@@ -30,4 +30,27 @@ extension BaseClient{
                 }
             }
         }
+    
+    //MARK: -Search Doctor
+    func SearchDoctor(searchPhrase: String,
+                      completion: @escaping ServiceResponse){
+        DispatchQueue.global(qos: .background).async {
+            //Run on background
+            let request = Service.search(searchPhrase: searchPhrase) as URLRequestConvertible
+            Alamofire.request(request)
+                    .responseObject { (response: DataResponse<ResponseDoctor>) in
+                    switch response.result {
+                    case let .success(data):
+                        //var a = data.data
+                        completion(true, nil, data);
+                        break
+
+                    case let .failure(error):
+                        completion(false, error as NSError?, nil);
+                        
+                        break
+                    }
+            }
+        }
+    }
 }

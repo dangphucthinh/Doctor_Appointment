@@ -40,6 +40,20 @@ class SignUpController: UIViewController {
         self.hideKeyboardWhenTappedAround()
         LoadGender()
         messageValited()
+   
+    }
+
+
+    
+    
+    private func configureTextFields(){
+        tfEmail.delegate = self
+        tfPassword.delegate = self
+        tfUserName.delegate = self
+        tfLastName.delegate = self
+        tfFirstName.delegate = self
+        tfConfirmPassword.delegate = self
+        tfPhoneNumber.delegate = self
     }
     
     func LoadGender(){
@@ -210,4 +224,28 @@ class SignUpController: UIViewController {
       self.view.endEditing(true)
     }
 
+}
+
+extension SignUpController : UITextFieldDelegate{
+    //Textfield
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        switch textField{
+            case tfUserName:
+                tfFirstName.becomeFirstResponder()
+            case tfFirstName:
+                tfLastName.becomeFirstResponder()
+            case tfLastName:
+                tfPassword.becomeFirstResponder()
+            case tfPassword:
+                tfConfirmPassword.becomeFirstResponder()
+            case tfConfirmPassword:
+                tfEmail.becomeFirstResponder()
+            case tfEmail:
+                tfPhoneNumber.becomeFirstResponder()
+            default:
+                textField.resignFirstResponder()
+            }        
+        return true
+    }
 }

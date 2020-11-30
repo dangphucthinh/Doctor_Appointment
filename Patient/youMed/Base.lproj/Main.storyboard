@@ -132,6 +132,21 @@
             </objects>
             <point key="canvasLocation" x="-794.20289855072474" y="-7.3660714285714279"/>
         </scene>
+        <!--Doctor Info View Controller-->
+        <scene sceneID="sBx-ec-5UN">
+            <objects>
+                <viewController id="Na4-hd-T57" customClass="DoctorInfoViewController" customModule="youMed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jsA-1B-eQ0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="uF5-7o-3ek"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YHO-WQ-LFv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1681" y="-676"/>
+        </scene>
         <!--Parent Controller-->
         <scene sceneID="lWT-49-zVL">
             <objects>
@@ -232,7 +247,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="So6-Bu-Uj2">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="151" width="414" height="662"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="specialistCell" rowHeight="200" id="7ML-0D-q7U" customClass="SpecialistTableViewCell" customModule="youMed" customModuleProvider="target">
@@ -301,6 +316,39 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xP-tx-R9Y">
+                                <rect key="frame" x="20" y="88" width="374" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Y9g-0g-VGJ">
+                                        <rect key="frame" x="8" y="10" width="284" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" systemColor="linkColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09E-Mk-OsU" customClass="CustomButton" customModule="youMed" customModuleProvider="target">
+                                        <rect key="frame" x="300" y="10" width="66" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Search"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="search:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QJ2-qE-jTY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -308,17 +356,19 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="So6-Bu-Uj2" secondAttribute="bottom" id="1Zf-c6-532"/>
                             <constraint firstItem="So6-Bu-Uj2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4HL-uS-fcN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="So6-Bu-Uj2" secondAttribute="trailing" id="bkf-bZ-xxo"/>
-                            <constraint firstItem="So6-Bu-Uj2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ega-I2-eFn"/>
+                            <constraint firstItem="So6-Bu-Uj2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="63" id="ega-I2-eFn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Pqj-Oq-r7o"/>
                     <connections>
+                        <outlet property="btnSearch" destination="09E-Mk-OsU" id="U3l-Q1-FyB"/>
                         <outlet property="tableView" destination="So6-Bu-Uj2" id="wnJ-jf-Bv9"/>
+                        <outlet property="tfSearch" destination="Y9g-0g-VGJ" id="Ko2-iX-F99"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3533" y="-358"/>
+            <point key="canvasLocation" x="3531.884057971015" y="-358.25892857142856"/>
         </scene>
         <!--Doctor View Controller-->
         <scene sceneID="0QP-jf-oVZ">
@@ -527,32 +577,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Fdi-7a-V5Q" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
-                                <rect key="frame" x="20" y="290" width="374" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="spd-0p-Clc"/>
-                                </constraints>
-                                <color key="textColor" systemColor="linkColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" systemColor="opaqueSeparatorColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="LeftPadding">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="name_act:" destination="G90-La-lPq" eventType="editingDidEnd" id="otd-9Z-Utt"/>
-                                </connections>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Qip-OL-Mik" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
                                 <rect key="frame" x="20" y="370" width="375" height="41"/>
                                 <constraints>
@@ -644,6 +668,32 @@
                                 <color key="textColor" red="1" green="0.1647194028" blue="0.24707394839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Fdi-7a-V5Q" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
+                                <rect key="frame" x="20" y="290" width="374" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="spd-0p-Clc"/>
+                                </constraints>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="opaqueSeparatorColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="LeftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="name_act:" destination="G90-La-lPq" eventType="editingDidEnd" id="otd-9Z-Utt"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f2y-Iq-2ju"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -764,7 +814,7 @@
                                 </constraints>
                                 <color key="textColor" systemColor="linkColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
@@ -781,6 +831,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="username_act:" destination="3l6-Sz-eO4" eventType="editingDidEnd" id="5Y2-I7-Lav"/>
+                                    <outlet property="delegate" destination="3l6-Sz-eO4" id="XsN-cM-1cz"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BEV-qc-EUd" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
@@ -790,7 +841,7 @@
                                 </constraints>
                                 <color key="textColor" systemColor="linkColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" systemColor="opaqueSeparatorColor"/>
@@ -807,6 +858,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="firstname_act:" destination="3l6-Sz-eO4" eventType="editingDidEnd" id="ZQD-iG-mGM"/>
+                                    <outlet property="delegate" destination="3l6-Sz-eO4" id="fNs-TZ-p4o"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="S52-sh-GTc" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
@@ -816,7 +868,7 @@
                                 </constraints>
                                 <color key="textColor" systemColor="linkColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
@@ -833,6 +885,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="lastname_act:" destination="3l6-Sz-eO4" eventType="editingDidEnd" id="IkX-JO-bfT"/>
+                                    <outlet property="delegate" destination="3l6-Sz-eO4" id="hpH-pD-30g"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cgh-UY-pHQ" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
@@ -842,7 +895,7 @@
                                 </constraints>
                                 <color key="textColor" systemColor="linkColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" systemColor="opaqueSeparatorColor"/>
@@ -859,6 +912,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="password_act:" destination="3l6-Sz-eO4" eventType="editingDidEnd" id="o0f-xA-x8s"/>
+                                    <outlet property="delegate" destination="3l6-Sz-eO4" id="QEv-jK-3Wv"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Q7e-7e-D2j" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
@@ -868,7 +922,7 @@
                                 </constraints>
                                 <color key="textColor" systemColor="linkColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
@@ -885,6 +939,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="confirm_act:" destination="3l6-Sz-eO4" eventType="editingDidEnd" id="axp-rU-2b9"/>
+                                    <outlet property="delegate" destination="3l6-Sz-eO4" id="2q0-Ow-CjX"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jBk-dU-zyw" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
@@ -894,7 +949,7 @@
                                 </constraints>
                                 <color key="textColor" systemColor="linkColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" systemColor="opaqueSeparatorColor"/>
@@ -909,6 +964,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="3l6-Sz-eO4" id="Z2C-J1-Jov"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UVI-iN-7e0" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
                                 <rect key="frame" x="20" y="646" width="374" height="34"/>
@@ -932,6 +990,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="3l6-Sz-eO4" id="rWf-iE-Ryh"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date Of Birth" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cBY-7K-mTQ" customClass="DesignableTextField" customModule="youMed" customModuleProvider="target">
                                 <rect key="frame" x="20" y="700" width="374" height="34"/>
@@ -2043,25 +2104,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZd-3c-Hwx">
-                                <rect key="frame" x="20" y="106" width="374" height="37"/>
+                                <rect key="frame" x="20" y="103" width="374" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="uph-J3-43E"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                <color key="textColor" systemColor="systemTealColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUw-OR-BZL">
-                                <rect key="frame" x="20" y="404" width="374" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="U1k-Jw-zIc"/>
+                                    <constraint firstAttribute="height" constant="40" id="57V-eQ-Za0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <color key="textColor" systemColor="systemTealColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1J0-2U-ruq" customClass="CustomButton" customModule="youMed" customModuleProvider="target">
-                                <rect key="frame" x="76" y="806" width="262" height="56"/>
+                                <rect key="frame" x="76" y="783" width="262" height="56"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="uAa-za-sDx"/>
@@ -2085,21 +2137,34 @@
                                     <action selector="makeAppointment:" destination="wR0-3Q-999" eventType="touchUpInside" id="zA0-0x-l8J"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUw-OR-BZL">
+                                <rect key="frame" x="20" y="401" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="00n-fr-ehH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <color key="textColor" systemColor="systemTealColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yRo-JS-1Yk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="yRo-JS-1Yk" firstAttribute="trailing" secondItem="RZd-3c-Hwx" secondAttribute="trailing" constant="20" id="49v-SL-Uk2"/>
+                            <constraint firstItem="UUw-OR-BZL" firstAttribute="top" secondItem="7dq-pn-p8x" secondAttribute="top" constant="401" id="5Ji-xN-gfX"/>
                             <constraint firstItem="1J0-2U-ruq" firstAttribute="leading" secondItem="yRo-JS-1Yk" secondAttribute="leading" constant="76" id="7BC-7A-y0l"/>
-                            <constraint firstItem="yRo-JS-1Yk" firstAttribute="trailing" secondItem="UUw-OR-BZL" secondAttribute="trailing" constant="20" id="Adv-gS-DpD"/>
-                            <constraint firstItem="UUw-OR-BZL" firstAttribute="leading" secondItem="yRo-JS-1Yk" secondAttribute="leading" constant="20" id="Lkk-EP-ViC"/>
-                            <constraint firstItem="UUw-OR-BZL" firstAttribute="top" secondItem="RZd-3c-Hwx" secondAttribute="bottom" constant="261" id="Ozk-i5-qiy"/>
-                            <constraint firstItem="yRo-JS-1Yk" firstAttribute="bottom" secondItem="1J0-2U-ruq" secondAttribute="bottom" id="Qnj-Gv-D9o"/>
-                            <constraint firstItem="RZd-3c-Hwx" firstAttribute="leading" secondItem="yRo-JS-1Yk" secondAttribute="leading" constant="20" id="YJJ-Qs-Kx1"/>
-                            <constraint firstItem="RZd-3c-Hwx" firstAttribute="top" secondItem="yRo-JS-1Yk" secondAttribute="top" constant="62" id="io1-X7-ks7"/>
+                            <constraint firstItem="RZd-3c-Hwx" firstAttribute="leading" secondItem="yRo-JS-1Yk" secondAttribute="leading" constant="20" id="Pl8-Vh-4pk"/>
+                            <constraint firstItem="yRo-JS-1Yk" firstAttribute="bottom" secondItem="1J0-2U-ruq" secondAttribute="bottom" constant="23" id="Qnj-Gv-D9o"/>
+                            <constraint firstItem="UUw-OR-BZL" firstAttribute="top" secondItem="RZd-3c-Hwx" secondAttribute="bottom" constant="258" id="Y0Q-eQ-Mf5"/>
+                            <constraint firstItem="yRo-JS-1Yk" firstAttribute="trailing" secondItem="UUw-OR-BZL" secondAttribute="trailing" constant="20" id="fPV-4A-GDP"/>
                             <constraint firstItem="yRo-JS-1Yk" firstAttribute="trailing" secondItem="1J0-2U-ruq" secondAttribute="trailing" constant="76" id="pt7-xJ-RqU"/>
-                            <constraint firstItem="yRo-JS-1Yk" firstAttribute="trailing" secondItem="RZd-3c-Hwx" secondAttribute="trailing" constant="20" id="vR3-aX-j9Z"/>
+                            <constraint firstItem="UUw-OR-BZL" firstAttribute="leading" secondItem="yRo-JS-1Yk" secondAttribute="leading" constant="20" id="qea-v8-fJ8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lbDoctor" destination="UUw-OR-BZL" id="ICv-29-ZOS"/>
+                        <outlet property="lbPatient" destination="RZd-3c-Hwx" id="TEf-Kz-H3m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCa-sm-Fvo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2325,7 +2390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Zr-Yb-HZx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6728.985507246377" y="-283.25892857142856"/>
+            <point key="canvasLocation" x="6929" y="-224"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="Lq6-mq-SyT">

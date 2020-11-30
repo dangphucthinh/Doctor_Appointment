@@ -35,17 +35,6 @@ extension UIViewController {
     
     func setNavigationBarLogo(title: String, controlEvents control :UIControl.Event, ForAction action:@escaping () -> Void) {
         
-        // Logo in center
-//        let logo = UIImage(named: Resources.kHomeMovieLogo)
-//        let imageView = UIImageView(image: logo)
-//        imageView.contentMode = .scaleAspectFill
-//        self.navigationItem.titleView = imageView
-        
-//        let logoImage = UIImage.init(named: Resources.kHomeMovieLogo)
-//        let logoImageView = UIImageView.init(image: logoImage)
-//        logoImageView.frame = CGRect(x: 0, y: 0, width: 150, height: 25)
-//        logoImageView.contentMode = .scaleAspectFit
-        
         // Title in left
         let titleFrame = CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.width)!/2, height: (self.navigationController?.navigationBar.frame.height)!)
         let labelTitle = UILabel(frame: titleFrame)
@@ -94,46 +83,27 @@ extension UIViewController {
         self.navigationController!.navigationBar.tintColor = UIColor.white
     }
     
-    func dateToSQLDate(_ DateString: String) -> String {
-        var returnDate = ""
-        let dateFormatter = DateFormatter()
-       // dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        let string = String(DateString)
-        if let date = dateFormatter.date(from: string) {
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-           returnDate = dateFormatter.string(from: date)
-        }
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        return returnDate
-    }
-
-}
-
-extension UIView{
-    
-    func dateToSQLDate(_ DateString: String) -> String {
-        var returnDate = ""
-        let dateFormatter = DateFormatter()
-       // dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        let string = String(DateString)
-        if let date = dateFormatter.date(from: string) {
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-           returnDate = dateFormatter.string(from: date)
-        }
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        return returnDate
-    }
-}
-
-extension UIView {
-    func roundedView(cornerRadius: CGFloat?, borderWidth: CGFloat?, borderCorlor: CGColor?) {
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = cornerRadius ?? 0
-        self.layer.borderWidth = borderWidth ?? 0
-        self.layer.borderColor = borderCorlor
-    }
+//    //Covert date to string
+//    func dateToSQLDate(_ DateString: String) -> String {
+//        var returnDate = ""
+//        let dateFormatter = DateFormatter()
+//       // dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+//        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+//        let string = String(DateString)
+//        if let date = dateFormatter.date(from: string) {
+//        dateFormatter.dateFormat = "MM/dd/yyyy"
+//           returnDate = dateFormatter.string(from: date)
+//        }
+//        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+//        return returnDate
+//    }
+//    
+//    //convert string to date
+//    func stringToDate(_ str: String)->Date{
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "MM/dd/yyyy"
+//        return formatter.date(from: str)!
+//    }
 }
 
 extension UIImageView{
@@ -144,27 +114,3 @@ extension UIImageView{
 }
 
 
-extension UITextField {
-    
-    func setInputViewDatePicker(target: Any, selector: Selector) {
-        // Create a UIDatePicker object and assign to inputView
-        let screenWidth = UIScreen.main.bounds.width
-        let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))//1
-        datePicker.datePickerMode = .date //2
-        self.inputView = datePicker //3
-        
-        // Create a toolbar and assign it to inputAccessoryView
-        let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: screenWidth, height: 44.0)) //4
-        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil) //5
-        let cancel = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(tapCancel)) // 6
-        let barButton = UIBarButtonItem(title: "Done", style: .plain, target: target, action: selector) //7
-        toolBar.setItems([cancel, flexible, barButton], animated: false) //8
-        self.inputAccessoryView = toolBar //9
-        
-    }
-    
-    @objc func tapCancel() {
-        self.resignFirstResponder()
-    }
-    
-}

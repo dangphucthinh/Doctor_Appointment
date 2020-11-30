@@ -47,6 +47,9 @@ struct API{
     
         //hospital
         static let kGetListHospital = "api/Hospital/ListHospitalCenter"
+    
+        //search
+        static let kSearchDoctor = "api/Search/Doctor"
 
 }
 

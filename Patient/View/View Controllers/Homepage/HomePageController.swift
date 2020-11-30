@@ -11,7 +11,12 @@ import SDWebImage
 
 class HomePageController: UIViewController {
 
+    @IBOutlet weak var tfSearch: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnSearch: CustomButton!
+    
+    var searchIcon = UIImage(named: "search_icon")
+    
     var listDoctor = List<Doctor>()
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -40,8 +45,28 @@ class HomePageController: UIViewController {
         tableView.register(UINib(nibName: "HeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "headerView")
         
         tableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "detailCell")
+        searchDoctor()
+  }
+    
+    
+    private func searchDoctor(){
+        tfSearch.withImage(direction: .Left, image: self.searchIcon!, colorSeparator: UIColor.orange, colorBorder: UIColor.black)
+        tfSearch.placeholder = "Doctor, Specialty"
         
     }
+    @IBAction func search(_ sender: Any) {
+        if(!tfSearch.text!.isEmpty) {
+            let controller: DoctorViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorViewControllerId) as! DoctorViewController
+            controller.searchPhrase = tfSearch.text!
+            controller.searchDoctor = true
+        
+            self.navigationController?.pushViewController(controller, animated: true)
+    }
+        else {
+            print("ccc")
+        }
+    }
+        
     
 }
 
@@ -182,8 +207,9 @@ extension HomePageController : DetailTableViewCellProtocol{
 extension HomePageController : DoctorViewProtocol{
     func doctorPage() {
         let controller: DoctorViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorViewControllerId) as! DoctorViewController
-
         
+        controller.listDoc = true
+    
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

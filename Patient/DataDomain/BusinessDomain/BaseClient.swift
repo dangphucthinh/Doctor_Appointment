@@ -68,6 +68,8 @@ class BaseClient: NSObject{
         case prediction(data: Array<Any>,
                         token: String)
         
+        case search(searchPhrase: String)
+        
         static let baseHTTP = API.kBaseUrl
         
   
@@ -81,6 +83,8 @@ class BaseClient: NSObject{
             case .getListDoctor, .getListHospital:
                 return .get
             case .chatbot, .prediction:
+                return .post
+            case .search:
                 return .post
             }
         }
@@ -110,6 +114,8 @@ class BaseClient: NSObject{
                 return API.kGetListHospital
             case .prediction:
                 return API.kPrediction
+            case .search:
+                return API.kSearchDoctor
             }
         }
             
@@ -139,7 +145,9 @@ class BaseClient: NSObject{
             case .getListHospital:
                 break
             case .prediction:
-                break	
+                break
+            case .search:
+                break
             }
             return headers;
         }
@@ -232,6 +240,11 @@ class BaseClient: NSObject{
                 return[
                     "data" : data
                 ]
+                
+            case .search(let searchPhrase):
+                return[
+                    "searchPhrase" : searchPhrase
+                ]
             }
         }
         
@@ -262,7 +275,8 @@ class BaseClient: NSObject{
             switch self {
             case .login,
                  .register,
-                 .forgotPassword:
+                 .forgotPassword,
+                 .search:
                 return urlRequest
                             
             case .GetPatientInfo(UserId: _,

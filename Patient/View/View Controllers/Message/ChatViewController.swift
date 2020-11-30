@@ -83,7 +83,7 @@ class ChatViewController: UIViewController {
     }
     
     func queryResponse(query: String) {
-  
+        
       BaseClient.shared.Chatbot(data: messageField.text!,
                                 completion: { [self]
             (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
