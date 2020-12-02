@@ -20,7 +20,7 @@ class AdviserViewController: UIViewController {
     
     var yourArray = [String]()
     let option =  Options()
-    var resultHihi = ""
+
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

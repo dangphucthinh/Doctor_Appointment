@@ -24,12 +24,11 @@ class MessengerViewController: UIViewController {
         textFieldValidation()
         self.title = recieverUser?.name
         getAllMessages()
-    
+        hideKeyboardWhenTappedAround()
     }
     
     func getAllMessages(){
-      
-        MessageDataManager.getAllMessages(thread: (recieverUser?.userId)! + sendUserId!) { (messages) in
+        MessageDataManager.getAllMessagesInConversation(thread: (recieverUser?.userId)! + sendUserId!) { (messages) in
             self.allmessages = messages
             self.messageTableView.reloadData()
            

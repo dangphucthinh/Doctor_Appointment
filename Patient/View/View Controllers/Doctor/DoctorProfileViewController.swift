@@ -11,7 +11,7 @@ class DoctorProfileViewController: UITableViewController {
     @IBOutlet weak var bookingAppoinment: UIButton!
     
     var data : Doctor?
-   
+    var dataUser: UserDataModel?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,26 +27,26 @@ class DoctorProfileViewController: UITableViewController {
         nameTextField.text = data?.fullName
         emailTextField.text = data?.specialtyName
         
-        let ava: String? = data?.avatar!
+        let ava: String? = data?.avatar
         let url = URL.init(string:"\(ava ?? "No image found")")
         imgAva.sd_setImage(with: url, placeholderImage: UIImage(named: "no_image_banner"))
     }
-    
     
     @IBAction func makeAppointment(_ sender: Any) {
         // create the alert
         let controller: MakeAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.MakeAppointmentViewControllerId) as! MakeAppointmentViewController
         
         controller.doctorId = (data?.id)!
+        controller.doctor = data
         
         self.navigationController?.pushViewController(controller, animated: true)
     }
     @IBAction func chatting(_ sender: Any) {
         // create the alert
         let controller: MessengerViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.MessengerViewControllerId) as! MessengerViewController
-        
-        controller.receivedUserId = data?.id
-        
+        dataUser = UserDataModel(Uname: (data?.fullName)!, Uemail: (data?.email)!, Uavatar: (data?.avatar)!, UuserId: (data?.id)! )
+        UserDataManager.setUserData(userData: dataUser!, userId: data?.id ?? "Not found ID")
+        controller.recieverUser = dataUser!
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

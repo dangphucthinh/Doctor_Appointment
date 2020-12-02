@@ -19,6 +19,7 @@ class ListAppointmentViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadData()
+        listAppointment = List<Appointment>()
     }
     override func viewDidLoad() {
         super.viewDidLoad()

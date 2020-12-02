@@ -20,7 +20,7 @@ class UserHeaderView: UITableViewHeaderFooterView {
         imageView.layer.cornerRadius = imageView.frame.height / 2
         imageView.backgroundColor = .systemBlue
         
-        nameLabel.text = name
+        nameLabel.text = name.uppercased()
         self.imageView.sd_setImage(with: URL(string: "\(avatar ?? "not found")"), placeholderImage: UIImage(named: "no_image_poster"))
     }
 }

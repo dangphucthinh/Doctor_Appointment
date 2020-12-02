@@ -17,6 +17,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     var listAppointment = List<Appointment>()
     var UserId = BaseClient.shared.userId
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        listAppointment = List<Appointment>()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,15 +51,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             let cell =  tableView.dequeueReusableCell(withIdentifier: "GeneralCell", for: indexPath)
             let a = listAppointment[indexPath.row]
         
-        
-        
             let ava: String? = a.patientAvatar
             let url = URL.init(string:"\(ava ?? "Not Found")")
         
             cell.textLabel?.text = a.patientName
             cell.detailTextLabel?.text = a.issue
         
-   
             cell.imageView?.sd_setImage(with: url, placeholderImage: UIImage(named: "no_image_banner"))
         
             cell.imageView?.backgroundColor = .systemBlue
@@ -95,15 +97,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
                               let listTemp = rs.data as List<Appointment>
 
-                     
-
                                 for item in listTemp{
                                     self.listAppointment.append(item)
                                 }
-                                self.tableView.reloadData()
-                            
-                                                
+                                                tableView.reloadData()
                      })
+        
+             
         
     }
 

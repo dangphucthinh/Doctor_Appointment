@@ -33,25 +33,25 @@ class AppointmentTableCell: UITableViewCell {
     
   
     func commonInit(_ name: String, _ phone: String, _ date: String){
-        doctorNameLb.text = name
+        doctorNameLb.text = "Dr. \(name.uppercased())"
         phoneNumber.text = phone
         dateLb.text = dateToSQLDate(date)
             
     }
     
     
-    private func dateToSQLDate(_ DateString: String) -> String {
-  
-        let dateFormatter = DateFormatter()
-       // dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        let string = String(DateString)
-        if let date = dateFormatter.date(from: string) {
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-            returnDate = dateFormatter.string(from: date)
-        }
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-
-        return returnDate
-    }
+//    private func dateToSQLDate(_ DateString: String) -> String {
+//  
+//        let dateFormatter = DateFormatter()
+//       // dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+//        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+//        let string = String(DateString)
+//        if let date = dateFormatter.date(from: string) {
+//        dateFormatter.dateFormat = "MM/dd/yyyy"
+//            returnDate = dateFormatter.string(from: date)
+//        }
+//        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+//
+//        return returnDate
+//    }
 }

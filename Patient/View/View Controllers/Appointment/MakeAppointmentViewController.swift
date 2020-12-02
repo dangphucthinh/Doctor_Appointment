@@ -16,12 +16,13 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
     @IBOutlet weak var timePicker: UIPickerView!
 
 
-    private var deliveryTimes = ["8 AM - 8:30 AM", "8:30 AM - 9 AM", "9 AM - 9:30 AM", "9:30 AM - 10 AM", "10 AM - 10:30 AM", "10:30 AM - 11 AM", "11 AM - 11:30 AM", "11:30 AM - 12 PM", "13 PM - 13:30 PM", "13:30 PM - 14 PM", "14 PM - 14:30 PM", "14:30 PM - 15 PM", "15 PM - 15:30 PM", "15:30 PM - 16 PM", "16 PM - 16:30 PM", "16:30 PM - 17 PM"]
+    private var deliveryTimes = ["8 - 8:30", "8:30 - 9", "9 - 9:30", "9:30 - 10",
+                                 "10 - 10:30", "10:30 - 11", "11 - 11:30", "11:30 - 12", "13 - 13:30", "13:30 - 14", "14 - 14:30", "14:30 - 15", "15 - 15:30", "15:30 - 16", "16 - 16:30", "16:30 - 17"]
     var doctorId = ""
     var dateSelected = ""
     var appointment : Appointment?
     let formatter = DateFormatter()
-
+    var doctor: Doctor?
     
 
     var patientId: String = BaseClient.shared.userId!
@@ -29,8 +30,9 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationTitle(title: "MAKE APPOINTMENT")
+        
         calendar.delegate = self
-
         timePicker.delegate = self
         timePicker.dataSource = self
 
@@ -43,13 +45,8 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
     @IBAction func Booking(_ sender: Any) {
         print("\(deliveryTimes[self.timePicker.selectedRow(inComponent: 0)])")
         print(dateSelected)
-
-        let controller: ConfirmAppointment = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ConfirmAppointmentId) as! ConfirmAppointment
-                                                      //controller.stringb = deliveryTimes[self.timePicker.selectedRow(inComponent: 0)]
-                                                      //controller.statusId = 1
-          self.navigationController?.pushViewController(controller, animated: true)
-
-
+//
+//        Loading.showLoading(message: Message.LoadingMessage, view: self.view)
 //        BaseClient.shared.MakeAnAppointment(doctorId: doctorId,
 //                                            patientId: patientId,
 //                                            meetingTime: formatter.date(from: dateSelected)!,
@@ -58,36 +55,38 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
 //                                            detail: detailTextField.text ?? "Nothing",
 //                                            completion: {
 //                    (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-//                                                //print(error!)
-//                                                let rs = value as! ResponseAppointment
-//                                                print(rs)
-//                                                if rs.status == 1{
-//                                                    let alert = UIAlertController(title: "My Title", message: "Can not appointment this time", preferredStyle: UIAlertController.Style.alert)
+//                    Loading.dismissLoading()
+//                    //print(error!)
+//                    let rs = value as! ResponseAppointment
+//                    print(rs)
+//                    if rs.status == 1{
+//                        let alert = UIAlertController(title: "My Title", message: "Can not appointment this time", preferredStyle: UIAlertController.Style.alert)
 //
-//                                                    // add an action (button)
-//                                                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//                        // add an action (button)
+//                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
 //
-//                                                    // show the alert
-//                                                    self.present(alert, animated: true, completion: nil)
+//                        // show the alert
+//                        self.present(alert, animated: true, completion: nil)
+//                    }
 //
-////                                                    let controller: ListAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ListAppointmentViewControllerId) as! ListAppointmentViewController
-////                                                    //controller.stringb = deliveryTimes[self.timePicker.selectedRow(inComponent: 0)]
-////
-////                                                    self.navigationController?.pushViewController(controller, animated: true)
+//                        if rs.status == 0{
+//                            let alert = UIAlertController(title: "My Title", message: "Success", preferredStyle: UIAlertController.Style.alert)
 //
+//                            // add an action (button)
+//                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//
+//                            // show the alert
+//                            self.present(alert, animated: true, completion: nil)
 //                                                }
-////                                                let alert = UIAlertController(title: "My Title", message: "Success", preferredStyle: UIAlertController.Style.alert)
-////
-////                                                // add an action (button)
-////                                                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-////
-////                                                // show the alert
-////                                                self.present(alert, animated: true, completion: nil)
-//                                                let controller: ListAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ListAppointmentViewControllerId) as! ListAppointmentViewController
-//                                                //controller.stringb = deliveryTimes[self.timePicker.selectedRow(inComponent: 0)]
-//                                                controller.statusId = 1
-//                                                self.navigationController?.pushViewController(controller, animated: true)
-
+                    let controller: ConfirmAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ConfirmAppointmentViewControllerId) as! ConfirmAppointmentViewController
+                   // controller.statusId = 1
+                        controller.issue = issueTextField.text ?? ""
+                        controller.detail = detailTextField.text ?? ""
+                        controller.time = deliveryTimes[self.timePicker.selectedRow(inComponent: 0)]
+                        controller.dateMeeting = dateSelected
+                        controller.doctor = doctor
+                    self.navigationController?.pushViewController(controller, animated: true)
+//
 //                    })
        
     }
@@ -106,12 +105,9 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
     }
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-
-
           formatter.dateFormat = "MM/dd/yyyy"
           self.dateSelected = formatter.string(from: date)
           self.view.endEditing(true)
-
     }
 }
 
@@ -125,7 +121,7 @@ extension MakeAppointmentViewController : UIPickerViewDelegate, UIPickerViewData
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return deliveryTimes[row ]
+        return deliveryTimes[row]
     }
 
 

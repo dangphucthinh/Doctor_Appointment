@@ -14,6 +14,8 @@ class BaseClient: NSObject{
     var userId : String?
     var fullName : String?
     var avatar : String?
+    var email : String?
+    var user: User?
     
     //singleton
     static let shared = BaseClient()
@@ -22,7 +24,8 @@ class BaseClient: NSObject{
     typealias ServiceResponse = (Bool?, NSError?, AnyObject?) -> Void
     
     enum Service: URLRequestConvertible {
-        case login(username: String, password: String)
+        case login(username: String,
+                   password: String)
         
         case register(username: String,
                       email: String,
@@ -37,6 +40,8 @@ class BaseClient: NSObject{
                             newPassword: String,
                             confirmPassword:String,
                             token: String)
+        
+        case forgotPassword(email: String)
         
         case GetPatientInfo(UserId: String,
                             token: String)
@@ -63,19 +68,23 @@ class BaseClient: NSObject{
         case prediction(data: Array<Any>,
                         token: String)
         
+        case search(searchPhrase: String)
+        
         static let baseHTTP = API.kBaseUrl
         
   
         //MARK: -Method
         private var method: HTTPMethod{
             switch self {
-            case .login, .changePassword, .register, .GetPatientInfo :
+            case .login, .changePassword, .register, .GetPatientInfo, .forgotPassword :
                 return .post
             case .makeAnAppointment, .getListAppointment:
                 return .post
             case .getListDoctor, .getListHospital:
                 return .get
             case .chatbot, .prediction:
+                return .post
+            case .search:
                 return .post
             }
         }
@@ -89,6 +98,8 @@ class BaseClient: NSObject{
                 return API.kRegisterUrl
             case .changePassword:
                 return API.kChangePassword
+            case .forgotPassword:
+                return API.kForgotPassword
             case .GetPatientInfo:
                 return API.kPatientInfo
             case .getListDoctor:
@@ -103,20 +114,23 @@ class BaseClient: NSObject{
                 return API.kGetListHospital
             case .prediction:
                 return API.kPrediction
+            case .search:
+                return API.kSearchDoctor
             }
         }
             
         //MARK: -Header
         private var headers: HTTPHeaders {
             //var headers = ["Accept": "application/json"]
-            var headers = ["Accept" : "multipart/form-data"]
+            let headers = ["Accept" : "multipart/form-data"]
             switch self {
             case .register:
                 break
             case .login:
                 break
             case .changePassword:
-                headers["Authorization"] = getAuthorizationHeader()
+                break
+            case .forgotPassword:
                 break
             case .GetPatientInfo:
                 break
@@ -132,15 +146,11 @@ class BaseClient: NSObject{
                 break
             case .prediction:
                 break
-            
+            case .search:
+                break
             }
             return headers;
         }
-        
-        private func getAuthorizationHeader() -> String?{
-            return "Bearer token"
-        }
-        
         // MARK: - Parameters
         private var parameters: Parameters? {
             switch self {
@@ -152,11 +162,17 @@ class BaseClient: NSObject{
                 ]
             case .changePassword(let pass,
                                  let newPass,
-                                 let confirmNewPass,_):
+                                 let confirmNewPass,
+                                 _):
                 return[
-                    "Password": pass,
-                    "new_password": newPass,
-                    "new_password_confirmation": confirmNewPass
+                    "OldPassword": pass,
+                    "NewPassword": newPass,
+                    "ConfirmPassword": confirmNewPass
+                ]
+                
+            case .forgotPassword(let email):
+                return[
+                    "Email" : email
                 ]
             case .register(let username,
                            let email,
@@ -224,6 +240,11 @@ class BaseClient: NSObject{
                 return[
                     "data" : data
                 ]
+                
+            case .search(let searchPhrase):
+                return[
+                    "searchPhrase" : searchPhrase
+                ]
             }
         }
         
@@ -254,9 +275,8 @@ class BaseClient: NSObject{
             switch self {
             case .login,
                  .register,
-                 .changePassword
-                 :
-                
+                 .forgotPassword,
+                 .search:
                 return urlRequest
                             
             case .GetPatientInfo(UserId: _,
@@ -269,6 +289,11 @@ class BaseClient: NSObject{
                                     issue: _,
                                     detail: _,
                                     token: let accessToken),
+                 
+                 .changePassword(oldPassword: _,
+                                 newPassword: _,
+                                 confirmPassword: _,
+                                 token: let accessToken),
                  
                  .getListAppointment(userId: _,
                                      statusId: _,

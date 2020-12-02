@@ -30,5 +30,7 @@ class Patient : User{
         medicalHistory      <- map["medical_History"]
         allergy             <- map["allergy"]
         symptom             <- map["symptom"]
+        firstName           <- map["firstName"]
+        lastName            <- map["lastName"]
     }
 }

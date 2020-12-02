@@ -11,32 +11,21 @@ import RealmSwift
 class DoctorViewController: UITableViewController {
     
     var listDoctor = List<Doctor>()
-    
-
     var allUsers = [UserDataModel]()
+    var searchDoctor : Bool = false
+    var listDoc : Bool = false
+    
+    var searchPhrase : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDoctor()
         cellRegister()
-        getAllUser()
-        
-        let userData = UserDataModel(Uname: "phucthinh dang", Uemail: "dangthinh@gmail.com", Uavatar: "http://res.cloudinary.com/deh0sqxwl/image/upload/v1603946649/kysbc6aamvwi8mkrklni.png", UuserId: "3bae1afc-ff29-421f-b80e-53a76635da0a")
-        UserDataManager.setUserData(userData: userData, userId: "3bae1afc-ff29-421f-b80e-53a76635da0a")
+        self.navigationTitle(title: "DOCTOR")
     }
     
     func cellRegister(){
         tableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "detailCell")
-    }
-    
-    
-    //MARK:- Get All Users
-    func getAllUser(){
-        UserDataManager.getAllUsers { (allUser) in
-            self.allUsers.removeAll()
-            self.allUsers = allUser
-            self.tableView.reloadData()
-        }
     }
     
 
@@ -49,19 +38,20 @@ class DoctorViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
         return listDoctor.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell") as! DetailTableViewCell
-        
-        if indexPath.row < listDoctor.count {
-           cell.data = listDoctor[indexPath.row]
-        } else {
-            // Handle non-existing object here
-            print("hihi")
-        }
     
+            if indexPath.row < listDoctor.count {
+               cell.data = listDoctor[indexPath.row]
+            } else {
+                // Handle non-existing object here
+                print("hihi")
+            }
+
         return cell
     }
     
@@ -81,22 +71,43 @@ class DoctorViewController: UITableViewController {
 
     
     func loadDoctor(){
-        BaseClient.shared.GetListDoctor(completion: { [self]
-                                        (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-                                                                 
-                                        if(isSuccess!){
-                                          let user = value as! ResponseDoctor
-                                          
-                                            let listTemp = user.data as List<Doctor>
-                                            for item in listTemp{
-                                                self.listDoctor.append(item)
-                                            }
-                                            self.tableView.reloadData()
-                                        }
+        if listDoc == true {
+            BaseClient.shared.GetListDoctor(completion: { [self]
+                                    (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+                                                             
+                                    if(isSuccess!){
+                                      let user = value as! ResponseDoctor
                                       
-                                })
+                                        let listTemp = user.data as List<Doctor>
+                                        for item in listTemp{
+                                            self.listDoctor.append(item)
+                                        }
+                                        self.tableView.reloadData()
+                                    }
+                                  
+                            })
+        }
+        if searchDoctor == true {
+            BaseClient.shared.SearchDoctor(searchPhrase: searchPhrase!,
+                                           completion: { [self]
+                                    (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+                                                             
+                                    if(isSuccess!){
+                                      let user = value as! ResponseDoctor
+                                      
+                                        let listTemp = user.data as List<Doctor>
+                                        for item in listTemp{
+                                            self.listDoctor.append(item)
+                                        }
+                                        self.tableView.reloadData()
+                                }
+                              
+                        })
+        }
     }
+  
+}
     
 
 
-}
+

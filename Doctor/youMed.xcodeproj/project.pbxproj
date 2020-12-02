@@ -21,7 +21,6 @@
 		4D0234BB2560C6F1003D9255 /* AppointmentTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0234B92560C6F0003D9255 /* AppointmentTableCell.swift */; };
 		4D0234BF2560C6FA003D9255 /* RequestViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0234BD2560C6FA003D9255 /* RequestViewCell.xib */; };
 		4D0234C02560C6FA003D9255 /* RequestViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0234BE2560C6FA003D9255 /* RequestViewCell.swift */; };
-		4D0234C32560C707003D9255 /* DoctorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0234C22560C707003D9255 /* DoctorCell.swift */; };
 		4D0234C72560C711003D9255 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0234C62560C711003D9255 /* CustomButton.swift */; };
 		4D0234CB2560C71C003D9255 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0234C92560C71C003D9255 /* HeaderView.xib */; };
 		4D0234CC2560C71C003D9255 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0234CA2560C71C003D9255 /* HeaderView.swift */; };
@@ -93,7 +92,6 @@
 		4D0234B92560C6F0003D9255 /* AppointmentTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentTableCell.swift; sourceTree = "<group>"; };
 		4D0234BD2560C6FA003D9255 /* RequestViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RequestViewCell.xib; sourceTree = "<group>"; };
 		4D0234BE2560C6FA003D9255 /* RequestViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestViewCell.swift; sourceTree = "<group>"; };
-		4D0234C22560C707003D9255 /* DoctorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorCell.swift; sourceTree = "<group>"; };
 		4D0234C62560C711003D9255 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		4D0234C92560C71C003D9255 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		4D0234CA2560C71C003D9255 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -330,7 +328,6 @@
 				4D105E7A25611A6D00416DE7 /* Chatting */,
 				4D02352D2560EF5E003D9255 /* User */,
 				4D0234AA2560C4DF003D9255 /* Appointment */,
-				4D0234C22560C707003D9255 /* DoctorCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -659,7 +656,6 @@
 				4D02349A2560C41E003D9255 /* BaseClient_Doctor.swift in Sources */,
 				4D0235382560F46D003D9255 /* MessageDataManager.swift in Sources */,
 				4D0234C02560C6FA003D9255 /* RequestViewCell.swift in Sources */,
-				4D0234C32560C707003D9255 /* DoctorCell.swift in Sources */,
 				4D02349F2560C427003D9255 /* RegisterResponse.swift in Sources */,
 				4D0234E52560C750003D9255 /* ForgotPasswordController.swift in Sources */,
 				4D105E8825611B2E00416DE7 /* DesignableView.swift in Sources */,

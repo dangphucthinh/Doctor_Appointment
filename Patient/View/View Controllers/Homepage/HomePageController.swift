@@ -11,9 +11,13 @@ import SDWebImage
 
 class HomePageController: UIViewController {
 
+    @IBOutlet weak var tfSearch: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnSearch: CustomButton!
+    
+    var searchIcon = UIImage(named: "search_icon")
+    
     var listDoctor = List<Doctor>()
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadDoctor()
@@ -22,7 +26,7 @@ class HomePageController: UIViewController {
             // Search action
             print("Search")
         })
-
+  
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -41,8 +45,29 @@ class HomePageController: UIViewController {
         tableView.register(UINib(nibName: "HeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "headerView")
         
         tableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "detailCell")
+        searchDoctor()
+  }
+    
+    
+    private func searchDoctor(){
+        tfSearch.withImage(direction: .Left, image: self.searchIcon!, colorSeparator: UIColor.orange, colorBorder: UIColor.black)
+        tfSearch.placeholder = "Doctor, Specialty"
         
     }
+    @IBAction func search(_ sender: Any) {
+        if(!tfSearch.text!.isEmpty) {
+            let controller: DoctorViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorViewControllerId) as! DoctorViewController
+            controller.searchPhrase = tfSearch.text!
+            controller.searchDoctor = true
+        
+            self.navigationController?.pushViewController(controller, animated: true)
+    }
+        else {
+            print("ccc")
+        }
+    }
+        
+    
 }
 
 extension HomePageController: UITableViewDelegate, UITableViewDataSource {
@@ -80,8 +105,6 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
          
             
             return cell
-            
-            //cell.delegate = self
         default:
             return UITableViewCell()
         }
@@ -100,7 +123,6 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("hihihehe")
         let controller: DoctorProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorProfileViewControllerId) as! DoctorProfileViewController
         
         controller.data = listDoctor[indexPath.row]
@@ -115,6 +137,34 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
             header.delegateHospital = self
             return header
         }
+        if section == 1{
+            let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 40))
+
+            let label = UILabel()
+            label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width, height: headerView.frame.height-10)
+            label.text = "SPECIALIST"
+            //label.font = UIFont().futuraPTMediumFont(16) // my custom font
+            label.textColor = .white // my custom colour
+            label.backgroundColor = .link
+            label.font = UIFont.boldSystemFont(ofSize: 16)
+            headerView.addSubview(label)
+
+            return headerView
+        }
+        if section == 2{
+            let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 40))
+
+            let label = UILabel()
+            label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width, height: headerView.frame.height-10)
+            label.text = "DOCTOR"
+            //label.font = UIFont().futuraPTMediumFont(16) // my custom font
+            label.textColor = .white // my custom colour
+            label.backgroundColor = .link
+            label.font = UIFont.boldSystemFont(ofSize: 16)
+            headerView.addSubview(label)
+
+            return headerView
+        }
         return UITableViewHeaderFooterView()
     }
     
@@ -123,17 +173,6 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
             return 130
         }
         return 30
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 1:
-            return "Specialist"
-        case 2:
-            return "Doctor"
-        default:
-            return ""
-        }
     }
     
     func loadDoctor(){
@@ -159,18 +198,18 @@ extension HomePageController : DetailTableViewCellProtocol{
         let controller: MakeAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.MakeAppointmentViewControllerId) as! MakeAppointmentViewController
 
         controller.doctorId = data.id!
-        self.navigationController?.pushViewController(controller, animated: true)
+        controller.doctor = data
         
-        print("cc")
-
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 
 extension HomePageController : DoctorViewProtocol{
     func doctorPage() {
         let controller: DoctorViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorViewControllerId) as! DoctorViewController
-
         
+        controller.listDoc = true
+    
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

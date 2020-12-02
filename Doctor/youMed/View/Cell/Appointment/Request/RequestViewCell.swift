@@ -7,13 +7,18 @@
 
 import UIKit
 
-protocol ResquestCellDelegate : AnyObject {
-    func accepted(_ data: Int)
+protocol ResquestAcceptCellDelegate : AnyObject {
+    func accepted(_ data: Appointment)
     
+}
+
+protocol RequestDenyCellDelegate : AnyObject {
+    func denied(_ data: Int)
 }
 class RequestViewCell: UITableViewCell {
     
-    weak var delegate: ResquestCellDelegate?
+    weak var delegateAccept: ResquestAcceptCellDelegate?
+    weak var delegateDeny: RequestDenyCellDelegate?
 
     @IBOutlet weak var imgAva: UIImageView!
     @IBOutlet weak var lbName: UILabel!
@@ -29,10 +34,7 @@ class RequestViewCell: UITableViewCell {
                 guard let data = data else { return }
                 
                 if(data.patientAvatar!.count > 0){
-                   // let url = URL.init(string: "\(API.kPosterUrl + data.poster)")! as URL
-                   // DataManager.shared.downloadImageUrl(imageView: self.imgPoster, from: url)
-                    //self.imgPoster.downloaded(from: url)
-                    
+
                     self.imgAva.sd_setImage(with: URL(string: "\(data.patientAvatar ?? "Not found")"), placeholderImage: UIImage(named: "no_image_poster"))
                     
                     lbName.text = String(format: " \(data.patientName ?? "Not found")")
@@ -65,11 +67,12 @@ class RequestViewCell: UITableViewCell {
     
     @IBAction func acceptBtn(_ sender: Any) {
         print("cc")
-        delegate?.accepted(id!)
+        delegateAccept?.accepted(data!)
     }
     
     @IBAction func denyBtn(_ sender: Any) {
         print("ececec")
+        delegateDeny?.denied(id!)
     }
     private func dateToSQLDate(_ DateString: String) -> String {
   

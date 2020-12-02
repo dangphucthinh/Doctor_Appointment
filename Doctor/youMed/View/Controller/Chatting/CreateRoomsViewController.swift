@@ -17,8 +17,9 @@ class CreateRoomsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cellRegistation()
-       
+        Loading.showLoading(message: Message.LoadingMessage, view: self.view)
         getAllUser()
+        Loading.dismissLoading()
     }
     
     func cellRegistation(){
@@ -32,7 +33,6 @@ class CreateRoomsViewController: UITableViewController {
             self.allUsers.removeAll()
             self.allUsers = allUser
             self.chatTableView.reloadData()
-         
         }
     }
 

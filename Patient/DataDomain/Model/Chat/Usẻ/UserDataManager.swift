@@ -10,8 +10,6 @@ import FirebaseDatabase
 
 class UserDataManager{
     
-    
-    
     static let databaseRef = Database.database().reference()
     
     static func setUserData(userData : UserDataModel, userId : String){
@@ -53,6 +51,5 @@ class UserDataManager{
             }
             completion(allUserData)
         }
-        
     }
 }

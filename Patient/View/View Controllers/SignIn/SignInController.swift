@@ -13,8 +13,9 @@ class SignInController: UIViewController {
 
     @IBOutlet weak var tfUsername: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
-    var user = User()
-        
+    @IBOutlet weak var lbNameValidated: UILabel!
+    @IBOutlet weak var lbPassValidated: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -40,12 +41,32 @@ class SignInController: UIViewController {
     }
     
     @IBAction func forgotPassword(_ sender: Any) {
-        let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.ForgotPasswordControllerId) as! ForgotPasswordController
+        let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.SendEmailViewControllerId) as! SendEmailViewController
         
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
+    @IBAction func name_act(_ sender: Any){
+        let text = tfUsername.text ?? ""
+        if text.isValidName{
+            tfUsername.textColor = UIColor.link
+            lbNameValidated.text = ""
+        }else{
+            tfUsername.textColor = UIColor.red
+            lbNameValidated.text = "Your username is invalid"
+        }
+    }
     
+    @IBAction func password_act(_ sender: Any){
+        let text = tfPassword.text ?? ""
+        if text.isValidPassword{
+            tfPassword.textColor = UIColor.link
+            lbNameValidated.text = ""
+        }else{
+            tfPassword.textColor = UIColor.link
+            lbPassValidated.text = "Your password is invalid"
+        }
+    }
    
     @IBAction func signIn(_ sender: Any) {
         if(!tfUsername.text!.isEmpty && !tfPassword.text!.isEmpty) {
@@ -57,6 +78,18 @@ class SignInController: UIViewController {
 
                 if(isSuccess!) {
                     
+                    let name = BaseClient.shared.fullName
+                    let email = BaseClient.shared.email
+                    let avatar = BaseClient.shared.avatar
+                    let id = BaseClient.shared.userId
+                    //send user to firebase
+                    let userData = UserDataModel(Uname: name ?? "Not found",
+                                                 Uemail: email ?? "Not found",
+                                                 Uavatar: avatar ?? "User",
+                                                 UuserId: id ?? "Not found" )
+                    UserDataManager.setUserData(userData: userData, userId: id ?? "Not found")
+                    
+                    //switch to parentViewController
                     self.resetRoot(id: StoryboardID.ParentViewControllerId)
                         }
                 else {

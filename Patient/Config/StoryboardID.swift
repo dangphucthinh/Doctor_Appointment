@@ -15,8 +15,12 @@ struct StoryboardID {
     //signUp id
     static let SignUpControllerId = "SignUpController"
     
-    //forgotPassword id
-    static let ForgotPasswordControllerId = "ForgotPasswordController"
+    //changePassword id
+    static let ChangePasswordControllerId = "ChangePasswordController"
+    
+    //forgotpassword
+    static let SendEmailViewControllerId = "SendEmailViewController"
+    static let ResetSuccessViewControllerId = "ResetSuccessViewController"
     
     //homePage id
     static let MainViewControllerId = "MainViewController"
@@ -32,11 +36,12 @@ struct StoryboardID {
     static let RequestedViewControllerId = "RequestedViewController"
     static let ListAppointmentViewControllerId = "ListAppointmentViewController"
     static let MakeAppointmentViewControllerId = "MakeAppointmentViewController"
-    static let ConfirmPatientTableViewCellId = "ConfirmPatientTableViewCell" //cell
+    static let PatientConfirmationViewId = "PatientConfirmationView" //cell
+    static let DoctorConfirmationViewId = "DoctorConfirmationView" //cell
     static let RequestViewCellId = "RequestViewCell" // cell
     static let AppointmentTableCellId = "AppointmentTableCell" //cell
     
-    static let ConfirmAppointmentId = "ConfirmAppointment"
+    static let ConfirmAppointmentViewControllerId = "ConfirmAppointmentViewController"
     
     //doctor
     static let DoctorProfileViewControllerId = "DoctorProfileViewController"

@@ -18,17 +18,11 @@ class RequestedViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadData()
+        listAppointment = List<Appointment>()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         let nib = UINib.init(nibName: StoryboardID.RequestViewCellId, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: StoryboardID.RequestViewCellId)
@@ -62,8 +56,8 @@ class RequestedViewController: UITableViewController {
 
         }
         
-    
-        cell.delegate = self
+        cell.delegateAccept = self
+        cell.delegateDeny = self
         return cell
     }
     @IBAction func refreshData(_ sender: UIRefreshControl) {
@@ -93,12 +87,12 @@ class RequestedViewController: UITableViewController {
         
     }
 }
-extension RequestedViewController : ResquestCellDelegate{
+extension RequestedViewController : ResquestAcceptCellDelegate{
  
-    func accepted(_ data: Int) {
+    func accepted(_ data: Appointment) {
         
-        BaseClient.shared.UpdateAppointment(id: data,
-                                            issue: "Non",
+        BaseClient.shared.UpdateAppointment(id: data.id!,
+                                            issue: data.issue!,
                                             detail: "nonnn",
                                             statusId: 2,
                                              completion: { [self]
@@ -112,9 +106,28 @@ extension RequestedViewController : ResquestCellDelegate{
                                 //controller.data = data
                                 self.navigationController?.pushViewController(controller, animated: true)
                                 }
-                                tableView.reloadData()
+                                
                                                 
                      })
+            tableView.reloadData()
         
+    }
+}
+
+extension RequestedViewController : RequestDenyCellDelegate{
+    func denied(_ data: Int) {
+        BaseClient.shared.UpdateAppointment(id: data ,
+                                            issue: "Non",
+                                            detail: "nonnn",
+                                            statusId: 3,
+                                             completion: { [self]
+                     (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+                            let rs = value as! ResponseListAppointment
+
+                                if rs.status == 0{
+                                
+                                    tableView.reloadData()
+            }
+        })
     }
 }

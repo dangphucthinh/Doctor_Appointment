@@ -12,11 +12,12 @@ class CreateRoomsViewController: UITableViewController {
     @IBOutlet weak var chatTableView:UITableView!
   
     var allUsers = [UserDataModel]()
+ 
+    var sendUserId = BaseClient.shared.userId
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cellRegistation()
-       
         getAllUser()
     }
     
@@ -26,14 +27,19 @@ class CreateRoomsViewController: UITableViewController {
     
     //MARK:- Get All Users
     func getAllUser(){
-      
         UserDataManager.getAllUsers { (allUser) in
             self.allUsers.removeAll()
             self.allUsers = allUser
             self.chatTableView.reloadData()
-         
+            
+            
+            for item in self.allUsers{
+                print(item.userId)
+            }
         }
     }
+
+    
 
         override func numberOfSections(in tableView: UITableView) -> Int {
             // #warning Incomplete implementation, return the number of sections
@@ -42,7 +48,7 @@ class CreateRoomsViewController: UITableViewController {
 
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             // #warning Incomplete implementation, return the number of rows
-            return 2
+            return allUsers.count 
         }
 
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

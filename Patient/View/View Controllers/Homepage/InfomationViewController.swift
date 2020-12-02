@@ -24,15 +24,19 @@ class InfomationViewController: UITableViewController {
     @IBOutlet weak var historyTextField: UITextField!
     @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var button: UIView!
+
     
     var UserId = BaseClient.shared.userId
     let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.hideKeyboardWhenTappedAround()
+        self.hideKeyboardWhenTappedAround()        
+        imgAvatar.roundedImageView()
+        self.navigationTitle(title: "PROFILE")
+        LoadInform(UserId: UserId!)
     }
+    
     
 
     override func viewWillAppear(_ animated: Bool) {
@@ -46,8 +50,6 @@ class InfomationViewController: UITableViewController {
                 button.addGestureRecognizer(tapGuesture1)
         
     }
-    
-    
     
     @objc func handleTap1(_ sender: AnyObject){
         var imageData : Data? = nil
@@ -64,7 +66,7 @@ class InfomationViewController: UITableViewController {
                 (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
                                     let rs = value as! ResponseUser
 
-                                            if(rs.status == 1){
+                if(rs.status == 1){
                     // create the alert
                     let alert = UIAlertController(title: "My Title", message: "Update Fail", preferredStyle: UIAlertController.Style.alert)
 
@@ -74,17 +76,20 @@ class InfomationViewController: UITableViewController {
                     // show the alert
                     self.present(alert, animated: true, completion: nil)
                 }
-                                            let alert = UIAlertController(title: "My Title", message: "Update Success", preferredStyle: UIAlertController.Style.alert)
+                if rs.status == 0 {
+                    let alert = UIAlertController(title: "My Title", message: "Update Success", preferredStyle: UIAlertController.Style.alert)
 
-                                            // add an action (button)
-                                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    // add an action (button)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { [self]
+                        action in
+                        self.LoadInform(UserId: self.UserId!)
+                    }))
 
-                                            // show the alert
-                                            self.present(alert, animated: true, completion: nil)
+                    // show the alert
+                    self.present(alert, animated: true, completion: nil)
+                }
         })
-       
-        LoadInform(UserId: UserId!)
-        }
+   }
     
     
 
@@ -132,7 +137,8 @@ class InfomationViewController: UITableViewController {
                     
                     let ava: String? = user.data?.avatar
                     let url = URL.init(string:"\(ava ?? "No image found")")
-                    self.nameTextField.text = user.data?.fullName
+                    self.nameTextField.text = user.data?.firstName
+                    self.lastNameTextField.text = user.data?.lastName
                     self.emailTextField.text = user.data?.email
                     self.phoneTextField.text = user.data?.phoneNumber
                     self.historyTextField.text = user.data?.medicalHistory
@@ -143,7 +149,7 @@ class InfomationViewController: UITableViewController {
                     let dateString = user.data?.dateOfBirth
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-                    let dateFromString = dateFormatter.date(from: dateString!)
+                    let dateFromString = dateFormatter.date(from: dateString ?? "Not found")
                     dateFormatter.dateFormat = "MM/dd/yyyy"
                     let stringFromDate = dateFormatter.string(from: dateFromString!)
                     self.dateOfBirthTextField.text = stringFromDate

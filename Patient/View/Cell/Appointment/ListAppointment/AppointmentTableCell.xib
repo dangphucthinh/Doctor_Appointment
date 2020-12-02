@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AppointmentTableCell" rowHeight="108" id="KGk-i7-Jjw" customClass="AppointmentTableCell" customModule="youMed" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="108"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="376" height="108"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZJe-9N-y1M">
+                        <rect key="frame" x="20" y="6" width="25" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="Tef-F1-HRq"/>
+                            <constraint firstAttribute="height" constant="25.5" id="r2X-bS-W1n"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dHe-qq-U92">
+                        <rect key="frame" x="20" y="39" width="25" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26.5" id="9fY-6G-dlw"/>
+                            <constraint firstAttribute="width" constant="25" id="F1K-8Q-ozD"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4d-AW-MOa">
+                        <rect key="frame" x="67" y="6" width="289" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Date meeting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vI-kk-KQW">
+                        <rect key="frame" x="67" y="41" width="289" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZA3-7r-TtQ">
+                        <rect key="frame" x="67" y="75" width="289" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="v6q-nx-eHy">
+                        <rect key="frame" x="20" y="73.5" width="25" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24.5" id="NKM-OZ-deU"/>
+                            <constraint firstAttribute="width" constant="25" id="Xjg-Tm-4Sr"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dHe-qq-U92" firstAttribute="top" secondItem="ZJe-9N-y1M" secondAttribute="bottom" constant="8" symbolic="YES" id="6jd-Qa-eF4"/>
+                    <constraint firstItem="ZJe-9N-y1M" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4.5" id="7pN-tg-CLl"/>
+                    <constraint firstItem="9vI-kk-KQW" firstAttribute="leading" secondItem="dHe-qq-U92" secondAttribute="trailing" constant="22" id="D2B-zF-A9y"/>
+                    <constraint firstItem="ZA3-7r-TtQ" firstAttribute="top" secondItem="9vI-kk-KQW" secondAttribute="bottom" constant="12" id="EK5-jo-nzU"/>
+                    <constraint firstAttribute="bottom" secondItem="ZA3-7r-TtQ" secondAttribute="bottom" constant="12" id="Gbi-2g-IPp"/>
+                    <constraint firstAttribute="trailing" secondItem="9vI-kk-KQW" secondAttribute="trailing" constant="20" symbolic="YES" id="IUe-2G-R6f"/>
+                    <constraint firstItem="ZJe-9N-y1M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="OHX-cJ-JUn"/>
+                    <constraint firstItem="dHe-qq-U92" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="Pmc-tH-b16"/>
+                    <constraint firstItem="I4d-AW-MOa" firstAttribute="leading" secondItem="ZJe-9N-y1M" secondAttribute="trailing" constant="22" id="XUB-qy-Ng8"/>
+                    <constraint firstItem="I4d-AW-MOa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="e0O-UE-dLP"/>
+                    <constraint firstAttribute="trailing" secondItem="I4d-AW-MOa" secondAttribute="trailing" constant="20" symbolic="YES" id="eED-zE-8wP"/>
+                    <constraint firstItem="9vI-kk-KQW" firstAttribute="top" secondItem="I4d-AW-MOa" secondAttribute="bottom" constant="11" id="ggE-Aa-NWA"/>
+                    <constraint firstAttribute="bottom" secondItem="v6q-nx-eHy" secondAttribute="bottom" constant="10.5" id="iwg-XO-FQE"/>
+                    <constraint firstItem="ZA3-7r-TtQ" firstAttribute="leading" secondItem="v6q-nx-eHy" secondAttribute="trailing" constant="22" id="lOU-2f-McI"/>
+                    <constraint firstAttribute="trailing" secondItem="ZA3-7r-TtQ" secondAttribute="trailing" constant="20" symbolic="YES" id="oGT-IS-DaO"/>
+                    <constraint firstItem="v6q-nx-eHy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="rkQ-Tv-MwB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLb" destination="9vI-kk-KQW" id="D8O-Pj-fCg"/>
+                <outlet property="doctorNameLb" destination="I4d-AW-MOa" id="NXH-ag-eP8"/>
+                <outlet property="phoneNumber" destination="ZA3-7r-TtQ" id="8Rh-AV-dhg"/>
+            </connections>
+            <point key="canvasLocation" x="-197.10144927536234" y="6.6964285714285712"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="phone" catalog="system" width="128" height="115"/>
+    </resources>
+</document>
