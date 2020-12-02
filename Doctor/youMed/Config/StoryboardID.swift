@@ -49,4 +49,8 @@ struct StoryboardID {
     //Create room
     static let CreateRoomsViewControllerId = "CreateRoomsViewController"
     
+    //patient
+    static let PatientViewCellId = "PatientViewCell"
+    static let PatientProfileViewControllerId = "PatientProfileViewController"
+    
 }

@@ -40,6 +40,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let nib2 = UINib(nibName: "CustomView", bundle: nil)
         tableView.register(nib2, forHeaderFooterViewReuseIdentifier: "customView")
         
+        let nib3 = UINib(nibName: StoryboardID.PatientViewCellId, bundle: nil)
+        tableView.register(nib3, forCellReuseIdentifier: StoryboardID.PatientViewCellId)
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,18 +51,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-            let cell =  tableView.dequeueReusableCell(withIdentifier: "GeneralCell", for: indexPath)
-            let a = listAppointment[indexPath.row]
-        
-            let ava: String? = a.patientAvatar
-            let url = URL.init(string:"\(ava ?? "Not Found")")
-        
-            cell.textLabel?.text = a.patientName
-            cell.detailTextLabel?.text = a.issue
-        
-            cell.imageView?.sd_setImage(with: url, placeholderImage: UIImage(named: "no_image_banner"))
-        
-            cell.imageView?.backgroundColor = .systemBlue
+        let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardID.PatientViewCellId) as! PatientViewCell
+        if indexPath.row < listAppointment.count{
+            cell.data = listAppointment[indexPath.row]
+        }else{
+            
+        }
             return cell
             
     }
@@ -67,14 +64,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        let controller: DoctorProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorProfileViewControllerId) as! DoctorProfileViewController
-        
+//        let controller: DoctorProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorProfileViewControllerId) as! DoctorProfileViewController
+        let controller: PatientProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.PatientProfileViewControllerId) as! PatientProfileViewController
         
 
         self.navigationController?.pushViewController(controller, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GeneralCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardID.PatientViewCellId)
         return (cell?.frame.height)!
     }
     
