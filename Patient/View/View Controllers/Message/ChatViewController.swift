@@ -137,8 +137,6 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
         cell.layer.cornerRadius = 10
         return cell
     }
-    
-
 }
 
 

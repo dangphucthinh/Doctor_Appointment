@@ -18,9 +18,9 @@ class AdviserViewController: UIViewController {
     
     @IBOutlet weak var result: UILabel!
     
-    var yourArray = [String]()
+    var ListDisease = [String]()
     let option =  Options()
-
+    let a: String? = nil
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -34,68 +34,56 @@ class AdviserViewController: UIViewController {
             // Search action
             print("Search")
         })
-        
-      
       loadData()
-        
-        
     }
     
 
    func loadData(){
     // Do any additional setup after loading the view.
-    mainDropDown.optionArray = option.disease
-    symtom1.optionArray = option.disease
-    symptom2.optionArray = option.disease
-    symptom4.optionArray = option.disease
+   // mainDropDown.optionArray = option.disease_value
+    mainDropDown.optionArray = option.disease_key
+    symtom1.optionArray = option.disease_key
+    symptom2.optionArray = option.disease_key
+    symptom4.optionArray = option.disease_key
 
     mainDropDown.didSelect{(selectedText , index , id) in
-//            self.valueLabel.text = "Selected String: \(selectedText) \n index: \(index) \n Id: \(id)"
 
         print(selectedText)
         print(index)
-        self.yourArray.append(selectedText)
-        
-        print(self.yourArray)
-       
+        self.ListDisease.append(selectedText)
     }
     
     symtom1.didSelect{(selectedText , index , id) in
-//            self.valueLabel.text = "Selected String: \(selectedText) \n index: \(index) \n Id: \(id)"
-
-        print(selectedText)
-        print(index)
-        self.yourArray.append(selectedText)
-        
-        print(self.yourArray)
-        
+       
+        for (i, v) in self.option.disease_value.enumerated() {
+            if i == index{
+                self.ListDisease.append(v)
+            }
+        }
+        print(self.ListDisease)
     }
     symptom2.didSelect{(selectedText , index , id) in
-//            self.valueLabel.text = "Selected String: \(selectedText) \n index: \(index) \n Id: \(id)"
-
-        print(selectedText)
-        print(index)
-        self.yourArray.append(selectedText)
-        
-        print(self.yourArray)
-      
+           
+        for (i, v) in self.option.disease_value.enumerated() {
+            if i == index{
+                self.ListDisease.append(v)
+            }
+        }
     }
     symptom4.didSelect{(selectedText , index , id) in
-//            self.valueLabel.text = "Selected String: \(selectedText) \n index: \(index) \n Id: \(id)"
-
-        print(selectedText)
-        print(index)
-        self.yourArray.append(selectedText)
-        
-        print(self.yourArray)
-        
+        for (i, v) in self.option.disease_value.enumerated() {
+            if i == index{
+                self.ListDisease.append(v)
+            }
+        }
     }
     
-    print(self.yourArray)
+ 
+    
    }
 
     @IBAction func sendData(_ sender: Any) {
-        BaseClient.shared.Prediction(data: self.yourArray,
+        BaseClient.shared.Prediction(data: self.ListDisease,
                                      completion: { [self]
                                  (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
                                                           
@@ -104,7 +92,8 @@ class AdviserViewController: UIViewController {
                                     
                                     self.result.text = (rs.data?.disease)!
                                     
-    }
-                                     })
+                                    }
+                         })
+        ListDisease.removeAll()        
     }
 }

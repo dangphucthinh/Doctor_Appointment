@@ -460,14 +460,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cf0-pM-jNM">
+                                <rect key="frame" x="20" y="106" width="374" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="loC-NA-mPy"/>
+                                    <constraint firstAttribute="width" constant="374" id="yEB-yj-uJa"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="CHOOSE THE SYMPTOM">
+                                        <attributes>
+                                            <font key="NSFont" size="24" name="HoeflerText-Black"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Symptom 3" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IZ6-DN-ZST" customClass="DropDown" customModule="iOSDropDown">
-                                <rect key="frame" x="0.0" y="431" width="414" height="34"/>
+                                <rect key="frame" x="33" y="349" width="349" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="349" id="6AZ-Xd-jxq"/>
+                                    <constraint firstAttribute="height" constant="34" id="Bvb-M0-vkM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Symptom 2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhH-HH-O6n" customClass="DropDown" customModule="iOSDropDown">
-                                <rect key="frame" x="0.0" y="333" width="414" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Symptom 2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhH-HH-O6n" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="33" y="262" width="349" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="349" id="4FP-Xe-ofL"/>
+                                    <constraint firstAttribute="height" constant="34" id="UkC-j8-gG6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -479,29 +510,68 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Symptom 4" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVB-NJ-nDW" customClass="DropDown" customModule="iOSDropDown">
-                                <rect key="frame" x="-11" y="536" width="425" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Symptom 4" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVB-NJ-nDW" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="33" y="431" width="349" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="AFy-Cj-fno"/>
+                                    <constraint firstAttribute="width" constant="349" id="Skk-3B-ONZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Symptom 1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Vp-5O-ioX" customClass="DropDown" customModule="iOSDropDown">
-                                <rect key="frame" x="0.0" y="200" width="414" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Symptom 1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Vp-5O-ioX" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="33" y="182" width="349" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="NI0-Ts-BIz"/>
+                                    <constraint firstAttribute="width" constant="349" id="PFD-uc-Mwf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcV-iK-Soh">
-                                <rect key="frame" x="20" y="637" width="374" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcV-iK-Soh">
+                                <rect key="frame" x="33" y="639" width="349" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="bPU-hu-9hS"/>
+                                    <constraint firstAttribute="width" constant="349" id="izu-Iz-iUi"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eK6-Hh-eYz">
-                                <rect key="frame" x="20" y="764" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eK6-Hh-eYz" customClass="CustomButton" customModule="youMed" customModuleProvider="target">
+                                <rect key="frame" x="74" y="744" width="267" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ogp-L9-h6c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Prediction"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.11141132870000001" green="0.31425861640000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="sendData:" destination="F2r-IN-cTq" eventType="touchUpInside" id="T8a-6c-rbr"/>
                                 </connections>
@@ -510,9 +580,26 @@
                         <viewLayoutGuide key="safeArea" id="IBt-MS-0Aa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="IZ6-DN-ZST" firstAttribute="trailing" secondItem="IBt-MS-0Aa" secondAttribute="trailing" id="8XX-TP-28c"/>
-                            <constraint firstItem="IZ6-DN-ZST" firstAttribute="centerY" secondItem="Jsk-UP-H7b" secondAttribute="centerY" id="kgg-J4-gbl"/>
-                            <constraint firstItem="IZ6-DN-ZST" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" id="n64-Tl-ft4"/>
+                            <constraint firstItem="cVB-NJ-nDW" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" constant="33" id="1DD-0m-lbG"/>
+                            <constraint firstItem="cVB-NJ-nDW" firstAttribute="top" secondItem="IZ6-DN-ZST" secondAttribute="bottom" constant="48" id="3mO-fS-7zl"/>
+                            <constraint firstItem="5Vp-5O-ioX" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" constant="33" id="3rW-ut-BIU"/>
+                            <constraint firstItem="IBt-MS-0Aa" firstAttribute="bottom" secondItem="eK6-Hh-eYz" secondAttribute="bottom" constant="19" id="4BR-eX-tZh"/>
+                            <constraint firstItem="IBt-MS-0Aa" firstAttribute="trailing" secondItem="IZ6-DN-ZST" secondAttribute="trailing" constant="32" id="4e7-Ou-GQ4"/>
+                            <constraint firstItem="yhH-HH-O6n" firstAttribute="top" secondItem="5Vp-5O-ioX" secondAttribute="bottom" constant="46" id="9pW-QE-OUi"/>
+                            <constraint firstItem="eK6-Hh-eYz" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" constant="74" id="DEh-2x-0mL"/>
+                            <constraint firstItem="cf0-pM-jNM" firstAttribute="top" secondItem="IBt-MS-0Aa" secondAttribute="top" constant="18" id="EGT-Ra-BOU"/>
+                            <constraint firstItem="cf0-pM-jNM" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" constant="20" id="I7i-gI-uGC"/>
+                            <constraint firstItem="IBt-MS-0Aa" firstAttribute="trailing" secondItem="cf0-pM-jNM" secondAttribute="trailing" constant="20" id="JTr-7a-wXb"/>
+                            <constraint firstItem="IZ6-DN-ZST" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" constant="33" id="KKS-Wy-ID7"/>
+                            <constraint firstItem="yhH-HH-O6n" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" constant="33" id="QmJ-lC-Mnd"/>
+                            <constraint firstItem="IBt-MS-0Aa" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cVB-NJ-nDW" secondAttribute="trailing" id="Szv-PZ-4nN"/>
+                            <constraint firstItem="eK6-Hh-eYz" firstAttribute="top" secondItem="QcV-iK-Soh" secondAttribute="bottom" constant="38" id="Ttq-4Q-fib"/>
+                            <constraint firstItem="5Vp-5O-ioX" firstAttribute="top" secondItem="cf0-pM-jNM" secondAttribute="bottom" constant="8" symbolic="YES" id="asp-Mz-NVV"/>
+                            <constraint firstItem="eK6-Hh-eYz" firstAttribute="centerX" secondItem="cVB-NJ-nDW" secondAttribute="centerX" id="epP-r5-mMC"/>
+                            <constraint firstItem="IBt-MS-0Aa" firstAttribute="trailing" secondItem="yhH-HH-O6n" secondAttribute="trailing" constant="32" id="geq-Io-SPQ"/>
+                            <constraint firstItem="IZ6-DN-ZST" firstAttribute="top" secondItem="yhH-HH-O6n" secondAttribute="bottom" constant="53" id="mZh-P2-zKD"/>
+                            <constraint firstItem="IBt-MS-0Aa" firstAttribute="trailing" secondItem="5Vp-5O-ioX" secondAttribute="trailing" constant="32" id="rkC-lv-BDz"/>
+                            <constraint firstItem="eK6-Hh-eYz" firstAttribute="centerX" secondItem="QcV-iK-Soh" secondAttribute="centerX" id="tw7-66-Nx7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xT3-k8-5yS"/>
@@ -601,6 +688,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="password_act:" destination="G90-La-lPq" eventType="editingDidEnd" id="vlQ-wi-B49"/>
+                                    <outlet property="delegate" destination="G90-La-lPq" id="dcD-Dj-G1n"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wja-qx-cbU">
@@ -692,6 +780,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="name_act:" destination="G90-La-lPq" eventType="editingDidEnd" id="otd-9Z-Utt"/>
+                                    <outlet property="delegate" destination="G90-La-lPq" id="AQ2-zd-fOS"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -2706,6 +2795,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="email_act:" destination="xzJ-if-fP2" eventType="editingDidEnd" id="rrt-ta-A3s"/>
+                                    <outlet property="delegate" destination="xzJ-if-fP2" id="9Yb-wc-9gs"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFq-ED-Y8J">
@@ -2758,55 +2848,55 @@
     </scenes>
     <designables>
         <designable name="6o0-iy-u2Y">
-            <size key="intrinsicContentSize" width="140" height="34"/>
+            <size key="intrinsicContentSize" width="130" height="34"/>
         </designable>
         <designable name="BEV-qc-EUd">
-            <size key="intrinsicContentSize" width="92.333333333333329" height="22"/>
+            <size key="intrinsicContentSize" width="82.333333333333329" height="22"/>
         </designable>
         <designable name="BHk-9u-i1a">
-            <size key="intrinsicContentSize" width="158" height="21"/>
+            <size key="intrinsicContentSize" width="148" height="21"/>
         </designable>
         <designable name="Fdi-7a-V5Q">
-            <size key="intrinsicContentSize" width="97" height="24.666666666666668"/>
+            <size key="intrinsicContentSize" width="87" height="24.666666666666668"/>
         </designable>
         <designable name="GKt-FU-R5I">
-            <size key="intrinsicContentSize" width="91.333333333333329" height="17"/>
+            <size key="intrinsicContentSize" width="81.333333333333329" height="17"/>
         </designable>
         <designable name="Q7e-7e-D2j">
-            <size key="intrinsicContentSize" width="148.66666666666666" height="21"/>
+            <size key="intrinsicContentSize" width="138.66666666666666" height="21"/>
         </designable>
         <designable name="Qip-OL-Mik">
-            <size key="intrinsicContentSize" width="91.666666666666671" height="23"/>
+            <size key="intrinsicContentSize" width="81.666666666666671" height="23"/>
         </designable>
         <designable name="S52-sh-GTc">
-            <size key="intrinsicContentSize" width="91.666666666666671" height="22"/>
+            <size key="intrinsicContentSize" width="81.666666666666671" height="22"/>
         </designable>
         <designable name="UVI-iN-7e0">
-            <size key="intrinsicContentSize" width="124.33333333333333" height="22"/>
+            <size key="intrinsicContentSize" width="114.33333333333333" height="22"/>
         </designable>
         <designable name="ZSP-Ps-vhQ">
-            <size key="intrinsicContentSize" width="127.66666666666667" height="17"/>
+            <size key="intrinsicContentSize" width="117.66666666666667" height="17"/>
         </designable>
         <designable name="cBY-7K-mTQ">
-            <size key="intrinsicContentSize" width="109.33333333333333" height="22"/>
+            <size key="intrinsicContentSize" width="99.333333333333329" height="22"/>
         </designable>
         <designable name="cgh-UY-pHQ">
-            <size key="intrinsicContentSize" width="83.333333333333329" height="21"/>
+            <size key="intrinsicContentSize" width="73.333333333333329" height="21"/>
         </designable>
         <designable name="dnp-Ml-mQw">
-            <size key="intrinsicContentSize" width="104.66666666666667" height="17"/>
+            <size key="intrinsicContentSize" width="94.666666666666671" height="17"/>
         </designable>
         <designable name="gae-XA-OT2">
-            <size key="intrinsicContentSize" width="132" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="122" height="18.666666666666668"/>
         </designable>
         <designable name="jBk-dU-zyw">
-            <size key="intrinsicContentSize" width="50.666666666666664" height="22"/>
+            <size key="intrinsicContentSize" width="40.666666666666664" height="22"/>
         </designable>
         <designable name="qDm-It-2Nm">
-            <size key="intrinsicContentSize" width="98" height="24.666666666666668"/>
+            <size key="intrinsicContentSize" width="88" height="24.666666666666668"/>
         </designable>
         <designable name="qOE-jd-G2d">
-            <size key="intrinsicContentSize" width="88.333333333333329" height="22"/>
+            <size key="intrinsicContentSize" width="78.333333333333329" height="22"/>
         </designable>
     </designables>
     <resources>

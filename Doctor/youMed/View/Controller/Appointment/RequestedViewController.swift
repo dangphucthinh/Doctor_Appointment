@@ -21,9 +21,10 @@ class RequestedViewController: UITableViewController {
         listAppointment = List<Appointment>()
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationTitle(title: "YOUR REQUEST")
         let nib = UINib.init(nibName: StoryboardID.RequestViewCellId, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: StoryboardID.RequestViewCellId)
     }

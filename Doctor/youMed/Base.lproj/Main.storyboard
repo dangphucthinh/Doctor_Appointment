@@ -519,7 +519,7 @@
         <!--Sign In Controller-->
         <scene sceneID="rUo-4D-nhg">
             <objects>
-                <viewController storyboardIdentifier="SignInController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nyi-YX-TSs" customClass="SignInController" customModule="youMed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nyi-YX-TSs" customClass="SignInController" customModule="youMed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dDF-p5-7Y6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -687,6 +687,7 @@
                 <navigationController id="4w3-9u-KL4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person" id="6Tg-t5-uB7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H8q-nh-Sl6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

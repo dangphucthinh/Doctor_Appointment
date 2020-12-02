@@ -10,8 +10,9 @@ import Foundation
 
 struct API{
     
-        static let kBaseUrl = "http://116.98.175.71:2905/"
-
+        static let kBaseUrl = "http://116.110.85.217:2905/"
+        static let kPatientUpdate = "http://116.110.85.217:2905/api/Auth/Update"
+    
         static let kImageUrl = "http://res.cloudinary.com/deh0sqxwl/image/upload/"
 
         //users
@@ -30,7 +31,7 @@ struct API{
         
         //patient
         static let kPatientInfo = "api/Auth/GetPatientInfo"
-        static let kPatientUpdate = "http://116.110.1.219:2905/api/Auth/Update"
+
     
         static let kTest = "api/Image/CreateImage"
     

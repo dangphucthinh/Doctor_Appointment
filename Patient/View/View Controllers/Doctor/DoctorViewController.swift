@@ -13,7 +13,6 @@ class DoctorViewController: UITableViewController {
     var listDoctor = List<Doctor>()
     var allUsers = [UserDataModel]()
     var searchDoctor : Bool = false
-    var listDoc : Bool = false
     
     var searchPhrase : String?
     
@@ -51,7 +50,7 @@ class DoctorViewController: UITableViewController {
                 // Handle non-existing object here
                 print("hihi")
             }
-
+        cell.delegate = self
         return cell
     }
     
@@ -71,22 +70,7 @@ class DoctorViewController: UITableViewController {
 
     
     func loadDoctor(){
-        if listDoc == true {
-            BaseClient.shared.GetListDoctor(completion: { [self]
-                                    (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-                                                             
-                                    if(isSuccess!){
-                                      let user = value as! ResponseDoctor
-                                      
-                                        let listTemp = user.data as List<Doctor>
-                                        for item in listTemp{
-                                            self.listDoctor.append(item)
-                                        }
-                                        self.tableView.reloadData()
-                                    }
-                                  
-                            })
-        }
+      
         if searchDoctor == true {
             BaseClient.shared.SearchDoctor(searchPhrase: searchPhrase!,
                                            completion: { [self]
@@ -104,8 +88,35 @@ class DoctorViewController: UITableViewController {
                               
                         })
         }
+        else {
+            BaseClient.shared.GetListDoctor(completion: { [self]
+                                    (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+                                                             
+                                    if(isSuccess!){
+                                      let user = value as! ResponseDoctor
+                                      
+                                        let listTemp = user.data as List<Doctor>
+                                        for item in listTemp{
+                                            self.listDoctor.append(item)
+                                        }
+                                        self.tableView.reloadData()
+                                    }
+                                  
+                            })
+        }
     }
   
+}
+
+extension DoctorViewController : DetailTableViewCellProtocol{
+    func doctorPage(_ data: Doctor) {
+        let controller: MakeAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.MakeAppointmentViewControllerId) as! MakeAppointmentViewController
+
+        controller.doctorId = data.id!
+        controller.doctor = data
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 }
     
 

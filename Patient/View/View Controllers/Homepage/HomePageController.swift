@@ -208,8 +208,6 @@ extension HomePageController : DoctorViewProtocol{
     func doctorPage() {
         let controller: DoctorViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorViewControllerId) as! DoctorViewController
         
-        controller.listDoc = true
-    
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }
@@ -218,7 +216,6 @@ extension HomePageController : HospitalViewProtocol{
     func hospitalPage() {
         let controller: HospitalViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.HospitalViewControllerId) as! HospitalViewController
 
-        
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

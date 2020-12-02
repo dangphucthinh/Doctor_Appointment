@@ -20,12 +20,6 @@ class MenuViewController: UIViewController {
         
         tableView.register(UINib(nibName: "UserHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "headerView")
     }
-    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(true)
-//        self.navigationController?.isNavigationBarHidden = true
-//    }
-
 }
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {

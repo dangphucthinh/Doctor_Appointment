@@ -19,6 +19,11 @@ class SendEmailViewController: UIViewController {
         hideKeyboardWhenTappedAround()
         lbEmailvalidate.text = ""
     }
+    
+    private func configureDelegate(){
+        tfEmail.delegate = self
+    }
+    
     @IBAction func email_act(_ sender: Any){
         
         let text = tfEmail.text ?? ""
@@ -32,8 +37,6 @@ class SendEmailViewController: UIViewController {
     }
     
     @IBAction func sendEmail(_ sender: Any) {
-        
-        
         let text = tfEmail.text ?? ""
         if text.isValidEmail{
             tfEmail.textColor = UIColor.blue
@@ -69,6 +72,13 @@ class SendEmailViewController: UIViewController {
             tfEmail.textColor = UIColor.red
             lbEmailvalidate.text = "Your email should be xyz@gmail.com"
         }
+    }
+}
+
+extension SendEmailViewController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

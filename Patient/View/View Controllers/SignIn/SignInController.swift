@@ -23,6 +23,11 @@ class SignInController: UIViewController {
    
     }
     
+    private func configureTextFields(){
+        tfUsername.delegate = self
+        tfPassword.delegate = self
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -106,5 +111,12 @@ class SignInController: UIViewController {
             }
         }
     
+    }
+}
+
+extension SignInController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

@@ -33,14 +33,14 @@ class RequestViewCell: UITableViewCell {
             didSet {
                 guard let data = data else { return }
                 
-                if(data.patientAvatar!.count > 0){
+          
 
                     self.imgAva.sd_setImage(with: URL(string: "\(data.patientAvatar ?? "Not found")"), placeholderImage: UIImage(named: "no_image_poster"))
                     
                     lbName.text = String(format: " \(data.patientName ?? "Not found")")
                     lbIssue.text = String(format: " \(data.issue ?? "Not found")")
                     lbDateBook.text = dateToSQLDate(data.meetingTime!)
-                }
+   
             }
         }
     
