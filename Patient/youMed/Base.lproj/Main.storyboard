@@ -455,6 +455,7 @@
         <!--Adviser View Controller-->
         <scene sceneID="tee-ev-PrZ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VV1-3c-udV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="AdviserViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="F2r-IN-cTq" customClass="AdviserViewController" customModule="youMed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jsk-UP-H7b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -543,13 +544,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcV-iK-Soh">
-                                <rect key="frame" x="33" y="548" width="349" height="67"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcV-iK-Soh">
+                                <rect key="frame" x="33" y="493" width="349" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="bPU-hu-9hS"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="349" id="izu-Iz-iUi"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -575,34 +576,55 @@
                                     <action selector="sendData:" destination="F2r-IN-cTq" eventType="touchUpInside" id="T8a-6c-rbr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEL-24-Noo">
-                                <rect key="frame" x="53" y="623" width="308" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEL-24-Noo">
+                                <rect key="frame" x="33" y="568" width="349" height="97"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="1NM-q9-lIy"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="349" id="fZx-zf-rWP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDm-Lm-uMH">
+                                <rect key="frame" x="74" y="706" width="267" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="267" id="4gj-i6-Ua4"/>
+                                    <constraint firstAttribute="height" constant="30" id="FB6-UH-NfJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Click here to see doctor"/>
+                                <connections>
+                                    <action selector="moveToListDoctor:" destination="F2r-IN-cTq" eventType="touchUpInside" id="NSQ-hi-hyq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IBt-MS-0Aa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cVB-NJ-nDW" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" constant="33" id="1DD-0m-lbG"/>
+                            <constraint firstItem="aEL-24-Noo" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" constant="33" id="1Ur-1e-O1e"/>
+                            <constraint firstItem="aEL-24-Noo" firstAttribute="top" secondItem="QcV-iK-Soh" secondAttribute="bottom" constant="8" id="3j7-o9-DJQ"/>
                             <constraint firstItem="cVB-NJ-nDW" firstAttribute="top" secondItem="IZ6-DN-ZST" secondAttribute="bottom" constant="48" id="3mO-fS-7zl"/>
                             <constraint firstItem="5Vp-5O-ioX" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" constant="33" id="3rW-ut-BIU"/>
                             <constraint firstItem="IBt-MS-0Aa" firstAttribute="bottom" secondItem="eK6-Hh-eYz" secondAttribute="bottom" constant="19" id="4BR-eX-tZh"/>
                             <constraint firstItem="IBt-MS-0Aa" firstAttribute="trailing" secondItem="IZ6-DN-ZST" secondAttribute="trailing" constant="32" id="4e7-Ou-GQ4"/>
+                            <constraint firstItem="IBt-MS-0Aa" firstAttribute="trailing" secondItem="lDm-Lm-uMH" secondAttribute="trailing" constant="73" id="9d8-5u-3Et"/>
                             <constraint firstItem="yhH-HH-O6n" firstAttribute="top" secondItem="5Vp-5O-ioX" secondAttribute="bottom" constant="46" id="9pW-QE-OUi"/>
                             <constraint firstItem="eK6-Hh-eYz" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" constant="74" id="DEh-2x-0mL"/>
                             <constraint firstItem="cf0-pM-jNM" firstAttribute="top" secondItem="IBt-MS-0Aa" secondAttribute="top" constant="18" id="EGT-Ra-BOU"/>
                             <constraint firstItem="cf0-pM-jNM" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" constant="20" id="I7i-gI-uGC"/>
                             <constraint firstItem="IBt-MS-0Aa" firstAttribute="trailing" secondItem="cf0-pM-jNM" secondAttribute="trailing" constant="20" id="JTr-7a-wXb"/>
                             <constraint firstItem="IZ6-DN-ZST" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" constant="33" id="KKS-Wy-ID7"/>
+                            <constraint firstItem="lDm-Lm-uMH" firstAttribute="top" secondItem="aEL-24-Noo" secondAttribute="bottom" constant="41" id="KQY-GU-o90"/>
                             <constraint firstItem="yhH-HH-O6n" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" constant="33" id="QmJ-lC-Mnd"/>
                             <constraint firstItem="IBt-MS-0Aa" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cVB-NJ-nDW" secondAttribute="trailing" id="Szv-PZ-4nN"/>
-                            <constraint firstItem="eK6-Hh-eYz" firstAttribute="top" secondItem="QcV-iK-Soh" secondAttribute="bottom" constant="129" id="Ttq-4Q-fib"/>
+                            <constraint firstItem="eK6-Hh-eYz" firstAttribute="top" secondItem="QcV-iK-Soh" secondAttribute="bottom" constant="184" id="Ttq-4Q-fib"/>
                             <constraint firstItem="5Vp-5O-ioX" firstAttribute="top" secondItem="cf0-pM-jNM" secondAttribute="bottom" constant="8" symbolic="YES" id="asp-Mz-NVV"/>
+                            <constraint firstItem="lDm-Lm-uMH" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" constant="74" id="cfk-KD-J0M"/>
                             <constraint firstItem="eK6-Hh-eYz" firstAttribute="centerX" secondItem="cVB-NJ-nDW" secondAttribute="centerX" id="epP-r5-mMC"/>
                             <constraint firstItem="IBt-MS-0Aa" firstAttribute="trailing" secondItem="yhH-HH-O6n" secondAttribute="trailing" constant="32" id="geq-Io-SPQ"/>
+                            <constraint firstItem="IBt-MS-0Aa" firstAttribute="trailing" secondItem="aEL-24-Noo" secondAttribute="trailing" constant="32" id="hbJ-uE-h2g"/>
                             <constraint firstItem="IZ6-DN-ZST" firstAttribute="top" secondItem="yhH-HH-O6n" secondAttribute="bottom" constant="53" id="mZh-P2-zKD"/>
                             <constraint firstItem="IBt-MS-0Aa" firstAttribute="trailing" secondItem="5Vp-5O-ioX" secondAttribute="trailing" constant="32" id="rkC-lv-BDz"/>
                             <constraint firstItem="eK6-Hh-eYz" firstAttribute="centerX" secondItem="QcV-iK-Soh" secondAttribute="centerX" id="tw7-66-Nx7"/>
@@ -610,6 +632,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="xT3-k8-5yS"/>
                     <connections>
+                        <outlet property="btnAction" destination="lDm-Lm-uMH" id="GVU-NF-K1p"/>
                         <outlet property="mainDropDown" destination="IZ6-DN-ZST" id="r12-3l-b6V"/>
                         <outlet property="result" destination="QcV-iK-Soh" id="y1s-Ah-Ptq"/>
                         <outlet property="specialty" destination="aEL-24-Noo" id="4tF-do-5ii"/>
@@ -618,7 +641,6 @@
                         <outlet property="symtom1" destination="5Vp-5O-ioX" id="iIG-yB-HhA"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VV1-3c-udV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3531.884057971015" y="344.86607142857139"/>
         </scene>
@@ -2855,55 +2877,55 @@
     </scenes>
     <designables>
         <designable name="6o0-iy-u2Y">
-            <size key="intrinsicContentSize" width="130" height="34"/>
+            <size key="intrinsicContentSize" width="140" height="34"/>
         </designable>
         <designable name="BEV-qc-EUd">
-            <size key="intrinsicContentSize" width="82.333333333333329" height="22"/>
+            <size key="intrinsicContentSize" width="92.333333333333329" height="22"/>
         </designable>
         <designable name="BHk-9u-i1a">
             <size key="intrinsicContentSize" width="158" height="21"/>
         </designable>
         <designable name="Fdi-7a-V5Q">
-            <size key="intrinsicContentSize" width="87" height="24.666666666666668"/>
+            <size key="intrinsicContentSize" width="97" height="24.666666666666668"/>
         </designable>
         <designable name="GKt-FU-R5I">
-            <size key="intrinsicContentSize" width="81.333333333333329" height="17"/>
+            <size key="intrinsicContentSize" width="91.333333333333329" height="17"/>
         </designable>
         <designable name="Q7e-7e-D2j">
-            <size key="intrinsicContentSize" width="138.66666666666666" height="21"/>
+            <size key="intrinsicContentSize" width="148.66666666666666" height="21"/>
         </designable>
         <designable name="Qip-OL-Mik">
-            <size key="intrinsicContentSize" width="81.666666666666671" height="23"/>
+            <size key="intrinsicContentSize" width="91.666666666666671" height="23"/>
         </designable>
         <designable name="S52-sh-GTc">
-            <size key="intrinsicContentSize" width="81.666666666666671" height="22"/>
+            <size key="intrinsicContentSize" width="91.666666666666671" height="22"/>
         </designable>
         <designable name="UVI-iN-7e0">
-            <size key="intrinsicContentSize" width="114.33333333333333" height="22"/>
+            <size key="intrinsicContentSize" width="124.33333333333333" height="22"/>
         </designable>
         <designable name="ZSP-Ps-vhQ">
-            <size key="intrinsicContentSize" width="117.66666666666667" height="17"/>
+            <size key="intrinsicContentSize" width="127.66666666666667" height="17"/>
         </designable>
         <designable name="cBY-7K-mTQ">
-            <size key="intrinsicContentSize" width="99.333333333333329" height="22"/>
+            <size key="intrinsicContentSize" width="109.33333333333333" height="22"/>
         </designable>
         <designable name="cgh-UY-pHQ">
-            <size key="intrinsicContentSize" width="73.333333333333329" height="21"/>
+            <size key="intrinsicContentSize" width="83.333333333333329" height="21"/>
         </designable>
         <designable name="dnp-Ml-mQw">
-            <size key="intrinsicContentSize" width="94.666666666666671" height="17"/>
+            <size key="intrinsicContentSize" width="104.66666666666667" height="17"/>
         </designable>
         <designable name="gae-XA-OT2">
             <size key="intrinsicContentSize" width="132" height="18.666666666666668"/>
         </designable>
         <designable name="jBk-dU-zyw">
-            <size key="intrinsicContentSize" width="40.666666666666664" height="22"/>
+            <size key="intrinsicContentSize" width="50.666666666666664" height="22"/>
         </designable>
         <designable name="qDm-It-2Nm">
-            <size key="intrinsicContentSize" width="88" height="24.666666666666668"/>
+            <size key="intrinsicContentSize" width="98" height="24.666666666666668"/>
         </designable>
         <designable name="qOE-jd-G2d">
-            <size key="intrinsicContentSize" width="78.333333333333329" height="22"/>
+            <size key="intrinsicContentSize" width="88.333333333333329" height="22"/>
         </designable>
     </designables>
     <resources>

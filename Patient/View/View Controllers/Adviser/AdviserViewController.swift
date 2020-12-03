@@ -18,6 +18,7 @@ class AdviserViewController: UIViewController {
     
     @IBOutlet weak var result: UILabel!
     @IBOutlet weak var specialty: UILabel!
+    @IBOutlet weak var btnAction: UIButton!
     
     var ListDisease = [String]()
     let option =  Options()
@@ -36,6 +37,7 @@ class AdviserViewController: UIViewController {
 //            print("Search")
 //        })
       loadData()
+        btnAction.isHidden = true
     }
     
 
@@ -82,6 +84,10 @@ class AdviserViewController: UIViewController {
  
     
    }
+    
+    @IBAction func moveToListDoctor(_ sender: Any){
+        
+    }
 
     @IBAction func sendData(_ sender: Any) {
         BaseClient.shared.Prediction(data: self.ListDisease,
@@ -92,8 +98,12 @@ class AdviserViewController: UIViewController {
                                    let rs = value as! ResponsePrediction
                                     print(rs)
                                     if rs.status == 0 {
-                                        self.result.text = (rs.data?.disease)!
-                                        self.specialty.text = rs.data?.spec.randomElement()!
+                                        self.result.text = "You are diagnosed with \((rs.data?.disease?.uppercased())!)"
+                                        self.specialty.text = "You should make appointment with doctor who has their specialty is \(rs.data?.spec.randomElement()! ?? "")"
+                                        btnAction.isHidden = false
+                                    }
+                                    if rs.status == 1 {
+                                        
                                     }
                                 }
                          })
