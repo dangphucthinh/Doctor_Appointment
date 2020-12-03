@@ -30,6 +30,7 @@ extension UIViewController {
     }
     
     @objc func dismissKeyboard() {
+        view.frame.origin.y = 0
         view.endEditing(true)
     }
     
@@ -99,11 +100,11 @@ extension UIViewController {
 //    }
 //    
 //    //convert string to date
-//    func stringToDate(_ str: String)->Date{
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MM/dd/yyyy"
-//        return formatter.date(from: str)!
-//    }
+    func stringToDate(_ str: String)->Date{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        return formatter.date(from: str)!
+    }
 }
 
 extension UIImageView{

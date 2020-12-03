@@ -55,6 +55,7 @@ class InfomationViewController: UITableViewController {
         var imageData : Data? = nil
         imageData = UIImage.pngData(imgAvatar.image!)()
         
+        Loading.showLoading(message: "Loading", view: self.view)
         BaseClient.shared.updateProfile(userId: UserId!,
                                         firstName: "phucthinh",
                                         lastName: "dang",
@@ -64,6 +65,7 @@ class InfomationViewController: UITableViewController {
                                         medicalHistory: "hehe",
                                         completion: {
                 (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+            Loading.dismissLoading()
                                     let rs = value as! ResponseUser
 
                 if(rs.status == 1){

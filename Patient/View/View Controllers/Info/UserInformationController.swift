@@ -50,20 +50,20 @@ extension UserInformationController: UITableViewDelegate, UITableViewDataSource 
             cell.textLabel?.text = "Home"
             cell.imageView?.image = UIImage(systemName: "house.fill")
         case 1:
-            cell.textLabel?.text = "Account"
+            cell.textLabel?.text = "Profile"
             cell.imageView?.image = UIImage(systemName: "person.fill")
         case 2:
             cell.textLabel?.text = "Your Request"
             cell.imageView?.image = UIImage(systemName: "exclamationmark.bubble.fill")
         case 3:
-            cell.textLabel?.text = "Upcoming"
+            cell.textLabel?.text = "Schedule"
             cell.imageView?.image = UIImage(systemName: "creditcard.fill")
         case 4:
             cell.textLabel?.text = "Messages"
             cell.imageView?.image = UIImage(systemName: "envelope.fill")
         case 5:
             cell.textLabel?.text = "Settings"
-            cell.imageView?.image = UIImage(systemName: "wrench.and.screwdriver.fill")
+            cell.imageView?.image = UIImage(systemName: "wrench.fill")
         case 6:
             cell.textLabel?.text = "Logout"
             cell.imageView?.image = UIImage(systemName: "arrowshape.turn.up.left.fill")

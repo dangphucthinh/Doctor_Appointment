@@ -23,24 +23,26 @@ class Doctor:Object, Mappable {
     var specialtyName : String?
     var hospitalSpecialty_Name : String?
     var bio : String?
+    var address : String?
     
     required convenience init?(map: Map) {
             self.init()
         }
     
     func mapping(map: Map) {
-        id          <- map["id"]
-        roles       <- map["roles"]
-        fullName    <- map["fullName"]
-        email       <- map["email"]
-        dateOfBirth <- map["dateOfBirth"]
-        avatar      <- map["avatar"]
-        userName    <- map["userName"]
-        phoneNumber <- map["phoneNumber"]
+        id                      <- map["id"]
+        roles                   <- map["roles"]
+        fullName                <- map["fullName"]
+        email                   <- map["email"]
+        dateOfBirth             <- map["dateOfBirth"]
+        avatar                  <- map["avatar"]
+        userName                <- map["userName"]
+        phoneNumber             <- map["phoneNumber"]
         education               <- map["education"]
         specialtyName           <- map["specialtyName"]
         hospitalSpecialty_Name  <- map["hospitalSpecialty_Name"]
         certification           <- map["certification"]
         bio                     <- map["bio"]
+        address                 <- map["hospital_Name"]
     }
 }

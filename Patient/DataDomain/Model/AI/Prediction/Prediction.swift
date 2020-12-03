@@ -11,7 +11,7 @@ import RealmSwift
 
 class Prediction : Object, Mappable{
     var disease: String?
-    var spec: String?
+    var spec = Array<String>()
     
     required convenience init?(map: Map) {
         self.init()
@@ -22,3 +22,5 @@ class Prediction : Object, Mappable{
         spec       <- map["spec"]
     }
 }
+
+

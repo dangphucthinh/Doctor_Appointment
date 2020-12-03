@@ -24,7 +24,25 @@ class MessengerViewController: UIViewController {
         textFieldValidation()
         self.title = recieverUser?.name
         getAllMessages()
-        hideKeyboardWhenTappedAround()
+        txtMessage.delegate = self
+        //listen for keyboard events
+        NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidShow(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidShow(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    @objc func keyboardDidShow(notification:NSNotification) {
+        if txtMessage.isEditing {
+            view.frame.origin.y = -300
+        }else{
+            view.frame.origin.y = 0
+        }
     }
     
     func getAllMessages(){
@@ -86,5 +104,14 @@ extension MessengerViewController{
             btnSend.alpha = 1
             btnSend.isEnabled = true
         }
+    }
+}
+
+extension MessengerViewController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyboardWhenTappedAround()
+        textField.resignFirstResponder()
+        view.frame.origin.y = 0
+        return true
     }
 }
