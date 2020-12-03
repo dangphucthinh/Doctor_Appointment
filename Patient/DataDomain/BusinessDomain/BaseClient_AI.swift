@@ -36,8 +36,7 @@ extension BaseClient{
             DispatchQueue.global(qos: .background).async {
                 //Run on background
                 
-                let request = Service.prediction(data: data,
-                                                 token: self.accessToken!)
+                let request = Service.prediction(data: data)
                 
                 Alamofire.request(request)
                     .responseObject{ (response: DataResponse<ResponsePrediction>) in

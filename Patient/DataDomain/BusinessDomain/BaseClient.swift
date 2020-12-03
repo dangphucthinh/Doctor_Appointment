@@ -65,8 +65,7 @@ class BaseClient: NSObject{
         case chatbot(data: String,
                      token: String)
         
-        case prediction(data: Array<Any>,
-                        token: String)
+        case prediction(data: Array<Any>)
         
         case search(searchPhrase: String)
         
@@ -235,8 +234,7 @@ class BaseClient: NSObject{
                     "data" : data
                 ]
                 
-            case .prediction(let data,
-                             _):
+            case .prediction(let data):
                 return[
                     "data" : data
                 ]
@@ -276,7 +274,8 @@ class BaseClient: NSObject{
             case .login,
                  .register,
                  .forgotPassword,
-                 .search:
+                 .search,
+                 .prediction:
                 return urlRequest
                             
             case .GetPatientInfo(UserId: _,
@@ -302,8 +301,8 @@ class BaseClient: NSObject{
                  .chatbot(data: _,
                           token: let accessToken),
                  
-                 .prediction(data: _,
-                             token: let accessToken),
+//                 .prediction(data: _,
+//                             token: let accessToken),
                 
                  .getListDoctor(token: let accessToken),
                 

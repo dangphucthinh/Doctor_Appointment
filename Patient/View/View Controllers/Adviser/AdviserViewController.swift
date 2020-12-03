@@ -17,23 +17,24 @@ class AdviserViewController: UIViewController {
     @IBOutlet weak var symptom4: DropDown!
     
     @IBOutlet weak var result: UILabel!
+    @IBOutlet weak var specialty: UILabel!
     
     var ListDisease = [String]()
     let option =  Options()
-    let a: String? = nil
+    let ListSpec = [String]()
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.showNavigationBar(animated: animated)
+       // self.showNavigationBar(animated: animated)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setNavigationBarLogo(title: "ADVISER", controlEvents: .touchUpInside,  ForAction:{() -> Void in
-            // Search action
-            print("Search")
-        })
+//        self.setNavigationBarLogo(title: "ADVISER", controlEvents: .touchUpInside,  ForAction:{() -> Void in
+//            // Search action
+//            print("Search")
+//        })
       loadData()
     }
     
@@ -89,10 +90,12 @@ class AdviserViewController: UIViewController {
                                                           
                                  if(isSuccess!){
                                    let rs = value as! ResponsePrediction
-                                    
-                                    self.result.text = (rs.data?.disease)!
-                                    
+                                    print(rs)
+                                    if rs.status == 0 {
+                                        self.result.text = (rs.data?.disease)!
+                                        self.specialty.text = rs.data?.spec.randomElement()!
                                     }
+                                }
                          })
         ListDisease.removeAll()        
     }

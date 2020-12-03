@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XPS-63-3g5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F2r-IN-cTq">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -464,7 +464,7 @@
                                 <rect key="frame" x="20" y="106" width="374" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="loC-NA-mPy"/>
-                                    <constraint firstAttribute="width" constant="374" id="yEB-yj-uJa"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="yEB-yj-uJa"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="CHOOSE THE SYMPTOM">
@@ -479,7 +479,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Symptom 3" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IZ6-DN-ZST" customClass="DropDown" customModule="iOSDropDown">
                                 <rect key="frame" x="33" y="349" width="349" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="349" id="6AZ-Xd-jxq"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="349" id="6AZ-Xd-jxq"/>
                                     <constraint firstAttribute="height" constant="34" id="Bvb-M0-vkM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -496,7 +496,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Symptom 2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhH-HH-O6n" customClass="DropDown" customModule="iOSDropDown">
                                 <rect key="frame" x="33" y="262" width="349" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="349" id="4FP-Xe-ofL"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="349" id="4FP-Xe-ofL"/>
                                     <constraint firstAttribute="height" constant="34" id="UkC-j8-gG6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -514,7 +514,7 @@
                                 <rect key="frame" x="33" y="431" width="349" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="AFy-Cj-fno"/>
-                                    <constraint firstAttribute="width" constant="349" id="Skk-3B-ONZ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="349" id="Skk-3B-ONZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -531,7 +531,6 @@
                                 <rect key="frame" x="33" y="182" width="349" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="NI0-Ts-BIz"/>
-                                    <constraint firstAttribute="width" constant="349" id="PFD-uc-Mwf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -545,10 +544,10 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcV-iK-Soh">
-                                <rect key="frame" x="33" y="639" width="349" height="67"/>
+                                <rect key="frame" x="33" y="548" width="349" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="bPU-hu-9hS"/>
-                                    <constraint firstAttribute="width" constant="349" id="izu-Iz-iUi"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="349" id="izu-Iz-iUi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -576,6 +575,13 @@
                                     <action selector="sendData:" destination="F2r-IN-cTq" eventType="touchUpInside" id="T8a-6c-rbr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEL-24-Noo">
+                                <rect key="frame" x="53" y="623" width="308" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IBt-MS-0Aa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -593,7 +599,7 @@
                             <constraint firstItem="IZ6-DN-ZST" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" constant="33" id="KKS-Wy-ID7"/>
                             <constraint firstItem="yhH-HH-O6n" firstAttribute="leading" secondItem="IBt-MS-0Aa" secondAttribute="leading" constant="33" id="QmJ-lC-Mnd"/>
                             <constraint firstItem="IBt-MS-0Aa" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cVB-NJ-nDW" secondAttribute="trailing" id="Szv-PZ-4nN"/>
-                            <constraint firstItem="eK6-Hh-eYz" firstAttribute="top" secondItem="QcV-iK-Soh" secondAttribute="bottom" constant="38" id="Ttq-4Q-fib"/>
+                            <constraint firstItem="eK6-Hh-eYz" firstAttribute="top" secondItem="QcV-iK-Soh" secondAttribute="bottom" constant="129" id="Ttq-4Q-fib"/>
                             <constraint firstItem="5Vp-5O-ioX" firstAttribute="top" secondItem="cf0-pM-jNM" secondAttribute="bottom" constant="8" symbolic="YES" id="asp-Mz-NVV"/>
                             <constraint firstItem="eK6-Hh-eYz" firstAttribute="centerX" secondItem="cVB-NJ-nDW" secondAttribute="centerX" id="epP-r5-mMC"/>
                             <constraint firstItem="IBt-MS-0Aa" firstAttribute="trailing" secondItem="yhH-HH-O6n" secondAttribute="trailing" constant="32" id="geq-Io-SPQ"/>
@@ -606,6 +612,7 @@
                     <connections>
                         <outlet property="mainDropDown" destination="IZ6-DN-ZST" id="r12-3l-b6V"/>
                         <outlet property="result" destination="QcV-iK-Soh" id="y1s-Ah-Ptq"/>
+                        <outlet property="specialty" destination="aEL-24-Noo" id="4tF-do-5ii"/>
                         <outlet property="symptom2" destination="yhH-HH-O6n" id="p7W-eO-4Xv"/>
                         <outlet property="symptom4" destination="cVB-NJ-nDW" id="dvA-Bn-JXJ"/>
                         <outlet property="symtom1" destination="5Vp-5O-ioX" id="iIG-yB-HhA"/>
@@ -2854,7 +2861,7 @@
             <size key="intrinsicContentSize" width="82.333333333333329" height="22"/>
         </designable>
         <designable name="BHk-9u-i1a">
-            <size key="intrinsicContentSize" width="148" height="21"/>
+            <size key="intrinsicContentSize" width="158" height="21"/>
         </designable>
         <designable name="Fdi-7a-V5Q">
             <size key="intrinsicContentSize" width="87" height="24.666666666666668"/>
@@ -2887,7 +2894,7 @@
             <size key="intrinsicContentSize" width="94.666666666666671" height="17"/>
         </designable>
         <designable name="gae-XA-OT2">
-            <size key="intrinsicContentSize" width="122" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="132" height="18.666666666666668"/>
         </designable>
         <designable name="jBk-dU-zyw">
             <size key="intrinsicContentSize" width="40.666666666666664" height="22"/>
