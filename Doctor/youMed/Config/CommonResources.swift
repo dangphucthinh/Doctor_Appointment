@@ -7,8 +7,4 @@
 //
 
 import Foundation
-struct Resources{
-    static let kHomeLogo = "icons8-xbox_cross"
-    static let kSearchLogo = "search_icon"
-}
 

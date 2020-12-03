@@ -34,8 +34,7 @@ class SignUpController: UIViewController {
 
 
     @IBAction func signUp(_ sender: Any) {
-       
-    //print(datePicker.date)
+    
         BaseConnection.request(BaseClient.Service.register(username: tfUserName.text!,
                                                            email: tfEmail.text!,
                                                            firstName: tfFirstName.text!,
@@ -101,7 +100,4 @@ class SignUpController: UIViewController {
    @objc func cancelDatePicker(){
       self.view.endEditing(true)
     }
-    
-    //MARK: -Gender
-    
 }

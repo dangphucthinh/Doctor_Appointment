@@ -33,14 +33,14 @@ class RequestViewCell: UITableViewCell {
             didSet {
                 guard let data = data else { return }
                 
-          
+                if(data.patientAvatar!.count > 0){
 
                     self.imgAva.sd_setImage(with: URL(string: "\(data.patientAvatar ?? "Not found")"), placeholderImage: UIImage(named: "no_image_poster"))
                     
                     lbName.text = String(format: " \(data.patientName ?? "Not found")")
                     lbIssue.text = String(format: " \(data.issue ?? "Not found")")
                     lbDateBook.text = dateToSQLDate(data.meetingTime!)
-   
+                }
             }
         }
     
@@ -73,19 +73,5 @@ class RequestViewCell: UITableViewCell {
     @IBAction func denyBtn(_ sender: Any) {
         print("ececec")
         delegateDeny?.denied(id!)
-    }
-    private func dateToSQLDate(_ DateString: String) -> String {
-  
-        let dateFormatter = DateFormatter()
-       // dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        let string = String(DateString)
-        if let date = dateFormatter.date(from: string) {
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-            returnDate = dateFormatter.string(from: date)
-        }
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-
-        return returnDate
     }
 }

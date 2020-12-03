@@ -35,16 +35,11 @@ class InfomationViewController: UITableViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.showNavigationBar(animated: animated)
-    }
-    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         LoadInform(UserId: UserId!)
-        self.navigationTitle(title: "PROFILE")
+      
         let tapGuesture = UITapGestureRecognizer(target: self, action: #selector(handleTap)) //declear tap view
         avaPicker.addGestureRecognizer(tapGuesture)
         

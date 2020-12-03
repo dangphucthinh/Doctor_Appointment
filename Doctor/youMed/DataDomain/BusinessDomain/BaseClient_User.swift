@@ -108,7 +108,7 @@ extension BaseClient {
             parameters["MedicalHistory"] = medicalHistory
             parameters["Allergy"] = allergy
 
-            let url = API.kPatientUpdate
+            let url = API.kUserUpdate
             print(url)
 
 

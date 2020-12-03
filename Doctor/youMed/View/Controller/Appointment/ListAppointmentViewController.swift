@@ -23,7 +23,10 @@ class ListAppointmentViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationTitle(title: "YOUR APPOINTMENT")
+        
+        //self.navigationController?.isNavigationBarHidden = true
+
+        
         let nib = UINib.init(nibName: StoryboardID.AppointmentTableCellId, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: StoryboardID.AppointmentTableCellId)
     }
