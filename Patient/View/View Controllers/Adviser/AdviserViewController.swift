@@ -19,6 +19,8 @@ class AdviserViewController: UIViewController {
     @IBOutlet weak var result: UILabel!
     @IBOutlet weak var specialty: UILabel!
     @IBOutlet weak var btnAction: UIButton!
+    @IBOutlet weak var ContentDiseaseView: UIView!
+    @IBOutlet weak var ContentSpecVIew: UIView!
     
     var ListDisease = [String]()
     let option =  Options()
@@ -26,18 +28,22 @@ class AdviserViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-       // self.showNavigationBar(animated: animated)
+       self.showNavigationBar(animated: animated)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.setNavigationBarLogo(title: "ADVISER", controlEvents: .touchUpInside,  ForAction:{() -> Void in
-//            // Search action
-//            print("Search")
-//        })
+        self.setNavigationBarLogo(title: "ADVISER", controlEvents: .touchUpInside,  ForAction:{() -> Void in
+            // Search action
+            print("Search")
+        })
       loadData()
         btnAction.isHidden = true
+        ContentDiseaseView.roundedView(cornerRadius: 15, borderWidth: 1, borderCorlor: .init(red: 0, green: 0, blue: 255, alpha: 0.5))
+        ContentSpecVIew.roundedView(cornerRadius: 15, borderWidth: 1, borderCorlor: .init(red: 0, green: 0, blue: 255, alpha: 0.5))
+        ContentDiseaseView.isHidden = true
+        ContentSpecVIew.isHidden = true
     }
     
 
@@ -80,10 +86,7 @@ class AdviserViewController: UIViewController {
             }
         }
     }
-    
- 
-    
-   }
+}
     
     @IBAction func moveToListDoctor(_ sender: Any){
         
@@ -96,11 +99,13 @@ class AdviserViewController: UIViewController {
                                                           
                                  if(isSuccess!){
                                    let rs = value as! ResponsePrediction
-                                    print(rs)
+                                    print(rs.data as Any)
                                     if rs.status == 0 {
                                         self.result.text = "You are diagnosed with \((rs.data?.disease?.uppercased())!)"
-                                        self.specialty.text = "You should make appointment with doctor who has their specialty is \(rs.data?.spec.randomElement()! ?? "")"
+                                        self.specialty.text = "You should make appointment with doctor who has their specialty is \(rs.data?.spec.randomElement()!.uppercased() ?? "")"
                                         btnAction.isHidden = false
+                                        ContentDiseaseView.isHidden = false
+                                        ContentSpecVIew.isHidden = false
                                     }
                                     if rs.status == 1 {
                                         

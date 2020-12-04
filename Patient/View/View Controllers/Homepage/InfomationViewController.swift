@@ -8,6 +8,7 @@
 import UIKit
 import RealmSwift
 import SDWebImage
+import Alamofire
 
 class InfomationViewController: UITableViewController {
 
@@ -53,43 +54,43 @@ class InfomationViewController: UITableViewController {
     
     @objc func handleTap1(_ sender: AnyObject){
         var imageData : Data? = nil
-        imageData = UIImage.pngData(imgAvatar.image!)()
+        imageData = UIImage.pngData((imgAvatar.image ?? UIImage(named: "User"))!)()
         
         Loading.showLoading(message: "Loading", view: self.view)
         BaseClient.shared.updateProfile(userId: UserId!,
-                                        firstName: "phucthinh",
-                                        lastName: "dang",
+                                        firstName: nameTextField.text ?? "",
+                                        lastName: lastNameTextField.text ?? ""  ,
                                         imageData: imageData,
-                                        symptom: "hihi",
-                                        allergy: "hah",
-                                        medicalHistory: "hehe",
+                                        symptom: symptonTextField.text ?? "",
+                                        allergy: allergyTextField.text ?? "",
+                                        medicalHistory: historyTextField.text ?? "",
                                         completion: {
                 (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-            Loading.dismissLoading()
-                                    let rs = value as! ResponseUser
-
-                if(rs.status == 1){
-                    // create the alert
-                    let alert = UIAlertController(title: "My Title", message: "Update Fail", preferredStyle: UIAlertController.Style.alert)
-
-                    // add an action (button)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
-                    // show the alert
-                    self.present(alert, animated: true, completion: nil)
-                }
-                if rs.status == 0 {
-                    let alert = UIAlertController(title: "My Title", message: "Update Success", preferredStyle: UIAlertController.Style.alert)
-
-                    // add an action (button)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { [self]
-                        action in
-                        self.LoadInform(UserId: self.UserId!)
-                    }))
-
-                    // show the alert
-                    self.present(alert, animated: true, completion: nil)
-                }
+                    Loading.dismissLoading()
+                                            let rs = value as! ResponseUser
+                                           print(rs)
+                        if isSuccess! {
+                            let alert = UIAlertController(title: "My Title", message: "Update Success", preferredStyle: UIAlertController.Style.alert)
+    
+                        // add an action (button)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { [self]
+                            action in
+                            self.LoadInform(UserId: self.UserId!)
+                        }))
+    
+                        // show the alert
+                        self.present(alert, animated: true, completion: nil)
+                        }
+                        else {
+                                        //create the alert
+                                        let alert = UIAlertController(title: "My Title", message: "Update Fail", preferredStyle: UIAlertController.Style.alert)
+                    
+                                        // add an action (button)
+                                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    
+                                        // show the alert
+                                        self.present(alert, animated: true, completion: nil)
+                        }
         })
    }
     
@@ -191,4 +192,11 @@ extension InfomationViewController : UIImagePickerControllerDelegate, UINavigati
         picker.dismiss(animated: true, completion: nil)
     }
     
+}
+
+extension InfomationViewController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

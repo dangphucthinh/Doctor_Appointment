@@ -32,12 +32,18 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
         // Do any additional setup after loading the view.
         self.navigationTitle(title: "MAKE APPOINTMENT")
         
-        calendar.delegate = self
-        timePicker.delegate = self
-        timePicker.dataSource = self
+        setDelegate()
 
         print(doctorId)
 
+    }
+    
+    private func setDelegate(){
+        issueTextField.delegate = self
+        detailTextField.delegate = self
+        calendar.delegate = self
+        timePicker.delegate = self
+        timePicker.dataSource = self
     }
 
     //MARK: -button
@@ -45,39 +51,6 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
     @IBAction func Booking(_ sender: Any) {
         print("\(deliveryTimes[self.timePicker.selectedRow(inComponent: 0)])")
         print(dateSelected)
-//
-//        Loading.showLoading(message: Message.LoadingMessage, view: self.view)
-//        BaseClient.shared.MakeAnAppointment(doctorId: doctorId,
-//                                            patientId: patientId,
-//                                            meetingTime: formatter.date(from: dateSelected)!,
-//                                            startTime: deliveryTimes[self.timePicker.selectedRow(inComponent: 0)],
-//                                            issue: issueTextField.text ?? "No thing",
-//                                            detail: detailTextField.text ?? "Nothing",
-//                                            completion: {
-//                    (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-//                    Loading.dismissLoading()
-//                    //print(error!)
-//                    let rs = value as! ResponseAppointment
-//                    print(rs)
-//                    if rs.status == 1{
-//                        let alert = UIAlertController(title: "My Title", message: "Can not appointment this time", preferredStyle: UIAlertController.Style.alert)
-//
-//                        // add an action (button)
-//                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//
-//                        // show the alert
-//                        self.present(alert, animated: true, completion: nil)
-//                    }
-//
-//                        if rs.status == 0{
-//                            let alert = UIAlertController(title: "My Title", message: "Success", preferredStyle: UIAlertController.Style.alert)
-//
-//                            // add an action (button)
-//                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//
-//                            // show the alert
-//                            self.present(alert, animated: true, completion: nil)
-//                                                }
                     let controller: ConfirmAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ConfirmAppointmentViewControllerId) as! ConfirmAppointmentViewController
                    // controller.statusId = 1
                         controller.issue = issueTextField.text ?? ""
@@ -86,8 +59,6 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
                         controller.dateMeeting = dateSelected
                         controller.doctor = doctor
                     self.navigationController?.pushViewController(controller, animated: true)
-//
-//                    })
        
     }
     //MARK: -calendar
@@ -123,6 +94,12 @@ extension MakeAppointmentViewController : UIPickerViewDelegate, UIPickerViewData
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return deliveryTimes[row]
     }
+}
 
-
+extension MakeAppointmentViewController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        hideKeyboardWhenTappedAround()
+        return true
+    }
 }

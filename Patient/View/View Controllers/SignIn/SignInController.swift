@@ -42,7 +42,7 @@ class SignInController: UIViewController {
     @IBAction func signUp(_ sender: Any) {
         let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.SignUpControllerId) as! SignUpController
         
-        self.present(controller,animated: true)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     @IBAction func forgotPassword(_ sender: Any) {

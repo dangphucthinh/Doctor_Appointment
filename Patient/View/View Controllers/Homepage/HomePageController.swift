@@ -26,7 +26,7 @@ class HomePageController: UIViewController {
             // Search action
             print("Search")
         })
-  
+        tfSearch.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -220,3 +220,10 @@ extension HomePageController : HospitalViewProtocol{
     }
 }
 
+extension HomePageController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        hideKeyboardWhenTappedAround()
+        return true
+    }
+}

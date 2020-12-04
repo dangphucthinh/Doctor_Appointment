@@ -6,10 +6,8 @@
 //
 import UIKit
 
-
 class ChatViewController: UIViewController {
 
-    
     let messagesTableView: UITableView = {
         let messagesTableView = UITableView()
         messagesTableView.register(MessagesViewCell.self, forCellReuseIdentifier: "cellId")
@@ -60,8 +58,8 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideKeyboardWhenTappedAround()
         
+        messageField.delegate = self
         messagesTableView.dataSource = self
         messagesTableView.delegate = self
         messagesTableView.separatorStyle = .none
@@ -79,7 +77,26 @@ class ChatViewController: UIViewController {
         
         pageTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
         pageTitle.bottomAnchor.constraint(equalTo: messagesTableView.topAnchor, constant: -18).isActive = true
+        
+        //listen textfield events
+        NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidShow(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidShow(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
 
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    @objc func keyboardDidShow(notification:NSNotification) {
+        if messageField.isEditing{
+            view.frame.origin.y = -300
+        }else{
+            view.frame.origin.y = 0
+        }
     }
     
     func queryResponse(query: String) {
@@ -139,6 +156,14 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+extension ChatViewController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyboardWhenTappedAround()
+        textField.resignFirstResponder()
+        view.frame.origin.y = 0
+        return true
+    }
+}
 
   
 

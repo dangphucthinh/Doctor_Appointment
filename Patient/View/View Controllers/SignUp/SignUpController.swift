@@ -19,8 +19,6 @@ class SignUpController: UIViewController {
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPhoneNumber: UITextField!
     @IBOutlet weak var tfDateOfBirth: UITextField!
-    @IBOutlet weak var gender: DropDown!
-    
     @IBOutlet weak var usernameValidated: UILabel!
     @IBOutlet weak var firstnameValidated: UILabel!
     @IBOutlet weak var lastnameValidated: UILabel!
@@ -34,17 +32,35 @@ class SignUpController: UIViewController {
     let datePicker = UIDatePicker()
     var isMale: Bool = true
  
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         showDatePicker()
-        self.hideKeyboardWhenTappedAround()
-        LoadGender()
         messageValited()
-   
+        //listen for keyboard events
+        NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidShow(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidShow(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
 
 
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
     
+    @objc func keyboardDidShow(notification:NSNotification) {
+        if tfPhoneNumber.isEditing || tfEmail.isEditing || tfConfirmPassword.isEditing{
+            view.frame.origin.y = -300
+        }else{
+            view.frame.origin.y = 0
+        }
+    }
     
     private func configureTextFields(){
         tfEmail.delegate = self
@@ -54,25 +70,8 @@ class SignUpController: UIViewController {
         tfFirstName.delegate = self
         tfConfirmPassword.delegate = self
         tfPhoneNumber.delegate = self
+          
     }
-    
-    func LoadGender(){
-        gender.optionArray = option.Gender
-        gender.didSelect{(selectedText , index , id) in
-        self.gender.text = "Selected String: \(selectedText) \n index: \(index) \n Id: \(id)"
-            print(selectedText)
-            print(index)
-            
-            if selectedText == "Male"{
-                self.isMale = true
-            }
-            if selectedText == "Female"{
-            self.isMale  = false
-        }
-        print(self.isMale)
-    }
-}
-    
     func messageValited(){
         usernameValidated.text = ""
         firstnameValidated.text = ""
@@ -142,6 +141,11 @@ class SignUpController: UIViewController {
         }
     }
     
+    @IBAction func moveToSignIn(_ sender: Any) {
+        let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.SignInControllerId) as! SignInController
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
     @IBAction func signUp(_ sender: Any) {
         if(tfConfirmPassword.text! != tfPassword.text!){
@@ -229,7 +233,7 @@ class SignUpController: UIViewController {
 extension SignUpController : UITextFieldDelegate{
     //Textfield
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
+        self.hideKeyboardWhenTappedAround()
         switch textField{
             case tfUserName:
                 tfFirstName.becomeFirstResponder()
@@ -245,7 +249,8 @@ extension SignUpController : UITextFieldDelegate{
                 tfPhoneNumber.becomeFirstResponder()
             default:
                 textField.resignFirstResponder()
-            }        
+                view.frame.origin.y = 0
+            }
         return true
     }
 }
