@@ -81,7 +81,7 @@ extension UIViewController {
     func showNavigationBar(animated: Bool) {
         // Show the navigation bar on other view controllers
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        self.navigationController!.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
     
 //    //Covert date to string

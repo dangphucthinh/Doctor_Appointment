@@ -20,18 +20,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         listAppointment = List<Appointment>()
+        loadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //self.navigationTitle(title: "Home")
         self.navigationController?.isNavigationBarHidden = true
-        loadData()
+        listAppointment = List<Appointment>()
         
         tableView.delegate = self
         tableView.dataSource = self
-        
         
         let nib = UINib(nibName: "HeaderView", bundle: nil)
         tableView.register(nib, forHeaderFooterViewReuseIdentifier: "headerView")
@@ -43,6 +43,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let nib3 = UINib(nibName: StoryboardID.PatientViewCellId, bundle: nil)
         tableView.register(nib3, forCellReuseIdentifier: StoryboardID.PatientViewCellId)
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        showNavigationBar(animated: animated)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,11 +68,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
-//        let controller: DoctorProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorProfileViewControllerId) as! DoctorProfileViewController
         let controller: PatientProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.PatientProfileViewControllerId) as! PatientProfileViewController
         
-
+        controller.data = listAppointment[indexPath.row]
+        
         self.navigationController?.pushViewController(controller, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
