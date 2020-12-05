@@ -48,19 +48,6 @@ class SignUpController: UIViewController {
     }
 
 
-    
-    
-    private func configureTextFields(){
-        tfEmail.delegate = self
-        tfPassword.delegate = self
-        tfUserName.delegate = self
-        tfLastName.delegate = self
-        tfFirstName.delegate = self
-        tfConfirmPassword.delegate = self
-        tfPhoneNumber.delegate = self
-        
-
-    }
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -73,6 +60,17 @@ class SignUpController: UIViewController {
         }else{
             view.frame.origin.y = 0
         }
+    }
+    
+    private func configureTextFields(){
+        tfEmail.delegate = self
+        tfPassword.delegate = self
+        tfUserName.delegate = self
+        tfLastName.delegate = self
+        tfFirstName.delegate = self
+        tfConfirmPassword.delegate = self
+        tfPhoneNumber.delegate = self
+          
     }
     func messageValited(){
         usernameValidated.text = ""

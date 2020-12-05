@@ -32,12 +32,18 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
         // Do any additional setup after loading the view.
         self.navigationTitle(title: "MAKE APPOINTMENT")
         
-        calendar.delegate = self
-        timePicker.delegate = self
-        timePicker.dataSource = self
+        setDelegate()
 
         print(doctorId)
 
+    }
+    
+    private func setDelegate(){
+        issueTextField.delegate = self
+        detailTextField.delegate = self
+        calendar.delegate = self
+        timePicker.delegate = self
+        timePicker.dataSource = self
     }
 
     //MARK: -button
@@ -88,6 +94,12 @@ extension MakeAppointmentViewController : UIPickerViewDelegate, UIPickerViewData
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return deliveryTimes[row]
     }
+}
 
-
+extension MakeAppointmentViewController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        hideKeyboardWhenTappedAround()
+        return true
+    }
 }

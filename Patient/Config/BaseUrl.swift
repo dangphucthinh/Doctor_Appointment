@@ -8,8 +8,8 @@
 import Foundation
 
 struct API{
-    static let kBaseUrl = "http://116.110.85.217:2905/"
-    static let kUpdate = "http://116.110.85.217:2905/api/Auth/Update"
+    static let kBaseUrl = "http://116.110.218.231:2905/"
+    static let kUpdate = "http://116.110.218.231:2905/api/Auth/Update"
 
         //users
         //HttpPost

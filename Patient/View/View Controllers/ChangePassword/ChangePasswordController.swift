@@ -22,6 +22,26 @@ class ChangePasswordController: UIViewController {
         // Do any additional setup after loading the view.
         hideKeyboardWhenTappedAround()
         hideValidate()
+        
+        //listen for keyboard events
+        NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidShow(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidShow(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    @objc func keyboardDidShow(notification:NSNotification) {
+        if tfConfirmPassword.isEditing {
+            view.frame.origin.y = -300
+        }else{
+            view.frame.origin.y = 0
+        }
     }
     
     func hideValidate(){
@@ -115,8 +135,21 @@ class ChangePasswordController: UIViewController {
             lbNewPass.text = "This filed is required"
             lbNewPass.text = "This field is required"
         }
-        
-        
-        
+    }
+}
+
+extension ChangePasswordController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+       
+        switch textField {
+        case tfOldPassword:
+            tfNewPassword.becomeFirstResponder()
+        case tfNewPassword:
+            tfConfirmPassword.becomeFirstResponder()
+        default:
+            textField.resignFirstResponder()
+            view.frame.origin.y = 0
+        }
+    return true
     }
 }

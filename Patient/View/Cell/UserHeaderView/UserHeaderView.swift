@@ -12,8 +12,6 @@ class UserHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
 
-    var name = BaseClient.shared.fullName
-    var avatar = BaseClient.shared.avatar
     var id = BaseClient.shared.userId
     
     func LoadInform(UserId :String){
@@ -24,7 +22,7 @@ class UserHeaderView: UITableViewHeaderFooterView {
                   if(isSuccess!){
                     let user = value as! ResponseUser
                     
-                    nameLabel.text = name!.uppercased()
+                    nameLabel.text = user.data?.fullName?.uppercased()
                     
                     let ava: String? = user.data?.avatar
                     let url = URL.init(string:"\(ava ?? "No image found")")
@@ -38,9 +36,6 @@ class UserHeaderView: UITableViewHeaderFooterView {
         super.awakeFromNib()
         
         imageView.layer.cornerRadius = imageView.frame.height / 2
-        imageView.backgroundColor = .systemBlue
-        LoadInform(UserId: id!)
-      
-       
+        imageView.backgroundColor = .systemBlue   
     }
 }

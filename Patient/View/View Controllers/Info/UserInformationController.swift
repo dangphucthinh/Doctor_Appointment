@@ -17,6 +17,7 @@ class UserInformationController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.showNavigationBar(animated: animated)
+        tableView.reloadData()
     }
         
     override func viewDidLoad() {
@@ -33,6 +34,7 @@ class UserInformationController: UIViewController {
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: "UserHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "headerView")
+        tableView.reloadData()
     }
     
 }
@@ -75,6 +77,7 @@ extension UserInformationController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerView") as! UserHeaderView
         headerView.contentView.backgroundColor = .white
+        headerView.LoadInform(UserId: BaseClient.shared.userId!)
         return headerView 
     }
     

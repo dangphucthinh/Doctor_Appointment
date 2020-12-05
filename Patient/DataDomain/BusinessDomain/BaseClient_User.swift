@@ -137,7 +137,6 @@ extension BaseClient {
     func updateProfile(userId: String,
                        firstName:String,
                        lastName:String,
-                       //gender: Bool,
                        imageData:Data?,
                        symptom: String,
                        allergy: String,
@@ -160,9 +159,6 @@ extension BaseClient {
             parameters["Allergy"] = allergy
 
         let url = API.kUpdate
-            print(url)
-
-
             Alamofire.upload(multipartFormData: { (multipartFormData) in
                 for (key, value) in parameters {
                     multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
@@ -175,10 +171,11 @@ extension BaseClient {
             }, usingThreshold: UInt64.init(), to: url, method: .post, headers: headers) { (result) in
                 switch result{
                     case .success(let upload, _, _):
-                        upload.responseJSON { response in
+                        upload.responseObject { (response : DataResponse<ResponseUser>) in
                             print("Succesfully uploaded  = \(response)")
+                            completion(true,nil, ResponseUser.init(value: result))
                             if let err = response.error{
-
+                            
                                 print(err)
                                 return
                             }

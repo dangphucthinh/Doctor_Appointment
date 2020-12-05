@@ -33,7 +33,7 @@ class DetailTableViewCell: UITableViewCell {
             
             specialistLabel.text = data.specialtyName
             nameLabel.text = data.fullName?.uppercased()
-            addressLabel.text = data.address
+            addressLabel.text = data.hospital_Name
            
             let ava: String? = data.avatar
             let url = URL.init(string: "\(ava ?? "Not found")")
