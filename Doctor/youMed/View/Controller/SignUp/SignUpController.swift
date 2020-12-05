@@ -18,8 +18,7 @@ class SignUpController: UIViewController {
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPhoneNumber: UITextField!
     @IBOutlet weak var tfDateOfBirth: UITextField!
-    @IBOutlet weak var btnMale: UIButton!
-    @IBOutlet weak var btnFemale: UIButton!
+
     
 
     let dateFormatter = DateFormatter()
@@ -28,9 +27,39 @@ class SignUpController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showDatePicker()
+        setDelegate()
         self.hideKeyboardWhenTappedAround()
+        
+        //listen for keyboard events
+            NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidShow(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidShow(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        }
+
+
+        deinit {
+            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        }
+        
+        @objc func keyboardDidShow(notification:NSNotification) {
+            if tfPhoneNumber.isEditing || tfEmail.isEditing || tfConfirmPassword.isEditing{
+                view.frame.origin.y = -300
+            }else{
+                view.frame.origin.y = 0
+            }
+        }
+    private func setDelegate(){
+        tfUserName.delegate = self
+        tfFirstName.delegate = self
+        tfLastName.delegate = self
+        tfPassword.delegate = self
+        tfConfirmPassword.delegate = self
+        tfEmail.delegate = self
+        tfPhoneNumber.delegate = self
+        tfDateOfBirth.delegate = self
     }
-    
 
 
     @IBAction func signUp(_ sender: Any) {
@@ -99,5 +128,27 @@ class SignUpController: UIViewController {
 
    @objc func cancelDatePicker(){
       self.view.endEditing(true)
+    }
+}
+
+extension SignUpController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case tfUserName:
+            tfFirstName.becomeFirstResponder()
+        case tfFirstName:
+            tfLastName.becomeFirstResponder()
+        case tfLastName:
+            tfPassword.becomeFirstResponder()
+        case tfPassword:
+            tfConfirmPassword.becomeFirstResponder()
+        case tfConfirmPassword:
+            tfEmail.becomeFirstResponder()
+        case tfEmail:
+            tfPhoneNumber.becomeFirstResponder()
+        default:
+            textField.resignFirstResponder()
+        }
+        return true
     }
 }

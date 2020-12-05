@@ -93,7 +93,7 @@ extension RequestedViewController : ResquestAcceptCellDelegate{
         
         BaseClient.shared.UpdateAppointment(id: data.id!,
                                             issue: data.issue!,
-                                            detail: "nonnn",
+                                            detail: data.detail!,
                                             statusId: 2,
                                              completion: { [self]
                      (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
@@ -117,8 +117,8 @@ extension RequestedViewController : ResquestAcceptCellDelegate{
 extension RequestedViewController : RequestDenyCellDelegate{
     func denied(_ data: Int) {
         BaseClient.shared.UpdateAppointment(id: data ,
-                                            issue: "Non",
-                                            detail: "nonnn",
+                                            issue: "",
+                                            detail: "",
                                             statusId: 3,
                                              completion: { [self]
                      (isSuccess: Bool?, error: NSError?, value: AnyObject?) in

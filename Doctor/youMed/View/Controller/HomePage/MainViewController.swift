@@ -20,18 +20,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         listAppointment = List<Appointment>()
+        self.setNavigationBarLogo(title: "HOME", controlEvents: .touchUpInside,
+        ForAction:{() -> Void in
+            // Search action
+            print("Search")
+        })
+        loadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //self.navigationTitle(title: "Home")
-        self.navigationController?.isNavigationBarHidden = true
-        loadData()
+        listAppointment = List<Appointment>()
         
         tableView.delegate = self
         tableView.dataSource = self
-        
         
         let nib = UINib(nibName: "HeaderView", bundle: nil)
         tableView.register(nib, forHeaderFooterViewReuseIdentifier: "headerView")
@@ -40,10 +42,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let nib2 = UINib(nibName: "CustomView", bundle: nil)
         tableView.register(nib2, forHeaderFooterViewReuseIdentifier: "customView")
         
-        let nib3 = UINib(nibName: StoryboardID.PatientViewCellId, bundle: nil)
-        tableView.register(nib3, forCellReuseIdentifier: StoryboardID.PatientViewCellId)
+        let nib3 = UINib(nibName: StoryboardID.AppointmentTableCellId, bundle: nil)
+        tableView.register(nib3, forCellReuseIdentifier: StoryboardID.AppointmentTableCellId)
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        showNavigationBar(animated: animated)
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listAppointment.count
@@ -51,27 +59,35 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardID.PatientViewCellId) as! PatientViewCell
-        if indexPath.row < listAppointment.count{
-            cell.data = listAppointment[indexPath.row]
-        }else{
-            
+        let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardID.AppointmentTableCellId, for: indexPath) as! AppointmentTableCell
+
+        // Configure the cell...
+       
+        if indexPath.row < listAppointment.count {
+           // name = "\(listAppointment[indexPath.row].doctorName ?? "Not name")"
+            cell.commonInit("\(listAppointment[indexPath.row].patientName ?? "Not name")",
+                            "\(listAppointment[indexPath.row].issue ?? "Not name")",
+                            "\(listAppointment[indexPath.row].meetingTime ?? "Not name")")
+          
+        } else {
+            // Handle non-existing object here
+            print("hihi")
+
         }
-            return cell
+        return cell
             
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
-//        let controller: DoctorProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorProfileViewControllerId) as! DoctorProfileViewController
         let controller: PatientProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.PatientProfileViewControllerId) as! PatientProfileViewController
         
-
+        controller.data = listAppointment[indexPath.row]
+        
         self.navigationController?.pushViewController(controller, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardID.PatientViewCellId)
+        let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardID.AppointmentTableCellId)
         return (cell?.frame.height)!
     }
     
