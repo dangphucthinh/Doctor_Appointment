@@ -11,7 +11,7 @@ import Foundation
 struct API{
     
         static let kBaseUrl = "http://116.110.26.46:2905/"
-        static let kUserUpdate = "http://116.110.26.46:2905/api/Auth/Update"
+        static let kUserUpdate = "http://116.110.26.46:2905/api/Doctor/Update"
 
         //users
         //HttpPost

@@ -86,11 +86,10 @@ extension BaseClient {
     func updateProfile(userId: String,
                        firstName:String,
                        lastName:String,
-                       //gender: Bool,
                        imageData:Data?,
-                       symptom: String,
-                       allergy: String,
-                       medicalHistory: String,
+                       bio: String,
+                       education: String,
+                       certification: String,
                        completion: @escaping ServiceResponse) {
         
         let headers: HTTPHeaders = [
@@ -104,9 +103,9 @@ extension BaseClient {
             parameters["UserId"] = userId
             parameters["FirstName"] = firstName
             parameters["LastName"] = lastName
-            parameters["Symptom"] = symptom
-            parameters["MedicalHistory"] = medicalHistory
-            parameters["Allergy"] = allergy
+            parameters["Bio"] = bio
+            parameters["Education"] = education
+            parameters["Certification"] = certification
 
             let url = API.kUserUpdate
             print(url)

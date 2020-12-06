@@ -225,13 +225,14 @@ class BaseClient: NSObject{
             }
             
             switch self {
-            case .login, .register, .changePassword, .getDoctorInfo:
+            case .login, .register, .changePassword:
                 return urlRequest
                             
             case .GetPatientInfo(UserId: _, token: let accessToken),
                  .getListAppointment(userId: _, statusId: _, token: let accessToken),
                  .updateAppointment(id: _, issue: _, detail: _, statusId: _, token: let accessToken),
-                 .getListDoctor(token: let accessToken):
+                 .getListDoctor(token: let accessToken),
+                .getDoctorInfo(userId: _, token: let accessToken):
                 urlRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: Header.Authorization)
                 return urlRequest
             }

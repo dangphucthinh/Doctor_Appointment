@@ -84,7 +84,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             self.navigationController?.pushViewController(controller, animated: true)
         case 1:
    
-            let controller: InfomationViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.InfomationViewControllerId) as! InfomationViewController
+            let controller: DoctorProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorProfileViewControllerId) as! DoctorProfileViewController
             
 
             self.navigationController?.pushViewController(controller, animated: true)
