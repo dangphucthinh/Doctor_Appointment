@@ -530,6 +530,7 @@
 		4DF3E6412556AA980058A23A /* Info */ = {
 			isa = PBXGroup;
 			children = (
+				4D13E645255C2C210065452F /* Adviser */,
 				E1CF95C3254A6D9C0091D0D0 /* UserInformationController.swift */,
 			);
 			path = Info;
@@ -828,7 +829,6 @@
 		E1D479E42543CE9F006A7C2C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4D13E645255C2C210065452F /* Adviser */,
 				4D1B6F5F2557949A00AEC5FC /* Appointment */,
 				4DF3E6522556AB4A0058A23A /* ChangePassword */,
 				4DC46694255AADD90027A193 /* Doctor */,

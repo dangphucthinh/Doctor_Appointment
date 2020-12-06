@@ -61,4 +61,12 @@ extension UIView{
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         return returnDate
     }
+    
+    func shadow(){
+        // shadow
+        self.layer.shadowColor = UIColor.link.cgColor
+        self.layer.shadowOffset = CGSize(width: 3, height: 3)
+        self.layer.shadowOpacity = 0.7
+        self.layer.shadowRadius = 4.0
+    }
 }
