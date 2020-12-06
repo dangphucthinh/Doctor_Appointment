@@ -25,7 +25,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             // Search action
             print("Search")
         })
-        loadData()
+        loadData(statusId: 2)
     }
     
     override func viewDidLoad() {
@@ -38,12 +38,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let nib = UINib(nibName: "HeaderView", bundle: nil)
         tableView.register(nib, forHeaderFooterViewReuseIdentifier: "headerView")
         
-        
-        let nib2 = UINib(nibName: "CustomView", bundle: nil)
-        tableView.register(nib2, forHeaderFooterViewReuseIdentifier: "customView")
-        
-        let nib3 = UINib(nibName: StoryboardID.AppointmentTableCellId, bundle: nil)
-        tableView.register(nib3, forCellReuseIdentifier: StoryboardID.AppointmentTableCellId)
+        let nib2 = UINib(nibName: StoryboardID.AppointmentTableCellId, bundle: nil)
+        tableView.register(nib2, forCellReuseIdentifier: StoryboardID.AppointmentTableCellId)
         
     }
     
@@ -56,6 +52,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listAppointment.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
@@ -92,8 +89,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerView") as? HeaderView
-        return header
+
+            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerView") as? HeaderView
+            //let appointmentCount = listAppointment.count
+            //header?.btnCount.setTitle("\(appointmentCount)", for: .normal)
+        header?.loadRequestAppointment()
+            return header
+
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -101,9 +103,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return (header?.frame.height)!
     }
     
-    private func loadData(){
+    private func loadData(statusId: Int){
         BaseClient.shared.GetListAppointment(userId: UserId!,
-                                             statusId: 2,
+                                             statusId: statusId,
                                              completion: { [self]
                      (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
                             let rs = value as! ResponseListAppointment
@@ -113,7 +115,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                                 for item in listTemp{
                                     self.listAppointment.append(item)
                                 }
-                                                tableView.reloadData()
+                            tableView.reloadData()
                      })
         
              

@@ -10,8 +10,8 @@ import Foundation
 
 struct API{
     
-        static let kBaseUrl = "http://116.110.96.141:2905/"
-
+        static let kBaseUrl = "http://116.110.26.46:2905/"
+        static let kUserUpdate = "http://116.110.26.46:2905/api/Auth/Update"
 
         //users
         //HttpPost
@@ -19,7 +19,7 @@ struct API{
         static let kLogin = "api/Auth/Login"
         static let kChangePassword = "api/Auth/ChangePassword"
         static let kResetPassword = "api/Auth/ResetPassword"
-        static let kUserUpdate = "http://116.110.96.141:2905/api/Auth/Update"
+
         
         //doctor
         static let kGetListAllDoctor = "api/Doctor/GetListAllDoctor" //get all doctors GET
