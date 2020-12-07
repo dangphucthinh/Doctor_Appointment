@@ -82,6 +82,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
      //   controller.data = listAppointment[indexPath.row]
         
      //   self.navigationController?.pushViewController(controller, animated: true)
+        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardID.AppointmentTableCellId)
@@ -94,6 +95,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             //let appointmentCount = listAppointment.count
             //header?.btnCount.setTitle("\(appointmentCount)", for: .normal)
         header?.loadRequestAppointment()
+        header?.patientDelegate = self
             return header
 
     }
@@ -117,9 +119,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                                 }
                             tableView.reloadData()
                      })
-        
-             
-        
     }
 
+}
+
+extension MainViewController : patientViewProtocol{
+    func patientPage() {
+        let controller: RequestedViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.RequestedViewControllerId) as! RequestedViewController
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
 }
