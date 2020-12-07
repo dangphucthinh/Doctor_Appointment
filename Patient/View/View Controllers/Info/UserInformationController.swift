@@ -10,10 +10,7 @@ import UIKit
 class UserInformationController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var data : Doctor?
-    var leftBarButtonItem : UIBarButtonItem!
-    
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.showNavigationBar(animated: animated)

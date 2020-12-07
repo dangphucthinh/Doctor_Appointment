@@ -123,7 +123,7 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let controller: DoctorProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorProfileViewControllerId) as! DoctorProfileViewController
+        let controller: DoctorInfoViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorInfoViewControllerId) as! DoctorInfoViewController
         
         controller.data = listDoctor[indexPath.row]
         

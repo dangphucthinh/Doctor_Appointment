@@ -13,18 +13,24 @@ class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setNavigationBarLogo(title: "INFORMATION", controlEvents: .touchUpInside,
+        ForAction:{() -> Void in
+            // Search action
+        })
 
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: "UserHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "headerView")
+        tableView.reloadData()
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(true)
-//        self.navigationController?.isNavigationBarHidden = true
-//    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.showNavigationBar(animated: animated)
+        tableView.reloadData()
+    }
 
 }
 
@@ -41,7 +47,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = "Home"
             cell.imageView?.image = UIImage(systemName: "house.fill")
         case 1:
-            cell.textLabel?.text = "Account"
+            cell.textLabel?.text = "Profile"
             cell.imageView?.image = UIImage(systemName: "person.fill")
         case 2:
             cell.textLabel?.text = "Your Request"
@@ -63,6 +69,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerView") as! UserHeaderView
         headerView.contentView.backgroundColor = .white
+        headerView.LoadInform(UserId: BaseClient.shared.userId!)
         return headerView
     }
     
@@ -71,13 +78,13 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
 
         switch indexPath.row {
         case 0:
-            let controller: CreateRoomsViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.CreateRoomsViewControllerId) as! CreateRoomsViewController
+            let controller: MainViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.MainViewControllerId) as! MainViewController
             
 
             self.navigationController?.pushViewController(controller, animated: true)
         case 1:
    
-            let controller: InfomationViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.InfomationViewControllerId) as! InfomationViewController
+            let controller: DoctorProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorProfileViewControllerId) as! DoctorProfileViewController
             
 
             self.navigationController?.pushViewController(controller, animated: true)
@@ -93,9 +100,11 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
 
             self.navigationController?.pushViewController(controller, animated: true)
         case 4:
-            print("e")
+            let controller: CreateRoomsViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.CreateRoomsViewControllerId) as! CreateRoomsViewController
+            
+
+            self.navigationController?.pushViewController(controller, animated: true)
         case 5:
-            print("g")
             let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.SignInControllerId) as! SignInController
             
             self.navigationController?.pushViewController(controller, animated: true)

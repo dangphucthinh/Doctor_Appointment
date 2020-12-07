@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 struct Message {
     static let LoginFailMessage = "Invalid Password"
     static let LoadingMessage = "Loading..."
@@ -14,4 +15,13 @@ struct Message {
 
 struct DateFormat {
     static let DateFormat = "MM/dd/yyyy"
+}
+
+struct Color {
+    static let borderColor = CGColor(red: 0, green: 0, blue: 210, alpha: 0.5)
+}
+
+struct Resources{
+    static let kHomeLogo = "icons8-xbox_cross"
+    static let kSearchLogo = "search_icon"
 }

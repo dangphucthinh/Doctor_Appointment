@@ -31,6 +31,7 @@ extension UIViewController {
     }
     
     @objc func dismissKeyboard() {
+        view.frame.origin.y = 0
         view.endEditing(true)
     }
     
@@ -49,7 +50,7 @@ extension UIViewController {
         
         // Search in right
         let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
-       // button.setImage(UIImage.init(named: Resources.kHomeLogo), for: .normal)
+        button.setImage(UIImage.init(named: Resources.kHomeLogo), for: .normal)
       
         button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
 
@@ -100,9 +101,9 @@ extension UIViewController {
     }
 //
 //    //convert string to date
-//    func stringToDate(_ str: String)->Date{
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MM/dd/yyyy"
-//        return formatter.date(from: str)!
-//    }
+    func stringToDate(_ str: String)->Date{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        return formatter.date(from: str)!
+    }
 }

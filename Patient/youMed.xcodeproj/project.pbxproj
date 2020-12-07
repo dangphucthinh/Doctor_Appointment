@@ -14,7 +14,6 @@
 		4D076A112557FDC000DDD452 /* ListAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D076A102557FDC000DDD452 /* ListAppointmentViewController.swift */; };
 		4D076A252557FE8A00DDD452 /* AppointmentTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D076A232557FE8A00DDD452 /* AppointmentTableCell.xib */; };
 		4D076A262557FE8A00DDD452 /* AppointmentTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D076A242557FE8A00DDD452 /* AppointmentTableCell.swift */; };
-		4D076A2B2557FF2D00DDD452 /* DoctorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D076A2A2557FF2D00DDD452 /* DoctorProfileViewController.swift */; };
 		4D076A302557FF9800DDD452 /* InfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D076A2F2557FF9800DDD452 /* InfomationViewController.swift */; };
 		4D13E64F255C36D80065452F /* ResponsePrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13E64E255C36D80065452F /* ResponsePrediction.swift */; };
 		4D13E65A255C37070065452F /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13E659255C37070065452F /* Prediction.swift */; };
@@ -141,7 +140,6 @@
 		4D076A102557FDC000DDD452 /* ListAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAppointmentViewController.swift; sourceTree = "<group>"; };
 		4D076A232557FE8A00DDD452 /* AppointmentTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentTableCell.xib; sourceTree = "<group>"; };
 		4D076A242557FE8A00DDD452 /* AppointmentTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentTableCell.swift; sourceTree = "<group>"; };
-		4D076A2A2557FF2D00DDD452 /* DoctorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorProfileViewController.swift; sourceTree = "<group>"; };
 		4D076A2F2557FF9800DDD452 /* InfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfomationViewController.swift; sourceTree = "<group>"; };
 		4D13E64E255C36D80065452F /* ResponsePrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsePrediction.swift; sourceTree = "<group>"; };
 		4D13E659255C37070065452F /* Prediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
@@ -472,7 +470,6 @@
 		4DC46694255AADD90027A193 /* Doctor */ = {
 			isa = PBXGroup;
 			children = (
-				4D076A2A2557FF2D00DDD452 /* DoctorProfileViewController.swift */,
 				4DC46695255AADF80027A193 /* DoctorViewController.swift */,
 				5529766A257491250034D94D /* DoctorInfoViewController.swift */,
 			);
@@ -533,6 +530,7 @@
 		4DF3E6412556AA980058A23A /* Info */ = {
 			isa = PBXGroup;
 			children = (
+				4D13E645255C2C210065452F /* Adviser */,
 				E1CF95C3254A6D9C0091D0D0 /* UserInformationController.swift */,
 			);
 			path = Info;
@@ -831,7 +829,6 @@
 		E1D479E42543CE9F006A7C2C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4D13E645255C2C210065452F /* Adviser */,
 				4D1B6F5F2557949A00AEC5FC /* Appointment */,
 				4DF3E6522556AB4A0058A23A /* ChangePassword */,
 				4DC46694255AADD90027A193 /* Doctor */,
@@ -1129,7 +1126,6 @@
 				4DC466A0255ACF130027A193 /* BaseClient_Hospital.swift in Sources */,
 				553ABDF5256364320016BCF3 /* DesignableTextField.swift in Sources */,
 				4D076A112557FDC000DDD452 /* ListAppointmentViewController.swift in Sources */,
-				4D076A2B2557FF2D00DDD452 /* DoctorProfileViewController.swift in Sources */,
 				4D78DCE22555799B00C53CB0 /* CommonString.swift in Sources */,
 				4DC46696255AADF80027A193 /* DoctorViewController.swift in Sources */,
 				4D076A302557FF9800DDD452 /* InfomationViewController.swift in Sources */,

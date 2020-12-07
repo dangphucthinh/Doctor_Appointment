@@ -86,11 +86,10 @@ extension BaseClient {
     func updateProfile(userId: String,
                        firstName:String,
                        lastName:String,
-                       //gender: Bool,
                        imageData:Data?,
-                       symptom: String,
-                       allergy: String,
-                       medicalHistory: String,
+                     //  bio: String,
+                     //  education: String,
+                    //   certification: String,
                        completion: @escaping ServiceResponse) {
         
         let headers: HTTPHeaders = [
@@ -104,9 +103,9 @@ extension BaseClient {
             parameters["UserId"] = userId
             parameters["FirstName"] = firstName
             parameters["LastName"] = lastName
-            parameters["Symptom"] = symptom
-            parameters["MedicalHistory"] = medicalHistory
-            parameters["Allergy"] = allergy
+          //  parameters["Bio"] = bio
+          //  parameters["Education"] = education
+          //  parameters["Certification"] = certification
 
             let url = API.kUserUpdate
             print(url)
@@ -139,87 +138,6 @@ extension BaseClient {
                     }
             }
         }
-
-    
-
-    
-    //MARK: -Get user info
-    /*
-         * Get user info
-         * @param: UserId
-         * @return list info of user in callback
-     */
-    func GetUserInfo(UserId: String,
-                     completion:@escaping ServiceResponse) {
-            DispatchQueue.global(qos: .background).async {
-                // Run on background
-                let request = Service.GetPatientInfo(UserId: UserId, token: self.accessToken!) as URLRequestConvertible
-                Alamofire.request(request)
-                        .responseObject { (response: DataResponse<ResponseUser>) in
-                        switch response.result {
-                        case let .success(data):
-                            completion(true, nil, data);
-                            break
-
-                        case let .failure(error):
-                            completion(false, error as NSError?, nil);
-                            
-                            break
-                        }
-                }
-            }
-        }
-    
-//    //MARK: -Get List All Specialites
-//    func GetListDoctor(completion:@escaping ServiceResponse) {
-//            DispatchQueue.global(qos: .background).async {
-//                // Run on background
-//                let request = Service.getListDoctor as URLRequestConvertible
-//                Alamofire.request(request)
-//                        .responseObject { (response: DataResponse<ResponseDoctor>) in
-//                        switch response.result {
-//                        case let .success(data):
-//                            //var a = data.data
-//                            completion(true, nil, data);
-//                            break
-//
-//                        case let .failure(error):
-//                            completion(false, error as NSError?, nil);
-//                            
-//                            break
-//                        }
-//                }
-//            }
-//        }
-    
-    //MARK: -Make an appointment
-    
-//    func MakeAnAppointment(doctorId: String,
-//                           patientId: String,
-//                           meetingTime: Date,
-//                           startTime: String,
-//                           issue: String,
-//                           detail: String,
-//                           completion:@escaping ServiceResponse) {
-//            DispatchQueue.global(qos: .background).async {
-//                // Run on background
-//                let request = Service.makeAnAppointment(doctorId: doctorId, patientId: patientId, meetingTime: meetingTime, startTime: startTime, issue: issue, detail: detail, token: self.accessToken!)
-//                
-//                Alamofire.request(request)
-//                        .responseObject { (response: DataResponse<ResponseAppointment>) in
-//                        switch response.result {
-//                        case let .success(data):
-//                            completion(true, nil, data);
-//                            break
-//
-//                        case let .failure(error):
-//                            completion(false, error as NSError?, nil);
-//                            
-//                            break
-//                        }
-//                }
-//            }
-//        }
 }
 
 

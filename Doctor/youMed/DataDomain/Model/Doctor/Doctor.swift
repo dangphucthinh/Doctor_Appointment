@@ -26,6 +26,7 @@ class Doctor:Object, Mappable {
     var bio : String?
     var firstName : String?
     var lastName: String?
+    var hospitalName: String?
     
     required convenience init?(map: Map) {
             self.init()
@@ -47,6 +48,7 @@ class Doctor:Object, Mappable {
         bio                     <- map["bio"]
         firstName               <- map["firstName"]
         lastName                <- map["lastName"]
+        hospitalName            <- map["hospital_Name"]
     }
 }
 
