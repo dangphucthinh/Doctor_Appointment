@@ -13,8 +13,11 @@ class DoctorViewController: UITableViewController {
     var listDoctor = List<Doctor>()
     var allUsers = [UserDataModel]()
     var searchDoctor : Bool = false
-    
+    var isHospital : Bool = false
+    var isSpecial: Bool = false
     var searchPhrase : String?
+    var hospitalId : Int?
+    var specialHospital: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +91,25 @@ class DoctorViewController: UITableViewController {
                               
                         })
         }
+        
+        if isHospital == true {
+            BaseClient.shared.getDoctorByHospital(Id: hospitalId!,
+                                           completion: { [self]
+                                    (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+                                                             
+                                    if(isSuccess!){
+                                      let user = value as! ResponseDoctor
+                                      
+                                        let listTemp = user.data as List<Doctor>
+                                        for item in listTemp{
+                                            self.listDoctor.append(item)
+                                        }
+                                        self.tableView.reloadData()
+                                }
+                              
+                        })
+       
+        }
         else {
             BaseClient.shared.GetListDoctor(completion: { [self]
                                     (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
@@ -105,8 +127,9 @@ class DoctorViewController: UITableViewController {
                             })
         }
     }
-  
 }
+  
+
 
 extension DoctorViewController : DetailTableViewCellProtocol{
     func doctorPage(_ data: Doctor) {

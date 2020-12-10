@@ -8,10 +8,17 @@
 import UIKit
 import RealmSwift
 
+protocol SpecialtyCellProtocol : AnyObject {
+    func specialtyPage()
+}
+
+
 class SpecialistTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnMore : UIButton!
+    
+    weak var delegate : SpecialtyCellProtocol?
     
     var listSpec = List<HospitalSpecialty>()
     var collectionViewOffset: CGFloat {
@@ -27,6 +34,7 @@ class SpecialistTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -61,6 +69,10 @@ class SpecialistTableViewCell: UITableViewCell {
                                       }
                                 })
     }
+    
+    @IBAction func showAll(_ sender: Any) {
+        delegate?.specialtyPage()
+    }
 
 }
 
@@ -88,7 +100,7 @@ extension SpecialistTableViewCell: UICollectionViewDelegate, UICollectionViewDat
             // Handle non-existing object here
             print("hihi")
         }
-        
+        cell.delegateSpecialty = self
         return cell
     }
 
@@ -109,3 +121,13 @@ extension SpecialistTableViewCell: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
 }
+
+extension SpecialistTableViewCell : SpecialtyViewProtocol{
+    func specialtyPage() {
+//        let controller: HospitalSpecialtiesViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.HospitalSpecialtiesViewControllerId) as! HospitalSpecialtiesViewController
+//        
+//        self.navigationController?.pushViewController(controller, animated: true)
+    }
+
+}
+

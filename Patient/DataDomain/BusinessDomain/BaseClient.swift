@@ -48,6 +48,12 @@ class BaseClient: NSObject{
         
         case getListDoctor(token: String)
         
+        case getDoctorBySpecialty(HsId: Int,
+                                  token: String)
+        
+        case getDoctorByHospital(Id: Int,
+                                 token: String)
+        
         case getListAllHospitalSpecialty(token: String)
         
         case getListHospital(token: String)
@@ -71,6 +77,7 @@ class BaseClient: NSObject{
         
         case search(searchPhrase: String)
         
+        
         static let baseHTTP = API.kBaseUrl
         
   
@@ -78,6 +85,8 @@ class BaseClient: NSObject{
         private var method: HTTPMethod{
             switch self {
             case .login, .changePassword, .register, .GetPatientInfo, .forgotPassword :
+                return .post
+            case .getDoctorByHospital, .getDoctorBySpecialty:
                 return .post
             case .makeAnAppointment, .getListAppointment:
                 return .post
@@ -109,6 +118,10 @@ class BaseClient: NSObject{
                 return API.kGetAllHospitalSpecialities
             case .makeAnAppointment:
                 return API.kMakeAnAppointment
+            case .getDoctorByHospital:
+                return API.kDoctorByHospital
+            case.getDoctorBySpecialty:
+                return API.kDoctorBySpeciality
             case .getListAppointment:
                 return API.kGetListAppoinment
             case .chatbot:
@@ -138,6 +151,10 @@ class BaseClient: NSObject{
             case .GetPatientInfo:
                 break
             case .getListDoctor:
+                break
+            case .getDoctorByHospital:
+                break
+            case .getDoctorBySpecialty:
                 break
             case .makeAnAppointment:
                 break
@@ -203,7 +220,19 @@ class BaseClient: NSObject{
                 return[
                     "UserId" : UserId
                 ]
+                
+            case .getDoctorByHospital(let Id,
+                                      _):
+                return[
+                    "Id" : Id
+                ]
            
+            case .getDoctorBySpecialty(let HsId,
+                                       _):
+                return[
+                    "HsId" : HsId
+                ]
+                
             case .getListDoctor(_):
                 return [:]
                 
@@ -310,12 +339,15 @@ class BaseClient: NSObject{
                  .chatbot(data: _,
                           token: let accessToken),
                  
-//                 .prediction(data: _,
-//                             token: let accessToken),
-                
                  .getListDoctor(token: let accessToken),
                 
                 .getListHospital(token: let accessToken),
+                
+                .getDoctorByHospital(Id: _,
+                                     token: let accessToken),
+                
+                .getDoctorBySpecialty(HsId: _,
+                                      token: let accessToken),
                 
                 .getListAllHospitalSpecialty(token: let accessToken):
                 

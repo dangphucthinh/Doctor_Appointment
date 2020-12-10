@@ -91,6 +91,7 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "specialistCell") as! SpecialistTableViewCell
             cell.loadInformation()
+            cell.delegate = self
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell") as! DetailTableViewCell
@@ -149,7 +150,6 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
             label.backgroundColor = .link
             label.font = UIFont.boldSystemFont(ofSize: 16)
             headerView.addSubview(label)
-
             return headerView
         }
         if section == 2{
@@ -226,5 +226,13 @@ extension HomePageController : UITextFieldDelegate{
         textField.resignFirstResponder()
         hideKeyboardWhenTappedAround()
         return true
+    }
+}
+
+extension HomePageController : SpecialtyCellProtocol  {
+    func specialtyPage() {
+        let controller: HospitalSpecialtiesViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.HospitalSpecialtiesViewControllerId) as! HospitalSpecialtiesViewController
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

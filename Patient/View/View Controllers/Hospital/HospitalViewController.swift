@@ -51,6 +51,14 @@ class HospitalViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let controller: DoctorViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorViewControllerId) as! DoctorViewController
+        controller.hospitalId = listHospital[indexPath.row].id
+        controller.isHospital = true
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 219
     }

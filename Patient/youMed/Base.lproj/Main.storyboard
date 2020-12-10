@@ -265,12 +265,22 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mn-br-E1o">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mn-br-E1o">
                                                     <rect key="frame" x="339" y="0.0" width="65" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="iPZ-Zz-TcU"/>
+                                                    </constraints>
                                                     <state key="normal" title="See all"/>
+                                                    <connections>
+                                                        <action selector="showAll:" destination="7ML-0D-q7U" eventType="touchUpInside" id="cKa-bU-44K"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9mn-br-E1o" firstAttribute="top" secondItem="NHs-w1-CbY" secondAttribute="topMargin" constant="-11" id="AZB-Jc-1OP"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="9mn-br-E1o" secondAttribute="trailing" constant="-10" id="HKg-ol-Q7f"/>
+                                                <constraint firstItem="9mn-br-E1o" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NHs-w1-CbY" secondAttribute="leading" constant="20" symbolic="YES" id="KJ8-ho-zJd"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="btnMore" destination="9mn-br-E1o" id="KvG-92-RAS"/>
@@ -624,6 +634,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Click here to see doctor"/>
+                                <connections>
+                                    <action selector="moveToListDoctor:" destination="F2r-IN-cTq" eventType="touchUpInside" id="sPL-fD-3x0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IBt-MS-0Aa"/>
@@ -3047,6 +3060,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gx1-0O-jiZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4334.7826086956529" y="348.88392857142856"/>
+        </scene>
+        <!--Hospital Specialties View Controller-->
+        <scene sceneID="GHl-dt-cGf">
+            <objects>
+                <viewController storyboardIdentifier="HospitalSpecialtiesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A5m-gV-XGi" customClass="HospitalSpecialtiesViewController" customModule="youMed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9xi-a1-Htb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="P0l-mj-mIW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jWX-DS-kIU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="750"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="QQn-Qt-MgL">
+                                    <size key="itemSize" width="201" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="specialistCell" id="guy-bL-MHV">
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ffj-zr-XYJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="201" height="200"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="201" height="200"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ETM-ll-Lh9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P0l-mj-mIW" firstAttribute="leading" secondItem="ETM-ll-Lh9" secondAttribute="leading" id="TcK-T3-wzf"/>
+                            <constraint firstItem="P0l-mj-mIW" firstAttribute="top" secondItem="ETM-ll-Lh9" secondAttribute="top" constant="-44" id="YFY-mB-wfm"/>
+                            <constraint firstItem="ETM-ll-Lh9" firstAttribute="trailing" secondItem="P0l-mj-mIW" secondAttribute="trailing" id="agN-QG-REz"/>
+                            <constraint firstItem="ETM-ll-Lh9" firstAttribute="bottom" secondItem="P0l-mj-mIW" secondAttribute="bottom" constant="-34" id="gVZ-jo-VBl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="jWX-DS-kIU" id="AoI-e3-5XS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="quX-bl-ksS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6930.434782608696" y="588.61607142857144"/>
         </scene>
     </scenes>
     <designables>
