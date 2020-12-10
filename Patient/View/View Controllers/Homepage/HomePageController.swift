@@ -179,19 +179,20 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     func loadDoctor(){
         BaseClient.shared.GetListDoctor(completion: { [self]
                                         (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-                                                                 
+
                                         if(isSuccess!){
                                           let user = value as! ResponseDoctor
-                                          
+
                                             let listTemp = user.data as List<Doctor>
                                             for item in listTemp{
                                                 self.listDoctor.append(item)
                                             }
                                             self.tableView.reloadData()
                                         }
-                                      
+
                                 })
     }
+    
 }
 
 extension HomePageController : DetailTableViewCellProtocol{

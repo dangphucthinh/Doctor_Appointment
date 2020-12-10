@@ -27,7 +27,7 @@ class HospitalSpecialtiesViewController: UIViewController, UICollectionViewDataS
             // Handle non-existing object here
             print("hihi")
         }
-        
+        cell.delegateDoctor = self
         return cell
     }
     
@@ -66,6 +66,15 @@ class HospitalSpecialtiesViewController: UIViewController, UICollectionViewDataS
     }
 
 
+}
+
+extension HospitalSpecialtiesViewController : doctorViewProtocol{
+    func doctorPage(specName: String) {
+        let controller: DoctorViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorViewControllerId) as! DoctorViewController
+        controller.specialHospital = specName
+        controller.isSpecial = true
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 }
 
 //extension HospitalSpecialtiesViewController : UICollectionViewDelegateFlowLayout {

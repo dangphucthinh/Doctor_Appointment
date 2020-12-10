@@ -76,11 +76,11 @@ extension BaseClient{
          }
      }
     
-    func getDoctorBySpecialty(HsId: Int,
+    func getDoctorBySpecialty(HosSpecName: String,
                              completion:@escaping ServiceResponse) {
          DispatchQueue.global(qos: .background).async {
              // Run on background
-             let request = Service.getDoctorBySpecialty(HsId: HsId, token: self.accessToken!)as URLRequestConvertible
+             let request = Service.getDoctorBySpecialty(HosSpecName: HosSpecName, token: self.accessToken!)as URLRequestConvertible
              Alamofire.request(request)
                      .responseObject { (response: DataResponse<ResponseDoctor>) in
                      switch response.result {

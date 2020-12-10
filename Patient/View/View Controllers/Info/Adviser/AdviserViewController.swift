@@ -90,8 +90,8 @@ class AdviserViewController: UIViewController {
     
     @IBAction func moveToListDoctor(_ sender: Any){
         let controller: DoctorViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorViewControllerId) as! DoctorViewController
-        controller.specialHospital = specialty.text!
-        controller.isSpecial = true
+       // controller.specialHospital = specialty.text!
+       // controller.isSpecial = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
 

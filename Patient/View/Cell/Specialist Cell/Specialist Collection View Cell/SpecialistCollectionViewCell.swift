@@ -11,16 +11,22 @@ protocol SpecialtyViewProtocol : AnyObject {
     func specialtyPage()
 }
 
+protocol doctorViewProtocol : AnyObject {
+    func doctorPage(specName: String)
+}
+
 class SpecialistCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var ContentView: UIView!
     weak var delegateSpecialty: SpecialtyViewProtocol?
+    weak var delegateDoctor: doctorViewProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         let imgTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgHandleTap(_:)))
-        imageView.addGestureRecognizer(imgTapGestureRecognizer)
+        ContentView.addGestureRecognizer(imgTapGestureRecognizer)
         
         imageView.backgroundColor = .white
         imageView.layer.cornerRadius = imageView.frame.height / 2
@@ -28,7 +34,8 @@ class SpecialistCollectionViewCell: UICollectionViewCell {
     
     @objc func imgHandleTap(_ sender: UITapGestureRecognizer) {
         print("a")
-        delegateSpecialty?.specialtyPage()
+        //delegateSpecialty?.specialtyPage()
+        delegateDoctor?.doctorPage(specName: (data?.name)!)
     }
     
     var data: HospitalSpecialty? {

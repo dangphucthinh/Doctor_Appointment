@@ -48,7 +48,7 @@ class BaseClient: NSObject{
         
         case getListDoctor(token: String)
         
-        case getDoctorBySpecialty(HsId: Int,
+        case getDoctorBySpecialty(HosSpecName: String,
                                   token: String)
         
         case getDoctorByHospital(Id: Int,
@@ -227,10 +227,10 @@ class BaseClient: NSObject{
                     "Id" : Id
                 ]
            
-            case .getDoctorBySpecialty(let HsId,
+            case .getDoctorBySpecialty(let HosSpecName,
                                        _):
                 return[
-                    "HsId" : HsId
+                    "HosSpecName" : HosSpecName
                 ]
                 
             case .getListDoctor(_):
@@ -346,7 +346,7 @@ class BaseClient: NSObject{
                 .getDoctorByHospital(Id: _,
                                      token: let accessToken),
                 
-                .getDoctorBySpecialty(HsId: _,
+                .getDoctorBySpecialty(HosSpecName: _,
                                       token: let accessToken),
                 
                 .getListAllHospitalSpecialty(token: let accessToken):
