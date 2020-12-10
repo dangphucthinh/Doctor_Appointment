@@ -21,8 +21,8 @@ class DoctorConfirmationView: UIView {
             guard let data = data else { return }
             
             lbName.text = data.fullName?.uppercased()
-            lbSpecialties.text = data.specialtyName
-            lbHospital.text = data.hospitalSpecialty_Name
+            lbSpecialties.text = data.hospitalSpecialty_Name
+            lbHospital.text = data.hospital_Name
         }
     }
  

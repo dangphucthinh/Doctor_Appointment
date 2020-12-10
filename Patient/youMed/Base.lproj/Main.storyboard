@@ -439,8 +439,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="arrowshape.turn.up.left" catalog="system" id="uYu-fI-xf4">
-                                                    <rect key="frame" x="21.333333333333336" y="12.999999999999998" width="21.333333333333332" height="17.333333333333332"/>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="message.fill" catalog="system" id="uYu-fI-xf4">
+                                                    <rect key="frame" x="21.166666666666664" y="11.999999999999998" width="21.666666666666668" height="19.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -2504,8 +2504,11 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdd-ut-fj0" customClass="CustomButton" customModule="youMed" customModuleProvider="target">
-                                <rect key="frame" x="107" y="1222" width="199" height="30"/>
+                                <rect key="frame" x="107" y="1198" width="199" height="54"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="CJp-Rx-zkg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2549,7 +2552,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Zr-Yb-HZx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6929" y="-224"/>
+            <point key="canvasLocation" x="6928.985507246377" y="-224.33035714285714"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="Lq6-mq-SyT">
@@ -3171,7 +3174,6 @@
         <image name="Camera" width="600" height="600"/>
         <image name="User" width="600" height="600"/>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
-        <image name="arrowshape.turn.up.left" catalog="system" width="128" height="106"/>
         <image name="background" width="112.5" height="243.5"/>
         <image name="building.fill" catalog="system" width="108" height="128"/>
         <image name="health-care-medical-icon" width="476" height="474"/>
