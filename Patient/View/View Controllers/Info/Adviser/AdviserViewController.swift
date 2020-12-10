@@ -22,6 +22,8 @@ class AdviserViewController: UIViewController {
     @IBOutlet weak var ContentDiseaseView: UIView!
     @IBOutlet weak var ContentSpecVIew: UIView!
     
+    var specialText = ""
+    
     var ListDisease = [String]()
     let option =  Options()
     let ListSpec = [String]()
@@ -90,8 +92,8 @@ class AdviserViewController: UIViewController {
     
     @IBAction func moveToListDoctor(_ sender: Any){
         let controller: DoctorViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorViewControllerId) as! DoctorViewController
-       // controller.specialHospital = specialty.text!
-       // controller.isSpecial = true
+        controller.isAdvise = true
+        controller.spec = specialText
         self.navigationController?.pushViewController(controller, animated: true)
     }
 
@@ -105,7 +107,8 @@ class AdviserViewController: UIViewController {
                                     print(rs.data as Any)
                                     if rs.status == 0 {
                                         self.result.text = "You are diagnosed with \((rs.data?.disease?.uppercased())!)"
-                                        self.specialty.text = "You should make appointment with doctor who has their specialty is \(rs.data?.spec.randomElement()!.uppercased() ?? "")"
+                                        self.specialText = rs.data?.spec.randomElement()! ?? ""
+                                        self.specialty.text = "You should make appointment with doctor who has their specialty is \(specialText.uppercased())"
                                         btnAction.isHidden = false
                                         ContentDiseaseView.isHidden = false
                                         ContentSpecVIew.isHidden = false
@@ -115,6 +118,10 @@ class AdviserViewController: UIViewController {
                                     }
                                 }
                          })
-        ListDisease.removeAll()        
+        ListDisease.removeAll()
+        symtom1.text = ""
+        symptom2.text = ""
+        symptom4.text = ""
+        mainDropDown.text = ""
     }
 }

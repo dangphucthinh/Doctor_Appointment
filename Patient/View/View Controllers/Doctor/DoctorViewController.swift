@@ -18,6 +18,8 @@ class DoctorViewController: UITableViewController {
     var searchPhrase : String?
     var hospitalId : Int?
     var specialHospital: String?
+    var isAdvise : Bool = false
+    var spec: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,6 +141,24 @@ class DoctorViewController: UITableViewController {
 
                                 })
         }
+       
+       else if isAdvise == true {
+        BaseClient.shared.getDoctorBySpecialty(HosSpecName: spec!,
+                                               completion: { [self]
+                                        (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+
+                                        if(isSuccess!){
+                                          let user = value as! ResponseDoctor
+
+                                            let listTemp = user.data as List<Doctor>
+                                            for item in listTemp{
+                                                self.listDoctor.append(item)
+                                            }
+                                            self.tableView.reloadData()
+                                    }
+
+                            })
+       }
         else {
             BaseClient.shared.GetListDoctor(completion: { [self]
                                     (isSuccess: Bool?, error: NSError?, value: AnyObject?) in

@@ -237,3 +237,12 @@ extension HomePageController : SpecialtyCellProtocol  {
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }
+//
+//extension HomePageController : doctorViewProtocol  {
+//    func doctorPage(specName: String) {
+//        let controller: DoctorViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorViewControllerId) as! DoctorViewController
+//        controller.specialHospital = specName
+//        controller.isSpecial = true
+//        self.navigationController?.pushViewController(controller, animated: true)
+//    }
+//}
