@@ -23,7 +23,7 @@ extension BaseClient{
                     .responseObject { (response: DataResponse<ResponseDoctor>) in
                     switch response.result {
                     case let .success(data):
-                        //var a = data.data
+
                         completion(true, nil, data);
                         break
 

@@ -47,7 +47,8 @@ class RequestViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // Initialization code\
+        imgAva.roundedImageView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

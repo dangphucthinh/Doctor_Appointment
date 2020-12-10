@@ -30,4 +30,25 @@ extension BaseClient{
                 }
             }
         }
+    
+    func GetListSpecialty(completion:@escaping ServiceResponse) {
+            DispatchQueue.global(qos: .background).async {
+                // Run on background
+                let request = Service.getListAllHospitalSpecialty(token: self.accessToken!) as URLRequestConvertible
+                Alamofire.request(request)
+                        .responseObject { (response: DataResponse<ResponseHospitalSpecialty>) in
+                        switch response.result {
+                        case let .success(data):
+                            //var a = data.data
+                            completion(true, nil, data);
+                            break
+
+                        case let .failure(error):
+                            completion(false, error as NSError?, nil);
+                            
+                            break
+                        }
+                }
+            }
+        }
 }

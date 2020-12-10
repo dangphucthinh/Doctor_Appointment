@@ -17,4 +17,18 @@ class SpecialistCollectionViewCell: UICollectionViewCell {
         imageView.backgroundColor = .white
         imageView.layer.cornerRadius = imageView.frame.height / 2
     }
+    
+    var data: HospitalSpecialty? {
+        didSet {
+            guard let data = data else { return }
+            
+          
+            label.text = data.name
+           
+           
+            let ava: String? = data.hosSpecImg
+            let url = URL.init(string: "\(ava ?? "Not found")")
+            self.imageView?.sd_setImage(with: url, placeholderImage: UIImage(named: "User"))
+        }
+    }
 }

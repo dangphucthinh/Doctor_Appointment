@@ -32,7 +32,6 @@ class InfomationViewController: UITableViewController {
         super.viewDidLoad()
         imgAvatar.roundedImageView()
         self.hideKeyboardWhenTappedAround()
-        self.navigationController?.isNavigationBarHidden = true
     }
     
 
@@ -59,9 +58,9 @@ class InfomationViewController: UITableViewController {
                                         firstName: nameTextField.text ?? "",
                                         lastName: lastNameTextField.text ?? "",
                                         imageData: imageData,
-                                        bio: "hihi",
-                                        education: "hah",
-                                        certification: "hehe",
+                                      //  bio: "hihi",
+                                      //  education: "hah",
+                                      //  certification: "hehe",
                                         completion: {
                 (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
                     Loading.dismissLoading()
@@ -141,19 +140,11 @@ class InfomationViewController: UITableViewController {
                     
                     let ava: String? = user.data?.avatar
                     let url = URL.init(string:"\(ava ?? "No image found")")
-                    self.nameTextField.text = user.data?.fullName
+                    self.nameTextField.text = user.data?.firstName
+                    self.lastNameTextField.text = user.data?.lastName
                     self.emailTextField.text = user.data?.email
                     self.phoneTextField.text = user.data?.phoneNumber
-                  
-//                    
-//                        
-                    let dateString = user.data?.dateOfBirth
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:sss"
-                    let dateFromString = dateFormatter.date(from: dateString ?? "Not found")
-                    dateFormatter.dateFormat = "MM/dd/yyyy"
-                    let stringFromDate = dateFormatter.string(from: dateFromString!)
-                    self.dateOfBirthTextField.text = stringFromDate
+                    self.dateOfBirthTextField.text = dateToSQLDate(user.data?.dateOfBirth ?? "")
                     
                     self.imgAvatar.sd_setImage(with: url, placeholderImage: UIImage(named: "no_image_banner"))
                   }

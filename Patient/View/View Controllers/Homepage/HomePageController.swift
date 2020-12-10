@@ -90,6 +90,7 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "specialistCell") as! SpecialistTableViewCell
+            cell.loadInformation()
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell") as! DetailTableViewCell

@@ -77,11 +77,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let controller: PatientProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.PatientProfileViewControllerId) as! PatientProfileViewController
+    let controller: PatientProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.PatientProfileViewControllerId) as! PatientProfileViewController
+    
+    controller.data = listAppointment[indexPath.row]
+    
+    self.navigationController?.pushViewController(controller, animated: true)
         
-        controller.data = listAppointment[indexPath.row]
-        
-        self.navigationController?.pushViewController(controller, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardID.AppointmentTableCellId)
@@ -94,6 +95,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             //let appointmentCount = listAppointment.count
             //header?.btnCount.setTitle("\(appointmentCount)", for: .normal)
         header?.loadRequestAppointment()
+        header?.patientDelegate = self
             return header
 
     }
@@ -104,10 +106,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     private func loadData(statusId: Int){
+        Loading.showLoading(message: Message.LoadingMessage, view: self.view)
         BaseClient.shared.GetListAppointment(userId: UserId!,
                                              statusId: statusId,
                                              completion: { [self]
                      (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+                    Loading.dismissLoading()
                             let rs = value as! ResponseListAppointment
 
                               let listTemp = rs.data as List<Appointment>
@@ -117,9 +121,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                                 }
                             tableView.reloadData()
                      })
-        
-             
-        
     }
 
+}
+
+extension MainViewController : patientViewProtocol{
+    func patientPage() {
+        let controller: RequestedViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.RequestedViewControllerId) as! RequestedViewController
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
 }

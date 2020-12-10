@@ -48,6 +48,8 @@ class BaseClient: NSObject{
         
         case getListDoctor(token: String)
         
+        case getListAllHospitalSpecialty(token: String)
+        
         case getListHospital(token: String)
         
         case makeAnAppointment(doctorId: String,
@@ -79,7 +81,7 @@ class BaseClient: NSObject{
                 return .post
             case .makeAnAppointment, .getListAppointment:
                 return .post
-            case .getListDoctor, .getListHospital:
+            case .getListDoctor, .getListHospital, .getListAllHospitalSpecialty:
                 return .get
             case .chatbot, .prediction:
                 return .post
@@ -103,6 +105,8 @@ class BaseClient: NSObject{
                 return API.kPatientInfo
             case .getListDoctor:
                 return API.kGetListAllDoctor
+            case .getListAllHospitalSpecialty:
+                return API.kGetAllHospitalSpecialities
             case .makeAnAppointment:
                 return API.kMakeAnAppointment
             case .getListAppointment:
@@ -142,6 +146,8 @@ class BaseClient: NSObject{
             case .chatbot:
                 break
             case .getListHospital:
+                break
+            case .getListAllHospitalSpecialty:
                 break
             case .prediction:
                 break
@@ -202,6 +208,9 @@ class BaseClient: NSObject{
                 return [:]
                 
             case .getListHospital(_):
+                return [:]
+             
+            case .getListAllHospitalSpecialty(_):
                 return [:]
                 
             case .makeAnAppointment(let doctorId,
@@ -306,7 +315,9 @@ class BaseClient: NSObject{
                 
                  .getListDoctor(token: let accessToken),
                 
-                .getListHospital(token: let accessToken):
+                .getListHospital(token: let accessToken),
+                
+                .getListAllHospitalSpecialty(token: let accessToken):
                 
                 urlRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: Header.Authorization)
                 return urlRequest

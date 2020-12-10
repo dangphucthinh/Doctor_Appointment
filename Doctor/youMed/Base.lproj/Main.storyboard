@@ -1452,14 +1452,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="O4o-gZ-T8t">
-                            <rect key="frame" x="0.0" y="772" width="414" height="92"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Make an appoinment"/>
-                            <connections>
-                                <action selector="makeAppointment:" destination="K6C-sJ-aLw" eventType="touchUpInside" id="Bg8-Jl-bYx"/>
-                            </connections>
-                        </button>
                         <sections>
                             <tableViewSection id="kIc-XO-H1M">
                                 <cells>
@@ -1471,14 +1463,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="HR2-xa-SbH">
-                                                    <rect key="frame" x="127" y="23" width="161" height="161"/>
+                                                    <rect key="frame" x="126.66666666666669" y="23" width="161" height="161"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="161" id="3kg-7t-Gyz"/>
                                                         <constraint firstAttribute="height" constant="161" id="4e7-Xa-w36"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vd0-Ik-eOv" customClass="RoundView" customModule="youMed" customModuleProvider="target">
-                                                    <rect key="frame" x="243" y="139" width="45" height="45"/>
+                                                    <rect key="frame" x="242.66666666666663" y="139" width="45" height="45"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera" translatesAutoresizingMaskIntoConstraints="NO" id="VZd-Ux-5ho">
                                                             <rect key="frame" x="12.333333333333343" y="12.666666666666657" width="20" height="20"/>
@@ -1576,7 +1568,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiK-aV-lak">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specialties:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiK-aV-lak">
                                                             <rect key="frame" x="8" y="112" width="120" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="VrP-t8-2nN"/>
@@ -1669,7 +1661,7 @@
                                                         <constraint firstAttribute="height" constant="221" id="Y0U-QV-YRh"/>
                                                     </constraints>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
@@ -1693,13 +1685,13 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="bioView" destination="95X-CM-gtg" id="mcW-xS-47B"/>
-                        <outlet property="contenView" destination="Lna-Yc-BzV" id="06Z-gW-Kd8"/>
-                        <outlet property="imgAva" destination="HR2-xa-SbH" id="sLC-iw-hW5"/>
-                        <outlet property="lbHospital" destination="OWN-qQ-ek8" id="bG0-lV-kWa"/>
-                        <outlet property="lbName" destination="htf-KQ-Haj" id="suY-qp-sm1"/>
-                        <outlet property="lbPhone" destination="GE3-w0-74l" id="v8s-TO-sgX"/>
-                        <outlet property="lbSpecialties" destination="eoA-bu-Lyd" id="20P-x5-myl"/>
+                        <outlet property="bioView" destination="95X-CM-gtg" id="lij-pP-H1f"/>
+                        <outlet property="contentView" destination="Lna-Yc-BzV" id="cpX-5i-Kmg"/>
+                        <outlet property="imgAva" destination="HR2-xa-SbH" id="1tK-ZA-hXC"/>
+                        <outlet property="lbHospital" destination="OWN-qQ-ek8" id="EIg-WX-tLT"/>
+                        <outlet property="lbName" destination="htf-KQ-Haj" id="uQ4-FK-svk"/>
+                        <outlet property="lbPhone" destination="GE3-w0-74l" id="ZsR-8f-FIB"/>
+                        <outlet property="lbSpecialties" destination="eoA-bu-Lyd" id="Rsz-VH-Q2v"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3AV-7J-488" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
