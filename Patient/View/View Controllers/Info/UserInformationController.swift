@@ -46,8 +46,8 @@ extension UserInformationController: UITableViewDelegate, UITableViewDataSource 
         cell.tintColor = .systemBlue
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = "Home"
-            cell.imageView?.image = UIImage(systemName: "house.fill")
+            cell.textLabel?.text = "Chatting"
+            cell.imageView?.image = UIImage(systemName: "message.fill")
         case 1:
             cell.textLabel?.text = "Profile"
             cell.imageView?.image = UIImage(systemName: "person.fill")
