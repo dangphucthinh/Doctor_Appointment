@@ -31,7 +31,7 @@ class DetailTableViewCell: UITableViewCell {
         didSet {
             guard let data = data else { return }
             
-            specialistLabel.text = data.specialtyName
+            specialistLabel.text = data.hospitalSpecialty_Name
             nameLabel.text = data.fullName?.uppercased()
             addressLabel.text = data.hospital_Name
            

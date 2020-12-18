@@ -9,58 +9,53 @@ import UIKit
 
 class PatientProfileViewController: UIViewController {
 
+    @IBOutlet weak var ContentView: UIView!
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbDate: UILabel!
     @IBOutlet weak var lbTime: UILabel!
     @IBOutlet weak var lbIssue: UILabel!
     @IBOutlet weak var lbDetail: UILabel!
-    @IBOutlet weak var ContentView: UIView!
-    var data: Appointment?
+    var data : Appointment?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationTitle(title: "APPOINTMENT") 
-        loadData()
+        
+        lbName.text = data?.patientName
+        lbDate.text = dateToSQLDate(data!.meetingTime!)
+        lbTime.text = data?.startTime
+        lbIssue.text = data?.issue
+        lbDetail.text = data?.detail
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        customView()
-        
-    }
+        ContentView.roundedView(cornerRadius: 10, borderWidth: 3, borderCorlor: .init(red: 0, green: 0, blue: 0, alpha: 0))
+
     
-    private func customView(){
-        lbName.roundedLabel(cornerRadius: 15, borderWidth: 1, borderCorlor: Color.borderColor, margin: 15)
-        lbDate.roundedLabel(cornerRadius: 15, borderWidth: 1, borderCorlor: Color.borderColor, margin: 15)
-        lbTime.roundedLabel(cornerRadius: 15, borderWidth: 1, borderCorlor: Color.borderColor, margin: 15)
-        lbIssue.roundedLabel(cornerRadius: 15, borderWidth: 1, borderCorlor: Color.borderColor, margin: 15)
-        lbDetail.roundedLabel(cornerRadius: 15, borderWidth: 1, borderCorlor: Color.borderColor, margin: 15)
-        ContentView.roundedView(cornerRadius: 15, borderWidth: 2, borderCorlor: Color.borderColor)
+        lbName.roundedLabel(cornerRadius: 15, borderWidth: 1, borderCorlor: .init(red: 0, green: 0, blue: 220, alpha: 0.5), margin: 10)
+        lbDate.roundedLabel(cornerRadius: 15, borderWidth: 1, borderCorlor: .init(red: 0, green: 0, blue: 220, alpha: 0.5), margin: 10)
+        lbTime.roundedLabel(cornerRadius: 15, borderWidth: 1, borderCorlor: .init(red: 0, green: 0, blue: 220, alpha: 0.5), margin: 10)
+        lbIssue.roundedLabel(cornerRadius: 15, borderWidth: 1, borderCorlor: .init(red: 0, green: 0, blue: 220, alpha: 0.5), margin: 10)
+        lbDetail.roundedLabel(cornerRadius: 15, borderWidth: 1, borderCorlor: .init(red: 0, green: 0, blue: 220, alpha: 0.5), margin: 10)
     }
-    
-    private func loadData(){
-        lbName.text = data?.patientName?.uppercased()
-        lbDate.text = dateToSQLDate(data?.meetingTime ?? "")
-        lbTime.text = data?.startTime
-        lbIssue.text = data?.issue
-        lbDetail.text = data?.detail
-    }
-    @IBAction func appointmentDone(_ sender: Any) {
+    @IBAction func btnDone(_ sender: Any) {
+        Loading.showLoading(message: Message.LoadingMessage, view: self.view)
         BaseClient.shared.UpdateAppointment(id: (data?.id)! ,
-                                            issue: (data?.issue)!,
-                                            detail: (data?.detail)!,
-                                            statusId: 3,
-                                             completion: {
+                                            issue: lbIssue.text!,
+                                            detail: lbDetail.text!,
+                                            statusId: 4,
+                                             completion: { [self]
                      (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+                                                Loading.dismissLoading()
                             let rs = value as! ResponseListAppointment
 
                                 if rs.status == 0{
-                                let controller: MainViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.MainViewControllerId) as! MainViewController
-                                self.navigationController?.pushViewController(controller, animated: true)
-            } 
-                                                
+                                    let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.MainViewControllerId) as! MainViewController
+
+                                     self.navigationController?.pushViewController(controller, animated: true)
+            }
         })
     }
 }

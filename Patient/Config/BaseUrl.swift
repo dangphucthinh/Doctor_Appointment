@@ -8,8 +8,8 @@
 import Foundation
 
 struct API{
-    static let kBaseUrl = "http://116.110.26.46:2907/"
-    static let kUpdate = "http://116.110.26.46:2907/api/Auth/Update"
+    static let kBaseUrl = "http://116.110.26.56:2907/"
+    static let kUpdate = "http://116.110.26.56:2907/api/Auth/Update"
 
         //users
         //HttpPost
@@ -21,8 +21,10 @@ struct API{
         //doctor
         static let kGetListAllDoctor = "api/Doctor/GetListAllDoctor" //get all doctors GET
         static let kGetDoctorInfo = "api/Doctor/GetDoctorInfo" //Post
-        static let kDoctorRegister = "Register"
-        static let kDoctorBySpeciality = "GetDoctorInfoBySpecialty"
+        //static let kDoctorRegister = "Register"
+        static let kDoctorBySpeciality = "/api/Doctor/GetDoctorInfoBySpecialty"
+        static let kDoctorByHospital = "/api/Doctor/GetDoctorByHospital"
+    
         
         
         //patient
@@ -35,9 +37,8 @@ struct API{
         
         
         //specialties
-        static let kGetAllHospitalSpecialities = "GetAllHospitalSpecialities"
-        static let kGetAllSpecialities = "GetAllSpecialities"
-    
+        static let kGetAllHospitalSpecialities = "api/Speciality/GetAllHospitalSpecialities"
+        
     
         //make appointment
         static let kMakeAnAppointment = "api/Appointment/MakeAnAppointment"

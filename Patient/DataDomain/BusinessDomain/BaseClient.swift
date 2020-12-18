@@ -48,6 +48,14 @@ class BaseClient: NSObject{
         
         case getListDoctor(token: String)
         
+        case getDoctorBySpecialty(HosSpecName: String,
+                                  token: String)
+        
+        case getDoctorByHospital(Id: Int,
+                                 token: String)
+        
+        case getListAllHospitalSpecialty(token: String)
+        
         case getListHospital(token: String)
         
         case makeAnAppointment(doctorId: String,
@@ -69,6 +77,7 @@ class BaseClient: NSObject{
         
         case search(searchPhrase: String)
         
+        
         static let baseHTTP = API.kBaseUrl
         
   
@@ -77,9 +86,11 @@ class BaseClient: NSObject{
             switch self {
             case .login, .changePassword, .register, .GetPatientInfo, .forgotPassword :
                 return .post
+            case .getDoctorByHospital, .getDoctorBySpecialty:
+                return .post
             case .makeAnAppointment, .getListAppointment:
                 return .post
-            case .getListDoctor, .getListHospital:
+            case .getListDoctor, .getListHospital, .getListAllHospitalSpecialty:
                 return .get
             case .chatbot, .prediction:
                 return .post
@@ -103,8 +114,14 @@ class BaseClient: NSObject{
                 return API.kPatientInfo
             case .getListDoctor:
                 return API.kGetListAllDoctor
+            case .getListAllHospitalSpecialty:
+                return API.kGetAllHospitalSpecialities
             case .makeAnAppointment:
                 return API.kMakeAnAppointment
+            case .getDoctorByHospital:
+                return API.kDoctorByHospital
+            case.getDoctorBySpecialty:
+                return API.kDoctorBySpeciality
             case .getListAppointment:
                 return API.kGetListAppoinment
             case .chatbot:
@@ -135,6 +152,10 @@ class BaseClient: NSObject{
                 break
             case .getListDoctor:
                 break
+            case .getDoctorByHospital:
+                break
+            case .getDoctorBySpecialty:
+                break
             case .makeAnAppointment:
                 break
             case .getListAppointment:
@@ -142,6 +163,8 @@ class BaseClient: NSObject{
             case .chatbot:
                 break
             case .getListHospital:
+                break
+            case .getListAllHospitalSpecialty:
                 break
             case .prediction:
                 break
@@ -197,11 +220,26 @@ class BaseClient: NSObject{
                 return[
                     "UserId" : UserId
                 ]
+                
+            case .getDoctorByHospital(let Id,
+                                      _):
+                return[
+                    "Id" : Id
+                ]
            
+            case .getDoctorBySpecialty(let HosSpecName,
+                                       _):
+                return[
+                    "HosSpecName" : HosSpecName
+                ]
+                
             case .getListDoctor(_):
                 return [:]
                 
             case .getListHospital(_):
+                return [:]
+             
+            case .getListAllHospitalSpecialty(_):
                 return [:]
                 
             case .makeAnAppointment(let doctorId,
@@ -301,12 +339,17 @@ class BaseClient: NSObject{
                  .chatbot(data: _,
                           token: let accessToken),
                  
-//                 .prediction(data: _,
-//                             token: let accessToken),
-                
                  .getListDoctor(token: let accessToken),
                 
-                .getListHospital(token: let accessToken):
+                .getListHospital(token: let accessToken),
+                
+                .getDoctorByHospital(Id: _,
+                                     token: let accessToken),
+                
+                .getDoctorBySpecialty(HosSpecName: _,
+                                      token: let accessToken),
+                
+                .getListAllHospitalSpecialty(token: let accessToken):
                 
                 urlRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: Header.Authorization)
                 return urlRequest

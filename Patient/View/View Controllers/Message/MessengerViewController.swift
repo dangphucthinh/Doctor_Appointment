@@ -64,6 +64,17 @@ class MessengerViewController: UIViewController {
     }
     
     @IBAction func onClickSend(_ sender: Any) {
+        let name = BaseClient.shared.fullName
+        let email = BaseClient.shared.email
+        let avatar = BaseClient.shared.avatar
+        let id = BaseClient.shared.userId
+        //send user to firebase
+        let userData = UserDataModel(Uname: name ?? "Not found",
+                                     Uemail: email ?? "Not found",
+                                     Uavatar: avatar ?? "User",
+                                     UuserId: id ?? "Not found" )
+        UserDataManager.setUserData(userData: userData, userId: id ?? "Not found")
+        
         let messageData = MessageDataModel(msg: txtMessage.text!, rvrId: (recieverUser?.userId)!, sndrId: sendUserId!)
         MessageDataManager.setMessage(thread: (recieverUser?.userId)! + sendUserId!, messageData: messageData)
         txtMessage.text = ""

@@ -14,9 +14,7 @@ class HomePageController: UIViewController {
     @IBOutlet weak var tfSearch: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSearch: CustomButton!
-    
-    var searchIcon = UIImage(named: "search_icon")
-    
+        
     var listDoctor = List<Doctor>()
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -26,6 +24,7 @@ class HomePageController: UIViewController {
             // Search action
             print("Search")
         })
+        hideKeyboardWhenTappedAround()
         tfSearch.delegate = self
     }
     
@@ -45,15 +44,10 @@ class HomePageController: UIViewController {
         tableView.register(UINib(nibName: "HeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "headerView")
         
         tableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "detailCell")
-        searchDoctor()
+
   }
     
     
-    private func searchDoctor(){
-        tfSearch.withImage(direction: .Left, image: self.searchIcon!, colorSeparator: UIColor.orange, colorBorder: UIColor.black)
-        tfSearch.placeholder = "Doctor, Specialty"
-        
-    }
     @IBAction func search(_ sender: Any) {
         if(!tfSearch.text!.isEmpty) {
             let controller: DoctorViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorViewControllerId) as! DoctorViewController
@@ -90,6 +84,8 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "specialistCell") as! SpecialistTableViewCell
+            cell.loadInformation()
+            cell.delegate = self
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell") as! DetailTableViewCell
@@ -148,7 +144,6 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
             label.backgroundColor = .link
             label.font = UIFont.boldSystemFont(ofSize: 16)
             headerView.addSubview(label)
-
             return headerView
         }
         if section == 2{
@@ -178,19 +173,20 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     func loadDoctor(){
         BaseClient.shared.GetListDoctor(completion: { [self]
                                         (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-                                                                 
+
                                         if(isSuccess!){
                                           let user = value as! ResponseDoctor
-                                          
+
                                             let listTemp = user.data as List<Doctor>
                                             for item in listTemp{
                                                 self.listDoctor.append(item)
                                             }
                                             self.tableView.reloadData()
                                         }
-                                      
+
                                 })
     }
+    
 }
 
 extension HomePageController : DetailTableViewCellProtocol{
@@ -227,3 +223,20 @@ extension HomePageController : UITextFieldDelegate{
         return true
     }
 }
+
+extension HomePageController : SpecialtyCellProtocol  {
+    func specialtyPage() {
+        let controller: HospitalSpecialtiesViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.HospitalSpecialtiesViewControllerId) as! HospitalSpecialtiesViewController
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+}
+//
+//extension HomePageController : doctorViewProtocol  {
+//    func doctorPage(specName: String) {
+//        let controller: DoctorViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.DoctorViewControllerId) as! DoctorViewController
+//        controller.specialHospital = specName
+//        controller.isSpecial = true
+//        self.navigationController?.pushViewController(controller, animated: true)
+//    }
+//}

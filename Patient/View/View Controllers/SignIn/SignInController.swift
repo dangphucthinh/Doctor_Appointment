@@ -82,25 +82,13 @@ class SignInController: UIViewController {
                 Loading.dismissLoading()
 
                 if(isSuccess!) {
-                    
-                    let name = BaseClient.shared.fullName
-                    let email = BaseClient.shared.email
-                    let avatar = BaseClient.shared.avatar
-                    let id = BaseClient.shared.userId
-                    //send user to firebase
-                    let userData = UserDataModel(Uname: name ?? "Not found",
-                                                 Uemail: email ?? "Not found",
-                                                 Uavatar: avatar ?? "User",
-                                                 UuserId: id ?? "Not found" )
-                    UserDataManager.setUserData(userData: userData, userId: id ?? "Not found")
-                    
                     //switch to parentViewController
                     self.resetRoot(id: StoryboardID.ParentViewControllerId)
                         }
                 else {
                     // Show message login fail
                     // create the alert
-                let alert = UIAlertController(title: "My Title", message: "Login Fail", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "Login fail", message: "Check your username or password", preferredStyle: UIAlertController.Style.alert)
 
                 // add an action (button)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))

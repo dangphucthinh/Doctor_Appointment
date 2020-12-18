@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1l5-JS-3fy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1l5-JS-3fy">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -1367,14 +1367,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04e-TH-My8">
-                                        <rect key="frame" x="20" y="311" width="337" height="67"/>
+                                        <rect key="frame" x="20" y="322" width="337" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNi-7O-ecb">
-                                        <rect key="frame" x="158" y="186" width="129" height="65"/>
+                                        <rect key="frame" x="158" y="186" width="100" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -1395,7 +1395,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9b-0d-2Sk">
-                                        <rect key="frame" x="20" y="186" width="130" height="65"/>
+                                        <rect key="frame" x="20" y="186" width="114" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -1421,7 +1421,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="appointmentDone:" destination="x3Z-cK-XZ1" eventType="touchUpInside" id="vnB-vQ-rku"/>
+                                            <action selector="btnDone:" destination="x3Z-cK-XZ1" eventType="touchUpInside" id="efO-gA-Ljv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1432,12 +1432,12 @@
                         <color key="backgroundColor" red="0.84697154821503295" green="0.95515058393555885" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="ContentView" destination="Yde-6C-evJ" id="df2-3R-QhB"/>
-                        <outlet property="lbDate" destination="k9b-0d-2Sk" id="tL2-LV-34w"/>
-                        <outlet property="lbDetail" destination="sDg-1o-BGL" id="dya-7k-er5"/>
-                        <outlet property="lbIssue" destination="04e-TH-My8" id="ekp-mc-w48"/>
-                        <outlet property="lbName" destination="RFr-Ki-UM5" id="Qte-ya-zHd"/>
-                        <outlet property="lbTime" destination="aNi-7O-ecb" id="a0G-p0-dtZ"/>
+                        <outlet property="ContentView" destination="Yde-6C-evJ" id="eoY-Pd-eYQ"/>
+                        <outlet property="lbDate" destination="k9b-0d-2Sk" id="UfX-xv-THK"/>
+                        <outlet property="lbDetail" destination="sDg-1o-BGL" id="krP-P3-FgE"/>
+                        <outlet property="lbIssue" destination="04e-TH-My8" id="xpx-1E-8ji"/>
+                        <outlet property="lbName" destination="RFr-Ki-UM5" id="EGA-hb-rFr"/>
+                        <outlet property="lbTime" destination="aNi-7O-ecb" id="bFA-el-JwP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aC0-ys-aQ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1707,7 +1707,7 @@
         <image name="exclamationmark.bubble.fill" catalog="system" width="128" height="110"/>
         <image name="health-care-medical-icon" width="476" height="474"/>
         <image name="house" catalog="system" width="128" height="106"/>
-        <image name="lock" catalog="system" width="128" height="128"/>
+        <image name="lock" catalog="system" width="32" height="32"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <namedColor name="PrimaryColor">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>

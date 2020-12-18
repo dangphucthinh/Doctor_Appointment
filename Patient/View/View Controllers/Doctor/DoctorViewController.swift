@@ -13,14 +13,30 @@ class DoctorViewController: UITableViewController {
     var listDoctor = List<Doctor>()
     var allUsers = [UserDataModel]()
     var searchDoctor : Bool = false
-    
+    var isHospital : Bool = false
+    var isSpecial: Bool = false
     var searchPhrase : String?
+    var hospitalId : Int?
+    var specialHospital: String?
+    var isAdvise : Bool = false
+    var spec: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDoctor()
         cellRegister()
         self.navigationTitle(title: "DOCTOR")
+        listDoctor = List<Doctor>()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        listDoctor = List<Doctor>()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        listDoctor = List<Doctor>()
     }
     
     func cellRegister(){
@@ -88,6 +104,61 @@ class DoctorViewController: UITableViewController {
                               
                         })
         }
+        
+       else if isHospital == true {
+            BaseClient.shared.getDoctorByHospital(Id: hospitalId!,
+                                           completion: { [self]
+                                    (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+
+                                    if(isSuccess!){
+                                      let user = value as! ResponseDoctor
+
+                                        let listTemp = user.data as List<Doctor>
+                                        for item in listTemp{
+                                            self.listDoctor.append(item)
+                                        }
+                                        self.tableView.reloadData()
+                                }
+
+                        })
+
+        }
+        
+       else if isSpecial == true {
+            BaseClient.shared.getDoctorBySpecialty(HosSpecName: specialHospital!,
+                                                   completion: { [self]
+                                            (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+
+                                            if(isSuccess!){
+                                              let user = value as! ResponseDoctor
+
+                                                let listTemp = user.data as List<Doctor>
+                                                for item in listTemp{
+                                                    self.listDoctor.append(item)
+                                                }
+                                                self.tableView.reloadData()
+                                        }
+
+                                })
+        }
+       
+       else if isAdvise == true {
+        BaseClient.shared.getDoctorBySpecialty(HosSpecName: spec!,
+                                               completion: { [self]
+                                        (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+
+                                        if(isSuccess!){
+                                          let user = value as! ResponseDoctor
+
+                                            let listTemp = user.data as List<Doctor>
+                                            for item in listTemp{
+                                                self.listDoctor.append(item)
+                                            }
+                                            self.tableView.reloadData()
+                                    }
+
+                            })
+       }
         else {
             BaseClient.shared.GetListDoctor(completion: { [self]
                                     (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
@@ -105,8 +176,9 @@ class DoctorViewController: UITableViewController {
                             })
         }
     }
-  
 }
+  
+
 
 extension DoctorViewController : DetailTableViewCellProtocol{
     func doctorPage(_ data: Doctor) {

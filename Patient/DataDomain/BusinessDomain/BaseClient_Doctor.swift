@@ -53,4 +53,48 @@ extension BaseClient{
             }
         }
     }
+    
+    func getDoctorByHospital(Id: Int,
+                             completion:@escaping ServiceResponse) {
+         DispatchQueue.global(qos: .background).async {
+             // Run on background
+             let request = Service.getDoctorByHospital(Id: Id, token: self.accessToken!)as URLRequestConvertible
+             Alamofire.request(request)
+                     .responseObject { (response: DataResponse<ResponseDoctor>) in
+                     switch response.result {
+                     case let .success(data):
+                         //var a = data.data
+                         completion(true, nil, data);
+                         break
+
+                     case let .failure(error):
+                         completion(false, error as NSError?, nil);
+                         
+                         break
+                     }
+             }
+         }
+     }
+    
+    func getDoctorBySpecialty(HosSpecName: String,
+                             completion:@escaping ServiceResponse) {
+         DispatchQueue.global(qos: .background).async {
+             // Run on background
+             let request = Service.getDoctorBySpecialty(HosSpecName: HosSpecName, token: self.accessToken!)as URLRequestConvertible
+             Alamofire.request(request)
+                     .responseObject { (response: DataResponse<ResponseDoctor>) in
+                     switch response.result {
+                     case let .success(data):
+                         //var a = data.data
+                         completion(true, nil, data);
+                         break
+
+                     case let .failure(error):
+                         completion(false, error as NSError?, nil);
+                         
+                         break
+                     }
+             }
+         }
+     }
 }

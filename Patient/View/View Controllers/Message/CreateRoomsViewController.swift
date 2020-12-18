@@ -57,6 +57,8 @@ class CreateRoomsViewController: UITableViewController {
             
             if indexPath.row < allUsers.count {
                 cell.lblName.text = allUsers[indexPath.row].name
+                let url = URL.init(string:"\(allUsers[indexPath.row].avatar )")
+                cell.imgAvatar.sd_setImage(with: url, placeholderImage: UIImage(named: "no_image_banner"))
             } else {
                 // Handle non-existing object here
                 print("hihi")

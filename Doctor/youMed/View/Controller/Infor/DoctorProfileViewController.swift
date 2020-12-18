@@ -20,6 +20,7 @@ class DoctorProfileViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.showNavigationBar(animated: animated)
         bioView.isEditable = false
         self.navigationTitle(title: "Profile")
         imgAva.roundedImageView()
@@ -28,7 +29,6 @@ class DoctorProfileViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButton))
