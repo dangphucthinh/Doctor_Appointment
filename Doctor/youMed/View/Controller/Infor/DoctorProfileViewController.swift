@@ -56,7 +56,7 @@ class DoctorProfileViewController: UITableViewController {
                         let url = URL.init(string:"\(ava ?? "No image found")")
                         self.lbName.text = user.data?.fullName
                         self.lbPhone.text = user.data?.phoneNumber
-                        self.lbSpecialties.text = user.data?.specialtyName
+                        self.lbSpecialties.text = user.data?.hospitalSpecialty_Name
                         self.lbHospital.text = user.data?.hospitalName
                         self.bioView.text = user.data?.bio
                         

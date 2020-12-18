@@ -38,7 +38,7 @@ class HeaderView: UITableViewHeaderFooterView {
                                     self.listAppointment.append(item)
                                 }
                                 if listAppointment.count <= 1 {
-                                    secondViewLabel.text = "You have \(listAppointment.count) PATIENT are waiting"
+                                    secondViewLabel.text = "You have \(listAppointment.count) PATIENT is waiting"
                                 }
                                 else {
                                     secondViewLabel.text = "You have \(listAppointment.count) PATIENTS are waiting"
@@ -51,7 +51,7 @@ class HeaderView: UITableViewHeaderFooterView {
     
     override func awakeFromNib() {
         firstView.layer.cornerRadius = CGFloat(30)
-        lbTitle.text = "Hello, How are you ? \(name!)"
+        lbTitle.text = "Hello \(name!)! How are you ?"
         secondView.roundedView(cornerRadius: 15, borderWidth: 2, borderCorlor: Color.borderColor)
         let doctorTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(doctorHandleTap(_:)))
         secondView.addGestureRecognizer(doctorTapGestureRecognizer)

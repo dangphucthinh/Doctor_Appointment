@@ -87,9 +87,7 @@ extension BaseClient {
                        firstName:String,
                        lastName:String,
                        imageData:Data?,
-                     //  bio: String,
-                     //  education: String,
-                    //   certification: String,
+                       phoneNumber: String,
                        completion: @escaping ServiceResponse) {
         
         let headers: HTTPHeaders = [
@@ -103,9 +101,7 @@ extension BaseClient {
             parameters["UserId"] = userId
             parameters["FirstName"] = firstName
             parameters["LastName"] = lastName
-          //  parameters["Bio"] = bio
-          //  parameters["Education"] = education
-          //  parameters["Certification"] = certification
+            parameters["PhoneNumber"] = phoneNumber
 
             let url = API.kUserUpdate
             print(url)

@@ -66,6 +66,15 @@ class RequestedViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    let controller: PatientProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.PatientProfileViewControllerId) as! PatientProfileViewController
+    
+    controller.data = listAppointment[indexPath.row]
+    
+    self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
     //MARK: -Load data
     private func loadData(){
         BaseClient.shared.GetListAppointment(userId: UserId!,

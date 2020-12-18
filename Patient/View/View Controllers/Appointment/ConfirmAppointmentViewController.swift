@@ -18,10 +18,6 @@ class ConfirmAppointmentViewController: UIViewController {
     var time: String?
     var dateMeeting = ""
     var detail: String?
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        LoadInform(UserId: BaseClient.shared.userId!)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +31,9 @@ class ConfirmAppointmentViewController: UIViewController {
             
         let userView = Bundle.main.loadNibNamed(StoryboardID.PatientConfirmationViewId, owner: self, options: nil)?.first as? PatientConfirmationView
         userView?.frame = CGRect(x: 20, y: 151, width: 374, height: 200)
-        userView?.data = users
+       // LoadInform(UserId: BaseClient.shared.userId!)
+        //userView?.data = users
+        userView?.LoadInform(UserId: BaseClient.shared.userId!)
         userView?.lbIssue.text = issue
         view.addSubview(userView!)
     }
@@ -49,19 +47,7 @@ class ConfirmAppointmentViewController: UIViewController {
         view.addSubview(doctorView!)
     }
     
-    //MARK: -Load info
-    func LoadInform(UserId :String){
-            BaseClient.shared.GetUserInfo(UserId: UserId,
-                                          completion: {
-                  (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
-                                  
-                  if(isSuccess!){
-                    let user = value as! ResponseUser
-                   print(user)
-                    self.users = user.data
-                  }
-          })
-        }
+
 
     
     @IBAction func makeAppointment(_ sender: Any) {

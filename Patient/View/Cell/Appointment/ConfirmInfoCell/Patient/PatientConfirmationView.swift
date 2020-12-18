@@ -46,6 +46,18 @@ class PatientConfirmationView: UIView {
         shadowView.layer.shadowRadius = 4.0
     }
     
- 
+    //MARK: -Load info
+    func LoadInform(UserId :String){
+            BaseClient.shared.GetUserInfo(UserId: UserId,
+                                          completion: {
+                  (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
+                                  
+                  if(isSuccess!){
+                    let user = value as! ResponseUser
+                    self.data = user.data
+            
+                  }
+          })
+        }
 
 }

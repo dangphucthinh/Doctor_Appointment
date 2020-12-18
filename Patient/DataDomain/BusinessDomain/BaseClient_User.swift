@@ -138,9 +138,7 @@ extension BaseClient {
                        firstName:String,
                        lastName:String,
                        imageData:Data?,
-                       symptom: String,
-                       allergy: String,
-                       medicalHistory: String,
+                       phoneNumber: String,
                        completion: @escaping ServiceResponse) {
         
         let headers: HTTPHeaders = [
@@ -154,9 +152,7 @@ extension BaseClient {
             parameters["UserId"] = userId
             parameters["FirstName"] = firstName
             parameters["LastName"] = lastName
-            parameters["Symptom"] = symptom
-            parameters["MedicalHistory"] = medicalHistory
-            parameters["Allergy"] = allergy
+            parameters["PhoneNumber"] = phoneNumber
 
         let url = API.kUpdate
             Alamofire.upload(multipartFormData: { (multipartFormData) in

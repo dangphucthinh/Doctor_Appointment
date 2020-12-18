@@ -17,12 +17,9 @@ class InfomationViewController: UITableViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var allergyTextField: UITextField!
     @IBOutlet weak var imgAvatar: UIImageView!
     @IBOutlet weak var avaPicker: UIView!
     @IBOutlet weak var addressTextField: UITextField!
-    @IBOutlet weak var symptonTextField: UITextField!
-    @IBOutlet weak var historyTextField: UITextField!
     @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var button: UIView!
 
@@ -61,9 +58,7 @@ class InfomationViewController: UITableViewController {
                                         firstName: nameTextField.text ?? "",
                                         lastName: lastNameTextField.text ?? ""  ,
                                         imageData: imageData,
-                                        symptom: symptonTextField.text ?? "",
-                                        allergy: allergyTextField.text ?? "",
-                                        medicalHistory: historyTextField.text ?? "",
+                                        phoneNumber: phoneTextField.text ?? "",
                                         completion: {
                 (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
                     Loading.dismissLoading()
@@ -148,9 +143,6 @@ class InfomationViewController: UITableViewController {
                     self.lastNameTextField.text = user.data?.lastName
                     self.emailTextField.text = user.data?.email
                     self.phoneTextField.text = user.data?.phoneNumber
-                    self.historyTextField.text = user.data?.medicalHistory
-                    self.allergyTextField.text = user.data?.allergy
-                    self.symptonTextField.text = user.data?.symptom
                     
                         
                     let dateString = user.data?.dateOfBirth

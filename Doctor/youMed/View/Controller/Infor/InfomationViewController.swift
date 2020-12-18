@@ -58,9 +58,7 @@ class InfomationViewController: UITableViewController {
                                         firstName: nameTextField.text ?? "",
                                         lastName: lastNameTextField.text ?? "",
                                         imageData: imageData,
-                                      //  bio: "hihi",
-                                      //  education: "hah",
-                                      //  certification: "hehe",
+                                        phoneNumber: phoneTextField.text ?? "",
                                         completion: {
                 (isSuccess: Bool?, error: NSError?, value: AnyObject?) in
                     Loading.dismissLoading()

@@ -1707,7 +1707,7 @@
         <image name="exclamationmark.bubble.fill" catalog="system" width="128" height="110"/>
         <image name="health-care-medical-icon" width="476" height="474"/>
         <image name="house" catalog="system" width="128" height="106"/>
-        <image name="lock" catalog="system" width="32" height="32"/>
+        <image name="lock" catalog="system" width="128" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <namedColor name="PrimaryColor">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>

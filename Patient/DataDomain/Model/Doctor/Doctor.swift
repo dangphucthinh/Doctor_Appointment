@@ -43,6 +43,6 @@ class Doctor:Object, Mappable {
         hospitalSpecialty_Name  <- map["hospitalSpecialty_Name"]
         certification           <- map["certification"]
         bio                     <- map["bio"]
-        hospital_Name                 <- map["hospital_Name"]
+        hospital_Name           <- map["hospital_Name"]
     }
 }
