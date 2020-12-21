@@ -38,7 +38,7 @@ class UserInformationController: UIViewController {
 
 extension UserInformationController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        7
+        8
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,12 +58,15 @@ extension UserInformationController: UITableViewDelegate, UITableViewDataSource 
             cell.textLabel?.text = "Schedule"
             cell.imageView?.image = UIImage(systemName: "creditcard.fill")
         case 4:
+            cell.textLabel?.text = "History"
+            cell.imageView?.image = UIImage(systemName: "doc.on.clipboard.fill")
+        case 5:
             cell.textLabel?.text = "Messages"
             cell.imageView?.image = UIImage(systemName: "envelope.fill")
-        case 5:
+        case 6:
             cell.textLabel?.text = "Settings"
             cell.imageView?.image = UIImage(systemName: "wrench.fill")
-        case 6:
+        case 7:
             cell.textLabel?.text = "Logout"
             cell.imageView?.image = UIImage(systemName: "arrowshape.turn.up.left.fill")
         default: break
@@ -81,7 +84,7 @@ extension UserInformationController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
    
-            print("cc")
+
         switch indexPath.row {
         case 0:
             let controller: CreateRoomsViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.CreateRoomsViewControllerId) as! CreateRoomsViewController
@@ -100,12 +103,18 @@ extension UserInformationController: UITableViewDelegate, UITableViewDataSource 
 
             self.navigationController?.pushViewController(controller, animated: true)
         case 4:
-            let controller: ChatViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ChatViewControllerId) as! ChatViewController
+            print("a")
+            let controller: ListAppointmentViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ListAppointmentViewControllerId) as! ListAppointmentViewController
+            controller.statusId = 4
+
             self.navigationController?.pushViewController(controller, animated: true)
         case 5:
-            let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.ChangePasswordControllerId) as! ChangePasswordController
+            let controller: ChatViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.ChatViewControllerId) as! ChatViewController
             self.navigationController?.pushViewController(controller, animated: true)
         case 6:
+            let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.ChangePasswordControllerId) as! ChangePasswordController
+            self.navigationController?.pushViewController(controller, animated: true)
+        case 7:
             let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.SignInControllerId) as! SignInController
             self.navigationController?.pushViewController(controller, animated: true)
         default:

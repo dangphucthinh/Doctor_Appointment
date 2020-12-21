@@ -17,6 +17,7 @@ target 'youMed' do
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
     pod 'Firebase/Storage'
+    pod 'CalendarKit'
 
   target 'youMedTests' do
     inherit! :search_paths

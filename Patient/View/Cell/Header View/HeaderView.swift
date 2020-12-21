@@ -22,7 +22,6 @@ class HeaderView: UITableViewHeaderFooterView {
     weak var delegateHospital: HospitalViewProtocol?
     
     @IBOutlet weak var doctorView: UIView!
-    @IBOutlet weak var clinicView: UIView!
     @IBOutlet weak var hospitalView: UIView!
     
     override func awakeFromNib() {
@@ -30,8 +29,7 @@ class HeaderView: UITableViewHeaderFooterView {
         
         let doctorTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(doctorHandleTap(_:)))
         doctorView.addGestureRecognizer(doctorTapGestureRecognizer)
-        let clinicTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(clinicHandleTap(_:)))
-        clinicView.addGestureRecognizer(clinicTapGestureRecognizer)
+      
         let hospitalTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hospitalHandleTap(_:)))
         hospitalView.addGestureRecognizer(hospitalTapGestureRecognizer)
     }
@@ -39,10 +37,6 @@ class HeaderView: UITableViewHeaderFooterView {
     @objc func doctorHandleTap(_ sender: UITapGestureRecognizer) {
         print("a")
         delegateDoctor?.doctorPage()
-    }
-    @objc func clinicHandleTap(_ sender: UITapGestureRecognizer) {
-        print("b")
-       
     }
     @objc func hospitalHandleTap(_ sender: UITapGestureRecognizer) {
         delegateHospital?.hospitalPage()

@@ -79,6 +79,7 @@
 		55318362255D2BF900A43B92 /* MessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55318361255D2BF900A43B92 /* MessageDataModel.swift */; };
 		5531836A255D313500A43B92 /* CreateRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55318369255D313500A43B92 /* CreateRoomsViewController.swift */; };
 		55337C23255B767D003E22A6 /* CommonResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55337C22255B767D003E22A6 /* CommonResources.swift */; };
+		5538C29025904A8E00D217C1 /* CustomCalendarExampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C28F25904A8E00D217C1 /* CustomCalendarExampleController.swift */; };
 		553ABDF5256364320016BCF3 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553ABDF4256364320016BCF3 /* DesignableTextField.swift */; };
 		555A6EB6256D04C500FAD327 /* ConfirmAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A6EB5256D04C500FAD327 /* ConfirmAppointmentViewController.swift */; };
 		555A6EC3256D076C00FAD327 /* PatientConfirmationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 555A6EC2256D076C00FAD327 /* PatientConfirmationView.xib */; };
@@ -209,6 +210,7 @@
 		55318361255D2BF900A43B92 /* MessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataModel.swift; sourceTree = "<group>"; };
 		55318369255D313500A43B92 /* CreateRoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomsViewController.swift; sourceTree = "<group>"; };
 		55337C22255B767D003E22A6 /* CommonResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResources.swift; sourceTree = "<group>"; };
+		5538C28F25904A8E00D217C1 /* CustomCalendarExampleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarExampleController.swift; sourceTree = "<group>"; };
 		553ABDF4256364320016BCF3 /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		555A6EB5256D04C500FAD327 /* ConfirmAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAppointmentViewController.swift; sourceTree = "<group>"; };
 		555A6EC2256D076C00FAD327 /* PatientConfirmationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PatientConfirmationView.xib; sourceTree = "<group>"; };
@@ -549,7 +551,6 @@
 		4DF3E6412556AA980058A23A /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				4D13E645255C2C210065452F /* Adviser */,
 				E1CF95C3254A6D9C0091D0D0 /* UserInformationController.swift */,
 			);
 			path = Info;
@@ -599,6 +600,14 @@
 				4D60194C25598AF30081B76F /* MessageModel.swift */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		5538C28925904A2B00D217C1 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				5538C28F25904A8E00D217C1 /* CustomCalendarExampleController.swift */,
+			);
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 		555FEC322574C9C200F7C763 /* CommonExtension */ = {
@@ -849,6 +858,8 @@
 		E1D479E42543CE9F006A7C2C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4D13E645255C2C210065452F /* Adviser */,
+				5538C28925904A2B00D217C1 /* Schedule */,
 				4D1B6F5F2557949A00AEC5FC /* Appointment */,
 				4DF3E6522556AB4A0058A23A /* ChangePassword */,
 				4DC46694255AADD90027A193 /* Doctor */,
@@ -1157,6 +1168,7 @@
 				4D78DCF9255579BB00C53CB0 /* Token.swift in Sources */,
 				4DA33ACA255C013B00E7CEC2 /* Data.swift in Sources */,
 				4D076A262557FE8A00DDD452 /* AppointmentTableCell.swift in Sources */,
+				5538C29025904A8E00D217C1 /* CustomCalendarExampleController.swift in Sources */,
 				4D0235232560D9E1003D9255 /* UserCell.swift in Sources */,
 				4D4244B525826316002EAFC7 /* ResponseHospitalSpecialty.swift in Sources */,
 				4D78DCD12555798500C53CB0 /* Loading.swift in Sources */,

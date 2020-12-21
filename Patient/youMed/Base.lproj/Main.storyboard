@@ -447,14 +447,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dWB-dP-Xqt">
-                                                    <rect key="frame" x="59" y="0.0" width="335" height="43.666667938232422"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="message.fill" catalog="system" id="uYu-fI-xf4">
-                                                    <rect key="frame" x="21.166666666666664" y="11.999999999999998" width="21.666666666666668" height="19.333333333333332"/>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uYu-fI-xf4">
+                                                    <rect key="frame" x="21.5" y="10" width="21" height="23"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -1574,6 +1574,21 @@
             </objects>
             <point key="canvasLocation" x="-794.20289855072474" y="797.54464285714278"/>
         </scene>
+        <!--Custom Calendar Example Controller-->
+        <scene sceneID="8li-0m-xbN">
+            <objects>
+                <viewController id="hrA-tR-kjr" customClass="CustomCalendarExampleController" customModule="youMed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VHr-e0-w8g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ctQ-96-BWE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="weR-rV-cyd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6114" y="349"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="2an-Uo-JVi">
             <objects>
@@ -2108,7 +2123,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="55 Nguyen Nhan str" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mfj-xP-tUZ">
-                                                    <rect key="frame" x="32" y="37" width="374" height="22"/>
+                                                    <rect key="frame" x="32" y="37" width="362" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -2996,9 +3011,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="P0l-mj-mIW">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jWX-DS-kIU">
                                 <rect key="frame" x="0.0" y="44" width="414" height="750"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3024,12 +3036,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ETM-ll-Lh9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="P0l-mj-mIW" firstAttribute="leading" secondItem="ETM-ll-Lh9" secondAttribute="leading" id="TcK-T3-wzf"/>
-                            <constraint firstItem="P0l-mj-mIW" firstAttribute="top" secondItem="ETM-ll-Lh9" secondAttribute="top" constant="-44" id="YFY-mB-wfm"/>
-                            <constraint firstItem="ETM-ll-Lh9" firstAttribute="trailing" secondItem="P0l-mj-mIW" secondAttribute="trailing" id="agN-QG-REz"/>
-                            <constraint firstItem="ETM-ll-Lh9" firstAttribute="bottom" secondItem="P0l-mj-mIW" secondAttribute="bottom" constant="-34" id="gVZ-jo-VBl"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="jWX-DS-kIU" id="AoI-e3-5XS"/>
@@ -3042,58 +3048,58 @@
     </scenes>
     <designables>
         <designable name="6o0-iy-u2Y">
-            <size key="intrinsicContentSize" width="140" height="34"/>
+            <size key="intrinsicContentSize" width="130" height="34"/>
         </designable>
         <designable name="BEV-qc-EUd">
-            <size key="intrinsicContentSize" width="92.333333333333329" height="22"/>
+            <size key="intrinsicContentSize" width="82.333333333333329" height="22"/>
         </designable>
         <designable name="BHk-9u-i1a">
-            <size key="intrinsicContentSize" width="158" height="21"/>
+            <size key="intrinsicContentSize" width="148" height="21"/>
         </designable>
         <designable name="Fdi-7a-V5Q">
-            <size key="intrinsicContentSize" width="97" height="24.666666666666668"/>
+            <size key="intrinsicContentSize" width="87" height="24.666666666666668"/>
         </designable>
         <designable name="GKt-FU-R5I">
-            <size key="intrinsicContentSize" width="91.333333333333329" height="17"/>
+            <size key="intrinsicContentSize" width="81.333333333333329" height="17"/>
         </designable>
         <designable name="Q7e-7e-D2j">
-            <size key="intrinsicContentSize" width="148.66666666666666" height="21"/>
+            <size key="intrinsicContentSize" width="138.66666666666666" height="21"/>
         </designable>
         <designable name="Qip-OL-Mik">
-            <size key="intrinsicContentSize" width="91.666666666666671" height="23"/>
+            <size key="intrinsicContentSize" width="81.666666666666671" height="23"/>
         </designable>
         <designable name="S52-sh-GTc">
-            <size key="intrinsicContentSize" width="91.666666666666671" height="22"/>
+            <size key="intrinsicContentSize" width="81.666666666666671" height="22"/>
         </designable>
         <designable name="UVI-iN-7e0">
-            <size key="intrinsicContentSize" width="124.33333333333333" height="22"/>
+            <size key="intrinsicContentSize" width="114.33333333333333" height="22"/>
         </designable>
         <designable name="Y9g-0g-VGJ">
-            <size key="intrinsicContentSize" width="239.33333333333334" height="22"/>
+            <size key="intrinsicContentSize" width="229.33333333333334" height="22"/>
         </designable>
         <designable name="ZSP-Ps-vhQ">
-            <size key="intrinsicContentSize" width="127.66666666666667" height="17"/>
+            <size key="intrinsicContentSize" width="117.66666666666667" height="17"/>
         </designable>
         <designable name="cBY-7K-mTQ">
-            <size key="intrinsicContentSize" width="109.33333333333333" height="22"/>
+            <size key="intrinsicContentSize" width="99.333333333333329" height="22"/>
         </designable>
         <designable name="cgh-UY-pHQ">
-            <size key="intrinsicContentSize" width="83.333333333333329" height="21"/>
+            <size key="intrinsicContentSize" width="73.333333333333329" height="21"/>
         </designable>
         <designable name="dnp-Ml-mQw">
-            <size key="intrinsicContentSize" width="104.66666666666667" height="17"/>
+            <size key="intrinsicContentSize" width="94.666666666666671" height="17"/>
         </designable>
         <designable name="gae-XA-OT2">
-            <size key="intrinsicContentSize" width="132" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="122" height="18.666666666666668"/>
         </designable>
         <designable name="jBk-dU-zyw">
-            <size key="intrinsicContentSize" width="50.666666666666664" height="22"/>
+            <size key="intrinsicContentSize" width="40.666666666666664" height="22"/>
         </designable>
         <designable name="qDm-It-2Nm">
-            <size key="intrinsicContentSize" width="98" height="24.666666666666668"/>
+            <size key="intrinsicContentSize" width="88" height="24.666666666666668"/>
         </designable>
         <designable name="qOE-jd-G2d">
-            <size key="intrinsicContentSize" width="88.333333333333329" height="22"/>
+            <size key="intrinsicContentSize" width="78.333333333333329" height="22"/>
         </designable>
     </designables>
     <resources>
@@ -3104,7 +3110,7 @@
         <image name="background" width="112.5" height="243.5"/>
         <image name="health-care-medical-icon" width="476" height="474"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
-        <image name="hospital_symbol" width="360" height="360"/>
+        <image name="hospital_symbol" width="900" height="742"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>

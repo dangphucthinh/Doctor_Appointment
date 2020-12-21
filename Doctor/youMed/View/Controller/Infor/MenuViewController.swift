@@ -36,7 +36,7 @@ class MenuViewController: UIViewController {
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        6
+        7
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,9 +56,12 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = "Upcoming"
             cell.imageView?.image = UIImage(systemName: "creditcard.fill")
         case 4:
+            cell.textLabel?.text = "History"
+            cell.imageView?.image = UIImage(systemName: "doc.on.clipboard.fill")
+        case 5:
             cell.textLabel?.text = "Messages"
             cell.imageView?.image = UIImage(systemName: "envelope.fill")
-        case 5:
+        case 6:
             cell.textLabel?.text = "Logout"
             cell.imageView?.image = UIImage(systemName: "arrowshape.turn.up.left.fill")
         default: break
@@ -99,12 +102,15 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
           
 
             self.navigationController?.pushViewController(controller, animated: true)
+            
         case 4:
+            print("a")
+        case 5:
             let controller: CreateRoomsViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.CreateRoomsViewControllerId) as! CreateRoomsViewController
             
 
             self.navigationController?.pushViewController(controller, animated: true)
-        case 5:
+        case 6:
             let controller = self.storyboard?.instantiateViewController(identifier: StoryboardID.SignInControllerId) as! SignInController
             
             self.navigationController?.pushViewController(controller, animated: true)

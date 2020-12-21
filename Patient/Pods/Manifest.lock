@@ -3,6 +3,9 @@ PODS:
   - AlamofireObjectMapper (5.1.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - CalendarKit (0.13.13):
+    - DateToolsSwift
+  - DateToolsSwift (5.0.0)
   - Firebase/Auth (6.34.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.9.2)
@@ -102,6 +105,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireObjectMapper (from `https://github.com/RomanPodymov/AlamofireObjectMapper.git`, branch `xcode-10-2-fix`)
+  - CalendarKit
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -115,6 +119,8 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CalendarKit
+    - DateToolsSwift
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -151,6 +157,8 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireObjectMapper: 9fec33dcec52497a2a32678cd3a7b597b5a32514
+  CalendarKit: 54944443a5cbd633a533b971408b00e879f54a7d
+  DateToolsSwift: 4207ada6ad615d8dc076323d27037c94916dbfa6
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
   FirebaseAuth: c92d49ada7948d1a23466e3db17bc4c2039dddc3
@@ -174,6 +182,6 @@ SPEC CHECKSUMS:
   RealmSwift: 0b7d7121e842724188123c6086831ae6d2952050
   SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
 
-PODFILE CHECKSUM: a31e22101775d03c93b671c8aac60b24f0fd8e89
+PODFILE CHECKSUM: 7aef4e8fed30ae512bb2c583adbfe90fc61e491c
 
 COCOAPODS: 1.10.0

@@ -16,8 +16,8 @@ class MakeAppointmentViewController: UIViewController, FSCalendarDelegate {
     @IBOutlet weak var timePicker: UIPickerView!
 
 
-    private var deliveryTimes = ["8 - 8:30", "8:30 - 9", "9 - 9:30", "9:30 - 10",
-                                 "10 - 10:30", "10:30 - 11", "11 - 11:30", "11:30 - 12", "13 - 13:30", "13:30 - 14", "14 - 14:30", "14:30 - 15", "15 - 15:30", "15:30 - 16", "16 - 16:30", "16:30 - 17"]
+    private var deliveryTimes = ["08:00 - 08:30", "08:30 - 09:00", "09:00 - 09:30", "09:30 - 10:00",
+                                 "10:00 - 10:30", "10:30 - 11:00", "11:00 - 11:30", "11:30 - 12:00", "13:00 - 13:30", "13:30 - 14:00", "14:00 - 14:30", "14:30 - 15:00", "15:00 - 15:30", "15:30 - 16:00", "16:00 - 16:30", "16:30 - 17:00"]
     var doctorId = ""
     var dateSelected = ""
     var appointment : Appointment?
